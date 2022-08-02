@@ -18,4 +18,17 @@ class PostController extends Controller
         //dd($post);
         return Inertia::render("Post/Show", ["post" => $post]);
     }
+
+    public function create()
+    {
+        return Inertia::render("Post/Create");
+    }
+
+    public function store(Request $request, Post $post)
+    {
+        $input = $request->all(); //$requestがformで送られてきたやつ
+        $post->fill($input)->save();
+        return redirect("/posts/".$post->id);
+
+    }
 }
