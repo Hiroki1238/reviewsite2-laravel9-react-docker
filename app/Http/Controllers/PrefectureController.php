@@ -21,7 +21,7 @@ class PrefectureController extends Controller
     {
         $prefecture_id = $prefecture->id;
         $venues = Venue::with('prefecture')->where('prefecture_id',$prefecture_id)->get();
-        return Inertia::render('Prefectures/Show',['venues' => $venues]);
+        return Inertia::render('Prefectures/Show',['venues' => $venues, 'prefecture' => $prefecture]);
         // return view('Prefectures/Show')->with(['venues' => $venues]);  
     }
     

@@ -1,10 +1,10 @@
 import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
-import { Link } from '@inertiajs/inertia-react'
+import { Link } from '@inertiajs/inertia-react';
 
 const Index = (props) => {
-  const { venues } = props;
+  const { venues, prefecture } = props;
   console.log(props);
 
   return (
@@ -15,7 +15,8 @@ const Index = (props) => {
     }>
 
       <div className="p-12">
-        <h1>県名を表示</h1>
+        <h1>{prefecture.name}の会場一覧</h1>
+        <h1><Link href="/prefectures">戻る</Link></h1>
 
         {venues.map((venue) => (
           <div key={venue.id}>

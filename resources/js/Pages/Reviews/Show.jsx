@@ -3,6 +3,8 @@ import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from '@inertiajs/inertia-react'
 
+// このファイルは各会場ごとのレビューを表示するためのjsx
+
 const Index = (props) => {
   const { prefecture_array } = props;
   console.log(props);
@@ -14,8 +16,10 @@ const Index = (props) => {
       </h2>
     }>
 
-      <div className="p-12">
-        <h1>都道府県から探す</h1>
+{/* レビューのタイトルをクリックして出てくる各レビューの詳細画面 */}
+
+      <div className="p-12"> 
+        <h1>レビュー</h1>
 
         {prefecture_array.map((region) => (
           <div key={region.id}>
