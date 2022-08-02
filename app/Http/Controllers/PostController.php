@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Http\Requests\PostRequest;
 use Inertia\Inertia;
 use App\Models\Post;
 
@@ -28,7 +29,18 @@ class PostController extends Controller
     {
         $input = $request->all(); //$requestがformで送られてきたやつ
         $post->fill($input)->save();
-        return redirect("/posts/".$post->id);
+        return redirect("/posts/" . $post->id);
+    }
 
+    public function edit(Post $post)
+    {
+        return Inertia::render("Post/Edit", ["posts" => $post]);
+    }
+
+    public function update(PostRequest $request, Post $post)
+    {
+        $input = $request->all();
+        $post->fill($input)->save();
+        return redirect("/posts/" . $post->id);
     }
 }
