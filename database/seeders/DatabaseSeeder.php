@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PostsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(RegionsTableSeeder::class);
+        $this->call(PrefecturesTableSeeder::class);
+        $this->call(VenuesTableSeeder::class);
+        $this->call(ReviewsTableSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
