@@ -9,13 +9,17 @@ use App\Models\User;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Inertia\Inertia;
 
 class ReviewController extends Controller
 {
     public function index(Review $review)
     {
         //return view('reviews/index')->with(['reviews' => $review->get()]);  
-        return view('reviews/index')->with(['reviews' => $review->getByLimitDESC()]); //取得する数に制限をかける   
+        //return view('reviews/index')->with(['reviews' => $review->getByLimitDESC()]); //取得する数に制限をかける   
+        return Inertia::render('Reviews/Index',[
+            ['reviews' => $review->getByLimit()]
+        ]);
     }
 
     public function show(Review $review,Image $image) //reviews/3の時$reviewsに3がid=3のreviewsテーブルを持ってくる、それが$reviesに入ってくる $review->idとすると3が取得できる
@@ -24,7 +28,10 @@ class ReviewController extends Controller
         $review = Review::with('venue')->find($review->id); //showのルーティングは/reviews/{review}となっていて、reviewの値を渡せている
         $images = $image->where('review_id',$review->id)->get();
         //dd($images);
-        return view('reviews/show')->with(['review' => $review,'images' => $images]);
+        // return view('reviews/show')->with(['review' => $review,'images' => $images]);
+        return Inertia::render('Reviews/Show',[
+            ['review' => $review->getByLimit(), 'images' => $images]
+        ]);
     }
 
     // public function create(Venue $venue,Request $request,Review $review)

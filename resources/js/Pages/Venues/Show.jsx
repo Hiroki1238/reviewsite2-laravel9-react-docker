@@ -26,9 +26,8 @@ const Index = (props) => {
 
         {reviews.map((review) => (
           <div key={review.id}>
-              
             <h2>
-              <Link href={`/reviews/${review}`}>{review.title}</Link>
+            <Link href={`/reviews/${review.id}`}>{review.title}</Link>
             </h2>
           </div>
         ))}
