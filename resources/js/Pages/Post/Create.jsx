@@ -9,7 +9,6 @@ import Authenticated from "@/Layouts/Authenticated";
         body: ""
     })
 
-    console.log(props);
     const handleSendPosts = (e) => {
         e.preventDefault();
         //console.log("e",e);

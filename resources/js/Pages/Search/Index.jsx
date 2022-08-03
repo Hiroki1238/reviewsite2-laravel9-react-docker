@@ -7,6 +7,16 @@ const Index = (props) => {
     const { venues, prefecture, prefecture_array } = props;
     console.log(props);
 
+    const InputWord = () => {
+      const [word, setWord] = useState('');
+    }
+
+    const handleSearch = (e) => {
+      console.log(e.target.value);
+        e.preventDefault();
+        post("/result"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
+    };
+
     return (
         <Authenticated
             auth={props.auth}
@@ -33,15 +43,18 @@ const Index = (props) => {
                 ))}
             </div>
 
+
             <div className="p-12">
-                <h1>キーワードから探す</h1>
-                <input type="text" name="word" placeholder="キーワード検索"></input>
-                <button type="submit">検索</button>
+                <form onSubmit={handleSearch}>
+                    <h1>キーワードから探す</h1>
+                    <input type="text" name="word" placeholder="キーワード検索" onChange={(e) => setWord("word", e.target.value)}></input>
+                    <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">検索</button>
+                </form>
             </div>
 
             <div className="p-12">
                 <h1>規模から探す</h1>
-                <button type="submit">検索</button>
+                <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">検索</button>
             </div>
         </Authenticated>
     );

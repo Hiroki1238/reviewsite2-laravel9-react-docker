@@ -33,7 +33,7 @@ const Index = (props) => {
           </div>
           </div>
           
-          if(images != null){
+          if(typeof images != 'undefined') {
           {images.map((image) => (
            <img src="image.image_path"></img>
           ))}
