@@ -27,7 +27,6 @@ class ReviewController extends Controller
         //$venue = Venue::find(1);
         $review = Review::with('venue')->find($review->id); //showのルーティングは/reviews/{review}となっていて、reviewの値を渡せている
         $images = $image->where('review_id',$review->id)->get();
-        //dd($images);
         // return view('reviews/show')->with(['review' => $review,'images' => $images]);
         return Inertia::render('Reviews/Show',[
             ['review' => $review->getByLimit(), 'images' => $images]
