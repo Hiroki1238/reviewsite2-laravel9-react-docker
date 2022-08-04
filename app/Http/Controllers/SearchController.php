@@ -19,7 +19,7 @@ class SearchController extends Controller
         $word = $request->input('word');
         $result = Venue::where('name', 'LIKE', '%'.$word.'%')->get();
         // return view('search/result')->with(['result' => $result]);
-        return Inertia::render('Serarch/Result',[
+        return Inertia::render('Search/Result',[
             ['result' => $result]
         ]);
     }
@@ -28,7 +28,7 @@ class SearchController extends Controller
     {
         $capacity = $request->input('capacity');
         $result = Venue::where('scale_standing', '<' , $capacity)->get();
-        return Inertia::render('Serarch/Result',[
+        return Inertia::render('Search/Result',[
             ['result' => $result]
         ]);
     }

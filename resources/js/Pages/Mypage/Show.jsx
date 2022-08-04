@@ -4,7 +4,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Link } from '@inertiajs/inertia-react'
 
 const Index = (props) => {
-  const { myReviews } = props;
+  const { authUser } = props;
 
   return (
     <Authenticated auth={props.auth} header={
@@ -13,8 +13,8 @@ const Index = (props) => {
       </h2>
     }>
 
-      <div className="p-12 bg-my-gray1">
-       <h1>マイページ</h1>
+      <div className="p-12">
+       <h1>???のマイページ</h1>
        <h3>neko neko neko neko neko neko</h3>
        {/* <div id="icon" className="rounded">
        ここにアイコンを表示

@@ -7,27 +7,35 @@ use App\Models\User;
 use App\Models\Review;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ProfileController extends Controller
 {
     //以下のindexメソッドでは、User $userとした上でwith(['user' => $user])をつけることにより、mypage/indexにuserの情報が渡せている。viewにデータを渡したいときはこういう書き方をしなければならない。
     public function index(User $user)
     {
-        //dd($user);
-        $auth_id = auth()->id();
-        $my_reviews = Review::with('user')->where('user_id', $auth_id)->get();
-        //dd($my_reviews);
-        return view('mypage/index')->with(['my_reviews' => $my_reviews]);
+        $authId = auth()->id();
+        $myReviews = Review::with('user')->where('user_id', $authId)->get();
+        // return view('mypage/index')->with(['my_reviews' => $my_reviews]);
+        return Inertia::render('Mypage/Index',[
+            ['myReviews' => $myReviews]
+        ]);
     }
 
     public function show(User $user)
     {
-        return view('mypage/show')->with(['user' => $user]);
+        // return view('mypage/show')->with(['user' => $user]);
+        return Inertia::render('Mypage/Index',[
+            ['user' => $user]
+        ]);
     }
 
     public function edit(User $user)
     {
-        return view('mypage/edit')->with(['user' => $user]);
+        // return view('mypage/edit')->with(['user' => $user]);
+        return Inertia::render('Mypage/Edit',[
+            ['user' => $user]
+        ]);
     }
 
     public function update(ProfileRequest $request, User $user)

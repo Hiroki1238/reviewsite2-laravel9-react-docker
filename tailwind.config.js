@@ -17,5 +17,65 @@ module.exports = {
         },
     },
 
+    // 追加
+    theme: {
+        extend: {
+            colors: {
+                // 'カラー名': 'カラーコード'
+                'my-purple1': '#7a54a8',
+            },
+        },
+    },
+
+    theme: {
+        extend: {
+            colors: {
+                // 'カラー名': 'カラーコード'
+                'my-purple2': '#884898',
+            },
+        },
+    },
+
+    theme: {
+        extend: {
+            colors: {
+                // 'カラー名': 'カラーコード'
+                'my-purple3': '#9969d3',
+            },
+        },
+    },
+
+    theme: {
+        extend: {
+            colors: {
+                // 'カラー名': 'カラーコード'
+                'my-gray1': '#eaeaea',
+            },
+        },
+    },
+
+    theme: {
+        extend: {
+            colors: {
+                // 'カラー名': 'カラーコード'
+                'my-gray2': '#404040',
+            },
+        },
+    },
+
+    // 追加
+    theme: {
+        extend: {
+            colors: {
+                // 'カラー名': 'カラーコード'
+                'box-gray3': '#3f3f3f',
+            },
+        },
+    },
+
+
+
+
+
     plugins: [require('@tailwindcss/forms')],
 };

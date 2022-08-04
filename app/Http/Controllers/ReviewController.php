@@ -17,9 +17,7 @@ class ReviewController extends Controller
     {
         //return view('reviews/index')->with(['reviews' => $review->get()]);  
         //return view('reviews/index')->with(['reviews' => $review->getByLimitDESC()]); //取得する数に制限をかける   
-        return Inertia::render('Reviews/Index',[
-            ['reviews' => $review->getByLimit()]
-        ]);
+        return Inertia::render('Reviews/Index',['reviews' => $review->getByLimit()]);
     }
 
     public function show(Review $review,Image $image) //reviews/3の時$reviewsに3がid=3のreviewsテーブルを持ってくる、それが$reviesに入ってくる $review->idとすると3が取得できる
@@ -28,9 +26,8 @@ class ReviewController extends Controller
         $review = Review::with('venue')->find($review->id); //showのルーティングは/reviews/{review}となっていて、reviewの値を渡せている
         $images = $image->where('review_id',$review->id)->get();
         // return view('reviews/show')->with(['review' => $review,'images' => $images]);
-        return Inertia::render('Reviews/Show',[
-            ['review' => $review->getByLimit(), 'images' => $images]
-        ]);
+        //dd($review);
+        return Inertia::render('Reviews/Show',['review' => $review, 'images' => $images]);
     }
 
     // public function create(Venue $venue,Request $request,Review $review)
@@ -51,12 +48,14 @@ class ReviewController extends Controller
 
     public function create(Venue $venue)
     {
-        return view('reviews/create')->with(['venue' => $venue]);
+        // return view('reviews/create')->with(['venue' => $venue]);
+        return Inertia::render('Reviews/Create',['venue' => $venue]);
     }
 
     public function getVenueName(Venue $venue)
     {
-        return view('Review/create')->with(['venue_name' => $venue->name]);
+        // return view('Review/create')->with(['venue_name' => $venue->name]);
+        return Inertia::render('Review/Create',['venueName',$venue->name]);
     }
 
     public function store(Venue $venue, ReviewRequest $request, Review $review, Image $image)
@@ -70,7 +69,8 @@ class ReviewController extends Controller
 
     public function edit(Review $review)
     {
-        return view('reviews/edit')->with(['review' => $review]);
+        // return view('reviews/edit')->with(['review' => $review]);
+        return Inertia::render('Reviews/Edit',['review' => $review]);
     }
 
     public function update(ReviewRequest $request, Review $review)

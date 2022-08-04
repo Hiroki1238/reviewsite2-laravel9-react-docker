@@ -54,16 +54,17 @@ require __DIR__.'/auth.php';
 Route::get('/prefectures', [PrefectureController::class, 'index']); //都道府県から検索する画面のルーティング
 Route::get('/prefectures/{prefecture}', [PrefectureController::class, 'show']); //県ごとの会場を表示
 
+Route::get('/prefectures/venues/{venue}', [VenueController::class, 'showReview']); //各会場ごとのレビューを表示
+
 //Route::get('/posts', 'ReviewController@index'); これはlaravel6の書き方
 Route::get('/reviews', [ReviewController::class, 'index']);
 Route::get('/reviews/{venue}/create', [ReviewController::class, 'create']);
-Route::get('/reviews/{review}', [ReviewController::class, 'show'])->name('show');
+Route::get('/reviews/{review}', [ReviewController::class, 'show']);
 Route::post('/reviews/{venue}', [ReviewController::class, 'store'])->name('store'); //postにした
 
-Route::get('/prefectures/venues/{venue}', [VenueController::class, 'showReview']); //各会場ごとのレビューを表示
 // Route::get('/reviews/{review}', [VenueController::class, 'show']);
 
-Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit'])->name('edit');
+Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
 Route::put('/reviews/{review}', [ReviewController::class, 'update'])->name('update');
 Route::delete('/reviews/{review}', [ReviewController::class, 'delete']);
 
