@@ -49,6 +49,7 @@ class Review extends Model
     public function store($input) //Review::store($input);のような呼び出し方をするときはstaticが必要
     {
         // $input += ['venue_id' => $venue_id];
+        //dd($input);
         $this->fill($input)->save(); // $review-> と Review:: は同じ意味  ,  $this と self:: は同じ意味
         $new_reviewId = $this->latest()->first()->id; //created_atを新しい順に並び替えて一番最新の一つを持ってくる
        // dd($new_reviewId);

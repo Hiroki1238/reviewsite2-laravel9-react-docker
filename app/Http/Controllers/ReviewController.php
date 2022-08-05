@@ -61,9 +61,10 @@ class ReviewController extends Controller
     //後でReviewRequestに直す
     public function store(Venue $venue, Request $request, Review $review, Image $image)
     {
-        $input = $request['review'];
+        $input = $request->all();
         //$input = $request->review;
         $images = $request->file('item_url');
+        //dd($input);
         $new_reviewId = $review->store($input); //Reviewのstoreを使う
         $image->store($images,$new_reviewId); //imagesテーブルにreview_idを渡す
         return redirect('/venues/'.$venue->id);
