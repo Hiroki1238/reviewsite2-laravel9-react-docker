@@ -19,7 +19,7 @@ const Edit = (props) => {
 
     const handleSendPosts = (e) => {
         e.preventDefault();
-        put(`/reviews/${review.id}`);
+        put(`/reviews/update/${review.id}/`);
     }
 
     return (
@@ -33,16 +33,46 @@ const Edit = (props) => {
                 
                 <form onSubmit={handleSendPosts}>
                     <div>
-                        <h2>Title</h2>
+                        <h2>タイトル</h2>
                         <input type="text" value={data.title} onChange={(e) => setData("title", e.target.value)}/>
                         <span className="text-red-600">{props.errors.title}</span>
                     </div>                    
                     
                     <div>
-                        <h2>Body</h2>
+                        <h2>レビュー内容</h2>
                         <textarea value={data.body} onChange={(e) => setData("body", e.target.value)}></textarea>
                         <span className="text-red-600">{props.errors.body}</span>
                     </div>
+                    
+                    <div>
+                        <h2>座席</h2>
+                        <input type="text" value={data.seat} onChange={(e) => setData("seat", e.target.value)}/>
+                        <span className="text-red-600">{props.errors.seat}</span>
+                    </div>  
+
+                    <div>
+                        <h2>10段階評価1</h2>
+                        <input type="number" value={data.star1} onChange={(e) => setData("star1", e.target.value)}/>
+                        <span className="text-red-600">{props.errors.seat}</span>
+                    </div>  
+
+                    <div>
+                        <h2>10段階評価2</h2>
+                        <input type="number" value={data.star2} onChange={(e) => setData("star2", e.target.value)}/>
+                        <span className="text-red-600">{props.errors.seat}</span>
+                    </div>  
+
+                    <div>
+                        <h2>10段階評価3</h2>
+                        <input type="number" value={data.star3} onChange={(e) => setData("star3", e.target.value)}/>
+                        <span className="text-red-600">{props.errors.seat}</span>
+                    </div>  
+
+                    <div>
+                        <h2>訪問日</h2>
+                        <input type="text" value={data.visited_at} onChange={(e) => setData("visited_at", e.target.value)}/>
+                        <span className="text-red-600">{props.errors.seat}</span>
+                    </div> 
                     
                     <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">send</button>
                 </form>

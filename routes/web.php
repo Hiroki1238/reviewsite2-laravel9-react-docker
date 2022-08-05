@@ -58,14 +58,14 @@ Route::get('/prefectures/venues/{venue}', [VenueController::class, 'showReview']
 //Route::get('/posts', 'ReviewController@index'); これはlaravel6の書き方
 Route::get('/reviews', [ReviewController::class, 'index']);
 Route::get('/reviews/{venue}/create', [ReviewController::class, 'create']);
-Route::get('/reviews/{review}', [ReviewController::class, 'show']);
 Route::post('/reviews/store/{venue}', [ReviewController::class, 'store'])->name('store'); //postにした
 
 // Route::get('/reviews/{review}', [VenueController::class, 'show']);
 
 Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
-Route::put('/reviews/{review}', [ReviewController::class, 'update'])->name('update');
-Route::delete('/reviews/{review}', [ReviewController::class, 'delete']);
+Route::put('/reviews/update/{review}/', [ReviewController::class, 'update'])->name('update');
+Route::delete('/reviews/delete/{review}', [ReviewController::class, 'delete']);
+Route::get('/reviews/{review}', [ReviewController::class, 'show']);
 
 
 Route::get('/home',[HomeController::class,'index']);

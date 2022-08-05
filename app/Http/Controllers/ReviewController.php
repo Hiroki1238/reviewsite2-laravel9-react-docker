@@ -55,17 +55,18 @@ class ReviewController extends Controller
     public function getVenueName(Venue $venue)
     {
         // return view('Review/create')->with(['venue_name' => $venue->name]);
-        return Inertia::render('Review/Create',['venueName',$venue->name]);
+        return Inertia::render('Review/Create',['venueId',$venue->id]);
     }
 
-    public function store(Venue $venue, ReviewRequest $request, Review $review, Image $image)
+    //後でReviewRequestに直す
+    public function store(Venue $venue, Request $request, Review $review, Image $image)
     {
         $input = $request['review'];
-        dd($input);
+        //$input = $request->review;
         $images = $request->file('item_url');
-        $new_id = $review->store($input,$venue->id); //Reviewのstoreを使う
-        $image->store($images,$new_id);
-        return redirect('/reviews/'.$review->id);
+        $new_reviewId = $review->store($input); //Reviewのstoreを使う
+        $image->store($images,$new_reviewId); //imagesテーブルにreview_idを渡す
+        return redirect('/venues/'.$venue->id);
     }
 
     public function edit(Review $review)
@@ -74,9 +75,11 @@ class ReviewController extends Controller
         return Inertia::render('Reviews/Edit',['review' => $review]);
     }
 
-    public function update(ReviewRequest $request, Review $review)
+    //後でReveiwRequestに直す
+    public function update(Request $request, Review $review)
     {
-        $input_review = $request['review'];
+        $input_review = $request->all();
+        //dd($input_review);
         $review->fill($input_review)->save();
 
         return redirect('/reviews/' . $review->id);

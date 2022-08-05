@@ -32,6 +32,7 @@ class Review extends Model
     }
     
     protected $fillable = [
+        'id',
         'user_id',
         'title',
         'body',
@@ -45,12 +46,13 @@ class Review extends Model
         'updated_at',
     ];
 
-    public function store($input, $venue_id) //Review::store($input);のような呼び出し方をするときはstaticが必要
+    public function store($input) //Review::store($input);のような呼び出し方をするときはstaticが必要
     {
-        $input += ['venue_id' => $venue_id];
+        // $input += ['venue_id' => $venue_id];
         $this->fill($input)->save(); // $review-> と Review:: は同じ意味  ,  $this と self:: は同じ意味
-        $new_review = $this->latest()->first()->id; //created_atが新しい順に並び替えて一番上の一つを持ってくる
-        return $new_review;
+        $new_reviewId = $this->latest()->first()->id; //created_atを新しい順に並び替えて一番最新の一つを持ってくる
+       // dd($new_reviewId);
+        return $new_reviewId;
     }
 
     public function getByLimit(int $limit_count = 10) //ここで一ページあたりの表示件数を指定する
