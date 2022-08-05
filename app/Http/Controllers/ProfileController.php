@@ -17,25 +17,19 @@ class ProfileController extends Controller
         $authId = auth()->id();
         $myReviews = Review::with('user')->where('user_id', $authId)->get();
         // return view('mypage/index')->with(['my_reviews' => $my_reviews]);
-        return Inertia::render('Mypage/Index',[
-            ['myReviews' => $myReviews]
-        ]);
+        return Inertia::render('Mypage/Index',['myReviews' => $myReviews]);
     }
 
     public function show(User $user)
     {
         // return view('mypage/show')->with(['user' => $user]);
-        return Inertia::render('Mypage/Index',[
-            ['user' => $user]
-        ]);
+        return Inertia::render('Mypage/Show',['user' => $user]);
     }
 
     public function edit(User $user)
     {
         // return view('mypage/edit')->with(['user' => $user]);
-        return Inertia::render('Mypage/Edit',[
-            ['user' => $user]
-        ]);
+        return Inertia::render('Mypage/Edit',['user' => $user]);
     }
 
     public function update(ProfileRequest $request, User $user)

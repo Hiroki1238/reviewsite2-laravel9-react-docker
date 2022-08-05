@@ -64,10 +64,10 @@ class ReviewController extends Controller
         $input = $request->all();
         //$input = $request->review;
         $images = $request->file('item_url');
-        //dd($input);
+        //dd($images);
         $new_reviewId = $review->store($input); //Reviewのstoreを使う
         $image->store($images,$new_reviewId); //imagesテーブルにreview_idを渡す
-        return redirect('/venues/'.$venue->id);
+        return redirect('prefectures/venues/'.$venue->id);
     }
 
     public function edit(Review $review)

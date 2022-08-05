@@ -89,13 +89,23 @@ const Create = (props) => {
                                 setData("visited_at", e.target.value)
                             }
                         ></input>
+
+                <div class="name-filed width">
+                <div class="first-name-box">
+                  <div class="text-label">
+                    <p class="name">希望画像<span class="red">上限５枚</span></p>
+                  </div>
+                  <div>
+                  <input type="file" name="item_url[]" multiple="multiple"></input>
+                  </div>
+                  {/* @if ($errors->has('item_url') || $errors->has('item_url.*') )
+                    <div class="alert alert-danger">{{ $errors->first('item_url') . $errors->first('item_url.*') }}</div>
+                  @endif */}
+                </div>
+              </div>
+
                     </div>
-                    <button
-                        type="submit"
-                        className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md"
-                    >
-                        send
-                    </button>
+                    <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">投稿</button>
                 </form>
 
                 <Link href={`/prefectures/venues/${venue.id}`}>戻る</Link>

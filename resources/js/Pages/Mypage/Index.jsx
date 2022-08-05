@@ -16,8 +16,9 @@ const Index = (props) => {
     }>
 
       <div className="p-12 bg-my-gray1">
+        <h1>ここにアイコンを表示</h1>
        <h1>{auth.user.name}のマイページ</h1>
-       <Link>プロフィール</Link>
+       <Link href={`mypage/profile/${auth.user.id}`}>プロフィールの編集</Link>
        <h3>neko neko neko neko neko neko</h3>
        {/* <div id="icon" className="rounded">
        ここにアイコンを表示

@@ -72,10 +72,10 @@ Route::get('/home',[HomeController::class,'index']);
 
 
 //マイページ関連
-Route::get('/mypage/{user}',[ProfileController::class, 'index']);
-Route::get('/mypage/profile/{user}',[ProfileController::class, 'show']);
 Route::get('/mypage/profile/{user}/edit',[ProfileController::class, 'edit']);
-Route::put('/mypage/profile/{user}', [ProfileController::class, 'update']);
+Route::put('/mypage/profile/{user}/update', [ProfileController::class, 'update']);
+Route::get('/mypage/profile/{user}',[ProfileController::class, 'show']);
+Route::get('/mypage/{user}',[ProfileController::class, 'index']);
 Route::post('/reviews', [ProfileController::class, 'store']);
 //Route::get('/search',[SearchController::class, 'index']);
 

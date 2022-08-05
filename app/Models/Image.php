@@ -15,7 +15,7 @@ class Image extends Model
     return $this->belongsTo(Review::class);
     }
 
-    public function store($images,$new_id)
+    public function store($images,$new_reviewId)
     {
         //Storage::disk('s3')->
         //dd(count($images));
@@ -23,7 +23,7 @@ class Image extends Model
             $path = Storage::disk('s3')->putFile('reviewImages', $image, 'public');
             $url = Storage::disk('s3')->url($path);
             $this->create([
-                "review_id" => $new_id, "image_path" => $url,
+                "review_id" => $new_reviewId, "image_path" => $url,
             ]);
         }
     }
