@@ -21,7 +21,7 @@ const Index = (props) => {
         <h2>所在地 : {venue.address}</h2>
         <h2>ホームページ : <Link href="venue.url">{venue.url}</Link></h2>
 
-        <h2><Link>新規投稿</Link></h2>
+        <h2><Link href={`/reviews/${venue.id}/create`}>新規投稿</Link></h2>
         <Link href={`/prefectures/${prefecture.id}`}>戻る</Link>
 
         {reviews.map((review) => (
