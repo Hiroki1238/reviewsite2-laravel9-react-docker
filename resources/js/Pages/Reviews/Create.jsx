@@ -4,6 +4,7 @@ import { Link, useForm } from '@inertiajs/inertia-react';
 import Authenticated from "@/Layouts/Authenticated";
 
   const Create = (props) => {
+    const { venue } = props;
     const {data, setData, post} = useForm({ //useForm と dataはセットで使う(dataという値は決まっているもの)
         title: "",        //↑このpostは送信方式
         body: "",
@@ -16,6 +17,7 @@ import Authenticated from "@/Layouts/Authenticated";
         visited_at:"",
 
     })
+    console.log("ねこ",venue);
 
     const handleSendPosts = (e) => {
         e.preventDefault();
@@ -43,7 +45,7 @@ import Authenticated from "@/Layouts/Authenticated";
           </div>
           <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">send</button>
         </form>
-      <Link href={`/reviews/${data.id}`}>戻る</Link>
+      <Link href={`/prefectures/venues/${venue.id}`}>戻る</Link>
       </div>
 
     </Authenticated>
