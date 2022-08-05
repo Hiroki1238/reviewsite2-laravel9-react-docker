@@ -36,7 +36,7 @@ use App\Http\Controllers\AdminpageController;
 //     ]);
 // });
 
-Route::get("/",[PostController::class,"index"]);
+Route::get("/blog",[PostController::class,"index"]);
 Route::get("/posts/create",[PostController::class,"create"]);
 Route::get("/posts/{post}", [PostController::class, "show"]); //post以降に何かついてるURLが全てこれに吸収されてしまう
 Route::post("/posts",[PostController::class,"store"]);
@@ -50,7 +50,6 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-
 Route::get('/prefectures', [PrefectureController::class, 'index']); //都道府県から検索する画面のルーティング
 Route::get('/prefectures/{prefecture}', [PrefectureController::class, 'show']); //県ごとの会場を表示
 
@@ -60,7 +59,7 @@ Route::get('/prefectures/venues/{venue}', [VenueController::class, 'showReview']
 Route::get('/reviews', [ReviewController::class, 'index']);
 Route::get('/reviews/{venue}/create', [ReviewController::class, 'create']);
 Route::get('/reviews/{review}', [ReviewController::class, 'show']);
-Route::post('/reviews/{venue}', [ReviewController::class, 'store'])->name('store'); //postにした
+Route::post('/reviews/store/{venue}', [ReviewController::class, 'store'])->name('store'); //postにした
 
 // Route::get('/reviews/{review}', [VenueController::class, 'show']);
 

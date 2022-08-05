@@ -17,12 +17,11 @@ import Authenticated from "@/Layouts/Authenticated";
         visited_at:"",
 
     })
-    console.log("ねこ",venue);
+    console.log("ねこ",venue.id);
 
     const handleSendPosts = (e) => {
         e.preventDefault();
-        //console.log("e",e);
-        post("/reviews/{review.id}"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
+        post("/reviews/store/{venue.id}"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
     }
 
   console.log(data);
@@ -30,7 +29,7 @@ import Authenticated from "@/Layouts/Authenticated";
   return (
     <Authenticated auth={props.auth} header={
       <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-        Create
+        新規投稿
       </h2>}>
 
       <div className="p-12">
@@ -45,6 +44,7 @@ import Authenticated from "@/Layouts/Authenticated";
           </div>
           <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">send</button>
         </form>
+        
       <Link href={`/prefectures/venues/${venue.id}`}>戻る</Link>
       </div>
 
