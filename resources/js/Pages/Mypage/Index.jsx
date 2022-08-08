@@ -6,8 +6,6 @@ import { Link } from '@inertiajs/inertia-react'
 const Index = (props) => {
   const { myReviews, auth } = props;
 
-  // console.log(auth.user.name);
-
   return (
     <Authenticated auth={props.auth} header={
       <h2 className="font-semibold text-xl text-gray-800 leading-tight">
@@ -18,7 +16,8 @@ const Index = (props) => {
       <div className="p-12 bg-my-gray1">
         <h1>ここにアイコンを表示</h1>
        <h1>{auth.user.name}のマイページ</h1>
-       <Link href={`mypage/profile/${auth.user.id}`}>プロフィールの編集</Link>
+       <h1>{auth.user.id}</h1>
+       <Link href={`/mypage/profile/${auth.user.id}`}>プロフィール詳細</Link>
        <h3>neko neko neko neko neko neko</h3>
        {/* <div id="icon" className="rounded">
        ここにアイコンを表示

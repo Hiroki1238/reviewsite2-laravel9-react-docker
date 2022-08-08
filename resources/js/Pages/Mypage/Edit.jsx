@@ -4,20 +4,22 @@ import { Link, useForm } from '@inertiajs/inertia-react';
 import Authenticated from "@/Layouts/Authenticated";
 
 const Edit = (props) => {
-    // const { review } = props;
+    console.log(props);
+    const { auth } = props; //authの中にuserがあって、ユーザー情報が入ってるから、わざわざuserをコントローラーで連れてくる必要ないかも
     const {data, setData, put} = useForm({
-          lastname: data.lastname,
-          name: data.name,
-          uname: data.uname,
-          email: data.email,
-          age:data.age,
-          profile:data.profile,
-          image_path:data.image_path,
+          lastname: auth.user.lastname,
+          name: auth.user.name,
+          uname: auth.user.uname,
+          email: auth.user.email,
+          age: auth.user.age,
+          profile: auth.user.profile,
+          image_path: auth.user.image_path,
     })
+
 
     const handleSendPosts = (e) => {
         e.preventDefault();
-        put(`/reviews/update/${review.id}/`);
+        put(`/mypage/profile/update/${auth.user.id}`);
     }
 
     return (
@@ -75,7 +77,7 @@ const Edit = (props) => {
                     <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">send</button>
                 </form>
                 
-                 <Link href={`/reviews/${review.id}`}>戻る</Link>
+                 <Link href={`/reviews/${auth.user.id}`}>戻る</Link>
             </div>
             
         </Authenticated>

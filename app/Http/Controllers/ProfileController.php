@@ -29,7 +29,8 @@ class ProfileController extends Controller
     public function edit(User $user)
     {
         // return view('mypage/edit')->with(['user' => $user]);
-        return Inertia::render('Mypage/Edit',['user' => $user]);
+        //dd($user);
+        return Inertia::render('Mypage/Edit'); //authの中身で事足りるから['user' => $user]を渡すのをやめてみた
     }
 
     public function update(ProfileRequest $request, User $user)

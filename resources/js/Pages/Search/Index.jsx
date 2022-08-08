@@ -1,20 +1,20 @@
 import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
-import { Link } from "@inertiajs/inertia-react";
+import { Link, useState } from "@inertiajs/inertia-react";
 
 const Index = (props) => {
     const { venues, prefecture, prefecture_array } = props;
     console.log(props);
 
-    const InputWord = () => {
-        const [word, setWord] = useState("");
+    const Search = () => {
+        const [word, setWord] = useState();
     };
 
     const handleSearch = (e) => {
         console.log("ねこ",e.target.value);
         e.preventDefault();
-        post("/result"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
+        Inertia.post("/result", word); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
     };
 
     return (
