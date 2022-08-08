@@ -28,6 +28,7 @@ const Index = (props) => {
        <h3>{auth.user.profile}</h3>
 
        <Link href={`/mypage/profile/edit/${auth.user.id}`}>編集</Link>
+       <h3><Link href={`/mypage/${auth.user.id}`}>戻る</Link></h3>
       </div>
 
     </Authenticated>

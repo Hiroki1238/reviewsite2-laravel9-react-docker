@@ -76,11 +76,12 @@ Route::get('/mypage/profile/edit/{user}',[ProfileController::class, 'edit']);
 Route::put('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
 Route::get('/mypage/profile/{user}',[ProfileController::class, 'show']);
 Route::get('/mypage/{user}',[ProfileController::class, 'index']);
-// Route::post('/reviews/store', [ProfileController::class, 'store']);
-//Route::get('/search',[SearchController::class, 'index']);
 
+//お気に入り、ブックマーク
 Route::get('mypage/likes/{user}',[LikeController::class,'index']);
 Route::get('mypage/bookmarks/{user}',[BookmarkController::class,'index']);
+Route::get('mypage/contacts/{user}',[ProfileController::class,'contact']);
+
 
 //管理者用
 Route::get('admin/create',[AdminpageController::class,'index']);

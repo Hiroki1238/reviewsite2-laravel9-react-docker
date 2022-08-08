@@ -15,8 +15,8 @@ const Index = (props) => {
       </h2>
     }>
 
-      <div className="p-12">
-        <h1>{venue.name}のレビュー</h1>
+      <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+        <h1 className="text-purple-800">{venue.name}のレビュー</h1>
         <h2>収容人数 : {venue.scale_standing}人</h2>
         <h2>所在地 : {venue.address}</h2>
         <h2>ホームページ : <Link href="venue.url">{venue.url}</Link></h2>

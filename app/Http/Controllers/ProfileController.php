@@ -67,4 +67,9 @@ class ProfileController extends Controller
 
         return redirect('mypage/profile/' . $auth_id);
     }
+
+    public function contact()
+    {
+        return Inertia::render('Contacts/Index');
+    }
 }

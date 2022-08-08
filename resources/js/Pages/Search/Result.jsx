@@ -9,11 +9,11 @@ const Index = (props) => {
   return (
     <Authenticated auth={props.auth} header={
       <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-        Index
+        検索結果
       </h2>
     }>
 
-      <div className="p-12 bg-my-gray1">
+      <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
        <h1>検索結果を表示</h1>
        <h3>12345</h3>
        {/* <div id="icon" className="rounded">

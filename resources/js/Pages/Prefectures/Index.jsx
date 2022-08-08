@@ -14,8 +14,8 @@ const Index = (props) => {
       </h2>
     }>
 
-      <div className="p-1.5 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-        <h1>都道府県から探す</h1>
+      <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+        <h1 className="text-purple-800">都道府県から探す</h1>
         {prefecture_array.map((region) => (
           <div key={region.id}>
             <h2>{region.region}</h2>

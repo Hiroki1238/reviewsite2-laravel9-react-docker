@@ -1,7 +1,8 @@
 import React from "react";
+import {useState} from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
-import { Link, useState } from "@inertiajs/inertia-react";
+import { Link } from "@inertiajs/inertia-react";
 
 const Index = (props) => {
     const { venues, prefecture, prefecture_array } = props;
@@ -11,7 +12,7 @@ const Index = (props) => {
     const handleSearch = (e) => {
         console.log("ねこ",e.target.value);
         e.preventDefault();
-        Inertia.post("/result", word); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
+        Inertia.post("/result", word); //"/result"というページに値を送っている
     };
 
     return (
@@ -23,7 +24,7 @@ const Index = (props) => {
                 </h2>
             }
         >
-            <div className="p-12">
+            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h1>都道府県から探す</h1>
 
                 {prefecture_array.map((region) => (
@@ -40,7 +41,7 @@ const Index = (props) => {
                 ))}
             </div>
 
-            <div className="p-12">
+            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <form onSubmit={handleSearch}>
                     <h1>キーワードから探す</h1>
                     <input type="text" name="word" placeholder="キーワード検索" onChange={(e) => setWord("word", e.target.value)}
@@ -54,7 +55,7 @@ const Index = (props) => {
                 </form>
             </div>
 
-            <div className="p-12">
+            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h1>規模から探す</h1>
                 <select>
                     <option value="10">1000-2000人</option>

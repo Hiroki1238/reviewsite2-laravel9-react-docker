@@ -33,43 +33,43 @@ const Edit = (props) => {
                 
                 <form onSubmit={handleSendPosts}>
                     <div>
-                        <h2>氏</h2>
+                        <h2 className="text-purple-800">氏</h2>
                         <input type="text" value={data.lastname} onChange={(e) => setData("lastname", e.target.value)}/>
                         <span className="text-red-600">{props.errors.title}</span>
                     </div>                    
                     
                     <div>
-                        <h2>名</h2>
+                        <h2 className="text-purple-800">名</h2>
                         <textarea value={data.name} onChange={(e) => setData("name", e.target.value)}></textarea>
                         <span className="text-red-600">{props.errors.body}</span>
                     </div>
                     
                     <div>
-                        <h2>ユーザー名</h2>
+                        <h2 className="text-purple-800">ユーザー名</h2>
                         <input type="text" value={data.uname} onChange={(e) => setData("uname", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
-                        <h2>メールアドレス</h2>
+                        <h2 className="text-purple-800">メールアドレス</h2>
                         <input type="text" value={data.email} onChange={(e) => setData("email", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
-                        <h2>年齢</h2>
+                        <h2 className="text-purple-800">年齢</h2>
                         <input type="number" value={data.age} onChange={(e) => setData("age", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
-                        <h2>プロフィール</h2>
+                        <h2 className="text-purple-800">プロフィール</h2>
                         <input type="text" value={data.profile} onChange={(e) => setData("profile", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
-                        <h2>画像</h2>
+                        <h2 className="text-purple-800">画像</h2>
                         <input type="text" value={data.image_path} onChange={(e) => setData("image_path", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div> 
@@ -77,7 +77,7 @@ const Edit = (props) => {
                     <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">send</button>
                 </form>
                 
-                 <Link href={`/reviews/${auth.user.id}`}>戻る</Link>
+                 <Link href={`/mypage/profile/${auth.user.id}`}>戻る</Link>
             </div>
             
         </Authenticated>

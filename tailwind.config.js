@@ -9,6 +9,14 @@ module.exports = {
         './resources/js/**/*.jsx',
     ],
 
+    theme: {    //追加
+        extend: {
+          fontFamily: {
+            zenmaru: ["Zen Maru Gothic"],
+          },
+        },
+      },
+
     theme: {
         extend: {
             fontFamily: {
