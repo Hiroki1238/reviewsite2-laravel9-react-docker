@@ -20,7 +20,7 @@ const Create = (props) => {
 
     const handleSendPosts = (e) => {
         e.preventDefault();
-        post(`/reviews/store/${venue.id}`); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
+        post(`/reviews/store/${data.id}`); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
     };
 
     console.log(data);
@@ -90,10 +90,10 @@ const Create = (props) => {
                             }
                         ></input>
 
-                <div class="name-filed width">
-                <div class="first-name-box">
-                  <div class="text-label">
-                    <p class="name">画像を選択<span class="red">（最大５枚）</span></p>
+                <div className="name-filed width">
+                <div className="first-name-box">
+                  <div className="text-label">
+                    <p id="name">画像を選択<span className="red">（最大５枚）</span></p>
                   </div>
                   <div>
                   <input type="file" name="item_url[]" multiple="multiple"></input>

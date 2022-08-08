@@ -6,10 +6,7 @@ import { Link, useState } from "@inertiajs/inertia-react";
 const Index = (props) => {
     const { venues, prefecture, prefecture_array } = props;
     console.log(props);
-
-    const Search = () => {
-        const [word, setWord] = useState();
-    };
+    const [word, setWord] = useState("");
 
     const handleSearch = (e) => {
         console.log("ねこ",e.target.value);

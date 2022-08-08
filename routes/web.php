@@ -58,7 +58,7 @@ Route::get('/prefectures/venues/{venue}', [VenueController::class, 'showReview']
 //Route::get('/posts', 'ReviewController@index'); これはlaravel6の書き方
 Route::get('/reviews', [ReviewController::class, 'index']);
 Route::get('/reviews/{venue}/create', [ReviewController::class, 'create']);
-Route::post('/reviews/store/{venue}', [ReviewController::class, 'store'])->name('store'); //postにした
+Route::post('/reviews/store/{review}', [ReviewController::class, 'store'])->name('store'); //postにした
 
 // Route::get('/reviews/{review}', [VenueController::class, 'show']);
 
@@ -76,11 +76,11 @@ Route::get('/mypage/profile/edit/{user}',[ProfileController::class, 'edit']);
 Route::put('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
 Route::get('/mypage/profile/{user}',[ProfileController::class, 'show']);
 Route::get('/mypage/{user}',[ProfileController::class, 'index']);
-Route::post('/reviews', [ProfileController::class, 'store']);
+// Route::post('/reviews/store', [ProfileController::class, 'store']);
 //Route::get('/search',[SearchController::class, 'index']);
 
-Route::get('mypage/favorite/{user}',[LikeController::class,'index']);
-Route::get('mypage/bookmark/{user}',[BookmarkController::class,'index']);
+Route::get('mypage/likes/{user}',[LikeController::class,'index']);
+Route::get('mypage/bookmarks/{user}',[BookmarkController::class,'index']);
 
 //管理者用
 Route::get('admin/create',[AdminpageController::class,'index']);

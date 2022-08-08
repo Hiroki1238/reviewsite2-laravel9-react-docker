@@ -25,6 +25,38 @@ export default function Authenticated({ auth, header, children }) {
                                     ホーム
                                 </NavLink>
                             </div>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href="/search">
+                                    会場検索
+                                </NavLink>
+                            </div>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href={`/mypage/${auth.user.id}`}>
+                                    マイページ
+                                </NavLink>
+                            </div>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href={`/mypage/likes/${auth.user.id}`}>
+                                    お気に入り
+                                </NavLink>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href={`/mypage/bookmarks/${auth.user.id}`}>
+                                    ブックマーク
+                                </NavLink>
+                            </div>
+
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href={`/mypage/contacts/${auth.user.id}`}>
+                                    お問い合せ
+                                </NavLink>
+                            </div>
+
+                            </div>
+
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">

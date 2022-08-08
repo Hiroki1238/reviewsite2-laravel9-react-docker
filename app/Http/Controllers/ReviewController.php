@@ -61,6 +61,7 @@ class ReviewController extends Controller
     //後でReviewRequestに直す
     public function store(Venue $venue, Request $request, Review $review, Image $image)
     {
+        dd("ねこ1");
         $input = $request->all();
         //$input = $request->review;
         $images = $request->file('item_url');
