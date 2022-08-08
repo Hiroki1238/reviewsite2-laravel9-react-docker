@@ -29,7 +29,7 @@ const Edit = (props) => {
                 </h2>
             }>
             
-            <div className="p-12">
+            <div className="p-1.5 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center"> {/*なぜか適用されない*/}
                 
                 <form onSubmit={handleSendPosts}>
                     <div>

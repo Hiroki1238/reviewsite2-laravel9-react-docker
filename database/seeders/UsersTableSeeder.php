@@ -21,7 +21,9 @@ class UsersTableSeeder extends Seeder
             'name' => 'ひろき',
             'uname' => 'nekopi',
             'email' => 'c14h14n3nao3s@gmail.com',
+            'age' => '20',
             'password' => Hash::make('sio20321'),
+            'profile' => 'こんにちは',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -31,7 +33,9 @@ class UsersTableSeeder extends Seeder
             'name' => 'ねこ',
             'uname' => 'neko',
             'email' => 'neko@gmail.com',
-            'password' => Hash::make('testtest'),
+            'age' => '10',
+            'password' => Hash::make('nekoneko'),
+            'profile' => 'こんにちは',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);

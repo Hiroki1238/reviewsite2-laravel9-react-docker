@@ -13,19 +13,18 @@ const Index = (props) => {
       </h2>
     }>
 
-      <div className="p-12">
+      <div className="p-1.5 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
         {/* <div id="icon" className="rounded">
        ここにアイコンを表示
        </div>
        <Link href="/mypage/profile/{ authUser.id }">{ authUser.name }のプロフィール</Link> */}
-       <h1>氏名</h1>
-       <h3>{auth.user.lastname}</h3>
-       <h3>{auth.user.name}</h3>
-       <h1>ユーザー名</h1>
+       <h2 className="text-purple-800">氏名</h2>
+       <h3>{auth.user.lastname} {auth.user.name}</h3>
+       <h2 className="text-purple-800">ユーザー名</h2>
        <h3>{auth.user.uname}</h3>
-       <h1>年齢</h1>
+       <h2 className="text-purple-800">年齢</h2>
        <h3>{auth.user.age}代</h3>
-       <h1>プロフィール</h1>
+       <h2 className="text-purple-800">プロフィール</h2>
        <h3>{auth.user.profile}</h3>
 
        <Link href={`/mypage/profile/edit/${auth.user.id}`}>編集</Link>
