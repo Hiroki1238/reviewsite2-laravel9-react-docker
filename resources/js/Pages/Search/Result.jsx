@@ -3,8 +3,8 @@ import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from '@inertiajs/inertia-react'
 
-const Index = (props) => {
-  const { myReviews } = props;
+const Word = (props) => {
+  const { results } = props;
 
   return (
     <Authenticated auth={props.auth} header={
@@ -15,11 +15,13 @@ const Index = (props) => {
 
       <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
        <h1>検索結果を表示</h1>
-       <h3>12345</h3>
-       {/* <div id="icon" className="rounded">
-       ここにアイコンを表示
-       </div>
-       <Link href="/mypage/profile/{ authUser.id }">{ authUser.name }のプロフィール</Link> */}
+       {results.map((result) => (
+          <div key={result.id}>
+            <h2>
+            <Link href={`/reviews/${result.id}`}>{result.title}</Link>
+            </h2>
+          </div>
+        ))}
       </div>
 
       <Link href="search/">戻る</Link>
@@ -28,4 +30,4 @@ const Index = (props) => {
   );
 }
 
-export default Index;
+export default Word;

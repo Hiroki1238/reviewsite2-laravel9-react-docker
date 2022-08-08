@@ -17,19 +17,19 @@ class SearchController extends Controller
     public function searchWord(Request $request,Venue $venue) //requestを使わないとformから送られてきたデータを受け取れない
     {
         $word = $request->input('word');
-        $result = Venue::where('name', 'LIKE', '%'.$word.'%')->get();
+        $results = Venue::where('name', 'LIKE', '%'.$word.'%')->get();
         // return view('search/result')->with(['result' => $result]);
         return Inertia::render('Search/Result',[
-            ['result' => $result]
+            ['results' => $results]
         ]);
     }
 
     public function searchCapacity(Request $request,Venue $venue)
     {
         $capacity = $request->input('capacity');
-        $result = Venue::where('scale_standing', '<' , $capacity)->get();
+        $results = Venue::where('scale_standing', '<' , $capacity)->get();
         return Inertia::render('Search/Result',[
-            ['result' => $result]
+            ['results' => $results]
         ]);
     }
 }
