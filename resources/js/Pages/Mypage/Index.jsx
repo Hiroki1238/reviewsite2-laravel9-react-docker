@@ -26,6 +26,21 @@ const Index = (props) => {
        <Link href="/mypage/profile/{ authUser.id }">{ authUser.name }のプロフィール</Link> */}
       </div>
 
+       <div className="p-12">
+      <h3>あなたのレビュー</h3>
+      {myReviews.map((review) => (
+          <div key={review.id}>
+            <h2>
+            <Link href={`/reviews/${review.id}`}>{review.title}</Link>
+            </h2>
+          </div>
+        ))}
+      <h3>お気に入りの会場</h3>
+      
+
+      <h3>ブックマーク</h3>
+      </div>
+
     </Authenticated>
   );
 }

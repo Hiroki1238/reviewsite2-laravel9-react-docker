@@ -17,8 +17,9 @@ class Image extends Model
 
     public function store($images,$new_reviewId)
     {
+        dd($images);
         //Storage::disk('s3')->
-        //dd(count($images));
+        //dd(count($images)); //null
         foreach ( $images as $image) {
             $path = Storage::disk('s3')->putFile('reviewImages', $image, 'public');
             $url = Storage::disk('s3')->url($path);

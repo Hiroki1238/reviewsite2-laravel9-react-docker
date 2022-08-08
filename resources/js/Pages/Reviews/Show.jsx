@@ -19,6 +19,17 @@ const Show = (props) => {
                 <div>
                     <h3>本文</h3>
                     <p>{ review.body }</p>
+                    <h3>座席</h3>
+                    <p>{ review.seat }</p>
+                    <h3>10段階評価1</h3>
+                    <p>{ review.star1 }</p>
+                    <h3>10段階評価2</h3>
+                    <p>{ review.star2 }</p>
+                    <h3>10段階評価3</h3>
+                    <p>{ review.star3 }</p>
+                    <h3>訪問日</h3>
+                    <p>{ review.visited_at }</p>
+
                 </div>
 
                 <div>

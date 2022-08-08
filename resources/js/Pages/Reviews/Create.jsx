@@ -93,7 +93,7 @@ const Create = (props) => {
                 <div class="name-filed width">
                 <div class="first-name-box">
                   <div class="text-label">
-                    <p class="name">希望画像<span class="red">上限５枚</span></p>
+                    <p class="name">画像を選択<span class="red">（最大５枚）</span></p>
                   </div>
                   <div>
                   <input type="file" name="item_url[]" multiple="multiple"></input>
