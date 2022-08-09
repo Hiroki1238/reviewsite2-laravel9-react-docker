@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { inertia } from "@inertiajs/inertia";
 import { Link, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
@@ -6,6 +6,8 @@ import Authenticated from "@/Layouts/Authenticated";
 const Create = (props) => {
     const { venue, auth } = props;
     const { data, setData, post } = useForm({
+        image:"",
+
         //useForm と dataはセットで使う(dataという値は決まっているもの)
         title: "", //↑このpostは送信方式
         body: "",
@@ -17,11 +19,18 @@ const Create = (props) => {
         venue_id: venue.id,
         visited_at: "",
     });
+    const [image, setImage] = useState([]);
+    console.log("image",image);
 
     const handleSendPosts = (e) => {
         e.preventDefault();
         post("/reviews/store"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
     };
+
+    const handleChangeFile = (e) => {
+        const { files } = e.target;
+        setPreview(window.URL.createObjectURL(files[0]));
+      };
 
     console.log(data);
 
@@ -83,7 +92,7 @@ const Create = (props) => {
 
                         <h2>訪問日</h2>
                         <input
-                            type="text"
+                            type="date"
                             placeholder="2020-01-01"
                             onChange={(e) =>
                                 setData("visited_at", e.target.value)
@@ -93,13 +102,14 @@ const Create = (props) => {
                 <div className="name-filed width">
                 <div className="first-name-box">
                   <div className="text-label">
-                    <p id="name">画像を選択<span className="red">（最大５枚）</span></p>
+                  <h2 className="text-purple-800">画像を選択</h2> {/*送信用*/}
+                       
+                        <input type="file" multiple="multiple" onChange={(e) => {setImage(e.target.files[0])}}/>
+                        <span className="text-red-600">{props.errors.image}</span>
                   </div>
-                  <div>
-                  <input type="file" name="item_url[]" multiple="multiple"></input>
-                  </div>
-                  errors.item_url && errors.item_url.* ?
-                    {/* <div class="alert alert-danger">{{ $errors->first('item_url') . $errors->first('item_url.*') }}</div> */}
+                  
+                  {/* errors.item_url || errors.item_url.* ?
+                    <div class="alert alert-danger">{ errors.first('item_url') . errors.first('item_url.*') }</div> */}
                 </div>
               </div>
 

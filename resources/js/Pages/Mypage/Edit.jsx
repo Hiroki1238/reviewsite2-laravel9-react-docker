@@ -7,7 +7,7 @@ const Edit = (props) => {
     const { auth } = props; //authの中にuserがあって、ユーザー情報が入ってるから、わざわざuserをコントローラーで連れてくる必要ないかも
     
     const {data, setData, post} = useForm({  
-        image:"dadgnkje",
+        image:"",
 
           lastname: auth.user.lastname,
           name: auth.user.name,

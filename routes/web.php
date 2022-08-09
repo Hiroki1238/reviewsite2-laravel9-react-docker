@@ -105,7 +105,12 @@ Route::post('/search/word', [SearchController::class, 'searchWord']);
 //S3関連
 // Route::get('/post/create', [PostsController::class, 'show']);
 // Route::post('/post/create/upload', [PostsController::class, 'create']);
-Route::put('/mypage/profile/{user}/update', [ProfileController::class, 'create']); //更新はput
+// Route::put('/mypage/profile/{user}/update', [ProfileController::class, 'create']); //更新はput
+
+
+Route::get('/like', 'LikeController@index'); // ブラウザでアクセスする
+Route::get('/like/userlist', 'LikeController@user_list'); // ユーザー情報を取得
+Route::post('/like/add', 'LikeController@like'); // いいね！データを追加
 
 
 
