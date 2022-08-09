@@ -19,13 +19,16 @@ const Index = (props) => {
                 {/* グレーのボックス(背景)に関する指定 */}
                 <h3>ここにアイコンを表示</h3>
                 <h1 className="text-purple-800">{auth.user.name}のマイページ</h1>
+
+            
+            { auth.user.image_path !== null ? (<div><img src={ auth.user.image_path } className="h-48 w-full"/></div>) : (<div><img
+        src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"
+        className="h-48 w-full"/></div>) }
+
                 <Link href={`/mypage/profile/${auth.user.id}`}>
                     プロフィール詳細
                 </Link>
-                {/* <div id="icon" className="rounded">
-       ここにアイコンを表示
-       </div>
-       <Link href="/mypage/profile/{ authUser.id }">{ authUser.name }のプロフィール</Link> */}
+
             </div>
 
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">

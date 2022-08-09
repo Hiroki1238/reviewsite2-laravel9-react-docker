@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfileRequest;
 use App\Models\User;
 use App\Models\Review;
-use Illuminate\Support\Facades\Storage;
+use App\Models\Image;
+// use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Storage;
 
 class ProfileController extends Controller
 {
@@ -33,10 +35,25 @@ class ProfileController extends Controller
         return Inertia::render('Mypage/Edit'); //authの中身で事足りるから['user' => $user]を渡すのをやめてみた
     }
 
-    public function update(ProfileRequest $request, User $user)
+    public function update(Request $request, User $user)
     {
-        $input_user = $request->all();
-        $user->fill($input_user)->save();
+        //dd("neko");
+
+        $form = $request->all(); //入力された情報全て受け取ってる
+        // $image = $request->file('image');
+        dd($request->file("image"));
+        $user->fill($form);
+        $path = Storage::disk('s3')->put('icon', $image, 'public');
+        $user->image_path = Storage::disk('s3')->url($path); // アップロードした画像のフルパスを取得
+        dd($user);
+        // if ($request->image !== null) {
+        //     $path = Storage::disk('s3')->put('icon', $image, 'public');
+        //     $user->image_path = Storage::disk('s3')->url($path); // アップロードした画像のフルパスを取得
+        // } elseif ($request->image == null && $form['image_path'] !== "") {
+        //     $user->image_path = $form['image_path'];
+        // }
+        $user->save();
+
         return redirect('mypage/profile/' . $user->id);
     }
 
@@ -53,6 +70,8 @@ class ProfileController extends Controller
         //$user = User::find($auth_id);
         $form = $request->all(); //入力された情報全て受け取ってる
         $image = $request->file('image');
+        //dd($request);
+        dd($image);
         unset($form['_token']); // @csrfを除外する
         $user->fill($form);
 

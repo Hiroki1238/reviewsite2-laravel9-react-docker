@@ -20,7 +20,7 @@ const Create = (props) => {
 
     const handleSendPosts = (e) => {
         e.preventDefault();
-        post(`/reviews/store/${data.id}`); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
+        post("/reviews/store"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
     };
 
     console.log(data);
@@ -98,9 +98,8 @@ const Create = (props) => {
                   <div>
                   <input type="file" name="item_url[]" multiple="multiple"></input>
                   </div>
-                  {/* @if ($errors->has('item_url') || $errors->has('item_url.*') )
-                    <div class="alert alert-danger">{{ $errors->first('item_url') . $errors->first('item_url.*') }}</div>
-                  @endif */}
+                  errors.item_url && errors.item_url.* ?
+                    {/* <div class="alert alert-danger">{{ $errors->first('item_url') . $errors->first('item_url.*') }}</div> */}
                 </div>
               </div>
 

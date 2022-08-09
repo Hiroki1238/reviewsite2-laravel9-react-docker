@@ -10,7 +10,6 @@ use App\Http\Controllers\PrefectureController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\ProfileController; //マイページ関連
-use App\Http\Controllers\PostsController; //S3の画像投稿
 use App\Http\Controllers\HomeController; //ホームの表示
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\BookmarkController;
@@ -36,6 +35,8 @@ use App\Http\Controllers\AdminpageController;
 //     ]);
 // });
 
+Route::post('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
+
 Route::get("/blog",[PostController::class,"index"]);
 Route::get("/posts/create",[PostController::class,"create"]);
 Route::get("/posts/{post}", [PostController::class, "show"]); //post以降に何かついてるURLが全てこれに吸収されてしまう
@@ -58,7 +59,7 @@ Route::get('/prefectures/venues/{venue}', [VenueController::class, 'showReview']
 //Route::get('/posts', 'ReviewController@index'); これはlaravel6の書き方
 Route::get('/reviews', [ReviewController::class, 'index']);
 Route::get('/reviews/{venue}/create', [ReviewController::class, 'create']);
-Route::post('/reviews/store/{review}', [ReviewController::class, 'store'])->name('store'); //postにした
+Route::post('/reviews/store', [ReviewController::class, 'store'])->name('store'); //postにした
 
 // Route::get('/reviews/{review}', [VenueController::class, 'show']);
 
@@ -73,7 +74,6 @@ Route::get('/home',[HomeController::class,'index']);
 
 //マイページ関連
 Route::get('/mypage/profile/edit/{user}',[ProfileController::class, 'edit']);
-Route::put('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
 Route::get('/mypage/profile/{user}',[ProfileController::class, 'show']);
 Route::get('/mypage/{user}',[ProfileController::class, 'index']);
 
@@ -103,8 +103,8 @@ Route::post('/search/word', [SearchController::class, 'searchWord']);
 
 
 //S3関連
-Route::get('/post/create', [PostsController::class, 'show']);
-Route::post('/post/create/upload', [PostsController::class, 'create']);
+// Route::get('/post/create', [PostsController::class, 'show']);
+// Route::post('/post/create/upload', [PostsController::class, 'create']);
 Route::put('/mypage/profile/{user}/update', [ProfileController::class, 'create']); //更新はput
 
 
