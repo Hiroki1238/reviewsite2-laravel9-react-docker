@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Inertia } from "@inertiajs/inertia";
 import { Link, useForm } from '@inertiajs/inertia-react';
 import Authenticated from "@/Layouts/Authenticated";
@@ -17,7 +17,7 @@ const Edit = (props) => {
           profile: auth.user.profile,
           image_path: auth.user.image_path,
     })
-    console.log(data);
+    const [preview, setPreview] = useState('');
 
     console.log(auth.user.id);
 
@@ -29,8 +29,13 @@ const Edit = (props) => {
         //     _method: 'put',
         //     image: data.image,
         // })
-        console.log("send");
+
     }
+
+    const handleChangeFile = (e) => {
+        const { files } = e.target;
+        setPreview(window.URL.createObjectURL(files[0]));
+      };
 
     return (
         <Authenticated auth={props.auth} header={
@@ -80,7 +85,8 @@ const Edit = (props) => {
 
                     <div>
                         <h2 className="text-purple-800">画像</h2> {/*送信用*/}
-                        <input type="file" onChange={(e) => setData("image", e.target.files[0])}/>
+                        <img src={preview} />
+                        <input type="file" onChange={(e) => {setData("image", e.target.files[0]); handleChangeFile(e);}}/>
                         <span className="text-red-600">{props.errors.image}</span>
                     </div> 
 
