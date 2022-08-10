@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { inertia } from "@inertiajs/inertia";
 import { Link, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
@@ -6,7 +6,7 @@ import Authenticated from "@/Layouts/Authenticated";
 const Create = (props) => {
     const { venue, auth } = props;
     const { data, setData, post } = useForm({
-        image:"",
+        images:"",
 
         //useForm と dataはセットで使う(dataという値は決まっているもの)
         title: "", //↑このpostは送信方式
@@ -19,10 +19,8 @@ const Create = (props) => {
         venue_id: venue.id,
         visited_at: "",
     });
-    const [image, setImage] = useState([]);
-    console.log("image",image);
 
-    const handleSendPosts = (e) => {
+    const handleSendImage = (e) => {
         e.preventDefault();
         post("/reviews/store"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
     };
@@ -37,6 +35,7 @@ const Create = (props) => {
     return (
         <Authenticated
             auth={props.auth}
+             errors={props.errors}
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
                     新規投稿
@@ -44,7 +43,7 @@ const Create = (props) => {
             }
         >
             <div className="p-12" flex justify-center>
-                <form onSubmit={handleSendPosts}>
+                <form onSubmit={handleSendImage}>
                     <div>
                         <h2>タイトル</h2>
                         <input
@@ -104,7 +103,7 @@ const Create = (props) => {
                   <div className="text-label">
                   <h2 className="text-purple-800">画像を選択</h2> {/*送信用*/}
                        
-                        <input type="file" multiple="multiple" onChange={(e) => {setImage(e.target.files[0])}}/>
+                        <input type="file" multiple onChange={(e) => setData("image", e.target.files)}/> {/*複数枚の時[0]不要*/}
                         <span className="text-red-600">{props.errors.image}</span>
                   </div>
                   

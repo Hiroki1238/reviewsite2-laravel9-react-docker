@@ -59,17 +59,20 @@ class ReviewController extends Controller
     }
 
     //後でReviewRequestに直す
-    public function store(Venue $venue, Request $request, Review $review, Image $image)
-    {
-        dd($image);
+    public function store(Request $request, Venue $venue,Review $review, Image $image){
         $input = $request->all();
-        //$input = $request->review;
-        $images = $request->file('item_url');
-        $new_reviewId = $review->store($input); //Reviewのstoreを使う
-        if(isset($image)){
-        $image->store($images,$new_reviewId); //imagesテーブルにreview_idを渡す
-         }
-        return redirect('prefectures/venues/'.$venue->id);
+        $images = $request->file("images");
+        $new_reviewId = $review->store($input);
+        if(isset($images)){
+        foreach($images as $image)
+        {
+            $image->store($images,$new_reviewId);
+            logger($image);
+            Storage::disk('s3')->put('reviewImages/', $image);
+        }
+      }
+    // $image->store($images,$new_reviewId); //imagesテーブルにreview_idを渡す
+    return redirect('prefectures/venues/'.$venue->id);
     }
 
     public function edit(Review $review)
