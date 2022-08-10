@@ -35,8 +35,6 @@ use App\Http\Controllers\AdminpageController;
 //     ]);
 // });
 
-Route::post('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
-
 Route::get("/blog",[PostController::class,"index"]);
 Route::get("/posts/create",[PostController::class,"create"]);
 Route::get("/posts/{post}", [PostController::class, "show"]); //post以降に何かついてるURLが全てこれに吸収されてしまう
@@ -56,12 +54,9 @@ Route::get('/prefectures/{prefecture}', [PrefectureController::class, 'show']); 
 
 Route::get('/prefectures/venues/{venue}', [VenueController::class, 'showReview']); //各会場ごとのレビューを表示
 
-//Route::get('/posts', 'ReviewController@index'); これはlaravel6の書き方
 Route::get('/reviews', [ReviewController::class, 'index']);
 Route::get('/reviews/{venue}/create', [ReviewController::class, 'create']);
 Route::post('/reviews/store', [ReviewController::class, 'store'])->name('store'); //postにした
-
-// Route::get('/reviews/{review}', [VenueController::class, 'show']);
 
 Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
 Route::put('/reviews/update/{review}/', [ReviewController::class, 'update'])->name('update');
@@ -73,6 +68,7 @@ Route::get('/home',[HomeController::class,'index']);
 
 
 //マイページ関連
+Route::post('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
 Route::get('/mypage/profile/edit/{user}',[ProfileController::class, 'edit']);
 Route::get('/mypage/profile/{user}',[ProfileController::class, 'show']);
 Route::get('/mypage/{user}',[ProfileController::class, 'index']);

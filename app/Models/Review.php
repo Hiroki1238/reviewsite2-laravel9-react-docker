@@ -46,7 +46,7 @@ class Review extends Model
         'updated_at',
     ];
 
-    public function store($input) //Review::store($input);のような呼び出し方をするときはstaticが必要
+    public function storeReview($input) //Review::store($input);のような呼び出し方をするときはstaticが必要
     {
         // $input += ['venue_id' => $venue_id];
         $this->fill($input)->save(); // $review-> と Review:: は同じ意味  ,  $this と self:: は同じ意味

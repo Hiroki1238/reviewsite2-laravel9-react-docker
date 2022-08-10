@@ -15,7 +15,7 @@ class Image extends Model
     return $this->belongsTo(Review::class);
     }
 
-    public function store($images,$new_reviewId)
+    public function storeImage($images,$new_reviewId)
     {
         //Storage::disk('s3')->
         //dd(count($images)); //null

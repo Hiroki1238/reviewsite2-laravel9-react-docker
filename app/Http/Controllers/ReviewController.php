@@ -8,7 +8,8 @@ use App\Models\Venue;
 use App\Models\User;
 use App\Models\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+//use Illuminate\Support\Facades\Storage;
+use Storage;
 use Inertia\Inertia;
 
 class ReviewController extends Controller
@@ -61,18 +62,12 @@ class ReviewController extends Controller
     //後でReviewRequestに直す
     public function store(Request $request, Venue $venue,Review $review, Image $image){
         $input = $request->all();
-        $images = $request->file("images");
-        $new_reviewId = $review->store($input);
-        if(isset($images)){
-        foreach($images as $image)
-        {
-            $image->store($images,$new_reviewId);
-            logger($image);
-            Storage::disk('s3')->put('reviewImages/', $image);
-        }
-      }
-    // $image->store($images,$new_reviewId); //imagesテーブルにreview_idを渡す
-    return redirect('prefectures/venues/'.$venue->id);
+        $images = $request->file('images');
+        $new_reviewId = $review->storeReview($input,$venue->id); //Review.phpのstoreImageを使う、今新しく作られたレビューのidを持ってきてる
+        //ここの段階で写真以外は保存済み
+        $image->storeImage($images,$new_reviewId);//imagesテーブルにreview_idを渡す
+        //dd($review->venue_id);
+    return redirect('prefectures/venues/'.$review->venue_id);
     }
 
     public function edit(Review $review)
