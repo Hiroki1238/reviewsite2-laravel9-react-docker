@@ -23,6 +23,8 @@ const Index = (props) => {
 
         <h2><Link href={`/reviews/${venue.id}/create`}>新規投稿</Link></h2>
         <Link href={`/prefectures/${prefecture.id}`}>戻る</Link>
+        </div>
+        <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
 
         {reviews.map((review) => (
           <div key={review.id}>

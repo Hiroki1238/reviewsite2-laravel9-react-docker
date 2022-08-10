@@ -5,11 +5,11 @@ import { Link } from '@inertiajs/inertia-react'
 
 //レビュー一覧で選択したレビューの詳細画面
 const Show = (props) => {
-    const { review } = props; 
+    const { review, images } = props; 
     return (
         <Authenticated auth={props.auth} header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Index
+                    レビュー詳細
                 </h2>
             }>
             
@@ -29,7 +29,12 @@ const Show = (props) => {
                     <p>{ review.star3 }</p>
                     <h3>訪問日</h3>
                     <p>{ review.visited_at }</p>
+                </div>
+                <div>
 
+                { images !== null ? (<div>{images.map((image) => (
+                      <img src="{ image.image_path }"/>
+                    ))}</div>) : (<div>no image</div>) }
                 </div>
 
                 <div>

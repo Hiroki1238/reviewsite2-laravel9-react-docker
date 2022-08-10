@@ -26,8 +26,6 @@ class ReviewController extends Controller
         //$venue = Venue::find(1);
         $review = Review::with('venue')->find($review->id); //showのルーティングは/reviews/{review}となっていて、reviewの値を渡せている
         $images = $image->where('review_id',$review->id)->get();
-        // return view('reviews/show')->with(['review' => $review,'images' => $images]);
-        //dd($review);
         return Inertia::render('Reviews/Show',['review' => $review, 'images' => $images]);
     }
 
@@ -63,7 +61,7 @@ class ReviewController extends Controller
     public function store(Request $request, Venue $venue,Review $review, Image $image){
         $input = $request->all();
         $images = $request->file('images');
-        $new_reviewId = $review->storeReview($input,$venue->id); //Review.phpのstoreImageを使う、今新しく作られたレビューのidを持ってきてる
+        $new_reviewId = $review->storeReview($input); //Review.phpのstoreImageを使う、今新しく作られたレビューのidを持ってきてる
         //ここの段階で写真以外は保存済み
         $image->storeImage($images,$new_reviewId);//imagesテーブルにreview_idを渡す
         //dd($review->venue_id);
