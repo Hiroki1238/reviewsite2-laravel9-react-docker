@@ -11,7 +11,7 @@ const Index = (props) => {
   return (
     <Authenticated auth={props.auth} header={
       <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-        Index
+        会場詳細
       </h2>
     }>
 

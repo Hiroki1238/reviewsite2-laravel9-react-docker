@@ -92,7 +92,9 @@ const Edit = (props) => {
 
                    
                     {/* 表示用 */}
-                    {auth.user.image_path !== null ? (<div><img src={auth.user.image_path} className="h-48 w-full"/></div>) : (<div> <img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" className="h-48 w-full"/></div>) }
+                    <div className="h-48 w-48 my-0 mx-auto">
+                    {auth.user.image_path !== null ? (<div><img src={auth.user.image_path}/></div>) : (<div> <img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"/></div>) }
+                    </div>
                     
                     <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">変更</button>
                 </form>

@@ -33,7 +33,7 @@ const Show = (props) => {
                 <div>
 
                 { images !== null ? (<div>{images.map((image) => (
-                      <img src="{ image.image_path }"/>
+                      <img src="{ image.image_path }" className="h-48 w-full"/>
                     ))}</div>) : (<div>no image</div>) }
                 </div>
 
