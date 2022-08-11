@@ -2,6 +2,9 @@ import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link, useForm } from '@inertiajs/inertia-react'
+import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 
 //レビュー一覧で選択したレビューの詳細画面
 const Show = (props) => {
@@ -19,10 +22,8 @@ const Show = (props) => {
 
     const handleNotBookmark = (e) => {
         e.preventDefault();
-        post(`/notbookmark/${review.id}`);
+        post(`/notbookmark/${review.id}`); //returnから上は{`${image.image_path}`}の外側の中「」いらない,return内はいる
     };
-
-    console.log(isBookmarked);
 
     return (
         <Authenticated auth={props.auth} header={
@@ -34,11 +35,13 @@ const Show = (props) => {
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h1 className="text-title-purple1">{ review.title }</h1>
 
-                {isBookmarked ? (<button onClick={handleNotBookmark}>[ブックマークを外す]</button>)
-                : (<button onClick={handleBookmark}>[ブックマークに登録]</button>)
+            <div>
+                {isBookmarked ? (<button onClick={handleNotBookmark}><BookmarkAddedIcon /></button>)
+                : (<button onClick={handleBookmark}><BookmarkBorderIcon /></button>)
               }
+            </div>
                 
-                <div>
+            <div>
                     <h3 className="text-title-purple1">本文</h3>
                     <p>{ review.body }</p>
                     <h3 className="text-title-purple1">座席</h3>
@@ -55,7 +58,7 @@ const Show = (props) => {
                 <div>
 
                 { images !== null ? (<div>{images.map((image) => (
-                      <img src="{ image.image_path }" className="h-48 w-full"/>
+                      <img src={`${image.image_path}`} className="h-48 w-full"/>
                     ))}</div>) : (<div>no image</div>) }
                 </div>
 

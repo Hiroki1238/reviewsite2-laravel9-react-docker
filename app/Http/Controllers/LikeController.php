@@ -26,4 +26,12 @@ class LikeController extends Controller
         Auth::user()->unlike($venueId);
         return back();
     }
+
+    //いいね一覧を表示したい
+    public function likeVenueList()
+    {
+        $auth = auth();
+        $auth->likeVenueList($auth->id);
+    }
+
 }

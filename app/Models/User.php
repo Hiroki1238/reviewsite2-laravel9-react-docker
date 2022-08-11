@@ -51,6 +51,18 @@ class User extends Authenticatable
        })->exists();    
     }
 
+
+
+    //お気に入り一覧を表示したい
+    public function likeVenueList($venueId)
+    {
+      return User::whereHas('likeVenues', function ($query) use($venueId) {
+        $query->where('venue_id', $venueId);
+       });    
+    }
+
+    
+
     //isLikeを使って、既にlikeしたか確認したあと、いいねする（重複させない）
     public function like($venueId)
     {
