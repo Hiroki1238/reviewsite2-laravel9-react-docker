@@ -13,21 +13,29 @@ const Index = (props) => {
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
                     {auth.user.name}のマイページ
                 </h2>
-            }>
-
+            }
+        >
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 {/* グレーのボックス(背景)に関する指定 */}
-                <h1 className="text-purple-800">{auth.user.name}のマイページ</h1>
+                <h1 className="text-title-purple1">
+                    {auth.user.name}のマイページ
+                </h1>
 
-            <div className="h-48 w-48 my-0 mx-auto">
-            {auth.user.image_path !== null ? (<div><img src={ auth.user.image_path }/></div>) : (<div><img
-        src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"/></div>) }
-        </div>
+                <div className="h-48 w-48 my-0 mx-auto">
+                    {auth.user.image_path !== null ? (
+                        <div>
+                            <img src={auth.user.image_path} />
+                        </div>
+                    ) : (
+                        <div>
+                            <img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" />
+                        </div>
+                    )}
+                </div>
 
                 <Link href={`/mypage/profile/${auth.user.id}`}>
                     プロフィール詳細
                 </Link>
-
             </div>
 
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
@@ -41,13 +49,13 @@ const Index = (props) => {
                         </h2>
                     </div>
                 ))}
-                </div>
-                <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+            </div>
+            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h3 className="text-title-purple1">お気に入りの会場</h3>
                 <h3>お気に入り一覧を表示</h3>
                 <h3 className="text-title-purple1">ブックマーク</h3>
                 <h3>ブックマーク一覧を表示</h3>
-                </div>
+            </div>
         </Authenticated>
     );
 };

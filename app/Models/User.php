@@ -69,6 +69,32 @@ class User extends Authenticatable
         $this->likeVenues()->detach($venueId);  //もし既に「いいね」していたら消す
       }
     }
+
+
+
+    //以下ブックマーク機能
+    public function bookmarkStatus($reviewId)
+    {
+      return User::whereHas('bookmarkReviews', function ($query) use($reviewId) {
+        $query->where('review_id', $reviewId);
+       })->exists();    
+    }
+
+    public function bookmark($reviewId)
+    {
+      if($this->bookmarkStatus($reviewId)){
+        //既にいいねしていたら(trueだったら)何もしない
+      } else {
+        $this->bookmarkReviews()->attach($reviewId);
+      }
+    }
+
+    public function notBookmark($reviewId) //解除
+    {
+      if($this->bookmarkStatus($reviewId)){
+        $this->bookmarkReviews()->detach($reviewId);  //もし既にブックマークしていたら消す
+      }
+    }
     
 
     protected $fillable = [

@@ -1,11 +1,29 @@
 import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
-import { Link } from '@inertiajs/inertia-react'
+import { Link, useForm } from '@inertiajs/inertia-react'
 
 //レビュー一覧で選択したレビューの詳細画面
 const Show = (props) => {
-    const { review, images, like_list, num_of_likes } = props; 
+    const { auth, review, images, isBookmarked } = props; 
+
+    const { data, setData, post } = useForm({
+        user_id: auth.user.id,
+        review_id: review.id,
+    });
+
+    const handleBookmark = (e) => {
+        e.preventDefault();
+        post(`/bookmark/${review.id}`);
+    };
+
+    const handleNotBookmark = (e) => {
+        e.preventDefault();
+        post(`/notbookmark/${review.id}`);
+    };
+
+    console.log(isBookmarked);
+
     return (
         <Authenticated auth={props.auth} header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
@@ -15,6 +33,10 @@ const Show = (props) => {
             
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h1 className="text-title-purple1">{ review.title }</h1>
+
+                {isBookmarked ? (<button onClick={handleNotBookmark}>[ブックマークを外す]</button>)
+                : (<button onClick={handleBookmark}>[ブックマークに登録]</button>)
+              }
                 
                 <div>
                     <h3 className="text-title-purple1">本文</h3>

@@ -15,27 +15,15 @@ class BookmarkController extends Controller
       return Inertia::render('Bookmarks/Index');
     }
 
-    public function store(Review $review, User $user) {
-      $user = Auth();
-      if (!$user->is_bookmark($review->id)) {
-          $user->bookmarkReviews()->attach();
-      }
-      return back();
-  }
-  public function destroy($articleId) {
-      $user = Auth();
-      if ($user->is_bookmark($articleId)) {
-          $user->bookmarkReviews()->detach($articleId);
-      }
-      return back();
-  }
-
-  public function bookmark_reviews()
+    public function store($reviewId)
     {
-        $articles = Auth()->bookmarkReviews()->orderBy('created_at', 'desc')->paginate(10);
-        $data = [
-            'reviews' => $reviews,
-        ];
-        return Inertia::render('Mypage/Bookmarks', $data);
+        Auth::user()->bookmark($reviewId);
+        return redirect('/reviews/'. $reviewId);
+    }
+
+    public function destroy($reviewId)
+    {
+        Auth::user()->notBookmark($reviewId);
+        return back();
     }
 }

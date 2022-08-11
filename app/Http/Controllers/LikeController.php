@@ -11,7 +11,7 @@ class LikeController extends Controller
     public function index(Request $request) {
 
         // return view('like.index')->with('ip', $request->ip());
-        return Inertia::render('Like/Index');
+        return Inertia::render('Likes/Index');
 
     }
 

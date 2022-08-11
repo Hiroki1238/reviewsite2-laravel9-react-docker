@@ -114,6 +114,13 @@ Route::post('/like/{venueId}', 'store');
 Route::post('/unlike/{venueId}','destroy');
 });
 
+//ブックマーク機能
+Route::controller(BookmarkController::class)->group(function () {
+    Route::get('mypage/bookmark/{user}','index');
+    Route::post('/bookmark/{reviewId}', 'store');
+    Route::post('/notbookmark/{reviewId}','destroy');
+    });
+
 
 
 //S3関連
