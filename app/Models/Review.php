@@ -60,6 +60,7 @@ class Review extends Model
     //return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
     return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
+    
 
     public function getByLimitDESC(int $limit_count = 10)
     {

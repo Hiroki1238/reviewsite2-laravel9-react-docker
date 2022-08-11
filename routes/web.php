@@ -35,12 +35,14 @@ use App\Http\Controllers\AdminpageController;
 //     ]);
 // });
 
-Route::get("/blog",[PostController::class,"index"]);
-Route::get("/posts/create",[PostController::class,"create"]);
-Route::get("/posts/{post}", [PostController::class, "show"]); //post以降に何かついてるURLが全てこれに吸収されてしまう
-Route::post("/posts",[PostController::class,"store"]);
-Route::get('/posts/{post}/edit',[PostController::class,"edit"]);
-Route::put('/posts/{post}',[PostController::class,"update"]);
+Route::controller(PostController::class)->group(function () {
+Route::get("/blog","index");
+Route::get("/posts/create", "create");
+Route::get("/posts/{post}", "show"); //post以降に何かついてるURLが全てこれに吸収されてしまう
+Route::post("/posts", "store");
+Route::get('/posts/{post}/edit', "edit");
+Route::put('/posts/{post}', "update");
+});
 
 
 Route::get('/dashboard', function () {
@@ -49,34 +51,41 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/prefectures', [PrefectureController::class, 'index']); //都道府県から検索する画面のルーティング
-Route::get('/prefectures/{prefecture}', [PrefectureController::class, 'show']); //県ごとの会場を表示
+Route::controller(PrefectureController::class)->group(function () {
+Route::get('/prefectures', 'index'); //都道府県の一覧
+Route::get('/prefectures/{prefecture}', 'show'); //県ごとの会場を表示
+});
 
 Route::get('/prefectures/venues/{venue}', [VenueController::class, 'showReview']); //各会場ごとのレビューを表示
 
-Route::get('/reviews', [ReviewController::class, 'index']);
-Route::get('/reviews/{venue}/create', [ReviewController::class, 'create']);
-Route::post('/reviews/store', [ReviewController::class, 'store'])->name('store'); //postにした
+Route::controller(ReviewController::class)->group(function () {
+Route::get('/reviews', 'index');
+Route::get('/reviews/{venue}/create', 'create');
+Route::post('/reviews/store', 'store'); //postにした
+Route::get('/reviews/{review}/edit', 'edit');
+Route::put('/reviews/update/{review}/', 'update');
+Route::delete('/reviews/delete/{review}', 'delete');
+Route::get('/reviews/{review}', 'show');
+});
 
-Route::get('/reviews/{review}/edit', [ReviewController::class, 'edit']);
-Route::put('/reviews/update/{review}/', [ReviewController::class, 'update'])->name('update');
-Route::delete('/reviews/delete/{review}', [ReviewController::class, 'delete']);
-Route::get('/reviews/{review}', [ReviewController::class, 'show']);
 
-
-Route::get('/home',[HomeController::class,'index']);
+Route::get('/home',[HomeController::class,'index']); //ホーム
 
 
 //マイページ関連
-Route::post('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
-Route::get('/mypage/profile/edit/{user}',[ProfileController::class, 'edit']);
-Route::get('/mypage/profile/{user}',[ProfileController::class, 'show']);
-Route::get('/mypage/{user}',[ProfileController::class, 'index']);
+Route::controller(ProfileController::class)->group(function () {
+    Route::post('/mypage/profile/update/{user}', 'update');
+    Route::get('/mypage/profile/edit/{user}','edit');
+    Route::get('mypage/contacts/{user}','contact');
+    Route::get('/mypage/profile/{user}', 'show');
+    Route::get('/mypage/{user}','index');
+});
+
+// Route::post('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
 
 //お気に入り、ブックマーク
 Route::get('mypage/likes/{user}',[LikeController::class,'index']);
 Route::get('mypage/bookmarks/{user}',[BookmarkController::class,'index']);
-Route::get('mypage/contacts/{user}',[ProfileController::class,'contact']);
 
 
 //管理者用
@@ -92,9 +101,11 @@ Route::get('/prefectures/test', function() {
 
 
 //検索機能
-Route::get('/search', [SearchController::class, 'index']);
-Route::post('/search/capacity', [SearchController::class, 'searchCapacity']);
-Route::post('/search/word', [SearchController::class, 'searchWord']);
+Route::controller(SearchController::class)->group(function () {
+Route::get('/search', 'index');
+Route::post('/search/capacity', 'searchCapacity');
+Route::post('/search/word', 'searchWord');
+});
 
 
 
@@ -103,23 +114,17 @@ Route::post('/search/word', [SearchController::class, 'searchWord']);
 // Route::post('/post/create/upload', [PostsController::class, 'create']);
 // Route::put('/mypage/profile/{user}/update', [ProfileController::class, 'create']); //更新はput
 
-
-Route::get('/like', 'LikeController@index'); // ブラウザでアクセスする
-Route::get('/like/userlist', 'LikeController@user_list'); // ユーザー情報を取得
-Route::post('/like/add', 'LikeController@like'); // いいね！データを追加
-
-
-
-// Route::get('/search', function() {
-//     return view('search/index');
-// });
+Route::controller(LikeController::class)->group(function () {
+Route::get('/like', 'index'); // ブラウザでアクセスする
+Route::get('/like/userlist', 'user_list'); // ユーザー情報を取得
+Route::post('/like/add', 'like'); // いいね！データを追加
+});
 
 
 //テスト用
 //Route::get('/test', function(){
      //return view('prefectures/index');
  //});
-
 
 
 Route::get('/', function () {

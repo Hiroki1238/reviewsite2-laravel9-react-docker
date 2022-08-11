@@ -14,20 +14,20 @@ const Show = (props) => {
             }>
             
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-                <h1 className="text-purple-800">{ review.title }</h1>
+                <h1 className="text-title-purple1">{ review.title }</h1>
                 
                 <div>
-                    <h3>本文</h3>
+                    <h3 className="text-title-purple1">本文</h3>
                     <p>{ review.body }</p>
-                    <h3>座席</h3>
+                    <h3 className="text-title-purple1">座席</h3>
                     <p>{ review.seat }</p>
-                    <h3>10段階評価1</h3>
+                    <h3 className="text-title-purple1">10段階評価1</h3>
                     <p>{ review.star1 }</p>
-                    <h3>10段階評価2</h3>
+                    <h3 className="text-title-purple1">10段階評価2</h3>
                     <p>{ review.star2 }</p>
-                    <h3>10段階評価3</h3>
+                    <h3 className="text-title-purple1">10段階評価3</h3>
                     <p>{ review.star3 }</p>
-                    <h3>訪問日</h3>
+                    <h3 className="text-title-purple1">訪問日</h3>
                     <p>{ review.visited_at }</p>
                 </div>
                 <div>

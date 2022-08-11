@@ -37,10 +37,10 @@ const Create = (props) => {
                 </h2>
             }
         >
-            <div className="p-12" flex justify-center>
+           <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <form onSubmit={handleSendImage}>
                     <div>
-                        <h2>タイトル</h2>
+                        <h2 className="text-title-purple1">タイトル</h2>
                         <input
                             type="text"
                             placeholder="タイトル"
@@ -50,7 +50,7 @@ const Create = (props) => {
                             {props.errors.title}
                         </span>
 
-                        <h2>レビュー内容</h2>
+                        <h2 className="text-title-purple1">レビュー内容</h2>
                         <textarea
                             placeholder="迷いました"
                             onChange={(e) => setData("body", e.target.value)}
@@ -59,32 +59,32 @@ const Create = (props) => {
                             {props.errors.body}
                         </span>
 
-                        <h2>座席番号</h2>
+                        <h2 className="text-title-purple1">座席番号</h2>
                         <input
                             type="text"
                             placeholder="K17"
                             onChange={(e) => setData("seat", e.target.value)}
                         ></input>
 
-                        <h2>10段階評価1</h2>
+                        <h2 className="text-title-purple1">10段階評価1</h2>
                         <input
                             type="number"
                             onChange={(e) => setData("star1", e.target.value)}
                         ></input>
 
-                        <h2>10段階評価2</h2>
+                        <h2 className="text-title-purple1">10段階評価2</h2>
                         <input
                             type="number"
                             onChange={(e) => setData("star2", e.target.value)}
                         ></input>
 
-                        <h2>10段階評価3</h2>
+                        <h2 className="text-title-purple1">10段階評価3</h2>
                         <input
                             type="number"
                             onChange={(e) => setData("star3", e.target.value)}
                         ></input>
 
-                        <h2>訪問日</h2>
+                        <h2 className="text-title-purple1">訪問日</h2>
                         <input
                             type="date"
                             placeholder="2020-01-01"
@@ -96,7 +96,7 @@ const Create = (props) => {
                 <div className="name-filed width">
                 <div className="first-name-box">
                   <div className="text-label">
-                  <h2 className="text-purple-800">画像を選択</h2> {/*送信用*/}
+                  <h2 className="text-title-purple1">画像を選択</h2> {/*送信用*/}
                        
                         <input type="file" multiple onChange={(e) => setData("images", e.target.files)}/> {/*複数枚の時[0]不要*/}
                         <span className="text-red-600">{props.errors.image}</span>
