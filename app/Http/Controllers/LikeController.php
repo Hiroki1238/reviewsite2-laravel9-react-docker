@@ -18,7 +18,7 @@ class LikeController extends Controller
     public function store($venueId)
     {
         Auth::user()->like($venueId);
-        return back();
+        return redirect('/prefectures/venues/'. $venueId);
     }
 
     public function destroy($venueId)

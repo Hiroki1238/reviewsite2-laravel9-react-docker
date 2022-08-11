@@ -45,7 +45,10 @@ class User extends Authenticatable
     //以下いいね機能
     public function LikeStatus($venueId)
     {
-      return $this->likeVenues()->where('venue_id',$venueId)->exists();
+      //$this->with('venues')->wherePivot('venue_id',$venueId)->exists();
+      return User::whereHas('likeVenues', function ($query) use($venueId) {
+        $query->where('venue_id', $venueId);
+       })->exists();    
     }
 
     //isLikeを使って、既にlikeしたか確認したあと、いいねする（重複させない）
