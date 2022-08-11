@@ -83,8 +83,7 @@ Route::controller(ProfileController::class)->group(function () {
 
 // Route::post('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
 
-//お気に入り、ブックマーク
-Route::get('mypage/likes/{user}',[LikeController::class,'index']);
+//ブックマーク
 Route::get('mypage/bookmarks/{user}',[BookmarkController::class,'index']);
 
 
@@ -105,6 +104,14 @@ Route::controller(SearchController::class)->group(function () {
 Route::get('/search', 'index');
 Route::post('/search/capacity', 'searchCapacity');
 Route::post('/search/word', 'searchWord');
+});
+
+
+//いいね機能
+Route::controller(LikeController::class)->group(function () {
+Route::get('mypage/like/{user}','index');
+Route::post('/like/{venueId}', 'store');
+Route::post('/unlike/{venueId}','destroy');
 });
 
 

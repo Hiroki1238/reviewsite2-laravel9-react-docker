@@ -5,7 +5,7 @@ import { Link } from '@inertiajs/inertia-react'
 
 //レビュー一覧で選択したレビューの詳細画面
 const Show = (props) => {
-    const { review, images } = props; 
+    const { review, images, like_list, num_of_likes } = props; 
     return (
         <Authenticated auth={props.auth} header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">

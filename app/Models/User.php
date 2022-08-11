@@ -42,6 +42,33 @@ class User extends Authenticatable
     return $this->belongsToMany(Review::class,'bookmarks','user_id','review_id');
     }
 
+    //以下いいね機能
+    public function isLike($venueId)
+    {
+      return $this->likes()->where('venue_id',venueId)->exists();
+    }
+
+    //isLikeを使って、既にlikeしたか確認したあと、いいねする（重複させない）
+    public function like($venueId)
+    {
+      if($this->isLike($venueId)){
+        //もし既に「いいね」していたら何もしない
+      } else {
+        $this->likeVenues()->attach($venueId);
+      }
+    }
+
+    //isLikeを使って、既にlikeしたか確認して、もししていたら解除する
+    public function unlike($venueId)
+    {
+      if($this->isLike($venueId)){
+        //もし既に「いいね」していたら消す
+        $this->likeVenues()->detach($venueId);
+      } else {
+      }
+    }
+    
+
     protected $fillable = [
         'lastname',
         'name',

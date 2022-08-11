@@ -39,7 +39,7 @@ export default function Authenticated({ auth, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/mypage/likes/${auth.user.id}`}>
+                                <NavLink href={`/mypage/like/${auth.user.id}`}>
                                     お気に入り
                                 </NavLink>
 
