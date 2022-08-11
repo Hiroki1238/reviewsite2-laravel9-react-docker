@@ -5,16 +5,16 @@ import { Link, useForm } from '@inertiajs/inertia-react'
 
 // このファイルは会場の情報とこの会場についているレビュー一覧を表示
 const Index = (props) => {
-  const { reviews, prefecture, venue, auth} = props;
+  const { reviews, prefecture, venue, auth, status} = props;
 
-  const { data, setData, post } = useForm({
+  const { data, setData, post} = useForm({
     user_id: auth.user.id,
     venue_id: venue.id,
 });
 
 const handleLike = (e) => {
   e.preventDefault();
-  post(`/like/${venue.id}`); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
+  post(`/like/${venue.id}`);
 };
 
   return (
@@ -30,6 +30,7 @@ const handleLike = (e) => {
         <h2>ホームページ : <Link href="venue.url">{venue.url}</Link></h2>
 
         <button onClick={handleLike}>[いいね]</button>
+        <h2>{status}</h2>
 
         <h2><Link href={`/reviews/${venue.id}/create`}>新規投稿</Link></h2>
         <Link href={`/prefectures/${prefecture.id}`}>戻る</Link>

@@ -32,39 +32,38 @@ class User extends Authenticatable
     return $this->belongsToMany(Venue::class);
     }
 
-    public function likeVenues()   //中間テーブル
-    {
-    return $this->belongsToMany(Venue::class,'likes','user_id','venue_id');
-    }
-
     public function bookmarkReviews()   //中間テーブル
     {
     return $this->belongsToMany(Review::class,'bookmarks','user_id','review_id');
     }
 
-    //以下いいね機能
-    public function isLike($venueId)
+    public function likeVenues()   //中間テーブル
     {
-      return $this->likes()->where('venue_id',venueId)->exists();
+    return $this->belongsToMany(Venue::class,'likes','user_id','venue_id');
+    }
+
+    //以下いいね機能
+    public function LikeStatus($venueId)
+    {
+      return $this->likeVenues()->where('venue_id',$venueId)->exists();
     }
 
     //isLikeを使って、既にlikeしたか確認したあと、いいねする（重複させない）
     public function like($venueId)
     {
-      if($this->isLike($venueId)){
-        //もし既に「いいね」していたら何もしない
+      if($this->LikeStatus($venueId)){
+        //既にいいねしていたら(trueだったら)何もしない
       } else {
         $this->likeVenues()->attach($venueId);
       }
+      //dd($venueId);
     }
 
     //isLikeを使って、既にlikeしたか確認して、もししていたら解除する
     public function unlike($venueId)
     {
-      if($this->isLike($venueId)){
-        //もし既に「いいね」していたら消す
-        $this->likeVenues()->detach($venueId);
-      } else {
+      if($this->LikeStatus($venueId)){
+        $this->likeVenues()->detach($venueId);  //もし既に「いいね」していたら消す
       }
     }
     

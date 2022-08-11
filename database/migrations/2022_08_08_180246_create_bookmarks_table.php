@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bookmarks', function (Blueprint $table) {
-            $table->id();
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('review_id')->constrained('reviews');
+            $table->primary(['user_id', 'review_id']);
             $table->timestamps();
         });
     }
