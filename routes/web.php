@@ -13,7 +13,7 @@ use App\Http\Controllers\ProfileController; //マイページ関連
 use App\Http\Controllers\HomeController; //ホームの表示
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\BookmarkController;
-use App\Http\Controllers\AdminpageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,13 +43,6 @@ Route::post("/posts", "store");
 Route::get('/posts/{post}/edit', "edit");
 Route::put('/posts/{post}', "update");
 });
-
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
 
 Route::controller(PrefectureController::class)->group(function () {
 Route::get('/prefectures', 'index'); //都道府県の一覧
@@ -88,7 +81,7 @@ Route::get('mypage/bookmarks/{user}',[BookmarkController::class,'index']);
 
 
 //管理者用
-Route::get('admin/create',[AdminpageController::class,'index']);
+// Route::get('admin/create',[AdminpageController::class,'index']);
 
 
 
@@ -145,8 +138,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 require __DIR__.'/auth.php';
+
+Route::prefix('admin')->name('admin.')->group(function(){
+
+    Route::get('/dashboard', function () {
+        return Inertia::render('Admin/Dashboard');
+    })->middleware(['auth:admin', 'verified'])->name('dashboard');
+
+    require __DIR__.'/admin.php';
+});
