@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('venues', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('keyword');
+            $table->string('keyword')->nullable();
             $table->integer('scale_standing')->nullable();
             $table->integer('scale_sitting')->nullable();
             $table->integer('location_path')->nullable(); //緯度・軽度の２つを保存しておくにはカラムが２つ必要だが後で直せるので一旦このまま
