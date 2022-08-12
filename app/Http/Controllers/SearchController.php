@@ -14,14 +14,12 @@ class SearchController extends Controller
         return Inertia::render('Search/Index',['prefecture_array' => $prefecture->getRegionList()]);
     }    
 
-    public function searchWord(Request $request,Venue $venue) //requestを使わないとformから送られてきたデータを受け取れない
+    public function searchWord($word) //requestを使わないとformから送られてきたデータを受け取れない
     {
-        $word = $request->input('word');
+        //$word = $request->input('word');
         $results = Venue::where('name', 'LIKE', '%'.$word.'%')->get();
-        // return view('search/result')->with(['result' => $result]);
-        return Inertia::render('Search/Result',[
-            ['results' => $results]
-        ]);
+        //dd($results);
+        return Inertia::render('Search/Result',['results' => $results]);
     }
 
     public function searchCapacity(Request $request,Venue $venue)

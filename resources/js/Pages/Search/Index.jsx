@@ -10,15 +10,13 @@ const Index = (props) => {
     const [word, setWord] = useState("");
 
     const handleSearchWord = (e) => {
-        console.log("ねこ1",e.target.value);
         e.preventDefault();
-        Inertia.post("/search/word", word); //"/result"というページに値を送っている
+        Inertia.get(`/search/word/${word}`); //"/result"というページに値を送っている
     };
 
     const handleSearchCapacity = (e) => {
-        console.log("ねこ2",e.target.value);
         e.preventDefault();
-        Inertia.post("/search/capacity", capacity); //"/result"というページに値を送っている
+        Inertia.get("/search/capacity", capacity); //"/result"というページに値を送っている
     };
 
     return (
@@ -50,7 +48,7 @@ const Index = (props) => {
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <form onSubmit={handleSearchWord}>
                     <h1>キーワードから探す</h1>
-                    <input type="text" name="word" placeholder="キーワード検索" onChange={(e) => setWord("word", e.target.value)}
+                    <input type="text" placeholder="キーワード検索" onChange={(e) => setWord(e.target.value)}
                     ></input>
                     <button
                         type="submit"

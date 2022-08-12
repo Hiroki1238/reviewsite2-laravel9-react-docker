@@ -18,13 +18,13 @@ const Word = (props) => {
        {results.map((result) => (
           <div key={result.id}>
             <h2>
-            <Link href={`/reviews/${result.id}`}>{result.title}</Link>
+            <Link href={`/prefectures/venues/${result.id}`}>{result.name}</Link>
             </h2>
           </div>
         ))}
       </div>
 
-      <Link href="search/">戻る</Link>
+      <Link href="/search">戻る</Link>
 
     </Authenticated>
   );

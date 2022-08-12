@@ -95,8 +95,8 @@ Route::get('/prefectures/test', function() {
 //検索機能
 Route::controller(SearchController::class)->group(function () {
 Route::get('/search', 'index');
-Route::post('/search/capacity', 'searchCapacity');
-Route::post('/search/word', 'searchWord');
+Route::get('/search/capacity', 'searchCapacity');
+Route::get('/search/word/{text}', 'searchWord');
 });
 
 
@@ -135,7 +135,7 @@ Route::post('/like/add', 'like'); // いいね！データを追加
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Test');
 });
 
 
