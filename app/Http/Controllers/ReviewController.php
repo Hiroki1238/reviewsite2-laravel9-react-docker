@@ -18,7 +18,7 @@ class ReviewController extends Controller
     {
         //return view('reviews/index')->with(['reviews' => $review->get()]);  
         //return view('reviews/index')->with(['reviews' => $review->getByLimitDESC()]); //取得する数に制限をかける   
-        return Inertia::render('Reviews/Index',['reviews' => $review->getByLimit()]);
+        return Inertia::render('Reviews/Index',['reviews' => $review->getByLimitAndPeginate()]);
     }
 
     public function show(Review $review,Image $image, User $user) //reviews/3の時$reviewsに3がid=3のreviewsテーブルを持ってくる、それが$reviesに入ってくる $review->idとすると3が取得できる

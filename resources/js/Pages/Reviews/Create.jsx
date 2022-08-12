@@ -25,6 +25,11 @@ const Create = (props) => {
         post("/reviews/store"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
     };
 
+    const handleChangeFile = (e) => {
+        const { files } = e.target;
+        setPreview(window.URL.createObjectURL(files[0]));
+      };
+
     console.log(data);
 
     return (
@@ -37,7 +42,7 @@ const Create = (props) => {
                 </h2>
             }
         >
-           <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+           <div className="p-6 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <form onSubmit={handleSendImage}>
                     <div>
                         <h2 className="text-title-purple1">タイトル</h2>
@@ -98,7 +103,7 @@ const Create = (props) => {
                   <div className="text-label">
                   <h2 className="text-title-purple1">画像を選択</h2> {/*送信用*/}
                        
-                        <input type="file" multiple onChange={(e) => setData("images", e.target.files)}/> {/*複数枚の時[0]不要*/}
+                        <input type="file" multiple onChange={(e) => {setData("images", e.target.files); ; handleChangeFile(e);}}/> {/*複数枚の時[0]不要*/}
                         <span className="text-red-600">{props.errors.image}</span>
                   </div>
                   

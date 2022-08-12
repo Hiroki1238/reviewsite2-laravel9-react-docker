@@ -38,8 +38,10 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => $request->user(),
-                'venue_status' => Auth::user()->likeVenues,
-                'review_status' => Auth::user()->bookmarkReviews,
+                'venue_status' => $request->user()->likeVenues,
+                'review_status' => $request->user()->bookmarkReviews,
+                // 'venue_status' => Auth::user()->likeVenues,
+                // 'review_status' => Auth::user()->bookmarkReviews,
             ],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [

@@ -51,8 +51,8 @@ const Index = (props) => {
                 </h2>
 
               <div>
-                {isLiked ? (<button onClick={handleUnlike}> <StarBorderIcon/> </button>)
-                : (<button onClick={handleLike}> <StarIcon /> </button>)
+                {isLiked ? (<button onClick={handleUnlike}> <StarIcon /> </button>)
+                : (<button onClick={handleLike}> <StarBorderIcon/> </button>)
               }
               </div>
 

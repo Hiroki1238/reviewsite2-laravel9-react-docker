@@ -4,7 +4,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
 
 const Index = (props) => {
-    const { myReviews, auth } = props;
+    const { myVenues, auth } = props;
 
     return (
         <Authenticated
@@ -21,11 +21,11 @@ const Index = (props) => {
 
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h2 className="text-purple-800">お気に入り</h2> {/*いいね一覧を表示したい*/}
-                {myLikes.map((review) => (
-                    <div key={review.id}>
+                {myVenues.map((venue) => (
+                    <div key={venue.id}>
                         <h2>
-                            <Link href={`/reviews/${review.id}`}>
-                                {review.title}
+                            <Link href={`/prefectures/venues/${venue.id}`}>
+                                {venue.name}
                             </Link>
                         </h2>
                     </div>

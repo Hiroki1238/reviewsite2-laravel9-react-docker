@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     /**
@@ -42,9 +43,8 @@ class User extends Authenticatable
     return $this->belongsToMany(Venue::class,'likes','user_id','venue_id');
     }
 
-
     //以下いいね機能
-    public function LikeStatus($venueId) //いいねの状態をbooleanで返す
+    public function LikeStatus($venueId)
     {
       //$this->with('venues')->wherePivot('venue_id',$venueId)->exists();
       return User::whereHas('likeVenues', function ($query) use($venueId) {
@@ -54,16 +54,15 @@ class User extends Authenticatable
 
 
 
-    // //お気に入りの一覧表示をする(Likes/Indexで表示)
-    // public function likeVenueList()
-    // {
-    //   $authId = auth()->id();
-    //   return Venue::whereHas('likeVenues', function ($query) use($authId) {
-    //     $query->where('user_id', $authId);
-    //    });    
-    // }
+    //お気に入り一覧を表示したい
+    public function likeVenueList($venueId)
+    {
+      return User::whereHas('likeVenues', function ($query) use($venueId) {
+        $query->where('venue_id', $venueId);
+       });    
+    }
 
-
+    
 
     //isLikeを使って、既にlikeしたか確認したあと、いいねする（重複させない）
     public function like($venueId)

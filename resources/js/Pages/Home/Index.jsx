@@ -2,9 +2,14 @@ import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
+import SwipeableViews from 'react-swipeable-views';
+import { autoPlay } from 'react-swipeable-views-utils';
 
 const Index = (props) => {
     const { auth, prefecture_array, reviews } = props;
+
+    const EnhancedSwipeableViews = autoPlay(SwipeableViews);
+
 
     return (
         <Authenticated
@@ -15,7 +20,13 @@ const Index = (props) => {
                 </h2>
             }>
 
-            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+{/* <EnhancedSwipeableViews interval={4000}>
+      <div><img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" /></div>
+      <div><img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" /></div>
+      <div><img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" /></div>
+    </EnhancedSwipeableViews>      */}
+   
+            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h2 className="text-title-purple1">新着のレビュー</h2>
                 {reviews.map((review) => (
                     <div key={review.id}>
@@ -27,14 +38,14 @@ const Index = (props) => {
                     </div>
                 ))}
                 </div>
-                <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+                <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h3 className="text-title-purple1">何か書く1</h3>
                 <h3>何か書く</h3>
                 <h3 className="text-title-purple1">何か書く2</h3>
                 <h3>何か書く</h3>
                 </div>
 
-                <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+                <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
         <h1 className="text-title-purple1">都道府県から探す</h1>
         {prefecture_array.map((region) => (
           <div key={region.id}>
@@ -53,5 +64,6 @@ const Index = (props) => {
         </Authenticated>
     );
 };
+
 
 export default Index;

@@ -18,7 +18,7 @@ module.exports = {
 
             colors: {
                 // 'カラー名': 'カラーコード'
-                'dark-green': '#06bbbc', 'box-gray':'#eaeaea','my-gray1':'#424242', 'box-bordergray':'#c7c7c7', 'title-purple1':'#7a54a8','my-purple2':'#884898', 'my-purple3':'#9969d3',
+                'dark-green': '#06bbbc', 'box-gray':'#eaeaea','my-gray1':'#424242', 'box-bordergray':'#c7c7c7', 'title-purple1':'#7a54a8','my-purple2':'#884898', 'my-purple3':'#9969d3', 'green-white':'#f9ffff',
               },
         },
     },

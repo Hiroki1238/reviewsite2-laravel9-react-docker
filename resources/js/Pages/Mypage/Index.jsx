@@ -15,7 +15,7 @@ const Index = (props) => {
                 </h2>
             }
         >
-            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 {/* グレーのボックス(背景)に関する指定 */}
                 <h1 className="text-title-purple1">
                     {auth.user.name}のマイページ
@@ -38,7 +38,7 @@ const Index = (props) => {
                 </Link>
             </div>
 
-            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h2 className="text-title-purple1">あなたのレビュー</h2>
                 {myReviews.map((review) => (
                     <div key={review.id}>
@@ -50,9 +50,11 @@ const Index = (props) => {
                     </div>
                 ))}
             </div>
-            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-                <h3 className="text-title-purple1">お気に入りの会場</h3>
+            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+                <h3 className="text-title-purple1 ">お気に入りの会場</h3>
                 <h3>お気に入り一覧を表示</h3>
+            </div>
+            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h3 className="text-title-purple1">ブックマーク</h3>
                 <h3>ブックマーク一覧を表示</h3>
             </div>

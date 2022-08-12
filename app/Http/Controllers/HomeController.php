@@ -11,6 +11,6 @@ class HomeController extends Controller
 {
     public function index(Prefecture $prefecture, Review $review)
     {
-        return Inertia::render('Home/Index',['prefecture_array' => $prefecture->getRegionList(), 'reviews' => $review->getByLimit(5)]);
+        return Inertia::render('Home/Index',['prefecture_array' => $prefecture->getRegionList(), 'reviews' => $review->getByLimit(5)]); //新着のレビューをホームに表示、表示件数をここで指定
     }
 }

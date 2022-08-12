@@ -10,9 +10,10 @@ use Inertia\Inertia;
 
 class BookmarkController extends Controller
 {
-    public function index()
-    {
-      return Inertia::render('Bookmarks/Index');
+    public function index(Request $request, User $user) {
+        $auth = auth()->user();
+        $myBookmarks = $auth->bookmarkReviews()->get();
+        return Inertia::render('Bookmarks/Index',['myBookmarks' => $myBookmarks]);
     }
 
     public function store($reviewId)

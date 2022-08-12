@@ -32,7 +32,7 @@ const Show = (props) => {
                 </h2>
             }>
             
-            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+            <div className="p-6 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-1/2">
                 <h1 className="text-title-purple1">{ review.title }</h1>
 
             <div>

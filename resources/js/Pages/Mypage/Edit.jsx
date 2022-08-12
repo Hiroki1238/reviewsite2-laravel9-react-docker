@@ -44,7 +44,7 @@ const Edit = (props) => {
                 </h2>
             }>
             
-            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+            <div className="p-6 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 
                 <form onSubmit={handleSendPosts}>
                     <div>
