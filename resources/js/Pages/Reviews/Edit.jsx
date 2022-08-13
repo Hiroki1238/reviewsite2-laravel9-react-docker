@@ -3,6 +3,11 @@ import { Inertia } from "@inertiajs/inertia";
 import { Link, useForm } from '@inertiajs/inertia-react';
 import Authenticated from "@/Layouts/Authenticated";
 
+import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
+import { Reviews } from "@mui/icons-material";
+
 const Edit = (props) => {
     const { review } = props;
     const {data, setData, put} = useForm({
@@ -50,23 +55,41 @@ const Edit = (props) => {
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
-                    <div>
-                        <h2>10段階評価1</h2>
-                        <input type="number" value={data.star1} onChange={(e) => setData("star1", e.target.value)}/>
-                        <span className="text-red-600">{props.errors.seat}</span>
-                    </div>  
+                    <Box sx={{ "& > legend": { mt: 2 } }}>
+                            <h2 className="text-title-purple1">
+                                ステージの見やすさ
+                            </h2>
+                            <Rating value={data.star1}
+                                name="simple-controlled"
+                                onChange={(e) =>
+                                    setData("star1", e.target.value)
+                                }
+                            />
+                        </Box>
 
-                    <div>
-                        <h2>10段階評価2</h2>
-                        <input type="number" value={data.star2} onChange={(e) => setData("star2", e.target.value)}/>
-                        <span className="text-red-600">{props.errors.seat}</span>
-                    </div>  
+                        <Box sx={{ "& > legend": { mt: 2 } }}>
+                            <h2 className="text-title-purple1">
+                                アクセスの良さ
+                            </h2>
+                            <Rating value={data.star2}
+                                name="simple-controlled"
+                                onChange={(e) =>
+                                    setData("star2", e.target.value)
+                                }
+                            />
+                        </Box>
 
-                    <div>
-                        <h2>10段階評価3</h2>
-                        <input type="number" value={data.star3} onChange={(e) => setData("star3", e.target.value)}/>
-                        <span className="text-red-600">{props.errors.seat}</span>
-                    </div>  
+                        <Box sx={{ "& > legend": { mt: 2 } }}>
+                            {/* <Typography component="legend">Controlled</Typography> */}
+                            <h2 className="text-title-purple1">総合点</h2>
+                            <Rating value={data.star3}
+                                name="simple-controlled"
+                                onChange={(e) =>
+                                    setData("star3", e.target.value)
+                                }
+                            />
+                        </Box>
+
 
                     <div>
                         <h2>訪問日</h2>

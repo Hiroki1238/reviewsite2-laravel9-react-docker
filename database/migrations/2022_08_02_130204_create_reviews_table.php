@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('star2');
             $table->integer('star3');
             $table->foreignId('venue_id')->constrained('venues');
-            $table->DateTime('visited_at');
+            $table->date('visited_at');
             $table->timestamps();
             $table->softDeletes();
         });

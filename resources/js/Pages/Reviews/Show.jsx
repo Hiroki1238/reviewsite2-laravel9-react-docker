@@ -1,3 +1,4 @@
+import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link, useForm } from "@inertiajs/inertia-react";
@@ -5,7 +6,7 @@ import BookmarkAddedIcon from "@mui/icons-material/BookmarkAdded";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
-import * as React from "react";
+// import * as React from "react";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
@@ -13,7 +14,7 @@ import Typography from "@mui/material/Typography";
 //レビュー一覧で選択したレビューの詳細画面
 const Show = (props) => {
     const { auth, review, images, isBookmarked } = props;
-    const [value, setValue] = React.useState(2);
+    const [value, setValue] = React.useState();
 
     const { data, setData, post } = useForm({
         user_id: auth.user.id,
@@ -59,32 +60,57 @@ const Show = (props) => {
                     <p>{review.body}</p>
                     <h3 className="text-title-purple1">座席</h3>
                     <p>{review.seat}</p>
-                    <h3 className="text-title-purple1">10段階評価1</h3>
-                    <p>{review.star1}</p>
-
-
+                    {/* <h3 className="text-title-purple1">10段階評価1</h3>
+                    <p>{review.star1}</p> */}
 
                     <Box
                         sx={{
                             "& > legend": { mt: 2 },
                         }}
                     >
-                        <Typography component="legend">Controlled</Typography>
+                        <h2 className="text-title-purple1">
+                                ステージの見やすさ
+                            </h2>
                         <Rating
-                            name="simple-controlled"
-                            value={value}
-                            onChange={(event, newValue) => {
-                                setValue(newValue);
-                            }}
+                            name="read-only"
+                            value={review.star1}
+                            readOnly
                         />
                     </Box>
 
+                    <Box
+                        sx={{
+                            "& > legend": { mt: 2 },
+                        }}
+                    >
+                        <h2 className="text-title-purple1">
+                                アクセスの良さ
+                            </h2>
+                        <Rating
+                            name="read-only"
+                            value={review.star2}
+                            readOnly
+                        />
+                    </Box>
 
+                    <Box
+                        sx={{
+                            "& > legend": { mt: 2 },
+                        }}
+                    >
+                        {/* <Typography component="legend">Read only</Typography> */}
+                        <h2 className="text-title-purple1">総合点</h2>
+                        <Rating
+                            name="read-only"
+                            value={review.star3}
+                            readOnly
+                        />
+                    </Box>
 
-                    <h3 className="text-title-purple1">10段階評価2</h3>
+                    {/* <h3 className="text-title-purple1">10段階評価2</h3>
                     <p>{review.star2}</p>
                     <h3 className="text-title-purple1">10段階評価3</h3>
-                    <p>{review.star3}</p>
+                    <p>{review.star3}</p> */}
                     <h3 className="text-title-purple1">訪問日</h3>
                     <p>{review.visited_at}</p>
                 </div>
@@ -94,7 +120,7 @@ const Show = (props) => {
                             {images.map((image) => (
                                 <img
                                     src={`${image.image_path}`}
-                                    className="h-48 w-full"
+                                    className="object-contain"
                                 />
                             ))}
                         </div>
