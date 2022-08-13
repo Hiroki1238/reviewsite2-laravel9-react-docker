@@ -29,13 +29,13 @@ class UsersTableSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'lastname' => 'ねこねこ',
+            'lastname' => 'ねこ',
             'name' => 'ねこ',
             'uname' => 'neko',
             'email' => 'neko@gmail.com',
             'age' => '10',
             'password' => Hash::make('nekoneko'),
-            'profile' => 'こんにちは',
+            'profile' => 'こんにちは！',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
