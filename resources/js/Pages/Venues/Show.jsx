@@ -61,7 +61,9 @@ const Index = (props) => {
                 <h2>
                     <Link href={`/reviews/${venue.id}/create`}>新規投稿</Link>
                 </h2>
-                <Link href={`/prefectures/${prefecture.id}`}>戻る</Link>
+                <Link onClick={() => window.history.back()}>
+                        戻る
+                    </Link>
             </div>
 
             <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">

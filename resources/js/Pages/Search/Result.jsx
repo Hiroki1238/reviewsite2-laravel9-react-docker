@@ -26,7 +26,9 @@ const Word = (props) => {
         ))}
       </div>
 
-      <Link href="/search">戻る</Link>
+      <Link onClick={() => window.history.back()}>
+                        戻る
+                    </Link>
 
     </Authenticated>
   );

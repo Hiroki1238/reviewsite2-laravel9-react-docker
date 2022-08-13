@@ -33,6 +33,10 @@ const Index = (props) => {
         ))}
       </div>
 
+      <Link onClick={() => window.history.back()}>
+                        戻る
+                    </Link>
+
     </Authenticated>
   );
 }

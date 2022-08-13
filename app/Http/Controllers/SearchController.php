@@ -29,13 +29,13 @@ class SearchController extends Controller
 
         $capacityInteger = intval($capacity);
         if(isset($word) && $capacityInteger === 0)
-                return Inertia::render('Search/Result', ['result' => $this->venue->searchByWord($word)]);
+                return Inertia::render('Search/Result', ['results' => $this->venue->searchByWord($word)]);
 
         if(isset($word) && isset($capacityInteger)) 
-                return Inertia::render('Search/Result', ['result' => $this->venue->searchByWordAndCapacity($word, $capacity)]);
+                return Inertia::render('Search/Result', ['results' => $this->venue->searchByWordAndCapacity($word, $capacity)]);
 
         if(isset($capacityInteger) && is_null($word)) 
-                return Inertia::render('Search/Result', ['result' => $this->venue->searchByCapacity($capacity)]);
+                return Inertia::render('Search/Result', ['results' => $this->venue->searchByCapacity($capacity)]);
     }
 
 

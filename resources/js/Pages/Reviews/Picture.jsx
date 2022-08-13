@@ -60,8 +60,10 @@ const Picture = (props) => {
     
 //           </Grid>
 //         </Box>
+
       );
 // };
+
 }
 
 export default Picture;

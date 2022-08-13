@@ -173,7 +173,9 @@ const Create = (props) => {
                     </button>
                 </form>
 
-                <Link href={`/prefectures/venues/${venue.id}`}>戻る</Link>
+                <Link onClick={() => window.history.back()}>
+                        戻る
+                    </Link>
             </div>
         </Authenticated>
     );

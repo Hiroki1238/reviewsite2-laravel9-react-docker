@@ -21,4 +21,4 @@ function Prefectures({prefecture_array}) {
   )
 }
 
-export default Prefectures
+export default Prefectures;

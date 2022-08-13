@@ -3,6 +3,7 @@ import {useState} from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link, useForm } from "@inertiajs/inertia-react";
+import Prefectures from "@/Components/Prefectures";
 
 const Index = (props) => {
     const { venues, prefecture, prefecture_array } = props;
@@ -28,22 +29,7 @@ const Index = (props) => {
             //     </h2>
             // }
         >
-            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-                <h1>都道府県から探す</h1>
-
-                {prefecture_array.map((region) => (
-                    <div key={region.id}>
-                        <h2>{region.region}</h2>
-                        {region.prefectures.map((prefecture) => (
-                            <p>
-                                <Link href={`/prefectures/${prefecture.id}`}>
-                                    {prefecture.name}
-                                </Link>
-                            </p>
-                        ))}
-                    </div>
-                ))}
-            </div>
+            <Prefectures prefecture_array={prefecture_array}/>
 
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <form onSubmit={handleSearchWord}>
@@ -78,6 +64,10 @@ const Index = (props) => {
                 </button>
                 </form>
             </div>
+
+            <Link onClick={() => window.history.back()}>
+                        戻る
+                    </Link>
         </Authenticated>
     );
 };

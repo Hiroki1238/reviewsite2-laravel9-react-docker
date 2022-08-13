@@ -38,19 +38,9 @@ class ProfileController extends Controller
     {
         $form = $request->all(); //入力された情報全て受け取ってる
         $image = $request->file('image');
-        //dd($request->file("image"));
         $user->fill($form);
-        //dd($form);
         $path = Storage::disk('s3')->put('icon', $image, 'public');
-        //dd(Storage::disk('s3')->url($path));
         $user->image_path = Storage::disk('s3')->url($path); // アップロードした画像のフルパスを取得
-        //dd($user);
-        // if ($request->image !== null) {
-        //     $path = Storage::disk('s3')->put('icon', $image, 'public');
-        //     $user->image_path = Storage::disk('s3')->url($path); // アップロードした画像のフルパスを取得
-        // } elseif ($request->image == null && $form['image_path'] !== "") {
-        //     $user->image_path = $form['image_path'];
-        // }
         $user->save();
 
         return redirect('mypage/profile/' . $user->id);
@@ -63,31 +53,6 @@ class ProfileController extends Controller
         $user->fill($input)->save();
         return redirect('mypage/profile/' . $user->id);
     }
-
-
-    // public function create(Request $request, User $user)
-    // {
-    //     $auth_id = auth()->id();
-    //     //$user = User::find($auth_id);
-    //     $form = $request->all(); //入力された情報全て受け取ってる
-    //     $image = $request->file('image');
-    //     //dd($request);
-    //     dd($image);
-    //     unset($form['_token']); // @csrfを除外する
-    //     $user->fill($form);
-
-    //     // バケットの「icon」フォルダへアップロード
-    //     if ($request->image !== null) {
-    //         $path = Storage::disk('s3')->put('icon', $image, 'public');
-    //         $user->image_path = Storage::disk('s3')->url($path); // アップロードした画像のフルパスを取得
-    //     } elseif ($request->image == null && $form['image_path'] !== "") {
-    //         $user->image_path = $form['image_path'];
-    //     }
-    //     $user->save();
-
-    //     return redirect('mypage/profile/' . $auth_id);
-    // }
-
 
     public function contact()
     {

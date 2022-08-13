@@ -2,6 +2,7 @@ import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from '@inertiajs/inertia-react'
+import Prefectures from "@/Components/Prefectures";
 
 const Index = (props) => {
   const { prefecture_array } = props;
@@ -16,21 +17,13 @@ const Index = (props) => {
     // }
     >
 
-      <div className="p-6 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-        <h1 className="text-title-purple1">都道府県から探す</h1>
-        {prefecture_array.map((region) => (
-          <div key={region.id}>
-            <h2>{region.region}</h2>
-             {region.prefectures.map((prefecture) => (
-              
-            <p>
-              {console.log(prefecture)}
-              <Link href={`/prefectures/${prefecture.id}`}>{prefecture.name}</Link>
-            </p>
-             ))}
-          </div>
-        ))}
-      </div>
+        <Prefectures prefecture_array={prefecture_array}/>
+        
+        <Link onClick={() => window.history.back()}>
+            戻る
+        </Link>
+
+
 
     </Authenticated>
   );

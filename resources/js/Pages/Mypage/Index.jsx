@@ -58,6 +58,10 @@ const Index = (props) => {
                 <h3 className="text-title-purple1">ブックマーク</h3>
                 <h3>ブックマーク一覧を表示</h3>
             </div>
+
+            <Link onClick={() => window.history.back()}>
+                        戻る
+                    </Link>
         </Authenticated>
     );
 };
