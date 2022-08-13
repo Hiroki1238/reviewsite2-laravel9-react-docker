@@ -38,11 +38,13 @@ const Edit = (props) => {
       };
 
     return (
-        <Authenticated auth={props.auth} header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    編集
-                </h2>
-            }>
+        <Authenticated auth={props.auth}
+            // header={
+            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+            //         編集
+            //     </h2>
+            // }
+            >
             
             <div className="p-6 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 
@@ -93,7 +95,7 @@ const Edit = (props) => {
                    
                     {/* 表示用 */}
                     <div className="h-48 w-48 my-0 mx-auto">
-                    {auth.user.image_path !== null ? (<div><img src={auth.user.image_path}/></div>) : (<div> <img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"/></div>) }
+                    {auth.user.image_path !== null ? (<div><img className="rounded-full" src={auth.user.image_path}/></div>) : (<div><img className="rounded-full" src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"/></div>) }
                     </div>
                     
                     <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">変更</button>

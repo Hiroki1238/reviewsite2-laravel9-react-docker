@@ -14,11 +14,12 @@ const Index = (props) => {
     return (
         <Authenticated
             auth={props.auth}
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    ホーム
-                </h2>
-            }>
+            // header={
+            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+            //         ホーム
+            //     </h2>
+            // }
+            >
 
 {/* <EnhancedSwipeableViews interval={4000}>
       <div><img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" /></div>

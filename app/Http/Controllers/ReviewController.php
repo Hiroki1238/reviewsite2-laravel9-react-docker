@@ -66,7 +66,7 @@ class ReviewController extends Controller
         //ここの段階で写真以外は保存済み
         $image->storeImage($images,$new_reviewId);//imagesテーブルにreview_idを渡す
         //dd($review->venue_id);
-    return redirect('prefectures/venues/'.$review->venue_id);
+    return redirect('/prefectures/venues/'.$review->venue_id);
     }
 
     public function edit(Review $review)

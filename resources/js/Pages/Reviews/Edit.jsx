@@ -28,11 +28,13 @@ const Edit = (props) => {
     }
 
     return (
-        <Authenticated auth={props.auth} header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    編集
-                </h2>
-            }>
+        <Authenticated auth={props.auth}
+        // header={
+        //         <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+        //             編集
+        //         </h2>
+        //     }
+            >
             
             <div className="p-1.5 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center"> {/*なぜか適用されない*/}
                 

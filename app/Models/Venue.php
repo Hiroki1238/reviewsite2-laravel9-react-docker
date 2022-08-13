@@ -32,4 +32,9 @@ class Venue extends Model
     {
     return $this->belongsToMany(User::class,'likes','venue_id','user_id');
     }
+
+    public function images()
+    {
+        return $this->hasManyThrough(Image::class, Review::class);
+    }
 }

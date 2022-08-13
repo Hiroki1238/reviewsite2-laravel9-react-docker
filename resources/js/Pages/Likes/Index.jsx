@@ -9,11 +9,12 @@ const Index = (props) => {
     return (
         <Authenticated
             auth={props.auth}
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    お気に入り
-                </h2>
-            }>
+            // header={
+            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+            //         お気に入り
+            //     </h2>
+            // }
+            >
 
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
             <h1>ここにお気に入りを表示</h1>

@@ -43,8 +43,6 @@ class HandleInertiaRequests extends Middleware
                 'venue_status' => $request->user()->likeVenues,
                 'review_status' => $request->user()->bookmarkReviews,
             ]) : (null)
-                // 'venue_status' => Auth::user()->likeVenues,
-                // 'review_status' => Auth::user()->bookmarkReviews,
             ],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [

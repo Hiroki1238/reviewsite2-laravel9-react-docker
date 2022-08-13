@@ -49,7 +49,10 @@ Route::get('/prefectures', 'index'); //都道府県の一覧
 Route::get('/prefectures/{prefecture}', 'show'); //県ごとの会場を表示
 });
 
-Route::get('/prefectures/venues/{venue}', [VenueController::class, 'showReview']); //各会場ごとのレビューを表示
+Route::controller(VenueController::class)->group(function () {
+Route::get('/prefectures/venues/pictures/{venue}', "picture");
+Route::get('/prefectures/venues/{venue}', "show"); //各会場ごとのレビューを表示
+});
 
 Route::controller(ReviewController::class)->group(function () {
 Route::get('/reviews', 'index');

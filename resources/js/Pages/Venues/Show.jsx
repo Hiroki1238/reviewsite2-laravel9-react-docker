@@ -36,11 +36,11 @@ const Index = (props) => {
     return (
         <Authenticated
             auth={props.auth}
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    レビュー詳細
-                </h2>
-            }
+            // header={
+            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+            //         レビュー詳細
+            //     </h2>
+            // }
         >
             <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h1 className="text-title-purple1">{venue.name}のレビュー</h1>
@@ -49,6 +49,8 @@ const Index = (props) => {
                 <h2>
                     ホームページ : <Link href="venue.url">{venue.url}</Link>
                 </h2>
+
+                <Link href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
 
               <div>
                 {isLiked ? (<button onClick={handleUnlike}> <StarIcon /> </button>)

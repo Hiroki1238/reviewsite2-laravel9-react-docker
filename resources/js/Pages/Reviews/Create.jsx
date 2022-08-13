@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { inertia } from "@inertiajs/inertia";
 import { Link, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
@@ -10,8 +10,9 @@ import Typography from "@mui/material/Typography";
 import { Reviews } from "@mui/icons-material";
 
 const Create = (props) => {
-    const { venue, auth } = props;
+    const { venue, auth, images } = props;
     // const [value, setValue] = React.useState();
+    const [preview, setPreview] = useState([]);
     const { data, setData, post } = useForm({
         images: "",
 
@@ -32,15 +33,24 @@ const Create = (props) => {
         post("/reviews/store"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
     };
 
+    const handleChangeFile = (e) => {
+        const { files } = e.target;
+        {Array.from(files).map((file) => {
+            //console.log(file);
+            setPreview(prevPreview => [...prevPreview, window.URL.createObjectURL(file)]);
+        })}
+      };
+      console.log(preview);
+
     return (
         <Authenticated
             auth={props.auth}
             errors={props.errors} //これは何のため？
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    新規投稿
-                </h2>
-            }
+            // header={
+            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+            //         新規投稿
+            //     </h2>
+            // }
         >
             <div className="p-6 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <form onSubmit={handleSendImage}>
@@ -127,6 +137,7 @@ const Create = (props) => {
                                         multiple
                                         onChange={(e) => {
                                             setData("images", e.target.files);
+                                            handleChangeFile(e);
                                         }}
                                     />{" "}
                                     {/*複数枚の時[0]不要*/}
@@ -139,6 +150,20 @@ const Create = (props) => {
                     <div class="alert alert-danger">{ errors.first('item_url') . errors.first('item_url.*') }</div> */}
                             </div>
                         </div>
+
+                        {/* 表示用 */}
+                    <div className="h-48 w-48 my-0 mx-auto">
+                    {preview ? <div>
+                            {preview.map((pre, index) => (
+                                <img
+                                key={index}
+                                    src={`${pre}`}
+                                    className="object-contain"
+                                />
+                            ))}
+                        </div> : null }
+                    </div>
+
                     </div>
                     <button
                         type="submit"

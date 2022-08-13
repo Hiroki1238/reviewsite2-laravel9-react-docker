@@ -1,8 +1,9 @@
 import React from 'react'
 
+
 const Test = () => {
   return (
-    <div>Test</div>
+    <div>ログインしていなくても見れる画面を作成</div>
   )
 }
 

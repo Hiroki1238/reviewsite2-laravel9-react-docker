@@ -8,11 +8,13 @@ const Index = (props) => {
   console.log(props);
 
   return (
-    <Authenticated auth={props.auth} header={
-      <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-        Index
-      </h2>
-    }>
+    <Authenticated auth={props.auth}
+    // header={
+    //   <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+    //     会場一覧
+    //   </h2>
+    // }
+    >
 
       <div className="p-6 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
         <h1 className="text-purple-800">{prefecture.name}の会場一覧</h1>

@@ -7,11 +7,13 @@ const Word = (props) => {
   const { results } = props;
 
   return (
-    <Authenticated auth={props.auth} header={
-      <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-        検索結果
-      </h2>
-    }>
+    <Authenticated auth={props.auth}
+    // header={
+    //   <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+    //     検索結果
+    //   </h2>
+    // }
+    >
 
       <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
        <h1>検索結果を表示</h1>

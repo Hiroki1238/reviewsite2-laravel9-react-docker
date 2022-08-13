@@ -34,13 +34,14 @@ const Show = (props) => {
     return (
         <Authenticated
             auth={props.auth}
-            header={
-                <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    レビュー詳細
-                </h2>
-            }
+            // header={
+            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+            //         レビュー詳細
+            //     </h2>
+            // }
         >
             <div className="p-6 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-1/2">
+                <h1><Link href={`/prefectures/venues/${review.venue_id}`}>{review.venue_id}のレビュー</Link></h1> {/*会場名をリレーションを使って表示した*/}
                 <h1 className="text-title-purple1">{review.title}</h1>
 
                 <div>
