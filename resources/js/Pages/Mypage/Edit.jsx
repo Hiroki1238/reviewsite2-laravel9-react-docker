@@ -104,6 +104,7 @@ const Edit = (props) => {
                 <Link onClick={() => window.history.back()}>
                         戻る
                     </Link>
+                    </div>
             
         </Authenticated>
         );
