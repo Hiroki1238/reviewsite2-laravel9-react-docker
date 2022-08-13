@@ -47,7 +47,7 @@ const Show = (props) => {
                 <div>
                     {isBookmarked ? (
                         <button onClick={handleNotBookmark}>
-                            <BookmarkAddedIcon />
+                            <BookmarkAddedIcon className="text-yellow-900"/>
                         </button>
                     ) : (
                         <button onClick={handleBookmark}>
@@ -135,7 +135,7 @@ const Show = (props) => {
                 </div>
 
                 <div>
-                    <Link href={`/prefectures/venues/${review.venue_id}`}>
+                    <Link onClick={() => window.history.back()}>
                         戻る
                     </Link>
                 </div>

@@ -98,8 +98,7 @@ Route::get('/prefectures/test', function() {
 //検索機能
 Route::controller(SearchController::class)->group(function () {
 Route::get('/search', 'index');
-Route::get('/search/capacity', 'searchCapacity');
-Route::get('/search/word/{text}', 'searchWord');
+Route::post('/search/word', 'searchWord');
 });
 
 

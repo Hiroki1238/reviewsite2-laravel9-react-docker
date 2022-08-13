@@ -4,6 +4,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
+import Prefectures from "@/Components/Prefectures";
 
 const Index = (props) => {
     const { auth, prefecture_array, reviews } = props;
@@ -27,6 +28,7 @@ const Index = (props) => {
       <div><img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" /></div>
     </EnhancedSwipeableViews>      */}
    
+      <div className="w-full h-full">
             <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h2 className="text-title-purple1">新着のレビュー</h2>
                 {reviews.map((review) => (
@@ -42,24 +44,12 @@ const Index = (props) => {
                 <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h3 className="text-title-purple1">何か書く1</h3>
                 <h3>何か書く</h3>
+                <hr className="border-indigo-500"/>
                 <h3 className="text-title-purple1">何か書く2</h3>
                 <h3>何か書く</h3>
                 </div>
 
-                <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-        <h1 className="text-title-purple1">都道府県から探す</h1>
-        {prefecture_array.map((region) => (
-          <div key={region.id}>
-            <h2>{region.region}</h2>
-             {region.prefectures.map((prefecture) => (
-              
-            <p>
-              {console.log(prefecture)}
-              <Link href={`/prefectures/${prefecture.id}`}>{prefecture.name}</Link>
-            </p>
-             ))}
-          </div>
-        ))}
+              <Prefectures prefecture_array={prefecture_array}/>
       </div>
 
         </Authenticated>

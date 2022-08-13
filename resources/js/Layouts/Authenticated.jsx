@@ -155,7 +155,13 @@ export default function Authenticated({ auth, header, children }) {
                 </header>
             )}
 
-            <main>{children}</main>
+            <main className="flex max-w-full min-h-screen justify-around">
+            <div>左のカラム</div>
+            <div className="w-1/2">
+            {children}
+            </div>
+            <div>右のカラム</div>
+            </main>
         </div>
     );
 }
