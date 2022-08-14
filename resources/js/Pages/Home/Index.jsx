@@ -33,9 +33,9 @@ const Index = (props) => {
                 <h2 className="text-title-purple1">新着のレビュー</h2>
                 {reviews.map((review) => (
                     <div key={review.id}>
-                        <h2>
+                        <h2 className="m-2">
                             <Link href={`/reviews/${review.id}`}>
-                                {review.title}
+                                {review.title} (会場名を表示)
                             </Link>
                         </h2>
                     </div>

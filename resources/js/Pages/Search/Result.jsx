@@ -19,7 +19,7 @@ const Word = (props) => {
        <h1>検索結果を表示</h1>
        {results.map((result) => (
           <div key={result.id}>
-            <h2>
+            <h2 className="m-2">
             <Link href={`/prefectures/venues/${result.id}`}>{result.name}</Link>
             </h2>
           </div>

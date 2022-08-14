@@ -47,11 +47,11 @@ const Show = (props) => {
                 <div>
                     {isBookmarked ? (
                         <button onClick={handleNotBookmark}>
-                            <BookmarkAddedIcon className="text-yellow-900"/>
+                            <BookmarkAddedIcon className="text-bookmark-red"/>
                         </button>
                     ) : (
                         <button onClick={handleBookmark}>
-                            <BookmarkBorderIcon />
+                            <BookmarkBorderIcon className="text-bookmark-red"/>
                         </button>
                     )}
                 </div>

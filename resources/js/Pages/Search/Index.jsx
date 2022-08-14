@@ -29,15 +29,14 @@ const Index = (props) => {
             //     </h2>
             // }
         >
-            <Prefectures prefecture_array={prefecture_array}/>
 
-            <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <form onSubmit={handleSearchWord}>
-                    <h1>キーワードから探す</h1>
+                    <h1 className="m-2">キーワードから探す</h1>
                     <input type="text" placeholder="キーワード検索" onChange={(e) => setWord(e.target.value)}
                     ></input>
 
-                <h1>規模から探す</h1>
+                <h1 className="m-2">規模から探す</h1>
                 <select onChange={(e) => setCapacity(e.target.value)}>
                     <option>-</option>
                     <option value="2000">1000-2000人</option>
@@ -55,15 +54,17 @@ const Index = (props) => {
                     <option value="30000">25000-30000人</option>
                     <option value="30001">30000人以上</option>
                 </select>
-
+                <br/>
                 <button
                     type="submit"
-                    className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md"
+                    className="px-3 py-1 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md"
                 >
                     検索
                 </button>
                 </form>
             </div>
+
+            <Prefectures prefecture_array={prefecture_array}/>
 
             <Link onClick={() => window.history.back()}>
                         戻る

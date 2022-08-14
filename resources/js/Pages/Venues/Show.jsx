@@ -44,19 +44,22 @@ const Index = (props) => {
         >
             <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 <h1 className="text-title-purple1">{venue.name}のレビュー</h1>
+
+                <div>
+                {isLiked ? (<button onClick={handleUnlike}> <StarIcon className="text-yellow-500"/> </button>)
+                : (<button onClick={handleLike}> <StarBorderIcon className="text-yellow-500"/> </button>)
+              }
+              </div>
+
+              <div>
                 <h2>収容人数 : {venue.scale_standing}人</h2>
                 <h2>所在地 : {venue.address}</h2>
                 <h2>
                     ホームページ : <Link href="venue.url">{venue.url}</Link>
                 </h2>
-
+                </div>
+                 <br/>
                 <Link href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
-
-              <div>
-                {isLiked ? (<button onClick={handleUnlike}> <StarIcon /> </button>)
-                : (<button onClick={handleLike}> <StarBorderIcon/> </button>)
-              }
-              </div>
 
                 <h2>
                     <Link href={`/reviews/${venue.id}/create`}>新規投稿</Link>
@@ -69,7 +72,7 @@ const Index = (props) => {
             <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
                 {reviews.map((review) => (
                     <div key={review.id}>
-                        <h2>
+                        <h2 className="m-2">
                             <Link href={`/reviews/${review.id}`}>
                                 {review.title}
                             </Link>

@@ -27,7 +27,7 @@ const Index = (props) => {
                 <h2 className="text-purple-800">お気に入り</h2> {/*いいね一覧を表示したい*/}
                 {myVenues.map((venue) => (
                     <div key={venue.id}>
-                        <h2>
+                        <h2 className="m-2">
                             <Link href={`/prefectures/venues/${venue.id}`}>
                                 {venue.name}
                             </Link>

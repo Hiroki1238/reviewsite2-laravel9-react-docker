@@ -17,17 +17,17 @@ const Index = (props) => {
             >
 
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-            <h1>ここにブックマークを表示</h1>
-            </div>
+            <h1>ブックマーク</h1>
             <Link onClick={() => window.history.back()}>
                         戻る
                     </Link>
+            </div>
+            
 
             <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-                <h2 className="text-purple-800">ブックマーク</h2>
                 {myBookmarks.map((review) => (
                     <div key={review.id}>
-                        <h2>
+                        <h2 className="m-2">
                             <Link href={`/reviews/${review.id}`}>
                                 {review.title}
                             </Link>

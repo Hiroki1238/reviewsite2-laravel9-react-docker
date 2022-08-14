@@ -156,7 +156,11 @@ export default function Authenticated({ auth, header, children }) {
             )}
 
             <main className="flex max-w-full min-h-screen justify-around">
+            <div className="text-left text-xl"> {/* text-rightかtext-center最終的にバランスを見て決める */}
             <div>左のカラム</div>
+            <div>何か書く</div>
+            <div>何か書く</div>
+            </div>
             <div className="w-1/2">
             {children}
             </div>
