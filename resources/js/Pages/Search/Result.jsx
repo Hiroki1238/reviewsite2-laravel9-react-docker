@@ -20,7 +20,7 @@ const Word = (props) => {
        {results.map((result) => (
           <div key={result.id}>
             <h2 className="m-2">
-            <Link href={`/prefectures/venues/${result.id}`}>{result.name}</Link>
+            <Link className="text-link-blue" href={`/prefectures/venues/${result.id}`}>{result.name}</Link>
             </h2>
           </div>
         ))}

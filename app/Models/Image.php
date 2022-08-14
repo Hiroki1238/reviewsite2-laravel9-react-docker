@@ -37,5 +37,6 @@ class Image extends Model
 
     public function getImage()
     {
+      
     }
 }

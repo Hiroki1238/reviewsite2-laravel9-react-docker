@@ -25,6 +25,7 @@ import Grid from '@mui/material/Grid';
 //レビュー一覧で選択したレビューの詳細画面
 const Picture = (props) => {
     const { auth, review, images } = props;
+    console.log(images);
     // const [value, setValue] = React.useState();
 
     // const { data, setData, post } = useForm({

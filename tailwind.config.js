@@ -18,7 +18,7 @@ module.exports = {
 
             colors: {
                 // 'カラー名': 'カラーコード'
-                'dark-green': '#06bbbc', 'box-gray':'#eaeaea','my-gray1':'#424242', 'box-bordergray':'#c7c7c7', 'title-purple1':'#7a54a8','title-purple2':'#9780b5','my-purple2':'#884898', 'my-purple3':'#9969d3', 'my-purple4' : '#a06edd', 'green-white':'#f9ffff', 'bookmark-red':'#842530',
+                'link-blue': '#227cd6', 'dark-green': '#06bbbc', 'box-gray':'#eaeaea','my-gray1':'#424242', 'menutitle-gray': '#5b5b5b','menu-gray': '#686868', 'box-bordergray':'#c7c7c7', 'shadowgray1':'#bfbfbf', 'title-purple1':'#7a54a8','title-purple2':'#9780b5','my-purple2':'#884898', 'my-purple3':'#9969d3', 'my-purple4' : '#a06edd', 'green-white':'#f9ffff', 'bookmark-red':'#842530',
               },
         },
     },

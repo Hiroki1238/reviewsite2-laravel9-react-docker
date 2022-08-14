@@ -28,7 +28,7 @@ const Index = (props) => {
                 {myBookmarks.map((review) => (
                     <div key={review.id}>
                         <h2 className="m-2">
-                            <Link href={`/reviews/${review.id}`}>
+                            <Link className="text-link-blue" href={`/reviews/${review.id}`}>
                                 {review.title}
                             </Link>
                         </h2>

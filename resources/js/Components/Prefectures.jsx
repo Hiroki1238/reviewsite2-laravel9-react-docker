@@ -12,7 +12,7 @@ function Prefectures({prefecture_array}) {
 
         <div className="w-full ml-0 space-x-3">
          {region.prefectures.map((prefecture) => (
-          <Link className="text-xl" href={`/prefectures/${prefecture.id}`}>{prefecture.name}</Link>
+          <Link className="text-xl text-link-blue" href={`/prefectures/${prefecture.id}`}>{prefecture.name}</Link>
           ))}
           </div>
 

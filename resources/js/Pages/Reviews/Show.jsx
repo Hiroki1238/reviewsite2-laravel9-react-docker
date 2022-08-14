@@ -40,21 +40,9 @@ const Show = (props) => {
             //     </h2>
             // }
         >
-            <div className="p-6 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-1/2">
-                <h1><Link href={`/prefectures/venues/${review.venue_id}`}>{review.venue_id}のレビュー</Link></h1> {/*会場名をリレーションを使って表示した*/}
+            <div className="p-6 mt-5 shadow-lg shadow-violet-200 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-1/2">
+                <h1><Link className="text-link-blue" href={`/prefectures/venues/${review.venue_id}`}>{review.venue_id}のレビュー</Link></h1> {/*会場名をリレーションを使って表示した*/}
                 <h1 className="text-title-purple1">{review.title}</h1>
-
-                <div>
-                    {isBookmarked ? (
-                        <button onClick={handleNotBookmark}>
-                            <BookmarkAddedIcon className="text-bookmark-red"/>
-                        </button>
-                    ) : (
-                        <button onClick={handleBookmark}>
-                            <BookmarkBorderIcon className="text-bookmark-red"/>
-                        </button>
-                    )}
-                </div>
 
                 <div>
                     <h3 className="text-title-purple1">本文</h3>
@@ -115,7 +103,7 @@ const Show = (props) => {
                     <h3 className="text-title-purple1">訪問日</h3>
                     <p>{review.visited_at}</p>
                 </div>
-                <div>
+                <div className="border border-b-0 border-gray-300">
                     {images !== null ? (
                         <div>
                             {images.map((image) => (
@@ -130,14 +118,22 @@ const Show = (props) => {
                     )}
                 </div>
 
-                <div>
-                    <Link href={"/reviews/" + review.id + "/edit"}>編集</Link>
-                </div>
-
-                <div>
-                    <Link onClick={() => window.history.back()}>
+                <div className="w-1/2 ml-auto text-right space-x-3 mt-3">
+                <Link className="text-gray-400 hover:text-gray-600 no-underline" onClick={() => window.history.back()}>
                         戻る
                     </Link>
+
+                    <Link className="text-gray-400 hover:text-gray-600 no-underline" href={"/reviews/" + review.id + "/edit"}>編集</Link>
+
+                    {isBookmarked ? (
+                        <button onClick={handleNotBookmark}>
+                            <BookmarkAddedIcon className="text-bookmark-red"/>
+                        </button>
+                    ) : (
+                        <button onClick={handleBookmark}>
+                            <BookmarkBorderIcon className="text-bookmark-red"/>
+                        </button>
+                    )}
                 </div>
             </div>
         </Authenticated>

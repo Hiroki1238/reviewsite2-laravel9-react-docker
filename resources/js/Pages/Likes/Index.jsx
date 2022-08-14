@@ -28,7 +28,7 @@ const Index = (props) => {
                 {myVenues.map((venue) => (
                     <div key={venue.id}>
                         <h2 className="m-2">
-                            <Link href={`/prefectures/venues/${venue.id}`}>
+                            <Link className="text-link-blue" href={`/prefectures/venues/${venue.id}`}>
                                 {venue.name}
                             </Link>
                         </h2>

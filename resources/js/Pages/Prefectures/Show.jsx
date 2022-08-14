@@ -18,7 +18,9 @@ const Index = (props) => {
 
       <div className="p-6 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
         <h1 className="text-purple-800">{prefecture.name}の会場一覧</h1>
-        <h1><Link href="/prefectures">戻る</Link></h1>
+        <Link className="text-link-blue" onClick={() => window.history.back()}>
+                        戻る
+                    </Link>
 
         {venues.map((venue) => (
           <div key={venue.id}>
@@ -26,16 +28,12 @@ const Index = (props) => {
              {venues.map((venue) => (
               
             <h2>
-              <Link href={`/prefectures/venues/${venue.id}`}>{venue.name}</Link>
+              <Link className="text-link-blue" href={`/prefectures/venues/${venue.id}`}>{venue.name}</Link>
             </h2>
              ))}
           </div>
         ))}
       </div>
-
-      <Link onClick={() => window.history.back()}>
-                        戻る
-                    </Link>
 
     </Authenticated>
   );

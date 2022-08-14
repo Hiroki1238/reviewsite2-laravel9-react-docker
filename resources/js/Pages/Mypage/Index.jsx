@@ -33,7 +33,7 @@ const Index = (props) => {
                     )}
                 </div>
 
-                <Link href={`/mypage/profile/${auth.user.id}`}>
+                <Link className="text-link-blue" href={`/mypage/profile/${auth.user.id}`}>
                     プロフィール詳細
                 </Link>
             </div>
@@ -43,7 +43,7 @@ const Index = (props) => {
                 {myReviews.map((review) => (
                     <div key={review.id}>
                         <h2 className="m-2">
-                            <Link href={`/reviews/${review.id}`}>
+                            <Link className="text-link-blue" href={`/reviews/${review.id}`}>
                                 {review.title}
                             </Link>
                         </h2>
@@ -59,7 +59,7 @@ const Index = (props) => {
                 <h3>ブックマーク一覧を表示</h3>
             </div>
 
-            <Link onClick={() => window.history.back()}>
+            <Link className="text-link-blue" onClick={() => window.history.back()}>
                         戻る
                     </Link>
         </Authenticated>

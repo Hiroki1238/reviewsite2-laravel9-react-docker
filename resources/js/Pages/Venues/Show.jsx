@@ -42,38 +42,44 @@ const Index = (props) => {
             //     </h2>
             // }
         >
-            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-                <h1 className="text-title-purple1">{venue.name}のレビュー</h1>
 
-                <div>
-                {isLiked ? (<button onClick={handleUnlike}> <StarIcon className="text-yellow-500"/> </button>)
-                : (<button onClick={handleLike}> <StarBorderIcon className="text-yellow-500"/> </button>)
-              }
-              </div>
+            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-1/2">
+                <h1 className="text-title-purple1">{venue.name}のレビュー</h1>
 
               <div>
                 <h2>収容人数 : {venue.scale_standing}人</h2>
                 <h2>所在地 : {venue.address}</h2>
                 <h2>
-                    ホームページ : <Link href="venue.url">{venue.url}</Link>
+                    ホームページ : <Link className="text-link-blue" href="venue.url">{venue.url}</Link>
                 </h2>
-                </div>
+                
                  <br/>
-                <Link href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
+                <Link className="text-link-blue" href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
 
                 <h2>
-                    <Link href={`/reviews/${venue.id}/create`}>新規投稿</Link>
+                    <Link className="text-link-blue" href={`/reviews/${venue.id}/create`}>新規投稿</Link>
                 </h2>
-                <Link onClick={() => window.history.back()}>
+                </div>
+                <div className="mt-3 border border-b-0 border-gray-300">
+                </div>
+
+                <div className="w-1/2 ml-auto text-right space-x-3 mt-3" >
+                <Link className="text-gray-400 hover:text-gray-600 no-underline" onClick={() => window.history.back()}>
                         戻る
                     </Link>
+
+                {isLiked ? (<button onClick={handleUnlike}> <StarIcon className="text-yellow-500"/> </button>)
+                : (<button onClick={handleLike}> <StarBorderIcon className="text-yellow-500"/> </button>)
+              }
+              </div>
+
             </div>
 
-            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-1/2">
                 {reviews.map((review) => (
                     <div key={review.id}>
                         <h2 className="m-2">
-                            <Link href={`/reviews/${review.id}`}>
+                            <Link className="text-link-blue" href={`/reviews/${review.id}`}>
                                 {review.title}
                             </Link>
                         </h2>

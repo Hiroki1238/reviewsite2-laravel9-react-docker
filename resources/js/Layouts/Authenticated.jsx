@@ -157,9 +157,23 @@ export default function Authenticated({ auth, header, children }) {
 
             <main className="flex max-w-full min-h-screen justify-around">
             <div className="text-left text-xl"> {/* text-rightかtext-center最終的にバランスを見て決める */}
-            <div>左のカラム</div>
-            <div>何か書く</div>
-            <div>何か書く</div>
+
+            <div className="text-xl text-menutitle-gray">検索</div>
+            <div>
+            <p><Link className="no-underline text-menu-gray text-sm">都道府県から探す</Link></p>
+            <p><Link className="no-underline text-menu-gray text-sm">キーワードから探す</Link></p>
+            <p><Link className="no-underline text-menu-gray text-sm">規模から探す</Link></p>
+            </div>
+            <br/>
+            <div className="text-xl text-menutitle-gray">会員メニュー</div>
+            <div>
+            <p><Link className="no-underline text-menu-gray text-sm">マイページ</Link></p>
+            <p><Link className="no-underline text-menu-gray text-sm">会員情報</Link></p>
+            <p><Link className="no-underline text-menu-gray text-sm">お気に入り</Link></p>
+            <p><Link className="no-underline text-menu-gray text-sm">ブックマーク</Link></p>
+            <hr className="my-2 border-gray-400"/>
+            </div>
+
             </div>
             <div className="w-1/2">
             {children}
