@@ -2,14 +2,16 @@ import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
+// import SwipeableViews from 'react-swipeable-views';
+// import { autoPlay } from 'react-swipeable-views-utils';
 import Prefectures from "@/Components/Prefectures";
+import Slideshow from "@/Components/Slideshow";
+import Slider1 from "@/Components/Slider1";
 
 const Index = (props) => {
     const { auth, prefecture_array, reviews } = props;
 
-    const EnhancedSwipeableViews = autoPlay(SwipeableViews);
+    // const EnhancedSwipeableViews = autoPlay(SwipeableViews);
 
 
     return (
@@ -22,11 +24,7 @@ const Index = (props) => {
             // }
             >
 
-{/* <EnhancedSwipeableViews interval={4000}>
-      <div><img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" /></div>
-      <div><img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" /></div>
-      <div><img src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png" /></div>
-    </EnhancedSwipeableViews>      */}
+        <Slider1 />
    
       <div className="w-full h-full">
             <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
