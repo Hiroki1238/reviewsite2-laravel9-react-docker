@@ -31,6 +31,8 @@ const Show = (props) => {
         post(`/notbookmark/${review.id}`); //returnから上は{`${image.image_path}`}の外側の中「」いらない,return内はいる
     };
 
+    console.log(review.venue.name);
+
     return (
         <Authenticated
             auth={props.auth}
@@ -40,15 +42,15 @@ const Show = (props) => {
             //     </h2>
             // }
         >
-            <div className="p-6 mt-5 shadow-lg shadow-violet-200 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-1/2">
-                <h1><Link className="text-link-blue" href={`/prefectures/venues/${review.venue_id}`}>{review.venue_id}のレビュー</Link></h1> {/*会場名をリレーションを使って表示した*/}
-                <h1 className="text-title-purple1">{review.title}</h1>
+             <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                <h1 className="py-2 mb-3 text-2xl"><Link className="text-link-blue" href={`/prefectures/venues/${review.venue_id}`}>{review.venue.name}のレビュー</Link></h1> {/*会場名をリレーションを使って表示した*/}
+                <h1 className="text-title-purple1 text-3xl mb-3">{review.title}</h1>
 
                 <div>
-                    <h3 className="text-title-purple1">本文</h3>
-                    <p>{review.body}</p>
-                    <h3 className="text-title-purple1">座席</h3>
-                    <p>{review.seat}</p>
+                    {/* <h3 className="text-title-purple1">レビュー内容</h3> */}
+                    <p className="text-my-gray1 text-2xl mb-5">{review.body}</p>
+                    <h3 className="text-title-purple1 text-2xl">座席</h3>
+                    <p className="text-my-gray1 text-xl mt-2 mb-5">{review.seat}</p>
                     {/* <h3 className="text-title-purple1">10段階評価1</h3>
                     <p>{review.star1}</p> */}
 
@@ -57,7 +59,7 @@ const Show = (props) => {
                             "& > legend": { mt: 2 },
                         }}
                     >
-                        <h2 className="text-title-purple1">
+                        <h2 className="text-title-purple1 text-2xl mt-3">
                                 ステージの見やすさ
                             </h2>
                         <Rating
@@ -72,7 +74,7 @@ const Show = (props) => {
                             "& > legend": { mt: 2 },
                         }}
                     >
-                        <h2 className="text-title-purple1">
+                        <h2 className="text-title-purple1 text-2xl mt-3">
                                 アクセスの良さ
                             </h2>
                         <Rating
@@ -88,7 +90,7 @@ const Show = (props) => {
                         }}
                     >
                         {/* <Typography component="legend">Read only</Typography> */}
-                        <h2 className="text-title-purple1">総合点</h2>
+                        <h2 className="text-title-purple1 text-2xl mt-3">総合点</h2>
                         <Rating
                             name="read-only"
                             value={review.star3}
@@ -100,8 +102,8 @@ const Show = (props) => {
                     <p>{review.star2}</p>
                     <h3 className="text-title-purple1">10段階評価3</h3>
                     <p>{review.star3}</p> */}
-                    <h3 className="text-title-purple1">訪問日</h3>
-                    <p>{review.visited_at}</p>
+                    <h3 className="text-title-purple1 text-2xl mt-4">訪問日</h3>
+                    <p className="text-my-gray1 text-xl mt-2 mb-3">{review.visited_at}</p>
                 </div>
                 <div className="border border-b-0 border-gray-300">
                     {images !== null ? (
@@ -119,11 +121,11 @@ const Show = (props) => {
                 </div>
 
                 <div className="w-1/2 ml-auto text-right space-x-3 mt-3">
-                <Link className="text-gray-400 hover:text-gray-600 no-underline" onClick={() => window.history.back()}>
+                <Link className="text-gray-400 hover:text-gray-600 no-underline text-lg" onClick={() => window.history.back()}>
                         戻る
                     </Link>
 
-                    <Link className="text-gray-400 hover:text-gray-600 no-underline" href={"/reviews/" + review.id + "/edit"}>編集</Link>
+                    <Link className="text-gray-400 hover:text-gray-600 no-underline text-lg" href={"/reviews/" + review.id + "/edit"}>編集</Link>
 
                     {isBookmarked ? (
                         <button onClick={handleNotBookmark}>

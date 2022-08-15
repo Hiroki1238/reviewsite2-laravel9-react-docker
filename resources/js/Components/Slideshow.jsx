@@ -1,6 +1,6 @@
 import Carousel from 'react-material-ui-carousel';
 
-//省略
+//このスライドショーは不採用
 
 // export default function Slideshow(){ これが基本型
 //   return(

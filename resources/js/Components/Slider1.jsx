@@ -22,7 +22,9 @@ const items = [
   {title: "name6", img: 'https://fytte.jp/news/wp-content/uploads/2020/04/img_6751_main.jpg'},
 ]
 
-export default function Slider1() {
+export default function Slider1(props) {
+  const{ images } = props;
+  
   return (
     <div className="py-3">
       <Swiper
@@ -45,8 +47,8 @@ export default function Slider1() {
         className="mySwiper"
       >
 
-        {items && items.map(item => (
-              <SwiperSlide><img className="mb-12 shadow-lg shadow-gray-400 rounded-2xl object-contain flex justify-center" src={item.img} /></SwiperSlide>
+        {images && images.map(item => (
+              <SwiperSlide><img className="mb-12 shadow-lg shadow-gray-400 rounded-2xl aspect-slideshow flex justify-center" src={item.image_path} /></SwiperSlide>
           ))}
       </Swiper>
     </div>

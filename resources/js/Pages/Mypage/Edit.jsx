@@ -46,47 +46,49 @@ const Edit = (props) => {
             // }
             >
             
-            <div className="p-6 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 
                 <form onSubmit={handleSendPosts}>
                     <div>
-                        <h2 className="text-purple-800">氏</h2>
-                        <input type="text" value={data.lastname} onChange={(e) => setData("lastname", e.target.value)}/>
-                        <span className="text-red-600">{props.errors.title}</span>
+                        <h2 className="text-title-purple1 text-2xl mb-2">氏名</h2>
+                        <input className="mr-2 mb-5" type="text" value={data.lastname} onChange={(e) => setData("lastname", e.target.value)}/>
+                        <input className="ml-2 mb-6"type="text" value={data.name} onChange={(e) => setData("name", e.target.value)}/>
+                        <span className="text-red-600">{props.errors.lastname}</span>
+                        <span className="text-red-600">{props.errors.name}</span>
                     </div>                    
                     
-                    <div>
-                        <h2 className="text-purple-800">名</h2>
-                        <textarea value={data.name} onChange={(e) => setData("name", e.target.value)}></textarea>
-                        <span className="text-red-600">{props.errors.body}</span>
-                    </div>
+                    {/* <div>
+                        <h2 className="text-title-purple1 text-2xl">名</h2>
+                        <input type="text" value={data.name} onChange={(e) => setData("name", e.target.value)}/>
+                        <span className="text-red-600">{props.errors.name}</span>
+                    </div> */}
                     
                     <div>
-                        <h2 className="text-purple-800">ユーザー名</h2>
-                        <input type="text" value={data.uname} onChange={(e) => setData("uname", e.target.value)}/>
+                        <h2 className="text-title-purple1 text-2xl mb-2">ユーザー名</h2>
+                        <input className="mb-6" type="text" value={data.uname} onChange={(e) => setData("uname", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
-                        <h2 className="text-purple-800">メールアドレス</h2>
-                        <input type="text" value={data.email} onChange={(e) => setData("email", e.target.value)}/>
+                        <h2 className="text-title-purple1 text-2xl mb-2">メールアドレス</h2>
+                        <input className="mb-6" type="text" value={data.email} onChange={(e) => setData("email", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
-                        <h2 className="text-purple-800">年齢</h2>
-                        <input type="number" value={data.age} onChange={(e) => setData("age", e.target.value)}/>
+                        <h2 className="text-title-purple1 text-2xl mb-2">年齢</h2>
+                        <input className="mb-6" type="number" value={data.age} onChange={(e) => setData("age", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
-                        <h2 className="text-purple-800">プロフィール</h2>
-                        <input type="text" value={data.profile} onChange={(e) => setData("profile", e.target.value)}/>
+                        <h2 className="text-title-purple1 text-2xl mb-2">プロフィール</h2>
+                        <input className="mb-6" type="text" value={data.profile} onChange={(e) => setData("profile", e.target.value)}/>
                         <span className="text-red-600">{props.errors.profile}</span>
                     </div>  
 
                     <div>
-                        <h2 className="text-purple-800">画像</h2> {/*送信用*/}
+                        <h2 className="text-title-purple1 text-2xl">画像</h2> {/*送信用*/}
                         <img src={preview} />
                         <input type="file" onChange={(e) => {setData("image", e.target.files[0]); handleChangeFile(e);}}/>
                         <span className="text-red-600">{props.errors.image}</span>
@@ -98,12 +100,15 @@ const Edit = (props) => {
                     {auth.user.image_path !== null ? (<div><img className="rounded-full" src={auth.user.image_path}/></div>) : (<div><img className="rounded-full" src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"/></div>) }
                     </div>
                     
-                    <button type="submit" className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md">変更</button>
+                    <button type="submit" className="px-3 py-1 mt-4 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md">変更</button>
                 </form>
+                <div className="border border-b-0 border-gray-300 mt-2"></div>
                 
-                <Link onClick={() => window.history.back()}>
+                <div className="w-5/7 ml-auto text-right space-x-3 mt-2" >
+                <Link className="text-gray-400 hover:text-gray-600 no-underline text-lg" onClick={() => window.history.back()}>
                         戻る
                     </Link>
+                    </div>
                     </div>
             
         </Authenticated>

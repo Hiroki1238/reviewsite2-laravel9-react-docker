@@ -65,7 +65,7 @@ Route::get('/reviews/{review}', 'show');
 });
 
 
-Route::get('/home',[HomeController::class,'index']); //ホーム
+Route::get('/',[HomeController::class,'index']); //ホーム
 
 
 //マイページ関連
@@ -98,7 +98,7 @@ Route::get('/prefectures/test', function() {
 //検索機能
 Route::controller(SearchController::class)->group(function () {
 Route::get('/search', 'index');
-Route::post('/search/word', 'searchWord');
+Route::get('/search/word', 'searchWordAndCapacity');
 });
 
 
@@ -136,9 +136,9 @@ Route::post('/like/add', 'like'); // いいね！データを追加
  //});
 
 
-Route::get('/', function () {
-    return Inertia::render('Test');
-});
+// Route::get('/', function () {
+//     return Inertia::render('Test');
+// });
 
 
 Route::get('/dashboard', function () {

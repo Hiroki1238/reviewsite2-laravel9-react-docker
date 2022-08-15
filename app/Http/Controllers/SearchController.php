@@ -22,7 +22,7 @@ class SearchController extends Controller
         return Inertia::render('Search/Index', ['prefecture_array' => $prefecture->getRegionList()]);
     }
 
-    public function searchWord(Request $request)
+    public function searchWordAndCapacity(Request $request)
     {
         $word = $request->input('word');
         $capacity = $request->input('capacity');

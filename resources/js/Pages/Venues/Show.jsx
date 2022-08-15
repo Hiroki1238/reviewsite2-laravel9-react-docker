@@ -43,28 +43,30 @@ const Index = (props) => {
             // }
         >
 
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-1/2">
-                <h1 className="text-title-purple1">{venue.name}のレビュー</h1>
+            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                <h1 className="text-title-purple1 text-3xl mb-4">{venue.name}のレビュー</h1>
 
               <div>
-                <h2>収容人数 : {venue.scale_standing}人</h2>
-                <h2>所在地 : {venue.address}</h2>
-                <h2>
-                    ホームページ : <Link className="text-link-blue" href="venue.url">{venue.url}</Link>
+                <h2 className="py-1">収容人数 : {venue.scale_standing}人</h2>
+                <h2 className="py-1">所在地 : {venue.address}</h2>
+                <h2 className="py-1">
+                    ホームページ : <Link className="text-gray-500" href="venue.url">{venue.url}</Link>
                 </h2>
                 
                  <br/>
-                <Link className="text-link-blue" href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
+                 <div className="mb-3">
+                <Link className="text-gray-500 text-xl no-underline" href={`/prefectures/venues/pictures/${venue.id}`}>[ {venue.name}の画像一覧 ]</Link>
+                </div>
 
                 <h2>
-                    <Link className="text-link-blue" href={`/reviews/${venue.id}/create`}>新規投稿</Link>
+                    <Link className="text-my-purple3 no-underline" href={`/reviews/${venue.id}/create`}>[ 新規投稿 ]</Link>
                 </h2>
                 </div>
                 <div className="mt-3 border border-b-0 border-gray-300">
                 </div>
 
                 <div className="w-1/2 ml-auto text-right space-x-3 mt-3" >
-                <Link className="text-gray-400 hover:text-gray-600 no-underline" onClick={() => window.history.back()}>
+                <Link className="text-gray-400 hover:text-gray-600 no-underline text-lg" onClick={() => window.history.back()}>
                         戻る
                     </Link>
 
@@ -75,11 +77,11 @@ const Index = (props) => {
 
             </div>
 
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-1/2">
+            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 {reviews.map((review) => (
                     <div key={review.id}>
                         <h2 className="m-2">
-                            <Link className="text-link-blue" href={`/reviews/${review.id}`}>
+                            <Link className="text-link-blue text-2xl" href={`/reviews/${review.id}`}>
                                 {review.title}
                             </Link>
                         </h2>

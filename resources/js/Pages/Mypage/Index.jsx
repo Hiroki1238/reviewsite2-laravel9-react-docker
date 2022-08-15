@@ -15,9 +15,9 @@ const Index = (props) => {
             //     </h2>
             // }
         >
-            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+             <div className="p-6 mt-5 mb-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 {/* グレーのボックス(背景)に関する指定 */}
-                <h1 className="text-title-purple1">
+                <h1 className="text-title-purple1 mb-5">
                     {auth.user.name}のマイページ
                 </h1>
 
@@ -32,36 +32,39 @@ const Index = (props) => {
                         </div>
                     )}
                 </div>
-
+                <div className="py-3">
                 <Link className="text-link-blue" href={`/mypage/profile/${auth.user.id}`}>
                     プロフィール詳細
                 </Link>
+                </div>
             </div>
 
-            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-                <h2 className="text-title-purple1">あなたのレビュー</h2>
+            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                <h2 className="text-title-purple1 text-2xl">あなたのレビュー</h2>
                 {myReviews.map((review) => (
                     <div key={review.id}>
                         <h2 className="m-2">
-                            <Link className="text-link-blue" href={`/reviews/${review.id}`}>
+                            <Link className="text-link-blue text-xl" href={`/reviews/${review.id}`}>
                                 {review.title}
                             </Link>
                         </h2>
                     </div>
                 ))}
             </div>
-            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-                <h3 className="text-title-purple1 ">お気に入りの会場</h3>
+            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                <h3 className="text-title-purple1 text-2xl">お気に入りの会場</h3>
                 <h3>お気に入り一覧を表示</h3>
             </div>
-            <div className="p-6 bg-gray-200 w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
-                <h3 className="text-title-purple1">ブックマーク</h3>
+            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                <h3 className="text-title-purple1 text-2xl">ブックマーク</h3>
                 <h3>ブックマーク一覧を表示</h3>
             </div>
 
-            <Link className="text-link-blue" onClick={() => window.history.back()}>
+            <div>
+            <Link className="text-gray-500 hover:text-gray-600 no-underline" onClick={() => window.history.back()}>
                         戻る
-                    </Link>
+            </Link>
+            </div>
         </Authenticated>
     );
 };

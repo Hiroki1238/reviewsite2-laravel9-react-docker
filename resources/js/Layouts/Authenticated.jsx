@@ -27,7 +27,7 @@ export default function Authenticated({ auth, header, children }) {
                             </div> */}
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href="/home">
+                                <NavLink href="/">
                                     ホーム
                                 </NavLink>
                             </div>
@@ -158,20 +158,20 @@ export default function Authenticated({ auth, header, children }) {
             <main className="flex max-w-full min-h-screen justify-around">
             <div className="text-left text-xl"> {/* text-rightかtext-center最終的にバランスを見て決める */}
 
-            <div className="text-xl text-menutitle-gray">検索</div>
+            <div className="text-3xl mt-3 py-1 text-menutitle-gray">検索</div>
             <div>
-            <p><Link className="no-underline text-menu-gray text-sm">都道府県から探す</Link></p>
-            <p><Link className="no-underline text-menu-gray text-sm">キーワードから探す</Link></p>
-            <p><Link className="no-underline text-menu-gray text-sm">規模から探す</Link></p>
+            <p><Link href="/prefectures" className="no-underline text-menu-gray text-xl">都道府県から探す</Link></p>
+            <p><Link href="/search" className="no-underline text-menu-gray text-xl">キーワードから探す</Link></p>
+            <p><Link href="/search" className="no-underline text-menu-gray text-xl">規模から探す</Link></p>
             </div>
-            <br/>
-            <div className="text-xl text-menutitle-gray">会員メニュー</div>
+            <hr className="my-5 border-shadowgray1"/>
+            <div className="text-3xl mb-1 text-menutitle-gray">会員メニュー</div>
             <div>
-            <p><Link className="no-underline text-menu-gray text-sm">マイページ</Link></p>
-            <p><Link className="no-underline text-menu-gray text-sm">会員情報</Link></p>
-            <p><Link className="no-underline text-menu-gray text-sm">お気に入り</Link></p>
-            <p><Link className="no-underline text-menu-gray text-sm">ブックマーク</Link></p>
-            <hr className="my-2 border-gray-400"/>
+            <p><Link href={`/mypage/${auth.user.id}`} className="no-underline text-menu-gray text-xl">マイページ</Link></p>
+            <p><Link href={`/mypage/profile/${auth.user.id}`} className="no-underline text-menu-gray text-xl">会員情報</Link></p>
+            <p><Link className="no-underline text-menu-gray text-xl">お気に入り</Link></p>
+            <p><Link className="no-underline text-menu-gray text-xl">ブックマーク</Link></p>
+            <hr className="my-5 border-shadowgray1"/>
             </div>
 
             </div>

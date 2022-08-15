@@ -24,7 +24,7 @@ const Picture = (props) => {
           </div>
       ))}
 
-          <Picture />
+          {/* <Picture /> */}
 
 
       </div>
