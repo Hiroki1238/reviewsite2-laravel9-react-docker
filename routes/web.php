@@ -56,20 +56,22 @@ Route::get('/prefectures/venues/{venue}', "show"); //各会場ごとのレビュ
 
 Route::controller(ReviewController::class)->group(function () {
 Route::get('/reviews', 'index');
+Route::get('/reviews/{review}', 'show');
+});
+
+Route::controller(ReviewController::class)->middleware('auth')->group(function () {
 Route::get('/reviews/{venue}/create', 'create');
 Route::post('/reviews/store', 'store'); //postにした
 Route::get('/reviews/{review}/edit', 'edit');
 Route::put('/reviews/update/{review}/', 'update');
 Route::delete('/reviews/delete/{review}', 'delete');
-Route::get('/reviews/{review}', 'show');
 });
-
 
 Route::get('/',[HomeController::class,'index']); //ホーム
 
 
 //マイページ関連
-Route::controller(ProfileController::class)->group(function () {
+Route::controller(ProfileController::class)->middleware('auth')->group(function () {
     Route::post('/mypage/profile/update/{user}', 'update');
     Route::get('/mypage/profile/edit/{user}','edit');
     Route::get('mypage/contacts/{user}','contact');
@@ -80,7 +82,7 @@ Route::controller(ProfileController::class)->group(function () {
 // Route::post('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
 
 //ブックマーク
-Route::get('mypage/bookmarks/{user}',[BookmarkController::class,'index']);
+Route::get('mypage/bookmarks/{user}',[BookmarkController::class,'index'])->middleware('auth');
 
 
 //管理者用

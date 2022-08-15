@@ -1613,6 +1613,58 @@ class VenuesTableSeeder extends Seeder
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
+        DB::table('venues')->insert([
+            'name' => '東京ドーム',
+            'keyword' => null,
+            'scale_standing' => '55000',
+            'scale_sitting' => null,
+            'location_path' => null,
+            'address' => '〒112-0004 東京都文京区後楽１丁目３−６１',
+            'prefecture_id' => '13',
+            'url' => 'https://www.tokyo-dome.co.jp/dome/',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('venues')->insert([
+            'name' => '味の素スタジアム',
+            'keyword' => null,
+            'scale_standing' => '49970',
+            'scale_sitting' => null,
+            'location_path' => null,
+            'address' => '〒182-0032 東京都調布市西町３７６−３',
+            'prefecture_id' => '13',
+            'url' => 'https://www.ajinomotostadium.com/',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('venues')->insert([
+            'name' => '東京有明アリーナ メインアリーナ',
+            'keyword' => null,
+            'scale_standing' => '15000',
+            'scale_sitting' => null,
+            'location_path' => null,
+            'address' => '〒135-0063 東京都江東区有明１丁目１１−１',
+            'prefecture_id' => '13',
+            'url' => 'https://ariake-arena.tokyo/',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('venues')->insert([
+            'name' => '日本武道館',
+            'keyword' => null,
+            'scale_standing' => '14471',
+            'scale_sitting' => null,
+            'location_path' => null,
+            'address' => '〒102-8321 東京都千代田区北の丸公園２−３',
+            'prefecture_id' => '13',
+            'url' => 'https://www.nipponbudokan.or.jp/',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
         //神奈川県 14
 
         DB::table('venues')->insert([
@@ -1923,6 +1975,58 @@ class VenuesTableSeeder extends Seeder
             'address' => '〒731-3167 広島県広島市安佐南区大塚西５丁目１−１',
             'prefecture_id' => '34',
             'url' => 'http://www.sports-or.city.hiroshima.jp/facilities/kouiki',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('venues')->insert([
+            'name' => 'Mazda Zoom-Zoom スタジアム広島(マツダスタジアム)',
+            'keyword' => null,
+            'scale_standing' => '33000',
+            'scale_sitting' => null,
+            'location_path' => null,
+            'address' => '〒732-0803 広島県広島市南区南蟹屋２丁目３−１',
+            'prefecture_id' => '34',
+            'url' => 'http://www.mazdastadium.jp/',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('venues')->insert([
+            'name' => '国営備北丘陵公園 大芝生広場 野外ステージ',
+            'keyword' => null,
+            'scale_standing' => '20000',
+            'scale_sitting' => null,
+            'location_path' => null,
+            'address' => '〒727-0022 広島県庄原市上原町１３００',
+            'prefecture_id' => '34',
+            'url' => 'https://www.bihokupark.jp/parkMap/parkMap_shibafu.html',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('venues')->insert([
+            'name' => '広島県立総合体育館(広島グリーンアリーナ) 大アリーナ',
+            'keyword' => null,
+            'scale_standing' => '10000',
+            'scale_sitting' => null,
+            'location_path' => null,
+            'address' => '〒730-0011 広島県広島市中区基町４−１',
+            'prefecture_id' => '34',
+            'url' => 'https://h-jigyoudan.or.jp/sports-center/',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('venues')->insert([
+            'name' => '広島サンプラザホール',
+            'keyword' => null,
+            'scale_standing' => '6052',
+            'scale_sitting' => null,
+            'location_path' => null,
+            'address' => '〒733-0833 広島県広島市西区商工センター３丁目１',
+            'prefecture_id' => '34',
+            'url' => 'https://www.hiroshima-sunplaza.or.jp/hall/',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);

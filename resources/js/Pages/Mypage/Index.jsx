@@ -39,7 +39,7 @@ const Index = (props) => {
                 </div>
             </div>
 
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h2 className="text-title-purple1 text-2xl">あなたのレビュー</h2>
                 {myReviews.map((review) => (
                     <div key={review.id}>
@@ -51,11 +51,11 @@ const Index = (props) => {
                     </div>
                 ))}
             </div>
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h3 className="text-title-purple1 text-2xl">お気に入りの会場</h3>
                 <h3>お気に入り一覧を表示</h3>
             </div>
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h3 className="text-title-purple1 text-2xl">ブックマーク</h3>
                 <h3>ブックマーク一覧を表示</h3>
             </div>

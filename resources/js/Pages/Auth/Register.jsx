@@ -38,10 +38,10 @@ export default function Register() {
 
             <ValidationErrors errors={errors} />
 
-            <form onSubmit={submit}>
+            <form className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7" onSubmit={submit}>
 
                 <div>
-                    <Label forInput="lastname" value="氏" />
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="lastname" value="氏" />
 
                     <Input
                         type="text"
@@ -55,7 +55,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="name" value="名" />
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="name" value="名" />
 
                     <Input
                         type="text"
@@ -70,7 +70,7 @@ export default function Register() {
                 </div>
 
                 <div>
-                    <Label forInput="uname" value="ユーザー名" />
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="uname" value="ユーザー名" />
 
                     <Input
                         type="text"
@@ -84,7 +84,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="email" value="メールアドレス" />
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="email" value="メールアドレス" />
 
                     <Input
                         type="email"
@@ -98,7 +98,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="パスワード" />
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="password" value="パスワード" />
 
                     <Input
                         type="password"
@@ -112,7 +112,7 @@ export default function Register() {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password_confirmation" value="パスワード（確認）" />
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="password_confirmation" value="パスワード（確認）" />
 
                     <Input
                         type="password"
@@ -125,11 +125,11 @@ export default function Register() {
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
-                    <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
+                    <Link href={route('login')} className="underline text-lg text-gray-600 hover:text-gray-900">
                         会員の方はこちら
                     </Link>
 
-                    <Button className="ml-4" processing={processing}>
+                    <Button className="ml-4 text-lg bg-my-purple3" processing={processing}>
                         登録
                     </Button>
                 </div>

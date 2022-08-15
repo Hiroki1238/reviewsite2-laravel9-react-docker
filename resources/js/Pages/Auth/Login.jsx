@@ -38,9 +38,9 @@ export default function Login({ status, canResetPassword }) {
 
             <ValidationErrors errors={errors} />
 
-            <form onSubmit={submit}>
+            <form className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7" onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="メールアドレス" />
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="email" value="メールアドレス" />
 
                     <Input
                         type="text"
@@ -53,8 +53,8 @@ export default function Login({ status, canResetPassword }) {
                     />
                 </div>
 
-                <div className="mt-4">
-                    <Label forInput="password" value="パスワード" />
+                <div className="mt-8">
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="password" value="パスワード" />
 
                     <Input
                         type="password"
@@ -70,7 +70,7 @@ export default function Login({ status, canResetPassword }) {
                     <label className="flex items-center">
                         <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
 
-                        <span className="ml-2 text-sm text-gray-600">ログイン情報を記憶する</span>
+                        <span className="ml-2 text-md text-gray-600">ログイン情報を記憶する</span>
                     </label>
                 </div>
 
@@ -78,13 +78,13 @@ export default function Login({ status, canResetPassword }) {
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900"
+                            className="underline text-md text-gray-600 hover:text-gray-900"
                         >
                             パスワードの再設定
                         </Link>
                     )}
 
-                    <Button className="ml-4" processing={processing}>
+                    <Button className="ml-4 text-lg bg-my-purple3" processing={processing}>
                         ログイン
                     </Button>
                 </div>

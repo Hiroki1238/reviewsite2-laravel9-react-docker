@@ -21,6 +21,7 @@ const Index = (props) => {
 
                     <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h2 className="text-title-purple1 text-3xl">お気に入り</h2> {/*いいね一覧を表示したい*/}
+                <p className="py-2 text-xl">お気に入りの会場がここに表示されます</p>
                 {myVenues.map((venue) => (
                     <div key={venue.id}>
                         <h2 className="m-2">

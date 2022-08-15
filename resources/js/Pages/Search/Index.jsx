@@ -25,7 +25,7 @@ const Index = (props) => {
         >
 
         <Search />
-
+        <div className="py-1"></div>
             <Prefectures prefecture_array={prefecture_array} />
 
             <Link onClick={() => window.history.back()}>

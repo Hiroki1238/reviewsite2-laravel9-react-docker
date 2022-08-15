@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PrefecturesTableSeeder::class);
         $this->call(VenuesTableSeeder::class);
         $this->call(ReviewsTableSeeder::class);
+        $this->call(ImagesTableSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

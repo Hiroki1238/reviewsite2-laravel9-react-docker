@@ -74,7 +74,7 @@ export default function Authenticated({ auth, header, children }) {
                                                 type="button"
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                {auth.user.name}
+                                                <div className="py-1">{auth.user.uname}</div>
 
                                                 <svg
                                                     className="ml-2 -mr-0.5 h-4 w-4"
@@ -93,6 +93,9 @@ export default function Authenticated({ auth, header, children }) {
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
+                                    <Dropdown.Link href={`/mypage/${auth.user.id}`} method="get" as="button">
+                                            マイページ
+                                        </Dropdown.Link>
                                         <Dropdown.Link href={route('logout')} method="post" as="button">
                                             ログアウト
                                         </Dropdown.Link>
@@ -169,8 +172,9 @@ export default function Authenticated({ auth, header, children }) {
             <div>
             <p><Link href={`/mypage/${auth.user.id}`} className="no-underline text-menu-gray text-xl">マイページ</Link></p>
             <p><Link href={`/mypage/profile/${auth.user.id}`} className="no-underline text-menu-gray text-xl">会員情報</Link></p>
-            <p><Link className="no-underline text-menu-gray text-xl">お気に入り</Link></p>
-            <p><Link className="no-underline text-menu-gray text-xl">ブックマーク</Link></p>
+            <p><Link href={`/mypage/like/${auth.user.id}`} className="no-underline text-menu-gray text-xl">お気に入り</Link></p>
+            <p><Link href={`/mypage/bookmarks/${auth.user.id}`} className="no-underline text-menu-gray text-xl">ブックマーク</Link></p>
+            <p><Link href={`/mypage/contacts/`} className="no-underline text-menu-gray text-xl">お問い合わせ</Link></p>
             <hr className="my-5 border-shadowgray1"/>
             </div>
 

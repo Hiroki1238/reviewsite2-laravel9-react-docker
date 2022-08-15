@@ -15,6 +15,47 @@ class ReviewsTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('reviews')->insert([
+            'title' => '普通',
+            'body' => '5列だとステージがかなり近く、肉眼ではっきり顔が見えました。',
+            'seat' => '5列77番',
+            'user_id' => 1,
+            'star1' => 3,
+            'star2' => 4,
+            'star3' => 3,
+            'venue_id' => 125,
+            'visited_at' => date('2021-03-30'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('reviews')->insert([
+            'title' => '見やすい会場です',
+            'body' => '設備が新しくて綺麗でした。2階席でしたがモニターもステージもかなり見やすかったです。',
+            'seat' => 'Cブロック2階 12列346番',
+            'user_id' => 1,
+            'star1' => 4,
+            'star2' => 4,
+            'star3' => 4,
+            'venue_id' => 72,
+            'visited_at' => date('2021-08-20'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
+
+        DB::table('reviews')->insert([
+            'title' => '古めの会場です',
+            'body' => '私が行った公演はセンターステージがありましたが、14列5番はセンターステージのすぐ隣という感じでした。前のステージはやや遠いです。',
+            'seat' => 'B-6ブロック アリーナ14列5番',
+            'user_id' => 1,
+            'star1' => 3,
+            'star2' => 3,
+            'star3' => 3,
+            'venue_id' => 150,
+            'visited_at' => date('2021-08-29'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+        ]);
 
         DB::table('reviews')->insert([
             'title' => 'めっちゃ暑い',

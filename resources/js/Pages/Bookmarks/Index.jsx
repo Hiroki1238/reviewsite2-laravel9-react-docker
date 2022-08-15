@@ -21,11 +21,12 @@ const Index = (props) => {
              </Link>
             <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
             <h2 className="text-title-purple1 text-3xl">ブックマーク</h2>
+            <p className="py-2 text-xl">ブックマークした投稿がここに表示されます</p>
             
                 {myBookmarks.map((review) => (
                     <div key={review.id}>
                         <h2 className="m-2">
-                            <Link className="text-link-blue" href={`/reviews/${review.id}`}>
+                            <Link className="text-link-blue text-2xl" href={`/reviews/${review.id}`}>
                                 {review.title}
                             </Link>
                         </h2>
