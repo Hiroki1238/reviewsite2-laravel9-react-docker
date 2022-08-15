@@ -17,7 +17,7 @@ const Index = (props) => {
         >
              <div className="p-6 mt-5 mb-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 {/* グレーのボックス(背景)に関する指定 */}
-                <h1 className="text-title-purple1 mb-5">
+                <h1 className="text-title-purple1 mb-5 text-2xl">
                     {auth.user.name}のマイページ
                 </h1>
 
@@ -33,7 +33,7 @@ const Index = (props) => {
                     )}
                 </div>
                 <div className="py-3">
-                <Link className="text-link-blue" href={`/mypage/profile/${auth.user.id}`}>
+                <Link className="text-link-blue text-lg" href={`/mypage/profile/${auth.user.id}`}>
                     プロフィール詳細
                 </Link>
                 </div>

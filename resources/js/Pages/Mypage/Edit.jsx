@@ -90,7 +90,7 @@ const Edit = (props) => {
                     <div>
                         <h2 className="text-title-purple1 text-2xl">画像</h2> {/*送信用*/}
                         <img src={preview} />
-                        <input type="file" onChange={(e) => {setData("image", e.target.files[0]); handleChangeFile(e);}}/>
+                        <input className="mt-2 mb-4" type="file" onChange={(e) => {setData("image", e.target.files[0]); handleChangeFile(e);}}/>
                         <span className="text-red-600">{props.errors.image}</span>
                     </div> 
 
@@ -100,7 +100,7 @@ const Edit = (props) => {
                     {auth.user.image_path !== null ? (<div><img className="rounded-full" src={auth.user.image_path}/></div>) : (<div><img className="rounded-full" src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"/></div>) }
                     </div>
                     
-                    <button type="submit" className="px-3 py-1 mt-4 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md">変更</button>
+                    <button type="submit" className="px-3 py-1 mt-5 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md">変更</button>
                 </form>
                 <div className="border border-b-0 border-gray-300 mt-2"></div>
                 

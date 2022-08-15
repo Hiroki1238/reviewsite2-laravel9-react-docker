@@ -60,6 +60,7 @@ const Index = (props) => {
 
                 <h2>
                     <Link className="text-my-purple3 no-underline" href={`/reviews/${venue.id}/create`}>[ 新規投稿 ]</Link>
+                    
                 </h2>
                 </div>
                 <div className="mt-3 border border-b-0 border-gray-300">

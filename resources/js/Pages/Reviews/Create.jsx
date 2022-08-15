@@ -52,11 +52,11 @@ const Create = (props) => {
             //     </h2>
             // }
         >
-            <div className="p-6 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <form onSubmit={handleSendImage}>
                     <div>
-                        <h2 className="text-title-purple1">タイトル</h2>
-                        <input
+                        <h2 className="text-title-purple1 text-2xl mb-2">タイトル</h2>
+                        <input className="mb-6"
                             type="text"
                             placeholder="タイトル"
                             onChange={(e) => setData("title", e.target.value)}
@@ -65,8 +65,8 @@ const Create = (props) => {
                             {props.errors.title}
                         </span>
 
-                        <h2 className="text-title-purple1">レビュー内容</h2>
-                        <textarea
+                        <h2 className="text-title-purple1 text-2xl mb-2">レビュー内容</h2>
+                        <textarea className="mb-6"
                             placeholder="迷いました"
                             onChange={(e) => setData("body", e.target.value)}
                         ></textarea>
@@ -74,15 +74,15 @@ const Create = (props) => {
                             {props.errors.body}
                         </span>
 
-                        <h2 className="text-title-purple1">座席番号</h2>
-                        <input
+                        <h2 className="text-title-purple1 text-2xl mb-2">座席番号</h2>
+                        <input className="mb-6"
                             type="text"
                             placeholder="K17"
                             onChange={(e) => setData("seat", e.target.value)}
                         ></input>
 
                         <Box sx={{ "& > legend": { mt: 2 } }}>
-                            <h2 className="text-title-purple1">
+                            <h2 className="text-title-purple1 text-2xl mb-2">
                                 ステージの見やすさ
                             </h2>
                             <Rating
@@ -94,7 +94,7 @@ const Create = (props) => {
                         </Box>
 
                         <Box sx={{ "& > legend": { mt: 2 } }}>
-                            <h2 className="text-title-purple1">
+                            <h2 className="text-title-purple1 text-2xl mb-2 mt-4">
                                 アクセスの良さ
                             </h2>
                             <Rating
@@ -107,7 +107,7 @@ const Create = (props) => {
 
                         <Box sx={{ "& > legend": { mt: 2 } }}>
                             {/* <Typography component="legend">Controlled</Typography> */}
-                            <h2 className="text-title-purple1">総合点</h2>
+                            <h2 className="text-title-purple1 text-2xl mb-2 mt-4">総合点</h2>
                             <Rating
                                 name="simple-controlled"
                                 onChange={(e) =>
@@ -116,8 +116,8 @@ const Create = (props) => {
                             />
                         </Box>
 
-                        <h2 className="text-title-purple1">訪問日</h2>
-                        <input
+                        <h2 className="text-title-purple1 text-2xl mb-2 mt-4">訪問日</h2>
+                        <input className="mb-5"
                             type="date"
                             placeholder="2020-01-01"
                             onChange={(e) =>
@@ -128,11 +128,11 @@ const Create = (props) => {
                         <div className="name-filed width">
                             <div className="first-name-box">
                                 <div className="text-label">
-                                    <h2 className="text-title-purple1">
+                                    <h2 className="text-title-purple1 text-xl mb-3">
                                         画像を選択
                                     </h2>{" "}
                                     {/*送信用*/}
-                                    <input
+                                    <input className=""
                                         type="file"
                                         multiple
                                         onChange={(e) => {
@@ -165,17 +165,18 @@ const Create = (props) => {
                     </div>
 
                     </div>
-                    <button
-                        type="submit"
-                        className="p-1 bg-purple-300 hover:bg-purple-400 rounded-md"
-                    >
-                        投稿
-                    </button>
+                    <button type="submit" className="px-3 py-1 mt-5 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md">投稿</button>
                 </form>
 
-                <Link onClick={() => window.history.back()}>
+                <div className="border border-b-0 border-gray-300 mt-2"></div>
+                <div className="w-1/2 ml-auto text-right space-x-3 mt-3">
+                    <Link
+                        className="text-gray-400 hover:text-gray-600 no-underline text-lg"
+                        onClick={() => window.history.back()}
+                    >
                         戻る
                     </Link>
+                </div>
             </div>
         </Authenticated>
     );

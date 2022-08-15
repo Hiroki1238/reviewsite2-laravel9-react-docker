@@ -11,6 +11,8 @@ import Slider1 from "@/Components/Slider1";
 const Index = (props) => {
     const { auth, prefecture_array, reviews, images } = props;
 
+    console.log("ねこ",reviews);
+
     // const EnhancedSwipeableViews = autoPlay(SwipeableViews);
 
     return (
@@ -36,7 +38,7 @@ const Index = (props) => {
                                     className="text-link-blue text-2xl"
                                     href={`/reviews/${review.id}`}
                                 >
-                                    {review.title} (会場名を表示)
+                                    {review.title} <span className="text-lg">({review.venue.name})</span>
                                 </Link>
                             </h2>
                         </div>

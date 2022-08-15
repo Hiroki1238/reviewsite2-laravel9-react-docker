@@ -175,7 +175,7 @@ export default function Authenticated({ auth, header, children }) {
             </div>
 
             </div>
-            <div className="w-1/2">
+            <div className="w-4/7">
             {children}
             </div>
             <div>右のカラム</div>

@@ -19,7 +19,7 @@ class VenueController extends Controller
 
     public function picture(Venue $venue)
     {
-        return Inertia::render('Reviews/Picture',['images' => $venue->images]);
+        return Inertia::render('Venues/Picture',['images' => $venue->images]);
     }
 
 }

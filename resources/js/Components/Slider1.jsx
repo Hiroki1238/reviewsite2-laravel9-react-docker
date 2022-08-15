@@ -35,9 +35,9 @@ export default function Slider1(props) {
     }}
     navigation={true}
 
-        speed={7000}
+        speed={5000} //写真が切り替わる際の移動の
         autoplay={{
-          delay: 2000,
+          delay: 8000, //表示中の3枚を表示し続ける時間
           disableOnInteraction: false
         }}
         slidesPerView={3}

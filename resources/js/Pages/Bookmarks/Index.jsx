@@ -16,15 +16,12 @@ const Index = (props) => {
             // }
             >
 
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-            <h1>ブックマーク</h1>
             <Link onClick={() => window.history.back()}>
                         戻る
-                    </Link>
-            </div>
-            
-
+             </Link>
             <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <h2 className="text-title-purple1 text-3xl">ブックマーク</h2>
+            
                 {myBookmarks.map((review) => (
                     <div key={review.id}>
                         <h2 className="m-2">
