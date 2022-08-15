@@ -16,10 +16,16 @@ const Index = (props) => {
             // }
             >
 
-            <Link onClick={() => window.history.back()}>
+           
+            <div className="py-2 px-3 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="flex justify-left">
+                    <Link
+                        className="text-gray-400 text-xl no-underline"
+                        onClick={() => window.history.back()}
+                    >
                         戻る
-             </Link>
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                    </Link>
+                </div>
             <h2 className="text-title-purple1 text-3xl">ブックマーク</h2>
             <p className="py-2 text-xl">ブックマークした投稿がここに表示されます</p>
             

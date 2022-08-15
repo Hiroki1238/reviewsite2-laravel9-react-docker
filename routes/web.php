@@ -79,15 +79,9 @@ Route::controller(ProfileController::class)->middleware('auth')->group(function 
     Route::get('/mypage/{user}','index');
 });
 
-// Route::post('/mypage/profile/update/{user}', [ProfileController::class, 'update']);
-
-//ブックマーク
-Route::get('mypage/bookmarks/{user}',[BookmarkController::class,'index'])->middleware('auth');
-
 
 //管理者用
 // Route::get('admin/create',[AdminpageController::class,'index']);
-
 
 
 //テスト用
@@ -105,19 +99,18 @@ Route::get('/search/word', 'searchWordAndCapacity');
 
 
 //いいね機能
-Route::controller(LikeController::class)->group(function () {
-Route::get('mypage/like/{user}','index');
+Route::controller(LikeController::class)->middleware('auth')->group(function () {
+Route::get('/mypage/like/{user}','index');
 Route::post('/like/{venueId}', 'store');
 Route::post('/unlike/{venueId}','destroy');
 });
 
 //ブックマーク機能
-Route::controller(BookmarkController::class)->group(function () {
-    Route::get('mypage/bookmark/{user}','index');
+Route::controller(BookmarkController::class)->middleware('auth')->group(function () {
+    Route::get('/mypage/bookmarks/{user}','index');
     Route::post('/bookmark/{reviewId}', 'store');
     Route::post('/notbookmark/{reviewId}','destroy');
     });
-
 
 
 //S3関連

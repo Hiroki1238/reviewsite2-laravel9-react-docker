@@ -126,11 +126,11 @@ export default function Register() {
 
                 <div className="flex items-center justify-end mt-4">
                     <Link href={route('admin.login')} className="underline text-sm text-gray-600 hover:text-gray-900">
-                        会員の方はこちら
+                        一般ユーザーのログインはこちら
                     </Link>
 
                     <Button className="ml-4" processing={processing}>
-                        登録
+                        管理者登録
                     </Button>
                 </div>
             </form>

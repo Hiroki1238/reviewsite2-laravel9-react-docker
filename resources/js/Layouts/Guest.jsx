@@ -33,7 +33,7 @@ export default function Guest({ header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href="/search">
+                                <NavLink href="/login">
                                     会場検索
                                 </NavLink>
                             </div>

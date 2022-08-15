@@ -60,11 +60,14 @@ const Index = (props) => {
                 <h3>ブックマーク一覧を表示</h3>
             </div>
 
-            <div>
-            <Link className="text-gray-500 hover:text-gray-600 no-underline" onClick={() => window.history.back()}>
+            <div className="flex justify-center">
+                    <Link
+                        className="text-gray-400 mb-3 text-xl no-underline"
+                        onClick={() => window.history.back()}
+                    >
                         戻る
-            </Link>
-            </div>
+                    </Link>
+                </div>
         </Authenticated>
     );
 };

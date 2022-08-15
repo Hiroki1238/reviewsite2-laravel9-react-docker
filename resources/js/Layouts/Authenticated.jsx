@@ -182,7 +182,7 @@ export default function Authenticated({ auth, header, children }) {
             <div className="w-4/7">
             {children}
             </div>
-            <div>右のカラム</div>
+            <div className="text-3xl mt-3 py-1 text-menutitle-gray">お知らせ</div>
             </main>
         </div>
     );

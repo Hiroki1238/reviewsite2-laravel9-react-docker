@@ -26,10 +26,14 @@ const Word = (props) => {
         ))}
       </div>
 
-      <Link onClick={() => window.history.back()}>
+      <div className="flex justify-center space-x-3 mt-3">
+                    <Link
+                        className="text-gray-400 hover:text-gray-600 no-underline text-lg"
+                        onClick={() => window.history.back()}
+                    >
                         戻る
                     </Link>
-
+                </div>
     </Authenticated>
   );
 }

@@ -34,7 +34,11 @@ const Index = (props) => {
        
 
        <div className="w-5/7 ml-auto text-right space-x-3 mt-3">
-                <Link className="text-gray-400 hover:text-gray-600 text-lg no-underline" onClick={() => window.history.back()}>
+
+                <Link
+                       className="text-gray-400 hover:text-gray-600 no-underline text-lg"
+                        onClick={() => window.history.back()}
+                    >
                         戻る
                     </Link>
 
