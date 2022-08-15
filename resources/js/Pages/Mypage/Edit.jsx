@@ -89,7 +89,7 @@ const Edit = (props) => {
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl">画像</h2> {/*送信用*/}
-                        <img src={preview} />
+                        <img className="rounded-full h-48 w-48 my-0 mx-auto" src={preview} />
                         <input className="mt-2 mb-4" type="file" onChange={(e) => {setData("image", e.target.files[0]); handleChangeFile(e);}}/>
                         <span className="text-red-600">{props.errors.image}</span>
                     </div> 

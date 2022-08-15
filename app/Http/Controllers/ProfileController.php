@@ -39,8 +39,10 @@ class ProfileController extends Controller
         $form = $request->all(); //入力された情報全て受け取ってる
         $image = $request->file('image');
         $user->fill($form);
+        if(isset($image)){
         $path = Storage::disk('s3')->put('icon', $image, 'public');
         $user->image_path = Storage::disk('s3')->url($path); // アップロードした画像のフルパスを取得
+         }
         $user->save();
 
         return redirect('mypage/profile/' . $user->id);
