@@ -35,8 +35,4 @@ class Image extends Model
         'image_path',
     ];
 
-    public function getImage()
-    {
-      
-    }
 }

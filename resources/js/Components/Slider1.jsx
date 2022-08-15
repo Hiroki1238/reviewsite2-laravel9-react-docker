@@ -24,7 +24,7 @@ const items = [
 
 export default function Slider1() {
   return (
-    <div>
+    <div className="py-3">
       <Swiper
 
     modules={[Autoplay, Pagination, Navigation]}
@@ -33,9 +33,9 @@ export default function Slider1() {
     }}
     navigation={true}
 
-        speed={4000}
+        speed={7000}
         autoplay={{
-          delay: 1000,
+          delay: 2000,
           disableOnInteraction: false
         }}
         slidesPerView={3}
@@ -46,7 +46,7 @@ export default function Slider1() {
       >
 
         {items && items.map(item => (
-              <SwiperSlide><img className="object-contain flex justify-center" src={item.img} /></SwiperSlide>
+              <SwiperSlide><img className="mb-12 shadow-lg shadow-gray-400 rounded-2xl object-contain flex justify-center" src={item.img} /></SwiperSlide>
           ))}
       </Swiper>
     </div>

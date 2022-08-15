@@ -19,10 +19,6 @@ class VenueController extends Controller
 
     public function picture(Venue $venue)
     {
-        //$pictures = $venue->images(); 
-        // $pictures = Image::with('venue')->where('venue_id',$venue_id);
-        // dd($pictures);
-        //dd($venue->images);
         return Inertia::render('Reviews/Picture',['images' => $venue->images]);
     }
 
