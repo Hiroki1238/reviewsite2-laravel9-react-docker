@@ -96,6 +96,9 @@ export default function Guest({ header, children }) {
                                         <Dropdown.Link href={route('register')} method="get" as="button">
                                             新規会員登録
                                         </Dropdown.Link>
+                                        <Dropdown.Link href="/login" method="get" as="button">
+                                            ログイン
+                                        </Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
                             </div>
