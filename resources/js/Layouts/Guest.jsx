@@ -33,7 +33,7 @@ export default function Guest({ header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href="/login">
+                                <NavLink href="/search">
                                     会場検索
                                 </NavLink>
                             </div>
@@ -164,8 +164,8 @@ export default function Guest({ header, children }) {
             <div className="text-3xl mt-3 py-1 text-menutitle-gray">検索</div>
             <div>
             <p><Link href="/login" className="no-underline text-menu-gray text-xl">都道府県から探す</Link></p>
-            <p><Link href="/login" className="no-underline text-menu-gray text-xl">キーワードから探す</Link></p>
-            <p><Link href="/login" className="no-underline text-menu-gray text-xl">規模から探す</Link></p>
+            <p><Link href="/search" className="no-underline text-menu-gray text-xl">キーワードから探す</Link></p>
+            <p><Link href="/search" className="no-underline text-menu-gray text-xl">規模から探す</Link></p>
             </div>
             <hr className="my-5 border-shadowgray1"/>
             <div className="text-3xl mb-1 text-menutitle-gray">会員メニュー</div>

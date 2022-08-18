@@ -9,8 +9,6 @@ import Guest from "@/Layouts/Guest";
 const Index = (props) => {
     const { auth, prefecture_array, reviews, images } = props;
 
-    console.log(auth);
-
     return (
         <div>
        {auth.user != null ? (
