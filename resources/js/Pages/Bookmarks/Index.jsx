@@ -1,7 +1,7 @@
 import React from "react";
-import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
+import Bookmark from "@/Components/Bookmark";
 
 const Index = (props) => {
     const { myBookmarks, auth } = props;
@@ -26,18 +26,7 @@ const Index = (props) => {
                         戻る
                     </Link>
                 </div>
-            <h2 className="text-title-purple1 text-3xl">ブックマーク</h2>
-            <p className="py-2 text-xl">ブックマークした投稿がここに表示されます</p>
-            
-                {myBookmarks.map((review) => (
-                    <div key={review.id}>
-                        <h2 className="m-2">
-                            <Link className="text-link-blue text-2xl" href={`/reviews/${review.id}`}>
-                                {review.title}
-                            </Link>
-                        </h2>
-                    </div>
-                ))}
+            <Bookmark myBookmarks={myBookmarks}/>
                 </div>
         </Authenticated>
     );

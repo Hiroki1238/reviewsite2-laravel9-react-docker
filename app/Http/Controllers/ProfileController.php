@@ -16,9 +16,12 @@ class ProfileController extends Controller
     //以下のindexメソッドでは、User $userとした上でwith(['user' => $user])をつけることにより、mypage/indexにuserの情報が渡せている。viewにデータを渡したいときはこういう書き方をしなければならない。
     public function index(User $user)
     {
+        $auth = auth()->user();
         $authId = auth()->id();
         $myReviews = Review::with('user')->where('user_id', $authId)->get();
-        return Inertia::render('Mypage/Index',['myReviews' => $myReviews]);
+
+        $myBookmarks = $auth->bookmarkReviews()->get();
+        return Inertia::render('Mypage/Index',['myReviews' => $myReviews, 'myBookmarks' => $myBookmarks]);
     }
 
 
