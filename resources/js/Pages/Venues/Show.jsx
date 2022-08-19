@@ -4,6 +4,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Link, useForm } from "@inertiajs/inertia-react";
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import ReviewList from "@/Components/ReviewList";
 //import SweetAlert2 from 'react-sweetalert2';
 
 // このファイルは会場の情報とこの会場についているレビュー一覧を表示
@@ -79,15 +80,7 @@ const Index = (props) => {
             </div>
 
             <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                {reviews.map((review) => (
-                    <div key={review.id}>
-                        <h2 className="m-2">
-                            <Link className="text-link-blue text-2xl" href={`/reviews/${review.id}`}>
-                                {review.title}
-                            </Link>
-                        </h2>
-                    </div>
-                ))}
+              <ReviewList reviews={reviews} />
             </div>
         </Authenticated>
     );

@@ -3,6 +3,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
 import Bookmark from "@/Components/Bookmark";
 import Like from "@/Components/Like";
+import ReviewList from "@/Components/ReviewList";
 
 const Index = (props) => {
     const { myReviews, myBookmarks, myVenues, auth } = props;
@@ -43,20 +44,14 @@ const Index = (props) => {
 
             <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h2 className="text-title-purple1 text-2xl mb-5">あなたのレビュー</h2>
-                {myReviews.map((review) => (
-                    <div key={review.id}>
-                        <h2 className="m-2">
-                            <Link className="text-link-blue text-2xl" href={`/reviews/${review.id}`}>
-                                {review.title}
-                            </Link>
-                        </h2>
-                    </div>
-                ))}
+                <ReviewList reviews={myReviews}/>
             </div>
+
             <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h3 className="text-title-purple1 text-2xl mb-5">お気に入りの会場</h3>
                 <Like myVenues={myVenues}/>
             </div>
+            
             <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h3 className="text-title-purple1 text-2xl mb-5">ブックマークしたレビュー</h3>
                 <Bookmark myBookmarks={myBookmarks}/>
