@@ -10,10 +10,8 @@ use App\Models\User;
 class LikeController extends Controller
 {
     public function index(Request $request, User $user) {
-        //$myVenues = User::with('likeVenues')->where('user_id', auth()->id())->get();
         $auth = auth()->user();
         $myVenues = $auth->likeVenues()->get();
-        //dd($myVenues);
         return Inertia::render('Likes/Index',['myVenues' => $myVenues]);
     }
 

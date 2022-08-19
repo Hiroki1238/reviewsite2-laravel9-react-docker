@@ -1,11 +1,11 @@
 import React from "react";
-import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
 import Bookmark from "@/Components/Bookmark";
+import Like from "@/Components/Like";
 
 const Index = (props) => {
-    const { myReviews, myBookmarks, auth } = props;
+    const { myReviews, myBookmarks, myVenues, auth } = props;
 
     return (
         <Authenticated
@@ -17,12 +17,12 @@ const Index = (props) => {
             // }
         >
              <div className="p-6 mt-5 mb-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                {/* グレーのボックス(背景)に関する指定 */}
                 <h1 className="text-title-purple1 mb-5 text-2xl">
                     {auth.user.name}のマイページ
                 </h1>
 
-                <div className="h-48 w-48 my-0 mx-auto">
+            {/*プロフィール写真がある場合はそれを表示、無い場合はダミーアイコンを表示*/}
+                <div className="h-48 w-48 my-0 mx-auto"> 
                     {auth.user.image_path !== null ? (
                         <div>
                             <img className="rounded-full" src={auth.user.image_path} />
@@ -33,6 +33,7 @@ const Index = (props) => {
                         </div>
                     )}
                 </div>
+
                 <div className="py-3">
                 <Link className="text-link-blue text-lg" href={`/mypage/profile/${auth.user.id}`}>
                     プロフィール詳細
@@ -54,7 +55,7 @@ const Index = (props) => {
             </div>
             <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h3 className="text-title-purple1 text-2xl mb-5">お気に入りの会場</h3>
-                <h3>お気に入り一覧を表示</h3>
+                <Like myVenues={myVenues}/>
             </div>
             <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h3 className="text-title-purple1 text-2xl mb-5">ブックマークしたレビュー</h3>

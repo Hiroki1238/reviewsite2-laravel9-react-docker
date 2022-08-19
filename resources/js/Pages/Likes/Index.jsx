@@ -2,6 +2,7 @@ import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
+import Like from "@/Components/Like";
 
 const Index = (props) => {
     const { myVenues, auth } = props;
@@ -28,21 +29,8 @@ const Index = (props) => {
                 
                 <h2 className="text-title-purple1 text-3xl">お気に入り</h2>{" "}
                 {/*いいね一覧を表示したい*/}
-                <p className="py-2 text-xl">
-                    お気に入りの会場がここに表示されます
-                </p>
-                {myVenues.map((venue) => (
-                    <div key={venue.id}>
-                        <h2 className="m-2">
-                            <Link
-                                className="text-link-blue text-2xl"
-                                href={`/prefectures/venues/${venue.id}`}
-                            >
-                                {venue.name}
-                            </Link>
-                        </h2>
-                    </div>
-                ))}
+                
+                <Like myVenues={myVenues}/>
 
             </div>
         </Authenticated>

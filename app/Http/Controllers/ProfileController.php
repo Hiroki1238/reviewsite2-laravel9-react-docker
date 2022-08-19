@@ -19,9 +19,10 @@ class ProfileController extends Controller
         $auth = auth()->user();
         $authId = auth()->id();
         $myReviews = Review::with('user')->where('user_id', $authId)->get();
+        $myVenues = $auth->likeVenues()->get();
 
         $myBookmarks = $auth->bookmarkReviews()->get();
-        return Inertia::render('Mypage/Index',['myReviews' => $myReviews, 'myBookmarks' => $myBookmarks]);
+        return Inertia::render('Mypage/Index',['myReviews' => $myReviews, 'myBookmarks' => $myBookmarks, 'myVenues' => $myVenues]);
     }
 
 
