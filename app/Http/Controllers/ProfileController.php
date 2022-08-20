@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\ProfileRequest;
-use App\Models\{User, Review, Image, Contact};
+use App\Models\{User, Review, Venue, Image, Contact};
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class ProfileController extends Controller
 {
-    public function index(User $user)
+    public function index()
     {
         $auth = auth()->user();
         $authId = auth()->id();
-        $myReviews = Review::with('user')->where('user_id', $authId)->get();
+        $myReviews = Review::with('user','venue')->where('user_id', $authId)->get(); 
+        //上の行についてwithの()内で2個していできることが判明
         $myVenues = $auth->likeVenues()->get();
 
         $myBookmarks = $auth->bookmarkReviews()->get();

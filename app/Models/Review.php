@@ -57,14 +57,12 @@ class Review extends Model
     public function getByLimit($limit_count) //ここで一ページあたりの表示件数を指定する
     {
     // updated_atで降順に並べたあと、limitで件数制限をかける
-    //return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
     return $this->with('venue')->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
     }
 
     public function getByLimitAndPeginate(int $limit_count = 10) //ここで一ページあたりの表示件数を指定する
     {
     // updated_atで降順に並べたあと、limitで件数制限をかける
-    //return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
     return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
     

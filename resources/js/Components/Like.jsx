@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from '@inertiajs/inertia-react'
 
 const Like = ({myVenues}) => {
+  
   return (
     <div>
       {myVenues.map((venue) => (

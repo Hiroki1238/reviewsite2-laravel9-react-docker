@@ -16,7 +16,7 @@ const Index = (props) => {
     // }
     >
 
-      <div className="py-1 px-4 bg-gray-200  w-1/2 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+<div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
       <div className="py-2 flex justify-left">
             <Link className="text-gray-400 text-xl no-underline" onClick={() => window.history.back()}>
                         戻る

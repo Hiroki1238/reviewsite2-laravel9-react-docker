@@ -14,6 +14,7 @@ use App\Http\Controllers\HomeController; //ホームの表示
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminpageController; //管理者用ページ
 
 /*
 |--------------------------------------------------------------------------
@@ -86,8 +87,9 @@ Route::controller(ContactController::class)->middleware('auth')->group(function 
 
 
 //管理者用
-Route::controller(AdminPageController::class)->middleware('auth')->group(function () {
-    Route::get('Admin/AdminVenue','index');
+Route::controller(AdminpageController::class)->middleware('auth')->group(function () {
+    Route::get('/admin/home','index');
+    Route::get('/admin/venues','venue');
 });
 
 

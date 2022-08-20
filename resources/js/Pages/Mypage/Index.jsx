@@ -3,21 +3,17 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
 import Bookmark from "@/Components/Bookmark";
 import Like from "@/Components/Like";
-import ReviewList from "@/Components/ReviewList";
+import ReviewList2 from "@/Components/ReviewList2";
 
 const Index = (props) => {
     const { myReviews, myBookmarks, myVenues, auth } = props;
+    //ProfileControllerのindexでReview::with('user','venue')としているのでvenueの情報も取得できている
 
     return (
         <Authenticated
             auth={props.auth}
-            // header={
-            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-            //         {auth.user.name}のマイページ
-            //     </h2>
-            // }
         >
-             <div className="p-6 mt-5 mb-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+             <div className="p-6 mt-5 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 mb-5 text-2xl">
                     {auth.user.name}のマイページ
                 </h1>
@@ -42,18 +38,19 @@ const Index = (props) => {
                 </div>
             </div>
 
-            <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                <h2 className="text-title-purple1 text-2xl mb-5">あなたのレビュー</h2>
-                <ReviewList reviews={myReviews}/>
+            <div className="py-6 mt-7 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                <h2 className="text-title-purple1 text-3xl mb-5">あなたのレビュー</h2>
+                <ReviewList2 reviews={myReviews}/>
+                
             </div>
 
-            <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                <h3 className="text-title-purple1 text-2xl mb-5">お気に入りの会場</h3>
-                <Like myVenues={myVenues}/>
+            <div className="py-6 mt-7 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                <h3 className="text-title-purple1 text-3xl mb-5">お気に入りの会場</h3>
+                    <Like myVenues={myVenues}/> 
             </div>
             
             <div className="py-6 mt-7 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                <h3 className="text-title-purple1 text-2xl mb-5">ブックマークしたレビュー</h3>
+                <h3 className="text-title-purple1 text-3xl mb-5">ブックマークしたレビュー</h3>
                 <Bookmark myBookmarks={myBookmarks}/>
             </div>
 

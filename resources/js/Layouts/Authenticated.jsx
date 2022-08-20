@@ -179,7 +179,7 @@ export default function Authenticated({ auth, header, children }) {
             </div>
 
             </div>
-            <div className="w-4/7">
+            <div className="w-5/8">
             {children}
             </div>
             <div className="text-3xl mt-3 py-1 text-menutitle-gray">お知らせ</div>

@@ -1,10 +1,10 @@
 import React from "react";
+import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link, useForm } from "@inertiajs/inertia-react";
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import ReviewList from "@/Components/ReviewList";
-import LikeButton from "@/Components/LikeButton";
 //import SweetAlert2 from 'react-sweetalert2';
 
 // このファイルは会場の情報とこの会場についているレビュー一覧を表示
@@ -18,7 +18,21 @@ const Index = (props) => {
 
     //const MySwal = withReactContent(Swal);
 
+    const handleLike = (e) => {
+        e.preventDefault();
+        post(`/like/${venue.id}`);
 
+        // MySwal.fire({
+        //   title: 'Success',
+        //   text: 'いいねしました',
+        //   icon: 'success',
+        // })
+    };
+
+    const handleUnlike = (e) => {
+        e.preventDefault();
+        post(`/unlike/${venue.id}`);
+    };
 
     return (
         <Authenticated
@@ -58,7 +72,9 @@ const Index = (props) => {
                         戻る
                     </Link>
 
-                <LikeButton isLiked={isLiked}/>
+                {isLiked ? (<button onClick={handleUnlike}> <StarIcon className="text-yellow-500"/> </button>)
+                : (<button onClick={handleLike}> <StarBorderIcon className="text-yellow-500"/> </button>)
+              }
               </div>
 
             </div>

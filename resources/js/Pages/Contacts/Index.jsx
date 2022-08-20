@@ -20,7 +20,7 @@ const Index = (props) => {
 
     return (
         <Authenticated auth={props.auth} errors={props.errors}>
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
             
                 <form onSubmit={handleSendPosts}>
                     <h1 className="text-title-purple1 text-3xl mb-5">
