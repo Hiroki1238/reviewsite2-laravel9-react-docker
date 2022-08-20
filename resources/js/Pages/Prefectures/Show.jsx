@@ -8,13 +8,7 @@ const Index = (props) => {
   console.log(props);
 
   return (
-    <Authenticated auth={props.auth}
-    // header={
-    //   <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-    //     会場一覧
-    //   </h2>
-    // }
-    >
+    <Authenticated auth={props.auth}>
 
 <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
       <div className="py-2 flex justify-left">
@@ -22,14 +16,14 @@ const Index = (props) => {
                         戻る
                     </Link>
                     </div>
-        <h1 className="text-title-purple1 text-3xl mb-4">{prefecture.name}の会場一覧</h1>
+        <h1 className="text-title-purple1 text-4xl mb-7">{prefecture.name}の会場一覧</h1>
                     
 
         {venues.map((venue) => (
           <div key={venue.id}>
              {venues.map((venue) => (
               
-            <h2 className="text-xl py-2">
+            <h2 className="text-2xl mb-5">
               <Link className="text-link-blue" href={`/prefectures/venues/${venue.id}`}>{venue.name}</Link>
             </h2>
              ))}

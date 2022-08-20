@@ -324,7 +324,7 @@ class PrefecturesTableSeeder extends Seeder
         ]);
 
         DB::table('prefectures')->insert([
-            'name' => '宮城県',
+            'name' => '宮崎県',
             'region_id' => 8,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),

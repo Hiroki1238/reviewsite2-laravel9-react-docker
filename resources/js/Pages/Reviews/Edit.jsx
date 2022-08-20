@@ -1,12 +1,10 @@
 import React from "react";
-import { Inertia } from "@inertiajs/inertia";
 import { Link, useForm } from "@inertiajs/inertia-react";
 import Authenticated from "@/Layouts/Authenticated";
 
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
-import { Reviews } from "@mui/icons-material";
 
 const Edit = (props) => {
     const { review } = props;

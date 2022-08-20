@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Venue;
 use Inertia\Inertia;
 
 class AdminpageController extends Controller
@@ -11,7 +12,27 @@ class AdminpageController extends Controller
         return Inertia::render('Admin/Index');
     }
 
-    public function venue(){
-        return Inertia::render('Admin/AdminVenue');
+    public function AddVenue(){
+        return Inertia::render('Admin/AddVenue');
+    }
+
+    public function SelectVenue(Venue $venue){
+        return Inertia::render('Admin/SelectVenue',['venue' => $venue]);
+    }
+
+    public function EditVenue(Venue $venue){
+        return Inertia::render('Admin/EditVenue',['venue' => $venue]);
+    }
+
+    public function DeleteVenue(){
+        return Inertia::render('Admin/DeleteVenue');
+    }
+
+    public function DeleteReview(){
+        return Inertia::render('Admin/DeleteReview');
+    }
+
+    public function ReplyToMessage(){
+        return Inertia::render('Admin/ReceivedMessage');
     }
 }

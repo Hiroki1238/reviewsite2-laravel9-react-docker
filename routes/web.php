@@ -89,7 +89,12 @@ Route::controller(ContactController::class)->middleware('auth')->group(function 
 //管理者用
 Route::controller(AdminpageController::class)->middleware('auth')->group(function () {
     Route::get('/admin/home','index');
-    Route::get('/admin/venues','venue');
+    Route::get('/admin/venues/add','AddVenue'); //会場の新規登録
+    Route::get('/admin/venues/select','SelectVenue'); //編集する会場を検索から探す
+    Route::get('/admin/venues/edit','EditVenue'); //会場の編集
+    Route::get('/admin/venues/delete','DeleteVenue'); //会場の削除
+    Route::get('/admin/reviews/delete','DeleteReview'); //不適切なレビューの削除
+    Route::get('/admin/contact','ReplyToMessage'); //お問い合わせに返信
 });
 
 

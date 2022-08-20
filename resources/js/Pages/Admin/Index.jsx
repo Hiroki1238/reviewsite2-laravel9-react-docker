@@ -13,9 +13,15 @@ const Index = (props) => {
               <h1 className="p-6 text-3xl text-title-purple1">管理者メニュー</h1>
             
                     <div className="flex flex-col">
-                    <Link className="text-link-blue text-2xl mb-1" href="/admin/venues">新規会場登録</Link>
+                    <Link className="text-link-blue text-2xl mb-3" href="/admin/venues/add">会場の新規登録</Link>
 
-                    <Link className="text-link-blue text-2xl" href="/admin/venues">会場の削除</Link>
+                    <Link className="text-link-blue text-2xl mb-3" href="/admin/venues/select">会場の編集</Link>
+
+                    <Link className="text-link-blue text-2xl mb-3" href="/admin/venues/delete">会場の削除</Link>
+
+                    <Link className="text-link-blue text-2xl mb-3" href="/admin/reviews/delete">不適切なレビューの削除</Link>
+
+                    <Link className="text-link-blue text-2xl mb-3" href="/admin/contact">お問い合わせに返信</Link>
                     </div>
 
                     <div className="w-5/7 ml-auto text-right space-x-3 mt-3 mr-2">
@@ -26,13 +32,6 @@ const Index = (props) => {
                     >
                         ホームに戻る
                     </Link>
-                
-                    <button
-                        type="submit"
-                        className="px-3 py-1 mt-5 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md"
-                    >
-                        送信
-                    </button>
                     </div>
             </div>
         </Authenticated>

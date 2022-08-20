@@ -46,7 +46,7 @@ const Edit = (props) => {
             // }
             >
             
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-9 mb-12 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 
                 <form onSubmit={handleSendPosts}>
                     <div>
@@ -77,13 +77,24 @@ const Edit = (props) => {
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">年齢</h2>
-                        <input className="mb-6" type="number" value={data.age} onChange={(e) => setData("age", e.target.value)}/>
+                        {/* <input className="mb-6" type="number" value={data.age} onChange={(e) => setData("age", e.target.value)}/> */}
+                        <select className="mb-6 px-7 py-2" type="number" value={data.age} onChange={(e) => setData("age", e.target.value)}>
+                            <option value="10">10代</option>
+                            <option value="20">20代</option>
+                            <option value="30">30代</option>
+                            <option value="40">40代</option>
+                            <option value="50">50代</option>
+                            <option value="60">60代</option>
+                            <option value="70">70代</option>
+                            <option value="80">80代</option>
+                            <option value="90">90代</option>
+                        </select>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">プロフィール</h2>
-                        <input className="mb-6" type="text" value={data.profile} onChange={(e) => setData("profile", e.target.value)}/>
+                        <textarea className="mb-6" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
                         <span className="text-red-600">{props.errors.profile}</span>
                     </div>  
 

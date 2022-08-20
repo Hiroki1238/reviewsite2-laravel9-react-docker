@@ -36,13 +36,7 @@ const Index = (props) => {
 
     return (
         <Authenticated
-            auth={props.auth}
-            // header={
-            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-            //         レビュー詳細
-            //     </h2>
-            // }
-        >
+            auth={props.auth}>
 
             <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 text-3xl mb-4">{venue.name}のレビュー</h1>
@@ -51,7 +45,7 @@ const Index = (props) => {
                 <h2 className="py-1">収容人数 : {venue.scale_standing}人</h2>
                 <h2 className="py-1">所在地 : {venue.address}</h2>
                 <h2 className="py-1">
-                    ホームページ : <Link className="text-gray-500" href="venue.url">{venue.url}</Link>
+                    ホームページ : <a className="text-gray-500"  target="_blank" href={venue.url}>{venue.url}</a>
                 </h2>
                 
                  <br/>

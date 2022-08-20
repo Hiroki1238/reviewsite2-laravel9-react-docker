@@ -13,7 +13,7 @@ const Index = (props) => {
         <Authenticated
             auth={props.auth}
         >
-             <div className="p-6 mt-5 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+             <div className="p-6 mt-9 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 mb-5 text-2xl">
                     {auth.user.name}のマイページ
                 </h1>
