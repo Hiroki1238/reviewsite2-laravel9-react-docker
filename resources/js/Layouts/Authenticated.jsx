@@ -174,7 +174,7 @@ export default function Authenticated({ auth, header, children }) {
             <p><Link href={`/mypage/profile/${auth.user.id}`} className="no-underline text-menu-gray text-xl">会員情報</Link></p>
             <p><Link href={`/mypage/like/${auth.user.id}`} className="no-underline text-menu-gray text-xl">お気に入り</Link></p>
             <p><Link href={`/mypage/bookmarks/${auth.user.id}`} className="no-underline text-menu-gray text-xl">ブックマーク</Link></p>
-            <p><Link href={`/mypage/contacts/`} className="no-underline text-menu-gray text-xl">お問い合わせ</Link></p>
+            <p><Link href={`/mypage/contacts/${auth.user.id}`} className="no-underline text-menu-gray text-xl">お問い合わせ</Link></p>
             <hr className="my-5 border-shadowgray1"/>
             </div>
 

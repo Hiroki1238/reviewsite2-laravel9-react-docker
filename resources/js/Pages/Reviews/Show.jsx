@@ -120,7 +120,7 @@ const Show = (props) => {
                     )}
                 </div>
 
-                <div className="w-1/2 ml-auto text-right space-x-3 mt-3">
+                <div className="w-5/7 ml-auto text-right space-x-3 mt-3">
                 <Link className="text-gray-400 hover:text-gray-600 no-underline text-lg" onClick={() => window.history.back()}>
                         戻る
                     </Link>

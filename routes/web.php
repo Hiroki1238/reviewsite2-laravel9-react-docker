@@ -79,14 +79,16 @@ Route::controller(ProfileController::class)->middleware('auth')->group(function 
 });
 
 Route::controller(ContactController::class)->middleware('auth')->group(function () {
-    Route::get('mypage/contacts/{user}','index');
-    Route::get('mypage/contacts/result','result');
+    Route::get('/mypage/contacts/{user}','index');
+    Route::get('/mypage/contacts/result','result');
     Route::post('/mypage/contacts/store','storeContacts');
 });
 
 
 //管理者用
-// Route::get('admin/create',[AdminpageController::class,'index']);
+Route::controller(AdminPageController::class)->middleware('auth')->group(function () {
+    Route::get('Admin/AdminVenue','index');
+});
 
 
 //テスト用

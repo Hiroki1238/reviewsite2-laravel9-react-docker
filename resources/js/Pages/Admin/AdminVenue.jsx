@@ -5,15 +5,19 @@ import { Link, useForm } from "@inertiajs/inertia-react";
 const Index = (props) => {
     const { auth } = props;
     const {data, setData, post} = useForm({
-        user_id: auth.user.id,
-        user_email: auth.user.email,
-        title: "",
-        body: ""
+        name: "",
+        keyword: "",
+        scale_standing: "",
+        scale_sitting: "",
+        location_path: "",
+        address: "",
+        prefecture_id: "",
+        url: "",
     })
 
     const handleSendPosts = (e) => {
         e.preventDefault();
-        post(`/mypage/contacts/store`);
+        post();
     }
     console.log(props);
     
@@ -24,17 +28,17 @@ const Index = (props) => {
             
                 <form onSubmit={handleSendPosts}>
                     <h1 className="text-title-purple1 text-3xl mb-5">
-                        お問い合わせ
+                        新規会場登録
                     </h1>
                     <div>
                         <input
                             className="w-6/7 mb-6"
                             type="text"
-                            placeholder="タイトルを入力"
-                            onChange={(e) => setData("title", e.target.value)}
+                            placeholder="会場名"
+                            onChange={(e) => setData("name", e.target.value)}
                         ></input>
                         <span className="text-red-600">
-                            {props.errors.title}
+                            {props.errors.name}
                         </span>
 
                         <textarea className="w-6/7 h-60" placeholder="お問い合わせ内容を入力" onChange={(e) => setData("body", e.target.value)}></textarea>

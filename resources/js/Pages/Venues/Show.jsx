@@ -19,6 +19,7 @@ const Index = (props) => {
     //const MySwal = withReactContent(Swal);
 
 
+
     return (
         <Authenticated
             auth={props.auth}
