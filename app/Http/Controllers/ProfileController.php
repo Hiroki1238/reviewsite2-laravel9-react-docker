@@ -1,19 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\ProfileRequest;
-use App\Models\User;
-use App\Models\Review;
-use App\Models\Image;
+use App\Models\{User, Review, Image, Contact};
 use Illuminate\Support\Facades\Storage;
-//use Storage;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class ProfileController extends Controller
 {
-    //以下のindexメソッドでは、User $userとした上でwith(['user' => $user])をつけることにより、mypage/indexにuserの情報が渡せている。viewにデータを渡したいときはこういう書き方をしなければならない。
     public function index(User $user)
     {
         $auth = auth()->user();
@@ -60,8 +55,16 @@ class ProfileController extends Controller
         return redirect('mypage/profile/' . $user->id);
     }
 
-    public function contact()
-    {
-        return Inertia::render('Contacts/Index');
-    }
+    // public function contact()
+    // {
+    //     return Inertia::render('Contacts/Index');
+    // }
+
+    // public function storeContacts(Request $request, Contact $contact)
+    // {
+    //     $input = $request->all(); //$requestがformで送られてきたやつ
+    //     $contact->fill($input)->save();
+    //     // return Inertia::render('Contacts/Result');
+    //     redirect('/');
+    // }
 }

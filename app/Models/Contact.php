@@ -13,4 +13,13 @@ class Contact extends Model
     {
     return $this->belongsTo(User::class);
     }
+
+    protected $fillable = [
+        'id',
+        'user_id',
+        'user_email',
+        'title',
+        'body',
+        'created_at',
+    ];
 }

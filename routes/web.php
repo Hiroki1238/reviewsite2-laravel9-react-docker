@@ -13,7 +13,7 @@ use App\Http\Controllers\ProfileController; //マイページ関連
 use App\Http\Controllers\HomeController; //ホームの表示
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\BookmarkController;
-
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,9 +74,14 @@ Route::get('/',[HomeController::class,'index']); //ホーム
 Route::controller(ProfileController::class)->middleware('auth')->group(function () {
     Route::post('/mypage/profile/update/{user}', 'update');
     Route::get('/mypage/profile/edit/{user}','edit');
-    Route::get('mypage/contacts/{user}','contact');
     Route::get('/mypage/profile/{user}', 'show');
     Route::get('/mypage/{user}','index');
+});
+
+Route::controller(ContactController::class)->middleware('auth')->group(function () {
+    Route::get('mypage/contacts/{user}','index');
+    Route::get('mypage/contacts/result','result');
+    Route::post('/mypage/contacts/store','storeContacts');
 });
 
 

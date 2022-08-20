@@ -14,11 +14,9 @@ const Index = (props) => {
             //         ブックマーク
             //     </h2>
             // }
-            >
-
-           
+        >
             <div className="py-2 px-3 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-            <div className="flex justify-left">
+                <div className="flex justify-left">
                     <Link
                         className="text-gray-400 text-xl no-underline"
                         onClick={() => window.history.back()}
@@ -26,8 +24,11 @@ const Index = (props) => {
                         戻る
                     </Link>
                 </div>
-            <Bookmark myBookmarks={myBookmarks}/>
-                </div>
+                <h2 className="text-title-purple1 text-3xl mb-5">
+                    ブックマークしたレビュー
+                </h2>
+                <Bookmark myBookmarks={myBookmarks} />
+            </div>
         </Authenticated>
     );
 };

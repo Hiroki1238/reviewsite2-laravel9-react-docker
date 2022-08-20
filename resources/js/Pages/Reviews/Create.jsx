@@ -7,7 +7,6 @@ import Authenticated from "@/Layouts/Authenticated";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
-import { Reviews } from "@mui/icons-material";
 
 const Create = (props) => {
     const { venue, auth, images } = props;
@@ -30,7 +29,7 @@ const Create = (props) => {
 
     const handleSendImage = (e) => {
         e.preventDefault();
-        post("/reviews/store"); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
+        post(`/reviews/store`); //postを使用すれば、送信するデータを指定しなくても、実行されるとdataに格納されているデータを勝手に送信してくれる "/posts"というページに値を送っている
     };
 
     const handleChangeFile = (e) => {
@@ -40,7 +39,7 @@ const Create = (props) => {
             setPreview(prevPreview => [...prevPreview, window.URL.createObjectURL(file)]);
         })}
       };
-      console.log(preview);
+      console.log(props);
 
     return (
         <Authenticated
