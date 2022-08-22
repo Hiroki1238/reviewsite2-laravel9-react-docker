@@ -1,32 +1,31 @@
 import React from "react";
 import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
-import { Link } from '@inertiajs/inertia-react'
+import { Link } from "@inertiajs/inertia-react";
 import Prefectures from "@/Components/Prefectures";
+import Guest from "@/Layouts/Guest";
 
 const Index = (props) => {
-  const { prefecture_array } = props;
-  console.log(props);
+    const { auth, prefecture_array } = props;
+    console.log(props);
 
-  return (
-    <Authenticated auth={props.auth}
-    // header={
-    //   <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-    //     都道府県から探す
-    //   </h2>
-    // }
-    >
+    return (
+        <div>
+            {auth.user != null ? (
+                <Authenticated auth={props.auth}>
+                    <Prefectures prefecture_array={prefecture_array} />
 
-        <Prefectures prefecture_array={prefecture_array}/>
-        
-        <Link onClick={() => window.history.back()}>
-            戻る
-        </Link>
+                    <Link onClick={() => window.history.back()}>戻る</Link>
+                </Authenticated>
+            ) : (
+                <Guest>
+                    <Prefectures prefecture_array={prefecture_array} />
 
-
-
-    </Authenticated>
-  );
-}
+                    <Link onClick={() => window.history.back()}>戻る</Link>
+                </Guest>
+            )}
+        </div>
+    );
+};
 
 export default Index;

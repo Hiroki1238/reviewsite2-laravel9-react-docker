@@ -13,7 +13,6 @@ const Index = (props) => {
     return (
         <div>
        {auth.user != null ? (
-
         <Authenticated auth={props.auth}>
             <Slider1 images={images}/>
 

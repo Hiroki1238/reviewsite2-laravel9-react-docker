@@ -17,11 +17,11 @@ class ContactController extends Controller
         $input = $request->all(); //$requestがformで送られてきたやつ
         $contact->fill($input)->save();
         // return Inertia::render('Contacts/Result');
-        return Inertia::render('Contacts/Result');
+        return Inertia::render('Contacts/Sent');
     }
 
-    public function result()
-    {
-        return Inertia::render('Contacts/Result');
-    }
+    // public function sent()
+    // {
+    //     return Inertia::render('Contacts/Sent');
+    // }
 }

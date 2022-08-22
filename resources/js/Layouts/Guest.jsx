@@ -163,7 +163,7 @@ export default function Guest({ header, children }) {
 
             <div className="text-3xl mt-3 py-1 text-menutitle-gray">検索</div>
             <div>
-            <p><Link href="/login" className="no-underline text-menu-gray text-xl">都道府県から探す</Link></p>
+            <p><Link href="/prefectures" className="no-underline text-menu-gray text-xl">都道府県から探す</Link></p>
             <p><Link href="/search" className="no-underline text-menu-gray text-xl">キーワードから探す</Link></p>
             <p><Link href="/search" className="no-underline text-menu-gray text-xl">規模から探す</Link></p>
             </div>

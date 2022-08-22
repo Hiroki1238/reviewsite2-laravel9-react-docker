@@ -79,9 +79,10 @@ Route::controller(ProfileController::class)->middleware('auth')->group(function 
     Route::get('/mypage/{user}','index');
 });
 
+//お問い合わせ関連
 Route::controller(ContactController::class)->middleware('auth')->group(function () {
     Route::get('/mypage/contacts/{user}','index');
-    Route::get('/mypage/contacts/result','result');
+    Route::get('/mypage/contacts/sent','sent');
     Route::post('/mypage/contacts/store','storeContacts');
 });
 
@@ -143,11 +144,6 @@ Route::post('/like/add', 'like'); // いいね！データを追加
 //Route::get('/test', function(){
      //return view('prefectures/index');
  //});
-
-
-// Route::get('/', function () {
-//     return Inertia::render('Test');
-// });
 
 
 Route::get('/dashboard', function () {

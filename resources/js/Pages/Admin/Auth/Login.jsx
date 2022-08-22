@@ -38,9 +38,10 @@ export default function Login({ status, canResetPassword }) {
 
             <ValidationErrors errors={errors} />
 
-            <form onSubmit={submit}>
+            <form className="px-7 py-4 mt-16 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7" onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="メールアドレス" />
+                <h1 className="py-4 text-2xl">管理者としてログイン</h1>
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="email" value="メールアドレス" />
 
                     <Input
                         type="text"
@@ -54,7 +55,7 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="mt-4">
-                    <Label forInput="password" value="パスワード" />
+                    <Label className="mt-5 mb-3 text-2xl text-title-purple1" forInput="password" value="パスワード" />
 
                     <Input
                         type="password"
