@@ -1,5 +1,5 @@
 import React from "react";
-import Authenticated from "@/Layouts/Authenticated";
+import AdminAuthenticated from "@/Layouts/AdminAuthenticated";
 import { Link, useForm } from "@inertiajs/inertia-react";
 import Search from "@/Components/Search";
 
@@ -24,7 +24,7 @@ const Index = (props) => {
     
 
     return (
-        <Authenticated auth={props.auth} errors={props.errors}>
+        <AdminAuthenticated auth={props.auth} errors={props.errors}>
         <div>
             <Search />
 
@@ -49,7 +49,7 @@ const Index = (props) => {
                         送信
                     </button>
                     </div>
-        </Authenticated>
+        </AdminAuthenticated>
     );
 };
 

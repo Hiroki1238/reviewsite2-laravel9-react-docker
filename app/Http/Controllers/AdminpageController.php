@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 use App\Models\Venue;
 use Inertia\Inertia;
 
@@ -32,7 +33,8 @@ class AdminpageController extends Controller
         return Inertia::render('Admin/DeleteReview');
     }
 
-    public function ReplyToMessage(){
-        return Inertia::render('Admin/ReceivedMessage');
+    public function ReplyToMessage(Contact $contact){
+        $contacts = $contact->orderBy('created_at', 'ASC')->get();
+        return Inertia::render('Admin/ReceivedMessage', ['contacts' => $contacts]);
     }
 }

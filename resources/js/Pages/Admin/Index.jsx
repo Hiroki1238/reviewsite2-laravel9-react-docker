@@ -1,5 +1,5 @@
 import React from "react";
-import Authenticated from "@/Layouts/Authenticated";
+import AdminAuthenticated from "@/Layouts/AdminAuthenticated";
 import { Link, useForm } from "@inertiajs/inertia-react";
 
 const Index = (props) => {
@@ -8,7 +8,7 @@ const Index = (props) => {
     console.log(props);
     
     return (
-        <Authenticated auth={props.auth} errors={props.errors}>
+        <AdminAuthenticated auth={props.auth} errors={props.errors}>
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
               <h1 className="p-6 text-3xl text-title-purple1">管理者メニュー</h1>
             
@@ -34,7 +34,7 @@ const Index = (props) => {
                     </Link>
                     </div>
             </div>
-        </Authenticated>
+        </AdminAuthenticated>
     );
 };
 

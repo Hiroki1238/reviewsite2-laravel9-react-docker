@@ -82,13 +82,13 @@ Route::controller(ProfileController::class)->middleware('auth')->group(function 
 //お問い合わせ関連
 Route::controller(ContactController::class)->middleware('auth')->group(function () {
     Route::get('/mypage/contacts/{user}','index');
-    Route::get('/mypage/contacts/sent','sent');
+    Route::get('/mypage/contacts/sent','sent'); //送信しましたと表示する
     Route::post('/mypage/contacts/store','storeContacts');
 });
 
 
 //管理者用
-Route::controller(AdminpageController::class)->middleware('auth')->group(function () {
+Route::controller(AdminpageController::class)->middleware('auth:admin')->group(function () {
     Route::get('/admin/home','index');
     Route::get('/admin/venues/add','AddVenue'); //会場の新規登録
     Route::get('/admin/venues/select','SelectVenue'); //編集する会場を検索から探す

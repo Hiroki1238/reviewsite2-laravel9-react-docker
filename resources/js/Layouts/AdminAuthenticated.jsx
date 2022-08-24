@@ -5,59 +5,53 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/inertia-react';
 
-export default function Authenticated({ auth, header, children }) {
+export default function AdminAuthenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
         <div className="min-h-screen bg-gray-100 text-my-gray1 font-rocknroll font-thin" >
-            <nav className="bg-my-purple2 border-b border-gray-100">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-16">
-                        <div className="flex">
-                            <div className="shrink-0 flex items-center">
-                                <Link href="/">
-                                    <ApplicationLogo className="block h-9 w-auto text-gray-500" />
-                                </Link>
-                            </div>
+        <nav className="bg-my-purple2 border-b border-gray-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between h-16">
+                    <div className="flex">
+                        <div className="shrink-0 flex items-center">
+                            <Link href="/">
+                                <ApplicationLogo className="block h-9 w-auto text-gray-500" />
+                            </Link>
+                        </div>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <ResponsiveNavLink href="{route('admin.dashboard')}" active={route().current('admin.dashboard')}>
-                                    ダッシュボード
-                                </ResponsiveNavLink>
-                            </div>
-
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href="/home">
+                        <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href="/admin/home">
                                     ホーム
                                 </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href="/search">
-                                    会場検索
+                                <NavLink href="/admin/venues/add">
+                                    会場の登録
                                 </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/mypage/${auth.user.id}`}>
-                                    マイページ
+                                <NavLink href="/admin/venues/select">
+                                    会場の編集
                                 </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/mypage/like/${auth.user.id}`}>
-                                    お気に入り
+                                <NavLink href={"/admin/venues/delete"}>
+                                    会場の削除
                                 </NavLink>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/mypage/bookmarks/${auth.user.id}`}>
-                                    ブックマーク
+                                <NavLink href={"/admin/reviews/delete"}>
+                                    レビューの削除
                                 </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/mypage/contacts/${auth.user.id}`}>
-                                    お問い合せ
+                                <NavLink href={"/admin/contact"}>
+                                    お問い合せに返信
                                 </NavLink>
                             </div>
 
@@ -149,13 +143,33 @@ export default function Authenticated({ auth, header, children }) {
                 </div>
             </nav>
 
-            {header && (
-                <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
-                </header>
-            )}
+            <main className="flex max-w-full min-h-screen justify-around">
+            <div className="text-left text-xl"> {/* text-rightかtext-center最終的にバランスを見て決める */}
 
-            <main>{children}</main>
-        </div>
+            <div className="text-3xl mt-3 py-1 text-menutitle-gray">検索</div>
+            <div>
+            <p><Link href="/prefectures" className="no-underline text-menu-gray text-xl">都道府県から探す</Link></p>
+            <p><Link href="/search" className="no-underline text-menu-gray text-xl">キーワードから探す</Link></p>
+            <p><Link href="/search" className="no-underline text-menu-gray text-xl">規模から探す</Link></p>
+            </div>
+            <hr className="my-5 border-shadowgray1"/>
+            <div className="text-3xl mb-1 text-menutitle-gray">会員メニュー</div>
+            <div>
+            <p><Link href={`/mypage/${auth.user.id}`} className="no-underline text-menu-gray text-xl">マイページ</Link></p>
+            <p><Link href={`/mypage/profile/${auth.user.id}`} className="no-underline text-menu-gray text-xl">会員情報</Link></p>
+            <p><Link href={`/mypage/like/${auth.user.id}`} className="no-underline text-menu-gray text-xl">お気に入り</Link></p>
+            <p><Link href={`/mypage/bookmarks/${auth.user.id}`} className="no-underline text-menu-gray text-xl">ブックマーク</Link></p>
+            <p><Link href={`/mypage/contacts/${auth.user.id}`} className="no-underline text-menu-gray text-xl">お問い合わせ</Link></p>
+            <hr className="my-5 border-shadowgray1"/>
+            </div>
+
+            </div>
+            <div className="w-5/8">
+            {children}
+            </div>
+            <div className="text-3xl mt-3 py-1 text-menutitle-gray">お知らせ</div>
+            </main>
+            </div>
+            
     );
 }
