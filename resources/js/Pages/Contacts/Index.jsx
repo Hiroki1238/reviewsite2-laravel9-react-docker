@@ -28,7 +28,7 @@ const Index = (props) => {
                     </h1>
                     <div>
                         <input
-                            className="w-6/7 mb-6"
+                            className="w-6/7 mb-8"
                             type="text"
                             placeholder="タイトルを入力"
                             onChange={(e) => setData("title", e.target.value)}

@@ -44,4 +44,8 @@ class AdminpageController extends Controller
         $contacts = $contact->orderBy('created_at', 'ASC')->get();
         return Inertia::render('Admin/ReceivedMessage', ['contacts' => $contacts]);
     }
+
+    public function Reply(Contact $contact){
+        return Inertia::render('Admin/Reply', ['targetContact' => $contact]);
+    }
 }

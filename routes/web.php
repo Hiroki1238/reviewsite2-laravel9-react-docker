@@ -98,6 +98,7 @@ Route::controller(AdminpageController::class)->middleware('auth:admin')->group(f
     Route::get('/admin/venues/delete','DeleteVenue'); //会場の削除
     Route::get('/admin/reviews/delete','DeleteReview'); //不適切なレビューの削除
     Route::get('/admin/contact','ReplyToMessage'); //お問い合わせに返信
+    Route::get('/admin/contact/reply/{contact}','Reply'); //お問い合わせに返信
 });
 
 

@@ -28,7 +28,7 @@ const Index = (props) => {
                                         <p className="text-xl">ユーザー名: {contact.user_id}</p>
                                         <p className="text-xl">登録メールアドレス: {contact.user_email}</p>
                                 </div>
-                                <button className="px-3 py-1 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md">回答する</button>
+                                <Link href={`/admin/contact/reply/${contact.id}`}>回答する</Link>
                             </div>
                         ))}
                     </div>
@@ -41,12 +41,6 @@ const Index = (props) => {
                             管理者メニューに戻る
                         </Link>
 
-                        <button
-                            type="submit"
-                            className="px-3 py-1 mt-5 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md"
-                        >
-                            送信
-                        </button>
                     </div>
                 </form>
             </div>
