@@ -15,6 +15,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminpageController; //管理者用ページ
+use App\Http\Controllers\TwitterController; //twitter
 
 /*
 |--------------------------------------------------------------------------
@@ -91,6 +92,7 @@ Route::controller(ContactController::class)->middleware('auth')->group(function 
 Route::controller(AdminpageController::class)->middleware('auth:admin')->group(function () {
     Route::get('/admin/home','index');
     Route::get('/admin/venues/add','AddVenue'); //会場の新規登録
+    Route::post('/admin/venues/store','StoreVenue'); //テーブルに登録
     Route::get('/admin/venues/select','SelectVenue'); //編集する会場を検索から探す
     Route::get('/admin/venues/edit','EditVenue'); //会場の編集
     Route::get('/admin/venues/delete','DeleteVenue'); //会場の削除
@@ -139,6 +141,12 @@ Route::get('/like/userlist', 'user_list'); // ユーザー情報を取得
 Route::post('/like/add', 'like'); // いいね！データを追加
 });
 
+//twitterログイン
+Route::controller(TwitterController::class)->group(function () {
+Route::get('/login/twitter', 'redirectToProvider')->name('twitter.login');
+Route::get('/login/twitter/callback', 'handleProviderCallback');
+Route::get('/twitter/logout', 'logout');
+});
 
 //テスト用
 //Route::get('/test', function(){

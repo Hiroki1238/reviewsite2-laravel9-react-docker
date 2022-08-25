@@ -17,6 +17,13 @@ class AdminpageController extends Controller
         return Inertia::render('Admin/AddVenue');
     }
 
+    public function StoreVenue(Request $request, Venue $venue){
+        //dd($request);
+        $input = $request->all(); //$requestがformで送られてきたやつ
+        $venue->fill($input)->save();
+        return redirect("/admin/home");
+    }
+
     public function SelectVenue(Venue $venue){
         return Inertia::render('Admin/SelectVenue',['venue' => $venue]);
     }

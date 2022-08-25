@@ -17,7 +17,7 @@ const Index = (props) => {
 
     const handleSendPosts = (e) => {
         e.preventDefault();
-        post();
+        post('/admin/venues/store');
     }
     console.log(props);
     

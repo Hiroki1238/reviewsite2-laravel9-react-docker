@@ -72,6 +72,7 @@ export default function Login({ status, canResetPassword }) {
 
                         <span className="ml-2 text-md text-gray-600">ログイン情報を記憶する</span>
                     </label>
+
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
@@ -82,11 +83,14 @@ export default function Login({ status, canResetPassword }) {
                         >
                             パスワードの再設定
                         </Link>
+                        
                     )}
 
                     <Button className="ml-4 text-lg bg-my-purple3" processing={processing}>
                         ログイン
                     </Button>
+                    <a href="{{route('twitter.login')}}" className="btn btn-outline-primary">Twitterログイン</a>
+
                 </div>
             </form>
         </Guest>

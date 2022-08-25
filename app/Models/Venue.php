@@ -67,4 +67,17 @@ class Venue extends Model
             default => Venue::where('scale_standing', '>=' , $capacityInteger)->where('name', 'LIKE', '%' . $word . '%')->get()
         };
     }
+
+    protected $fillable = [
+        'name',
+        'keyword',
+        'scale_standing',
+        'scale_sitting',
+        'location_path',
+        'address',
+        'prefecture_id',
+        'url',
+        'created_at',
+        'updated_at',
+    ];
 }
