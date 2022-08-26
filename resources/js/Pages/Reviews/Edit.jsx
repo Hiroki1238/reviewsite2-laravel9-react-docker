@@ -41,7 +41,7 @@ const Edit = (props) => {
                             タイトル
                         </h2>
                         <input
-                            className="mb-8 text-xl rounded-lg"
+                            className="w-6/7 mb-8 text-xl rounded-lg"
                             type="text"
                             value={data.title}
                             onChange={(e) => setData("title", e.target.value)}
@@ -56,7 +56,7 @@ const Edit = (props) => {
                             レビュー内容
                         </h2>
                         <textarea
-                            className="mb-8 text-xl rounded-lg"
+                            className="w-6/7 h-80 mb-8 text-xl rounded-lg"
                             value={data.body}
                             onChange={(e) => setData("body", e.target.value)}
                         ></textarea>

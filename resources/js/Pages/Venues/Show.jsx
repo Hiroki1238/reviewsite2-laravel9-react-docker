@@ -38,8 +38,8 @@ const Index = (props) => {
         <Authenticated
             auth={props.auth}>
 
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                <h1 className="text-title-purple1 text-3xl mb-4">{venue.name}のレビュー</h1>
+            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                <h1 className="text-title-purple1 text-3xl mt-4 mb-7">{venue.name}のレビュー</h1>
 
               <div>
                 <h2 className="py-1">収容人数 : {venue.scale_standing}人</h2>
@@ -73,7 +73,7 @@ const Index = (props) => {
 
             </div>
 
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
               <ReviewList reviews={reviews} />
             </div>
         </Authenticated>

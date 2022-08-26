@@ -23,12 +23,12 @@ const Index = (props) => {
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
             
                 <form onSubmit={handleSendPosts}>
-                    <h1 className="text-title-purple1 text-3xl mb-5">
+                    <h1 className="text-title-purple1 text-3xl mt-4 mb-5">
                         お問い合わせ
                     </h1>
                     <div>
                         <input
-                            className="w-6/7 mb-8"
+                            className="w-6/7 mt-2 mb-8 text-lg rounded-lg"
                             type="text"
                             placeholder="タイトルを入力"
                             onChange={(e) => setData("title", e.target.value)}
@@ -37,7 +37,7 @@ const Index = (props) => {
                             {props.errors.title}
                         </span>
 
-                        <textarea className="w-6/7 h-60" placeholder="お問い合わせ内容を入力" onChange={(e) => setData("body", e.target.value)}></textarea>
+                        <textarea className="w-6/7 h-80 text-lg rounded-lg" placeholder="お問い合わせ内容を入力" onChange={(e) => setData("body", e.target.value)}></textarea>
                         <span className="text-red-600">
                             {props.errors.body}
                         </span>
