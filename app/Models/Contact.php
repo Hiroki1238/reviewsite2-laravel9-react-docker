@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use DateTimeInterface;
 
 class Contact extends Model
 {
@@ -12,6 +13,11 @@ class Contact extends Model
     public function user()   //1対多
     {
     return $this->belongsTo(User::class);
+    }
+
+    protected function serializeDate(\DateTimeInterface $date)
+    {
+        return $date->format('Y/m/d'); //ブラウザ上の表示がこの形式になるだけで、データベースには影響しない
     }
 
     protected $fillable = [

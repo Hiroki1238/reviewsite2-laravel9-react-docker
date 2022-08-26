@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ReviewsTableSeeder::class);
         $this->call(ImagesTableSeeder::class);
         $this->call(AnnouncementSeeder::class);
+        $this->call(ContactSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

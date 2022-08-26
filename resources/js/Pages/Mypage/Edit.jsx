@@ -88,7 +88,7 @@ const Edit = (props) => {
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">プロフィール</h2>
-                        <textarea className="mb-8 text-lg rounded-lg" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
+                        <textarea className="mb-8 w-7/9 h-60 text-lg rounded-xl" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
                         <span className="text-red-600">{props.errors.profile}</span>
                     </div>  
 

@@ -56,7 +56,7 @@ const Edit = (props) => {
                             レビュー内容
                         </h2>
                         <textarea
-                            className="w-6/7 h-80 mb-9 text-xl rounded-lg font-kosugimaru font-medium"
+                            className="w-6/7 h-80 mb-9 text-xl rounded-xl font-kosugimaru font-medium"
                             value={data.body}
                             onChange={(e) => setData("body", e.target.value)}
                         ></textarea>

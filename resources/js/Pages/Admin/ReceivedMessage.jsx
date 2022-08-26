@@ -23,10 +23,15 @@ const Index = (props) => {
                         {contacts.map((contact) => (
                             <div key={contact.id} className="p-6 mt-9  my-0 mx-auto rounded-lg border-2 border-gray-300 bg-gray-250 text-center w-5/7">
                                 <div>
-                                        <h1 className="text-xl">タイトル: {contact.title}</h1>
-                                        <p className="text-xl">お問い合わせ内容: {contact.body}</p>
-                                        <p className="text-xl">ユーザー名: {contact.user_id}</p>
-                                        <p className="text-xl">登録メールアドレス: {contact.user_email}</p>
+                                    <p className="text-left px-2 text-gray-500">{contact.created_at}</p>
+                                        <h1 className="text-title-purple1 text-xl">タイトル</h1>
+                                        <p className="text-lg font-kosugimaru font-medium mb-5">{contact.title}</p>
+                                        <h1 className="text-title-purple1 text-xl">お問い合わせ内容</h1>
+                                        <p className="text-lg font-kosugimaru font-medium mb-5">{contact.body}</p>
+                                        <h1 className="text-title-purple1 text-xl">ユーザー名</h1>
+                                        <p className="text-lg mb-5">{contact.user_id}</p>
+                                        <h1 className="text-title-purple1 text-xl">登録メールアドレス</h1>
+                                        <p className="text-lg mb-5">{contact.user_email}</p>
                                 </div>
                                 <Link href={`/admin/contact/reply/${contact.id}`}>回答する</Link>
                             </div>
