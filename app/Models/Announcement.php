@@ -23,6 +23,6 @@ class Announcement extends Model
      */
     protected function serializeDate(\DateTimeInterface $date)
     {
-        return $date->format('Y.m.d'); //ブラウザ上の表示がこの形式になるだけで、データベースには影響しない
+        return $date->format('Y/m/d'); //ブラウザ上の表示がこの形式になるだけで、データベースには影響しない
     }
 }

@@ -3,7 +3,7 @@ import { Link } from '@inertiajs/inertia-react'
 
 const ReviewList2 = ({reviews}) => {
   return (
-    <div>
+    <div className="mb-4">
        {reviews.map((review) => (
                         <div key={review.id}>
                             <h2 className="m-2">

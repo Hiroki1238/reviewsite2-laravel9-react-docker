@@ -61,6 +61,7 @@ const Index = (props) => {
                     </div>
                 </form>
             </div>
+
         </Authenticated>
     );
 };

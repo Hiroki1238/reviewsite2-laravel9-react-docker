@@ -38,21 +38,15 @@ const Edit = (props) => {
       };
 
     return (
-        <Authenticated auth={props.auth}
-            // header={
-            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-            //         編集
-            //     </h2>
-            // }
-            >
+        <Authenticated auth={props.auth}>
             
             <div className="p-6 mt-9 mb-12 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 
                 <form onSubmit={handleSendPosts}>
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">氏名</h2>
-                        <input className="mr-2 mb-5" type="text" value={data.lastname} onChange={(e) => setData("lastname", e.target.value)}/>
-                        <input className="ml-2 mb-6"type="text" value={data.name} onChange={(e) => setData("name", e.target.value)}/>
+                        <input className="mr-2 mb-8 text-lg rounded-lg" type="text" value={data.lastname} onChange={(e) => setData("lastname", e.target.value)}/>
+                        <input className="ml-2 mb-8 text-lg rounded-lg"type="text" value={data.name} onChange={(e) => setData("name", e.target.value)}/>
                         <span className="text-red-600">{props.errors.lastname}</span>
                         <span className="text-red-600">{props.errors.name}</span>
                     </div>                    
@@ -65,20 +59,20 @@ const Edit = (props) => {
                     
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">ユーザー名</h2>
-                        <input className="mb-6" type="text" value={data.uname} onChange={(e) => setData("uname", e.target.value)}/>
+                        <input className="mb-8 text-lg rounded-lg" type="text" value={data.uname} onChange={(e) => setData("uname", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">メールアドレス</h2>
-                        <input className="mb-6" type="text" value={data.email} onChange={(e) => setData("email", e.target.value)}/>
+                        <input className="mb-8 w-4/7 text-lg rounded-lg" type="text" value={data.email} onChange={(e) => setData("email", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">年齢</h2>
                         {/* <input className="mb-6" type="number" value={data.age} onChange={(e) => setData("age", e.target.value)}/> */}
-                        <select className="mb-6 px-7 py-2" type="number" value={data.age} onChange={(e) => setData("age", e.target.value)}>
+                        <select className="mb-8 px-7 py-2 text-lg rounded-xl" type="number" value={data.age} onChange={(e) => setData("age", e.target.value)}>
                             <option value="10">10代</option>
                             <option value="20">20代</option>
                             <option value="30">30代</option>
@@ -94,7 +88,7 @@ const Edit = (props) => {
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">プロフィール</h2>
-                        <textarea className="mb-6" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
+                        <textarea className="mb-8 text-lg rounded-lg" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
                         <span className="text-red-600">{props.errors.profile}</span>
                     </div>  
 

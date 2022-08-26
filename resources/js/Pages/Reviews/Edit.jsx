@@ -34,14 +34,14 @@ const Edit = (props) => {
             //         </h2>
             //     }
         >
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <form onSubmit={handleSendPosts}>
                     <div>
-                        <h2 className="text-title-purple1 text-2xl mb-2">
+                        <h2 className="text-title-purple1 text-2xl mt-4 mb-2">
                             タイトル
                         </h2>
                         <input
-                            className="mb-6 text-xl"
+                            className="mb-8 text-xl rounded-lg"
                             type="text"
                             value={data.title}
                             onChange={(e) => setData("title", e.target.value)}
@@ -56,7 +56,7 @@ const Edit = (props) => {
                             レビュー内容
                         </h2>
                         <textarea
-                            className="mb-6 text-xl"
+                            className="mb-8 text-xl rounded-lg"
                             value={data.body}
                             onChange={(e) => setData("body", e.target.value)}
                         ></textarea>
@@ -70,7 +70,7 @@ const Edit = (props) => {
                             座席
                         </h2>
                         <input
-                            className="mb-6 text-xl"
+                            className="mb-8 text-xl rounded-lg"
                             type="text"
                             value={data.seat}
                             onChange={(e) => setData("seat", e.target.value)}
@@ -81,7 +81,7 @@ const Edit = (props) => {
                     </div>
 
                     <Box sx={{ "& > legend": { mt: 2 } }}>
-                        <h2 className="text-title-purple1 text-2xl mb-2">
+                        <h2 className="text-title-purple1 text-2xl mb-3">
                             ステージの見やすさ
                         </h2>
                         <Rating
@@ -92,7 +92,7 @@ const Edit = (props) => {
                     </Box>
 
                     <Box sx={{ "& > legend": { mt: 2 } }}>
-                        <h2 className="text-title-purple1 text-2xl mb-2 mt-4">
+                        <h2 className="text-title-purple1 text-2xl mb-3 mt-4">
                             アクセスの良さ
                         </h2>
                         <Rating
@@ -104,10 +104,11 @@ const Edit = (props) => {
 
                     <Box sx={{ "& > legend": { mt: 2 } }}>
                         {/* <Typography component="legend">Controlled</Typography> */}
-                        <h2 className="text-title-purple1 text-2xl mb-2 mt-4">
+                        <h2 className="text-title-purple1 text-2xl mb-3 mt-4">
                             総合点
                         </h2>
                         <Rating
+                        className="mb-3"
                             value={data.star3}
                             name="simple-controlled"
                             onChange={(e) => setData("star3", e.target.value)}
@@ -119,13 +120,14 @@ const Edit = (props) => {
                             訪問日
                         </h2>
                         <input
-                            className="mb-6 text-xl"
-                            type="text"
+                            className="mb-5 text-xl rounded-lg"
+                            type="date"
                             value={data.visited_at}
                             onChange={(e) =>
                                 setData("visited_at", e.target.value)
                             }
                         />
+
                         <span className="text-red-600">
                             {props.errors.seat}
                         </span>

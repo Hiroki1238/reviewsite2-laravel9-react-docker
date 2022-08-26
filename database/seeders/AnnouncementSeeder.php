@@ -23,5 +23,13 @@ class AnnouncementSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+        DB::table('announcements')->insert([
+            'title' => 'パスワード変更のご案内',
+            'body' => '2020年以前にご登録いただいた方につきましては、2022年8月中にパスワードのご変更をお願い致します。',
+            'admin_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
     }
 }

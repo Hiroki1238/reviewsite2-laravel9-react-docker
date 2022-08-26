@@ -13,21 +13,22 @@ const Search = (props) => {
 
     return (
         <div>
-            <div className="p-6 mt-7 mb-2 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-8 mb-3 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <form onSubmit={handleSearchWord}>
-                    <h1 className="mt-1 mb-2 text-title-purple1 text-3xl">
+                    <h1 className="mt-3 mb-3 text-title-purple1 text-3xl">
                         キーワードから探す
                     </h1>
                     <input
+                        className="rounded-lg"
                         type="text"
                         placeholder="キーワード検索"
                         onChange={(e) => setWord(e.target.value)}
                     ></input>
 
-                    <h1 className="mt-7 mb-2 text-title-purple1 text-3xl">
+                    <h1 className="mt-7 mb-3 text-title-purple1 text-3xl">
                         規模から探す
                     </h1>
-                    <select onChange={(e) => setCapacity(e.target.value)}>
+                    <select className="rounded-xl" onChange={(e) => setCapacity(e.target.value)}>
                         <option>-</option>
                         <option value="2000">1000-2000人</option>
                         <option value="3000">2000-3000人</option>
@@ -47,7 +48,7 @@ const Search = (props) => {
                     <br />
                     <button
                         type="submit"
-                        className="px-3 py-1 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md"
+                        className="px-3 py-1 mt-5 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md"
                     >
                         検索
                     </button>

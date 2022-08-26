@@ -45,17 +45,12 @@ const Create = (props) => {
         <Authenticated
             auth={props.auth}
             errors={props.errors} //これは何のため？
-            // header={
-            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-            //         新規投稿
-            //     </h2>
-            // }
         >
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <form onSubmit={handleSendImage}>
                     <div>
-                        <h2 className="text-title-purple1 text-2xl mb-2">タイトル</h2>
-                        <input className="mb-6"
+                        <h2 className="text-title-purple1 text-2xl mt-4 mb-2">タイトル</h2>
+                        <input className="mb-8 text-lg rounded-lg"
                             type="text"
                             placeholder="タイトル"
                             onChange={(e) => setData("title", e.target.value)}
@@ -65,7 +60,7 @@ const Create = (props) => {
                         </span>
 
                         <h2 className="text-title-purple1 text-2xl mb-2">レビュー内容</h2>
-                        <textarea className="mb-6"
+                        <textarea className="mb-8 text-lg rounded-lg"
                             placeholder="迷いました"
                             onChange={(e) => setData("body", e.target.value)}
                         ></textarea>
@@ -74,14 +69,14 @@ const Create = (props) => {
                         </span>
 
                         <h2 className="text-title-purple1 text-2xl mb-2">座席番号</h2>
-                        <input className="mb-6"
+                        <input className="mb-8 text-lg rounded-lg"
                             type="text"
-                            placeholder="K17"
+                            placeholder="東スタンド E17"
                             onChange={(e) => setData("seat", e.target.value)}
                         ></input>
 
                         <Box sx={{ "& > legend": { mt: 2 } }}>
-                            <h2 className="text-title-purple1 text-2xl mb-2">
+                            <h2 className="text-title-purple1 text-2xl mb-3">
                                 ステージの見やすさ
                             </h2>
                             <Rating
@@ -93,7 +88,7 @@ const Create = (props) => {
                         </Box>
 
                         <Box sx={{ "& > legend": { mt: 2 } }}>
-                            <h2 className="text-title-purple1 text-2xl mb-2 mt-4">
+                            <h2 className="text-title-purple1 text-2xl mb-3 mt-4">
                                 アクセスの良さ
                             </h2>
                             <Rating
@@ -106,8 +101,9 @@ const Create = (props) => {
 
                         <Box sx={{ "& > legend": { mt: 2 } }}>
                             {/* <Typography component="legend">Controlled</Typography> */}
-                            <h2 className="text-title-purple1 text-2xl mb-2 mt-4">総合点</h2>
+                            <h2 className="text-title-purple1 text-2xl mb-3 mt-4">総合点</h2>
                             <Rating
+                            className="mb-3"
                                 name="simple-controlled"
                                 onChange={(e) =>
                                     setData("star3", e.target.value)
@@ -116,7 +112,7 @@ const Create = (props) => {
                         </Box>
 
                         <h2 className="text-title-purple1 text-2xl mb-2 mt-4">訪問日</h2>
-                        <input className="mb-5"
+                        <input className="mb-5 text-lg rounded-lg"
                             type="date"
                             placeholder="2020-01-01"
                             onChange={(e) =>
@@ -127,7 +123,7 @@ const Create = (props) => {
                         <div className="name-filed width">
                             <div className="first-name-box">
                                 <div className="text-label">
-                                    <h2 className="text-title-purple1 text-xl mb-3">
+                                    <h2 className="text-title-purple1 text-xl mt-5 mb-3">
                                         画像を選択
                                     </h2>{" "}
                                     {/*送信用*/}
