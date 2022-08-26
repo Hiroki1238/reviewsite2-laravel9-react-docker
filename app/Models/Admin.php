@@ -18,6 +18,11 @@ class Admin extends Authenticatable
      * @var array<int, string>
      */
 
+     public function information() //admin1 対 information多
+     {
+        $this->hasMany(Information::class);
+     }
+
 
     protected $fillable = [
         'lastname',
