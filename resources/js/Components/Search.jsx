@@ -19,7 +19,7 @@ const Search = (props) => {
                         キーワードから探す
                     </h1>
                     <input
-                        className="rounded-lg"
+                        className="rounded-lg text-lg"
                         type="text"
                         placeholder="キーワード検索"
                         onChange={(e) => setWord(e.target.value)}
@@ -28,7 +28,7 @@ const Search = (props) => {
                     <h1 className="mt-7 mb-3 text-title-purple1 text-3xl">
                         規模から探す
                     </h1>
-                    <select className="rounded-xl" onChange={(e) => setCapacity(e.target.value)}>
+                    <select className="rounded-xl text-lg" onChange={(e) => setCapacity(e.target.value)}>
                         <option>-</option>
                         <option value="2000">1000-2000人</option>
                         <option value="3000">2000-3000人</option>
