@@ -18,9 +18,9 @@ class Admin extends Authenticatable
      * @var array<int, string>
      */
 
-     public function information() //admin1 対 information多
+     public function announcement() //admin1 対 announcement多
      {
-        $this->hasMany(Information::class);
+        $this->hasMany(Announcement::class);
      }
 
 

@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Announcement;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,7 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(VenuesTableSeeder::class);
         $this->call(ReviewsTableSeeder::class);
         $this->call(ImagesTableSeeder::class);
-        $this->call(InformationSeeder::class);
+        $this->call(AnnouncementSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

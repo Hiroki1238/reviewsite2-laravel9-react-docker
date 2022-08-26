@@ -4,9 +4,11 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/inertia-react';
+// import Information from '@/Components/Information'; 未解決
 
 export default function Authenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+    // const { informations } = props; 未解決
 
     return (
         <div className="min-h-screen bg-gray-100 text-my-gray1 font-rocknroll font-thin" >
@@ -183,6 +185,7 @@ export default function Authenticated({ auth, header, children }) {
             {children}
             </div>
             <div className="text-3xl mt-3 py-1 text-menutitle-gray">お知らせ</div>
+            {/* <Information informations={informations} /> 未解決  */}
             </main>
         </div>
     );

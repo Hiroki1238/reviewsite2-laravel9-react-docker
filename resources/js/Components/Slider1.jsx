@@ -48,7 +48,9 @@ export default function Slider1(props) {
       >
 
         {images && images.map(item => (
-              <SwiperSlide><img className="mb-12 shadow-lg shadow-gray-400 rounded-2xl aspect-slideshow flex justify-center" src={item.image_path} /></SwiperSlide>
+              <SwiperSlide key={item.id}>
+                <img className="mb-12 shadow-lg shadow-gray-400 rounded-2xl aspect-slideshow flex justify-center" src={item.image_path} />
+                </SwiperSlide>
           ))}
       </Swiper>
     </div>
