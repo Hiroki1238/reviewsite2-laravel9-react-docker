@@ -13,7 +13,7 @@ const Search = (props) => {
 
     return (
         <div>
-            <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-7 mb-2 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <form onSubmit={handleSearchWord}>
                     <h1 className="mt-1 mb-2 text-title-purple1 text-3xl">
                         キーワードから探す
