@@ -5,32 +5,33 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use DateTimeInterface; //ブラウザ上でのtimestampsの表記を変更
 
 class Review extends Model
 {
     //use HasFactory;
     use SoftDeletes;
-    
+
     public function user()   //riview1 対 user1
     {
-    return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function venue()   //riview1 対 venue1
     {
-    return $this->belongsTo(Venue::class);
+        return $this->belongsTo(Venue::class);
     }
 
     public function images()   //riview1 対 image1 //?
     {
-    return $this->hasMany(Image::class);
+        return $this->hasMany(Image::class);
     }
 
     public function bookmarkedUsers()  //中間テーブル
     {
-    return $this->belongsToMany(User::class,'bookmarks','review_id','user_id');
+        return $this->belongsToMany(User::class, 'bookmarks', 'review_id', 'user_id');
     }
-    
+
     protected $fillable = [
         'id',
         'user_id',
@@ -56,24 +57,35 @@ class Review extends Model
 
     public function getByLimit($limit_count) //ここで一ページあたりの表示件数を指定する
     {
-    // updated_atで降順に並べたあと、limitで件数制限をかける
-    return $this->with('venue')->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
+        // updated_atで降順に並べたあと、limitで件数制限をかける
+        return $this->with('venue')->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
     }
 
     public function getByLimitAndPeginate(int $limit_count = 10) //ここで一ページあたりの表示件数を指定する
     {
-    // updated_atで降順に並べたあと、limitで件数制限をかける
-    return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+        // updated_atで降順に並べたあと、limitで件数制限をかける
+        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
-    
+
 
     public function getByLimitDESC(int $limit_count = 10)
     {
-    return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
 
     public function getByLimitASC(int $limit_count = 10)
     {
-    return $this->orderBy('updated_at', 'ASC')->paginate($limit_count);
+        return $this->orderBy('updated_at', 'ASC')->paginate($limit_count);
+    }
+
+    /**
+     * 配列/JSONシリアル化の日付を準備
+     *
+     * @param  \DateTimeInterface  $date
+     * @return string
+     */
+    protected function serializeDate(\DateTimeInterface $date)
+    {
+        return $date->format('Y/m/d'); //ブラウザ上の表示がこの形式になるだけで、データベースには影響しない
     }
 }

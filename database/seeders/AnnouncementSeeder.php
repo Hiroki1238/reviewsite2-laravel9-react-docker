@@ -19,8 +19,8 @@ class AnnouncementSeeder extends Seeder
             'title' => '新機能のお知らせ',
             'body' => '本日マイページに新機能を追加いたしました',
             'admin_id' => 1,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
     }
