@@ -41,7 +41,7 @@ const Edit = (props) => {
                             タイトル
                         </h2>
                         <input
-                            className="w-6/7 mb-8 text-xl rounded-lg"
+                            className="w-6/7 mb-8 text-xl rounded-lg font-kosugimaru font-medium"
                             type="text"
                             value={data.title}
                             onChange={(e) => setData("title", e.target.value)}
@@ -56,7 +56,7 @@ const Edit = (props) => {
                             レビュー内容
                         </h2>
                         <textarea
-                            className="w-6/7 h-80 mb-8 text-xl rounded-lg"
+                            className="w-6/7 h-80 mb-9 text-xl rounded-lg font-kosugimaru font-medium"
                             value={data.body}
                             onChange={(e) => setData("body", e.target.value)}
                         ></textarea>
@@ -70,7 +70,7 @@ const Edit = (props) => {
                             座席
                         </h2>
                         <input
-                            className="mb-8 text-xl rounded-lg"
+                            className="mb-10 text-xl rounded-lg font-kosugimaru font-medium"
                             type="text"
                             value={data.seat}
                             onChange={(e) => setData("seat", e.target.value)}
@@ -85,6 +85,7 @@ const Edit = (props) => {
                             ステージの見やすさ
                         </h2>
                         <Rating
+                            className="mb-5"
                             value={data.star1}
                             name="simple-controlled"
                             onChange={(e) => setData("star1", e.target.value)}
@@ -96,6 +97,7 @@ const Edit = (props) => {
                             アクセスの良さ
                         </h2>
                         <Rating
+                            className="mb-5"
                             value={data.star2}
                             name="simple-controlled"
                             onChange={(e) => setData("star2", e.target.value)}
@@ -108,7 +110,7 @@ const Edit = (props) => {
                             総合点
                         </h2>
                         <Rating
-                        className="mb-3"
+                            className="mb-3"
                             value={data.star3}
                             name="simple-controlled"
                             onChange={(e) => setData("star3", e.target.value)}

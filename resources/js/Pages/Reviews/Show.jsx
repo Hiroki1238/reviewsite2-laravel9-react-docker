@@ -45,13 +45,13 @@ const Show = (props) => {
              <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <div className="text-left px-2 text-gray-500 text-md">{review.created_at}</div>
                 <h1 className="py-2 mt-1 mb-5 text-2xl"><Link className="text-link-blue" href={`/prefectures/venues/${review.venue_id}`}>{review.venue.name}のレビュー</Link></h1> {/*会場名をリレーションを使って表示した*/}
-                <h1 className="text-title-purple1 text-3xl mb-3">{review.title}</h1>
+                <h1 className="text-title-purple1 text-3xl mb-3 font-medium">{review.title}</h1>
 
                 <div>
                     {/* <h3 className="text-title-purple1">レビュー内容</h3> */}
-                    <p className="text-my-gray1 text-2xl mb-7">{review.body}</p>
+                    <p className="text-my-gray1 text-2xl mb-9 px-6 font-kosugimaru font-medium">{review.body}</p>
                     <h3 className="text-title-purple1 text-2xl">座席</h3>
-                    <p className="text-my-gray1 text-2xl mt-2 mb-6">{review.seat}</p>
+                    <p className="text-my-gray1 text-2xl mt-2 mb-9 font-kosugimaru font-medium">{review.seat}</p>
                     {/* <h3 className="text-title-purple1">10段階評価1</h3>
                     <p>{review.star1}</p> */}
 

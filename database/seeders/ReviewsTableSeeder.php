@@ -17,8 +17,8 @@ class ReviewsTableSeeder extends Seeder
     {
         DB::table('reviews')->insert([
             'title' => '普通',
-            'body' => '5列だとステージがかなり近く、肉眼ではっきり顔が見えました。',
-            'seat' => '5列77番',
+            'body' => '5列だとステージがかなり近く、肉眼ではっきり顔が見えました。5列だとステージがかなり近く、肉眼ではっきり顔が見えました。5列だとステージがかなり近く、肉眼ではっきり顔が見えました。テストです。',
+            'seat' => '東スタンド 5列77番',
             'user_id' => 1,
             'star1' => 3,
             'star2' => 4,
@@ -171,7 +171,7 @@ class ReviewsTableSeeder extends Seeder
 
         DB::table('reviews')->insert([
             'title' => '駅から遠い',
-            'body' => '困る',
+            'body' => '悪くはないです',
             'seat' => 'B13',
             'user_id' => 2,
             'star1' => 3,
