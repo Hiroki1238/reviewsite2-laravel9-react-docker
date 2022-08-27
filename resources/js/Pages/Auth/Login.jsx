@@ -67,10 +67,20 @@ export default function Login({ status, canResetPassword }) {
                 </div>
 
                 <div className="block mt-4">
-                    <label className="flex items-center">
+                    <label className="flex items-center ml-12">
                         <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
 
                         <span className="ml-2 text-md text-gray-600">ログイン情報を記憶する</span>
+
+                        {canResetPassword && (
+                        <Link
+                            href={route('password.request')}
+                            className="underline text-md text-gray-600 hover:text-gray-900"
+                        >
+                            パスワードの再設定
+                        </Link>
+                        
+                    )}
                     </label>
 
                 </div>
@@ -86,10 +96,12 @@ export default function Login({ status, canResetPassword }) {
                         
                     )}
 
+                    <div>
+                    <a href="{{route('twitter.login')}}" className="btn btn-outline-primary">Twitterログイン</a>
                     <Button className="ml-4 text-lg bg-my-purple3" processing={processing}>
                         ログイン
                     </Button>
-                    <a href="{{route('twitter.login')}}" className="btn btn-outline-primary">Twitterログイン</a>
+                    </div>
 
                 </div>
             </form>
