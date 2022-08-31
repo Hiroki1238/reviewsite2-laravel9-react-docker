@@ -184,8 +184,10 @@ export default function Authenticated({ auth, header, children }) {
             <div className="w-5/8">
             {children}
             </div>
-            <div className="text-3xl mt-3 py-1 text-menutitle-gray">お知らせ</div>
-            {/* <Information informations={informations} /> 未解決  */}
+            <div>
+            <h1 className="mt-5 text-3xl mb-1 text-menutitle-gray">会員メニュー</h1>
+            <p className="py-3">新着のお知らせはありません</p>
+            </div>
             </main>
         </div>
     );

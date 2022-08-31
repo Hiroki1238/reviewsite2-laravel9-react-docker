@@ -182,7 +182,10 @@ export default function Guest({ header, children }) {
             <div className="w-4/7">
             {children}
             </div>
-            <div>右のカラム</div>
+            <div>
+            <h1 className="mt-5 text-3xl mb-1 text-menutitle-gray">会員メニュー</h1>
+            <p className="py-3">新着のお知らせはありません</p>
+            </div>
             </main>
         </div>
     );
