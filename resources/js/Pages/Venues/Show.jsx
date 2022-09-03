@@ -13,7 +13,7 @@ const Index = (props) => {
     const { reviews, prefecture, venue, auth, isLiked } = props;
 
     const { data, setData, post } = useForm({
-        user_id: auth.user.id,
+        user_id: auth.user?.id,
         venue_id: venue.id,
     });
 
