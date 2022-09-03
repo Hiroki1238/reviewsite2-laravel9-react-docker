@@ -8,16 +8,17 @@ function Prefectures({ prefecture_array }) {
                 都道府県から探す
             </h1>
             <div className="divide-y space-y-5 divide-gray-400">
-                {prefecture_array.map((region) => (
+                {prefecture_array.map((region, index) => (
                     <div
                         className="py-7 align-center text-center justify-center mx-auto box-sizing"
-                        key={region.id}
+                        key={`${index}-${region.name}`}
                     >
                         <h1 className="text-3xl mb-3">{region.region}</h1>
 
                         <div className="w-full ml-0 space-x-3">
-                            {region.prefectures.map((prefecture) => (
+                            {region.prefectures.map((prefecture, index) => (
                                 <Link
+                                key={`${index}-${prefecture.name}`}
                                     className="text-2xl text-link-blue"
                                     href={`/prefectures/${prefecture.id}`}
                                 >

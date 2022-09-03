@@ -33,7 +33,7 @@ const Index = (props) => {
                     </div>
                 </Authenticated>
             ) : (
-                <Guest>
+                <Guest announcements = {announcements}>
                     <Slider1 images={images} />
 
                     <div className="w-full">

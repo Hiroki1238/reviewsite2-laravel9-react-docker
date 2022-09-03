@@ -5,7 +5,7 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/inertia-react';
 
-export default function Guest({ header, children }) {
+export default function Guest({ header, children, announcements }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
