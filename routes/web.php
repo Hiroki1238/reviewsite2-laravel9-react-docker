@@ -16,6 +16,7 @@ use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminpageController; //管理者用ページ
 use App\Http\Controllers\TwitterController; //twitter
+use App\Http\Controllers\LoginController; //googleログイン
 
 /*
 |--------------------------------------------------------------------------
@@ -153,6 +154,11 @@ Route::get('/twitter/logout', 'logout');
 //Route::get('/test', function(){
      //return view('prefectures/index');
  //});
+
+ Route::controller(LoginController::class)->group(function () {
+ Route::get('login/google', 'redirectToGoogle');
+ Route::get('login/google/callback', 'handleGoogleCallback');
+ });
 
 
 Route::get('/dashboard', function () {

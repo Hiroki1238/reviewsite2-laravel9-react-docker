@@ -6,9 +6,8 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/inertia-react';
 // import Information from '@/Components/Information'; 未解決
 
-export default function Authenticated({ auth, header, children }) {
+export default function Authenticated({ auth, header, children, announcements }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
-    // const { informations } = props; 未解決
 
     return (
         <div className="min-h-screen bg-gray-100 text-my-gray1 font-rocknroll font-thin" >
@@ -184,10 +183,20 @@ export default function Authenticated({ auth, header, children }) {
             <div className="w-5/8">
             {children}
             </div>
-            <div>
-            <h1 className="mt-5 text-3xl mb-1 text-menutitle-gray">会員メニュー</h1>
-            <p className="py-3">新着のお知らせはありません</p>
-            </div>
+            <div className="w-1/8 text-left text-xl">
+                    <h1 className="mt-5 text-3xl mb-1 text-menutitle-gray">
+                        お知らせ
+                    </h1>
+                    {announcements.map((announcement) => {
+                        return(
+                        <div key={announcement.title}>
+                            <p className="mt-3">{announcement.created_at}</p>
+                            <p className="py-1">{announcement.title}</p>
+                            <p className="py-1">{announcement.body}</p>
+                        </div>
+                        )
+                        })}
+                </div>
             </main>
         </div>
     );

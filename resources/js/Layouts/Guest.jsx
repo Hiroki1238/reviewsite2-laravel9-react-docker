@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import Dropdown from '@/Components/Dropdown';
-import NavLink from '@/Components/NavLink';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
-import { Link } from '@inertiajs/inertia-react';
+import React, { useState } from "react";
+import ApplicationLogo from "@/Components/ApplicationLogo";
+import Dropdown from "@/Components/Dropdown";
+import NavLink from "@/Components/NavLink";
+import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
+import { Link } from "@inertiajs/inertia-react";
 
 export default function Guest({ header, children, announcements }) {
-    const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+    console.log("neko", announcements);
+    const [showingNavigationDropdown, setShowingNavigationDropdown] =
+        useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 text-my-gray1 font-rocknroll font-thin" >
+        <div className="min-h-screen bg-gray-100 text-my-gray1 font-rocknroll font-thin">
             <nav className="bg-my-purple2 border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -27,42 +29,32 @@ export default function Guest({ header, children, announcements }) {
                             </div> */}
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href="/">
-                                    ホーム
-                                </NavLink>
+                                <NavLink href="/">ホーム</NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href="/search">
-                                    会場検索
-                                </NavLink>
+                                <NavLink href="/search">会場検索</NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/login`}>
-                                    マイページ
-                                </NavLink>
+                                <NavLink href={`/login`}>マイページ</NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/login`}>
-                                    お気に入り
-                                </NavLink>
+                                <NavLink href={`/login`}>お気に入り</NavLink>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/login`}>
-                                    ブックマーク
-                                </NavLink>
+                                <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                    <NavLink href={`/login`}>
+                                        ブックマーク
+                                    </NavLink>
+                                </div>
+
+                                <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                    <NavLink href={`/login`}>
+                                        お問い合せ
+                                    </NavLink>
+                                </div>
                             </div>
-
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/login`}>
-                                    お問い合せ
-                                </NavLink>
-                            </div>
-
-                            </div>
-
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
@@ -74,7 +66,9 @@ export default function Guest({ header, children, announcements }) {
                                                 type="button"
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
-                                                <div className="py-1">新規登録</div>
+                                                <div className="py-1">
+                                                    新規登録
+                                                </div>
 
                                                 <svg
                                                     className="ml-2 -mr-0.5 h-4 w-4"
@@ -93,10 +87,18 @@ export default function Guest({ header, children, announcements }) {
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
-                                        <Dropdown.Link href={route('register')} method="get" as="button">
+                                        <Dropdown.Link
+                                            href={route("register")}
+                                            method="get"
+                                            as="button"
+                                        >
                                             新規会員登録
                                         </Dropdown.Link>
-                                        <Dropdown.Link href="/login" method="get" as="button">
+                                        <Dropdown.Link
+                                            href="/login"
+                                            method="get"
+                                            as="button"
+                                        >
                                             ログイン
                                         </Dropdown.Link>
                                     </Dropdown.Content>
@@ -106,19 +108,36 @@ export default function Guest({ header, children, announcements }) {
 
                         <div className="-mr-2 flex items-center sm:hidden">
                             <button
-                                onClick={() => setShowingNavigationDropdown((previousState) => !previousState)}
+                                onClick={() =>
+                                    setShowingNavigationDropdown(
+                                        (previousState) => !previousState
+                                    )
+                                }
                                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out"
                             >
-                                <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <svg
+                                    className="h-6 w-6"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
                                     <path
-                                        className={!showingNavigationDropdown ? 'inline-flex' : 'hidden'}
+                                        className={
+                                            !showingNavigationDropdown
+                                                ? "inline-flex"
+                                                : "hidden"
+                                        }
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
                                         d="M4 6h16M4 12h16M4 18h16"
                                     />
                                     <path
-                                        className={showingNavigationDropdown ? 'inline-flex' : 'hidden'}
+                                        className={
+                                            showingNavigationDropdown
+                                                ? "inline-flex"
+                                                : "hidden"
+                                        }
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
@@ -130,9 +149,17 @@ export default function Guest({ header, children, announcements }) {
                     </div>
                 </div>
 
-                <div className={(showingNavigationDropdown ? 'block' : 'hidden') + ' sm:hidden'}>
+                <div
+                    className={
+                        (showingNavigationDropdown ? "block" : "hidden") +
+                        " sm:hidden"
+                    }
+                >
                     <div className="pt-2 pb-3 space-y-1">
-                        <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
+                        <ResponsiveNavLink
+                            href={route("dashboard")}
+                            active={route().current("dashboard")}
+                        >
                             Dashboard
                         </ResponsiveNavLink>
                     </div>
@@ -154,38 +181,114 @@ export default function Guest({ header, children, announcements }) {
 
             {header && (
                 <header className="bg-white shadow">
-                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">{header}</div>
+                    <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {header}
+                    </div>
                 </header>
             )}
 
             <main className="flex max-w-full min-h-screen justify-around">
-            <div className="text-left text-xl"> {/* text-rightかtext-center最終的にバランスを見て決める */}
+                <div className="w-1/8 text-left text-xl">
+                    {" "}
+                    {/* text-rightかtext-center最終的にバランスを見て決める */}
+                    <div className="text-3xl mt-3 py-1 text-menutitle-gray">
+                        検索
+                    </div>
+                    <div>
+                        <p>
+                            <Link
+                                href="/prefectures"
+                                className="no-underline text-menu-gray text-xl"
+                            >
+                                都道府県から探す
+                            </Link>
+                        </p>
+                        <p>
+                            <Link
+                                href="/search"
+                                className="no-underline text-menu-gray text-xl"
+                            >
+                                キーワードから探す
+                            </Link>
+                        </p>
+                        <p>
+                            <Link
+                                href="/search"
+                                className="no-underline text-menu-gray text-xl"
+                            >
+                                規模から探す
+                            </Link>
+                        </p>
+                    </div>
+                    <hr className="my-5 border-shadowgray1" />
+                    <div className="text-3xl mb-1 text-menutitle-gray">
+                        会員メニュー
+                    </div>
+                    <div>
+                        <p>
+                            <Link
+                                href="/login"
+                                className="no-underline text-menu-gray text-xl"
+                            >
+                                マイページ
+                            </Link>
+                        </p>
+                        <p>
+                            <Link
+                                href="/login"
+                                className="no-underline text-menu-gray text-xl"
+                            >
+                                会員情報
+                            </Link>
+                        </p>
+                        <p>
+                            <Link
+                                href="/login"
+                                className="no-underline text-menu-gray text-xl"
+                            >
+                                お気に入り
+                            </Link>
+                        </p>
+                        <p>
+                            <Link
+                                href="/login"
+                                className="no-underline text-menu-gray text-xl"
+                            >
+                                ブックマーク
+                            </Link>
+                        </p>
+                        <p>
+                            <Link
+                                href="/login"
+                                className="no-underline text-menu-gray text-xl"
+                            >
+                                お問い合わせ
+                            </Link>
+                        </p>
+                        <hr className="my-5 border-shadowgray1" />
+                    </div>
+                </div>
 
-            <div className="text-3xl mt-3 py-1 text-menutitle-gray">検索</div>
-            <div>
-            <p><Link href="/prefectures" className="no-underline text-menu-gray text-xl">都道府県から探す</Link></p>
-            <p><Link href="/search" className="no-underline text-menu-gray text-xl">キーワードから探す</Link></p>
-            <p><Link href="/search" className="no-underline text-menu-gray text-xl">規模から探す</Link></p>
-            </div>
-            <hr className="my-5 border-shadowgray1"/>
-            <div className="text-3xl mb-1 text-menutitle-gray">会員メニュー</div>
-            <div>
-            <p><Link href="/login" className="no-underline text-menu-gray text-xl">マイページ</Link></p>
-            <p><Link href="/login" className="no-underline text-menu-gray text-xl">会員情報</Link></p>
-            <p><Link href="/login" className="no-underline text-menu-gray text-xl">お気に入り</Link></p>
-            <p><Link href="/login" className="no-underline text-menu-gray text-xl">ブックマーク</Link></p>
-            <p><Link href="/login" className="no-underline text-menu-gray text-xl">お問い合わせ</Link></p>
-            <hr className="my-5 border-shadowgray1"/>
-            </div>
+                <div className="w-4/7">{children}</div>
 
-            </div>
-            <div className="w-4/7">
-            {children}
-            </div>
-            <div>
-            <h1 className="mt-5 text-3xl mb-1 text-menutitle-gray">会員メニュー</h1>
-            <p className="py-3">新着のお知らせはありません</p>
-            </div>
+                <div className="w-1/8 text-left text-xl">
+                    <h1 className="mt-5 text-3xl mb-1 text-menutitle-gray">
+                        お知らせ
+                    </h1>
+                    {announcements.map((announcement) => {
+                        return(
+                        <div key={announcement.title}>
+                            <p className="mt-3">{announcement.created_at}</p>
+                            <p className="py-1">{announcement.title}</p>
+                            <p className="py-1">{announcement.body}</p>
+                        </div>
+                        )
+                        })}
+
+                    {/* {announcements[0].created_at}
+                    {announcements[0].title}
+                    {announcements[0].body} */}
+                </div>
             </main>
         </div>
     );

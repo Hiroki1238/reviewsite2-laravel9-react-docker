@@ -97,14 +97,15 @@ export default function Login({ status, canResetPassword }) {
                     )}
 
                     <div>
-                    <a href="{{route('twitter.login')}}" className="btn btn-outline-primary">Twitterログイン</a>
+                    {/* <a href="{{route('twitter.login')}}" className="btn btn-outline-primary">Twitterログイン</a> */}
+                    <a href="/login/google">Google Login</a>
                     <Button className="ml-4 text-lg bg-my-purple3" processing={processing}>
                         ログイン
                     </Button>
                     </div>
-
                 </div>
             </form>
+            
         </Guest>
     );
 }

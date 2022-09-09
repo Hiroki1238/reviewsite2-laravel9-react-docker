@@ -14,7 +14,7 @@ const Index = (props) => {
     return (
         <div>
             {auth.user != null ? (
-                <Authenticated auth={props.auth}>
+                <Authenticated auth={props.auth} announcements = {announcements}>
                     <Slider1 images={images} />
 
                     <div className="w-full">
