@@ -4,7 +4,7 @@ import { Link, useForm } from '@inertiajs/inertia-react';
 import Authenticated from "@/Layouts/Authenticated";
 
 const Edit = (props) => {
-    const { auth } = props; //authの中にuserがあって、ユーザー情報が入ってるから、わざわざuserをコントローラーで連れてくる必要ないかも
+    const { auth, announcements } = props; //authの中にuserがあって、ユーザー情報が入ってるから、わざわざuserをコントローラーで連れてくる必要ないかも
     
     const {data, setData, post} = useForm({  
         image:"",

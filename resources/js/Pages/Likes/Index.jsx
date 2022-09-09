@@ -5,7 +5,7 @@ import { Link } from "@inertiajs/inertia-react";
 import Like from "@/Components/Like";
 
 const Index = (props) => {
-    const { myVenues, auth } = props;
+    const { myVenues, auth, announcements } = props;
 
     return (
         <Authenticated

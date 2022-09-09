@@ -6,7 +6,7 @@ import Search from "@/Components/Search";
 import Guest from "@/Layouts/Guest";
 
 const Index = (props) => {
-    const { auth, prefecture_array } = props;
+    const { auth, prefecture_array, announcements } = props;
     // const { data, setData, post } = useForm({
     //     word: "",
     //     capacity: "",
@@ -15,14 +15,7 @@ const Index = (props) => {
     return (
         <div>
        {auth.user != null ? (
-         <Authenticated
-         auth={props.auth}
-         // header={
-         //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-         //         検索
-         //     </h2>
-         // }
-     >
+           <Authenticated auth={props.auth} announcements = {announcements}>
 
      <Search />
      <div className="py-1"></div>
@@ -34,13 +27,7 @@ const Index = (props) => {
                  </div>
      </Authenticated>
        ):(
-        <Guest
-        // header={
-        //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-        //         検索
-        //     </h2>
-        // }
-    >
+        <Guest announcements = {announcements}>
 
     <Search />
     <div className="py-1"></div>

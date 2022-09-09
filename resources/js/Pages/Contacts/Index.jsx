@@ -3,7 +3,7 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Link, useForm } from "@inertiajs/inertia-react";
 
 const Index = (props) => {
-    const { auth } = props;
+    const { auth, announcements } = props;
     const {data, setData, post} = useForm({
         user_id: auth.user.id,
         user_email: auth.user.email,
@@ -19,7 +19,7 @@ const Index = (props) => {
     
 
     return (
-        <Authenticated auth={props.auth} errors={props.errors}>
+        <Authenticated auth={props.auth} errors={props.errors} announcements={announcements}>
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
             
                 <form onSubmit={handleSendPosts}>

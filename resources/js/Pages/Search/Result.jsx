@@ -4,12 +4,12 @@ import { Link } from '@inertiajs/inertia-react'
 import Guest from "@/Layouts/Guest";
 
 const Word = (props) => {
-  const { results, auth } = props;
+  const { results, auth, announcements } = props;
 
   return (
     <div>
    {auth.user != null ? (
-     <Authenticated auth={props.auth}>
+     <Authenticated auth={props.auth} announcements = {announcements}>
 
      <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
       <h1>検索結果を表示</h1>
@@ -32,7 +32,7 @@ const Word = (props) => {
                </div>
    </Authenticated>
    ):(
-   <Guest>
+   <Guest announcements = {announcements}>
 
     <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
      <h1>検索結果を表示</h1>

@@ -6,20 +6,20 @@ import Prefectures from "@/Components/Prefectures";
 import Guest from "@/Layouts/Guest";
 
 const Index = (props) => {
-    const { auth, prefecture_array } = props;
+    const { auth, prefecture_array, announcements } = props;
     console.log(props);
 
     return (
         <div>
             {auth.user != null ? (
-                <Authenticated auth={props.auth}>
+                <Authenticated auth={props.auth} announcements = {announcements}>
                     <Prefectures prefecture_array={prefecture_array} />
 
                     <Link onClick={() => window.history.back()}>戻る</Link>
                 </Authenticated>
             ) : (
-                <Guest>
-                    <Prefectures prefecture_array={prefecture_array} />
+                <Guest announcements = {announcements}>
+                    <Prefectures prefecture_array={prefecture_array} announcements = {announcements} />
 
                     <Link onClick={() => window.history.back()}>戻る</Link>
                 </Guest>
