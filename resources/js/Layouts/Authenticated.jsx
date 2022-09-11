@@ -187,7 +187,7 @@ export default function Authenticated({ auth, header, children, announcements })
                     <h1 className="mt-5 text-3xl mb-1 text-menutitle-gray">
                         お知らせ
                     </h1>
-                    {announcements.map((announcement) => {
+                    {/* {announcements.map((announcement) => {
                         return(
                         <div key={announcement.title}>
                             <p className="mt-3">{announcement.created_at}</p>
@@ -195,7 +195,7 @@ export default function Authenticated({ auth, header, children, announcements })
                             <p className="py-1">{announcement.body}</p>
                         </div>
                         )
-                        })}
+                        })} */}
                 </div>
             </main>
         </div>

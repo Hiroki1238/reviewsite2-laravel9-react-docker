@@ -9,8 +9,8 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $announcements = $announcement->orderBy('created_at','DESC')->get();
-        return Inertia::render('Contacts/Index',['announcements' => $announcements]);
+        // $announcements = $announcement->orderBy('created_at','DESC')->get();
+        return Inertia::render('Contacts/Index');
     }
 
     public function storeContacts(Request $request, Contact $contact, Announcement $announcement)
