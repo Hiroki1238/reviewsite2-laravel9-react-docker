@@ -40,22 +40,40 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 ---
 
 ## 構成
-```
+
+```	
 reviewsite2-laravel9-react-docker
 |
-├─ docker(ここらはDockerで環境作ってるファイル系)
-│    ├─ php
-│    │   └─ Dockerfile
-│    │   └─ php.ini
-│    ├─ nginx
-│    │    └─ Dockerfile
-│    │    └─ default.conf
-│    └─ mysql
-│         └─ Dockerfile
-│         └─ my.cnf
-│─ .env(環境の設定類が記載されてる 例：DB情報とかとか)
-│─ src
-└─ docker-compose.yml
+├─ app
+│    ├─ Console
+│    │
+│    │
+│    ├─ Exceptions
+│    │
+│    │
+│    └─ 
+│
+│─ .editorconfig
+│─ .env
+│─ .env.example
+│─ .gitattributes
+│─ .gitignore
+│─ .zshrc
+│─ artisan
+│─ composer.json
+│─ composer.lock
+│─ docker-compose.yml
+│─ jsconfig.json
+│─ my.cnf
+│─ package-lock.json
+│─ package.json
+│─ phpunit.xml
+│─ postcss.config.js
+│─ Procfile
+│─ README.md
+│─ tailwind.config.js
+│─ vite.config.js
+
 ```
 
 ---
