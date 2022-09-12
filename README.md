@@ -1,6 +1,6 @@
 # raion
 
-![logo](https://user-images.githubusercontent.com/105682555/189568755-fbfd0e2a-fed1-4406-9164-61f03ef3ac5b.jpg)
+<img width="91" alt="logo-transparent" src="https://user-images.githubusercontent.com/105682555/189569009-f34bd847-62f2-4924-a3e7-42ce76a6c156.png">
 
 ## 本アプリの概要
 ライブ会場にレビューを付けられるアプケーションです。
