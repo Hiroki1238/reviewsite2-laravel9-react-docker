@@ -19,7 +19,7 @@ function Prefectures({ prefecture_array }) {
                             {region.prefectures.map((prefecture, index) => (
                                 <Link
                                 key={`${index}-${prefecture.name}`}
-                                    className="text-2xl text-link-blue"
+                                    className="text-2xl text-link-blue font-kosugimaru"
                                     href={`/prefectures/${prefecture.id}`}
                                 >
                                     {prefecture.name}

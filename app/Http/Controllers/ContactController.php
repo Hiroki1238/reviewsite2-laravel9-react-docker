@@ -7,10 +7,10 @@ use Inertia\Inertia;
 
 class ContactController extends Controller
 {
-    public function index()
+    public function index(Announcement $announcement)
     {
-        // $announcements = $announcement->orderBy('created_at','DESC')->get();
-        return Inertia::render('Contacts/Index');
+        $announcements = $announcement->orderBy('created_at','DESC')->get();
+        return Inertia::render('Contacts/Index', ['announcements' => $announcements]);
     }
 
     public function storeContacts(Request $request, Contact $contact, Announcement $announcement)

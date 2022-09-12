@@ -9,7 +9,7 @@ import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 
 const Create = (props) => {
-    const { venue, auth, images } = props;
+    const { venue, auth, images, announcements } = props;
     // const [value, setValue] = React.useState();
     const [preview, setPreview] = useState([]);
     const { data, setData, post } = useForm({
@@ -44,6 +44,7 @@ const Create = (props) => {
     return (
         <Authenticated
             auth={props.auth}
+            announcements={announcements}
             errors={props.errors} //これは何のため？
         >
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">

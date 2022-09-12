@@ -6,13 +6,13 @@ import Guest from "@/Layouts/Guest";
 
 //レビュー一覧で選択したレビューの詳細画面
 const Picture = (props) => {
-    const { auth, images } = props;
+    const { auth, images, announcements } = props;
     console.log(images);
 
     return (
         <div>
             {auth.user != null ? (
-                <Authenticated auth={props.auth}>
+                <Authenticated auth={props.auth} announcements={announcements}>
       
         <div>
             <ImageList className="w-full h-full"
@@ -44,7 +44,7 @@ const Picture = (props) => {
         </div>
         </Authenticated>
     ) : (
-        <Guest>
+        <Guest announcements={announcements}>
             <div>
             <ImageList className="w-full h-full"
                 // sx={{ width: 1000, height: 1000 }}

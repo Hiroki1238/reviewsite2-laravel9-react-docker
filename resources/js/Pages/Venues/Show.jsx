@@ -10,7 +10,7 @@ import Guest from "@/Layouts/Guest";
 
 // このファイルは会場の情報とこの会場についているレビュー一覧を表示
 const Index = (props) => {
-    const { reviews, prefecture, venue, auth, isLiked } = props;
+    const { reviews, prefecture, venue, auth, isLiked, announcements } = props;
 
     const { data, setData, post } = useForm({
         user_id: auth.user?.id,
@@ -22,12 +22,6 @@ const Index = (props) => {
     const handleLike = (e) => {
         e.preventDefault();
         post(`/like/${venue.id}`);
-
-        // MySwal.fire({
-        //   title: 'Success',
-        //   text: 'いいねしました',
-        //   icon: 'success',
-        // })
     };
 
     const handleUnlike = (e) => {
@@ -39,7 +33,7 @@ const Index = (props) => {
         
         <div>
         {auth.user != null ? (
-            <Authenticated auth={props.auth}>
+            <Authenticated auth={props.auth} announcements={announcements}>
 
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 text-3xl mt-4 mb-7">{venue.name}のレビュー</h1>
@@ -76,12 +70,12 @@ const Index = (props) => {
 
             </div>
 
-            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7 font-kosugimaru">
               <ReviewList reviews={reviews} />
             </div>
         </Authenticated>
     ) : (
-        <Guest>
+        <Guest announcements={announcements}>
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 text-3xl mt-4 mb-7">{venue.name}のレビュー</h1>
 
@@ -117,7 +111,7 @@ const Index = (props) => {
 
             </div>
 
-            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7 font-kosugimaru">
               <ReviewList reviews={reviews} />
             </div>
         </Guest>

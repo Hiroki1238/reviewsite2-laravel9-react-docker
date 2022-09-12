@@ -15,9 +15,7 @@ const Index = (props) => {
         e.preventDefault();
         post(`/mypage/contacts/store`);
     }
-    console.log(props);
     
-
     return (
         <Authenticated auth={props.auth} errors={props.errors} announcements={announcements}>
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">

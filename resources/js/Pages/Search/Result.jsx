@@ -11,7 +11,7 @@ const Word = (props) => {
    {auth.user != null ? (
      <Authenticated auth={props.auth} announcements = {announcements}>
 
-     <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+     <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
       <h1>検索結果を表示</h1>
       {results.map((result) => (
          <div key={result.id}>
@@ -34,7 +34,7 @@ const Word = (props) => {
    ):(
    <Guest announcements = {announcements}>
 
-    <div className="p-6 bg-gray-200 w-96 my-0 mx-auto rounded-lg border border-gray-300 text-center">
+    <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
      <h1>検索結果を表示</h1>
      {results.map((result) => (
         <div key={result.id}>

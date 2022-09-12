@@ -3,10 +3,10 @@ import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
 
 const Index = (props) => {
-    const { auth } = props;
+    const { auth, announcements } = props;
 
     return (
-        <Authenticated auth={props.auth} errors={props.errors}>
+        <Authenticated auth={props.auth} errors={props.errors} announcements={announcements}>
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
             
                     <h1 className="text-title-purple1 text-3xl mb-5">

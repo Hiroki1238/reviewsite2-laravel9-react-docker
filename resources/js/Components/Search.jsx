@@ -19,7 +19,7 @@ const Search = (props) => {
                         キーワードから探す
                     </h1>
                     <input
-                        className="rounded-lg text-lg"
+                        className="rounded-lg text-lg font-kosugimaru"
                         type="text"
                         placeholder="キーワード検索"
                         onChange={(e) => setWord(e.target.value)}

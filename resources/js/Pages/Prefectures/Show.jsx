@@ -4,13 +4,13 @@ import { Link } from "@inertiajs/inertia-react";
 import Guest from "@/Layouts/Guest";
 
 const Index = (props) => {
-    const { venues, prefecture, auth } = props;
+    const { venues, prefecture, auth, announcements } = props;
     console.log(props);
 
     return (
         <div>
             {auth.user != null ? (
-                <Authenticated auth={props.auth}>
+                <Authenticated auth={props.auth} announcements={announcements}>
                     <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                         <div className="py-2 flex justify-left">
                             <Link
@@ -27,7 +27,7 @@ const Index = (props) => {
                         {venues.map((venue) => (
                             <div key={venue.id}>
                                 {venues.map((venue) => (
-                                    <h2 className="text-2xl mb-5">
+                                    <h2 className="text-2xl mb-5 font-kosugimaru">
                                         <Link
                                             className="text-link-blue"
                                             href={`/prefectures/venues/${venue.id}`}
@@ -41,7 +41,7 @@ const Index = (props) => {
                     </div>
                 </Authenticated>
             ) : (
-                <Guest>
+                <Guest announcements={announcements}>
                     <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                         <div className="py-2 flex justify-left">
                             <Link

@@ -12,13 +12,13 @@ const Index = (props) => {
     return (
         <div>
             {auth.user != null ? (
-                <Authenticated auth={props.auth} announcements = {announcements}>
+                <Authenticated auth={props.auth} announcements={announcements}>
                     <Prefectures prefecture_array={prefecture_array} />
 
                     <Link onClick={() => window.history.back()}>戻る</Link>
                 </Authenticated>
             ) : (
-                <Guest announcements = {announcements}>
+                <Guest announcements={announcements}>
                     <Prefectures prefecture_array={prefecture_array} announcements = {announcements} />
 
                     <Link onClick={() => window.history.back()}>戻る</Link>

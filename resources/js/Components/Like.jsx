@@ -7,7 +7,7 @@ const Like = ({myVenues}) => {
     <div>
       {myVenues.map((venue) => (
                     <div key={venue.id}>
-                        <h2 className="m-2">
+                        <h2 className="m-2 font-kosugimaru">
                             <Link
                                 className="text-link-blue text-2xl"
                                 href={`/prefectures/venues/${venue.id}`}

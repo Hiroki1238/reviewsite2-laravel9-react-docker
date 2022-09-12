@@ -7,7 +7,7 @@ import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 
 const Edit = (props) => {
-    const { review } = props;
+    const { review, announcements } = props;
     const { data, setData, put } = useForm({
         title: review.title,
         body: review.body,
@@ -28,11 +28,7 @@ const Edit = (props) => {
     return (
         <Authenticated
             auth={props.auth}
-            // header={
-            //         <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-            //             編集
-            //         </h2>
-            //     }
+            announcements={announcements}
         >
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <form onSubmit={handleSendPosts}>

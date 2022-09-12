@@ -162,7 +162,7 @@ export default function Authenticated({ auth, header, children, announcements })
             <main className="flex max-w-full min-h-screen justify-around">
             <div className="text-left text-xl"> {/* text-rightかtext-center最終的にバランスを見て決める */}
 
-            <div className="text-3xl mt-3 py-1 text-menutitle-gray">検索</div>
+            <div className="text-3xl mt-4 py-1 text-menutitle-gray">検索</div>
             <div>
             <p><Link href="/prefectures" className="no-underline text-menu-gray text-xl">都道府県から探す</Link></p>
             <p><Link href="/search" className="no-underline text-menu-gray text-xl">キーワードから探す</Link></p>
@@ -184,15 +184,15 @@ export default function Authenticated({ auth, header, children, announcements })
             {children}
             </div>
             <div className="w-1/8 text-left text-xl">
-                    <h1 className="mt-5 text-3xl mb-1 text-menutitle-gray">
+                    <h1 className="mt-6 text-3xl mb-4 text-menutitle-gray">
                         お知らせ
                     </h1>
                     {announcements.map((announcement) => {
                         return(
                         <div key={announcement.title}>
                             <p className="mt-3">{announcement.created_at}</p>
-                            <p className="py-1">{announcement.title}</p>
-                            <p className="py-1">{announcement.body}</p>
+                            <p className="py-1 text-xl">{announcement.title}</p>
+                            <p className="py-1 text-xl font-kosugimaru mb-6">{announcement.body}</p>
                         </div>
                         )
                         })}
