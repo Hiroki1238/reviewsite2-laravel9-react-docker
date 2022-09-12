@@ -6,13 +6,16 @@ import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import Announcement from '@/Components/Announcement';
 
-export default function Login({ status, canResetPassword }) {
+export default function Login({ status, canResetPassword, announcements }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
         remember: '',
     });
+
+    console.log("neko2",announcements);
 
     useEffect(() => {
         return () => {
@@ -31,7 +34,7 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <Guest>
+        <Guest announcements={announcements}>
             <Head title="Log in" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
@@ -71,16 +74,6 @@ export default function Login({ status, canResetPassword }) {
                         <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
 
                         <span className="ml-2 text-md text-gray-600">ログイン情報を記憶する</span>
-
-                        {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-md text-gray-600 hover:text-gray-900"
-                        >
-                            パスワードの再設定
-                        </Link>
-                        
-                    )}
                     </label>
 
                 </div>
@@ -98,7 +91,7 @@ export default function Login({ status, canResetPassword }) {
 
                     <div>
                     {/* <a href="{{route('twitter.login')}}" className="btn btn-outline-primary">Twitterログイン</a> */}
-                    <a href="/login/google">Google Login</a>
+                    <a href="/login/google">Googleアカウントでログイン</a>
                     <Button className="ml-4 text-lg bg-my-purple3" processing={processing}>
                         ログイン
                     </Button>

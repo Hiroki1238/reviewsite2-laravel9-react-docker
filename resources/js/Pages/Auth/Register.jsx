@@ -38,6 +38,10 @@ export default function Register() {
 
             <ValidationErrors errors={errors} />
 
+            <div className="p-12 mt-9 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7 text-2xl">
+            <a href="/login/google">Googleアカウントでログイン</a>
+            </div>
+
             <form className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7" onSubmit={submit}>
 
                 <div>

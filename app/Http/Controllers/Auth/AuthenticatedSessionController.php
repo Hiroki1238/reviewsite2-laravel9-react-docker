@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use App\Models\Announcement;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -17,11 +18,12 @@ class AuthenticatedSessionController extends Controller
      *
      * @return \Inertia\Response
      */
-    public function create()
+    public function create(Announcement $announcement)
     {
+        $announcements = $announcement->orderBy('created_at','DESC')->get();
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
-            'status' => session('status'),
+            'status' => session('status'), 'announcements' => $announcements
         ]);
     }
 
