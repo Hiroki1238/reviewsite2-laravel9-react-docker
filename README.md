@@ -8,9 +8,10 @@
 #### デプロイ先
 https://reviewsite2-laravel9-react.herokuapp.com/
 
-#### 『注意』
-未完成です。
+#### 注意
+本アプリは制作途中です。
 
+---
 
 #### 実装済み機能
 - 会員登録機能
@@ -23,7 +24,7 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 - お問い合わせ機能
 
 
-#### FurureWork
+#### 今後の展望
 - ソーシャルログイン(Google,Twitterなど)
 - ハンバーガーボタン
 - SNS共有ボタン
