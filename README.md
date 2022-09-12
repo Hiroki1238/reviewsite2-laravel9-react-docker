@@ -32,9 +32,12 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 ---
 
 ## 使用技術
-- Docker
-- Laravel9
+###フロントエンド
 - React
+###バックエンド
+- Laravel9
+###インフラ
+- Docker
 - MySQL
 
 ---
@@ -79,7 +82,6 @@ reviewsite2-laravel9-react-docker
 ---
 
 ## 環境の立ち上げ方
-#### とりあえず必要なやつ
 1. DockerDesktopのインストール
 2. このリポジトリをクローン
 3. 対象箇所で下記を実行
