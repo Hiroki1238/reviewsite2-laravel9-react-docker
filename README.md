@@ -11,7 +11,10 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 #### 注意
 本アプリは制作途中です。
 
-#### 実装済み機能
+---
+
+## 実装済み機能
+#### 一般ユーザー
 - 会員登録機能
 - レビュー投稿のCRUD
 - いいね、ブックマーク機能
@@ -20,6 +23,13 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 - 画像投稿機能（S3）
 - 検索機能
 - お問い合わせ機能
+
+#### 管理者
+- 管理者ログイン
+- 会場の新規登録・修正・削除機能
+- 不適切なレビューの削除機能
+- お問い合わせ返信機能
+
 
 
 #### 今後の展望
@@ -38,16 +48,20 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 - CSS(Tailwind)
 
 #### バックエンド
-
+- PHP
 - Laravel9
 
 #### インフラ
 - Docker
 - MySQL
+- Google+ API
+
+#### その他
+- Visual Studio Code
 
 ---
 
-## 構成
+## 構成図
 
 ```	
 reviewsite2-laravel9-react-docker
