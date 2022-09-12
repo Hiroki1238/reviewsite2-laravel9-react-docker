@@ -148,14 +148,14 @@ const Create = (props) => {
                             </div>
                         </div>
 
-                        {/* 表示用 */}
+                        {/* 投稿する写真のプレビュー */}
                     <div className="h-48 w-48 my-0 mx-auto">
                     {preview ? <div>
                             {preview.map((pre, index) => (
                                 <img
                                 key={index}
                                     src={`${pre}`}
-                                    className="object-contain"
+                                    className="object-contain aspect-auto"
                                 />
                             ))}
                         </div> : null }

@@ -23,7 +23,7 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => env('APP_URL') . ':8000'. '/login/google/callback', //'8000'が必要か不明
+        'redirect' => env('APP_URL') . '/login/google/callback',
     ],
 
     'mailgun' => [
