@@ -11,8 +11,6 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 #### 注意
 本アプリは制作途中です。
 
----
-
 #### 実装済み機能
 - 会員登録機能
 - レビュー投稿のCRUD
@@ -59,6 +57,8 @@ reviewsite2-laravel9-react-docker
 │─ src
 └─ docker-compose.yml
 ```
+
+---
 
 ## 環境の立ち上げ方
 #### とりあえず必要なやつ
