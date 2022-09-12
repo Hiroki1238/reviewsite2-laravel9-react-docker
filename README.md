@@ -32,11 +32,11 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 ---
 
 ## 使用技術
-###フロントエンド
+####フロントエンド
 - React
-###バックエンド
+####バックエンド
 - Laravel9
-###インフラ
+####インフラ
 - Docker
 - MySQL
 
