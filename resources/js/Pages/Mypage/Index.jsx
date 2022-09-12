@@ -6,12 +6,13 @@ import Like from "@/Components/Like";
 import ReviewList2 from "@/Components/ReviewList2";
 
 const Index = (props) => {
-    const { myReviews, myBookmarks, myVenues, auth } = props;
+    const { myReviews, myBookmarks, myVenues, auth, announcements } = props;
     //ProfileControllerのindexでReview::with('user','venue')としているのでvenueの情報も取得できている
 
     return (
         <Authenticated
             auth={props.auth}
+            announcements={announcements}
         >
              <div className="p-6 mt-9 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 mt-3 mb-5 text-2xl">

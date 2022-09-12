@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ReviewRequest;
-use App\Models\Review;
-use App\Models\Venue;
-use App\Models\User;
-use App\Models\Image;
+use App\Models\{User, Review, Venue, Image};
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Storage;
 use Storage;

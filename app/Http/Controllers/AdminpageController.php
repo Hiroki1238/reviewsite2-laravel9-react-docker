@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Contact;
-use App\Models\Venue;
+use App\Models\{Contact, Venue};
 use Inertia\Inertia;
 
 class AdminpageController extends Controller

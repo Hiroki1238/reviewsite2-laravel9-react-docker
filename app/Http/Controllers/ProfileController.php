@@ -2,35 +2,37 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\ProfileRequest;
-use App\Models\{User, Review, Venue, Image, Contact};
+use App\Models\{User, Review, Venue, Image, Contact, Announcement};
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index(Announcement $announcement)
     {
+        $announcements = $announcement->orderBy('created_at','DESC')->get();
         $auth = auth()->user();
         $authId = auth()->id();
         $myReviews = Review::with('user','venue')->where('user_id', $authId)->get(); 
         //上の行についてwithの()内で2個していできることが判明
         $myVenues = $auth->likeVenues()->get();
-
         $myBookmarks = $auth->bookmarkReviews()->get();
-        return Inertia::render('Mypage/Index',['myReviews' => $myReviews, 'myBookmarks' => $myBookmarks, 'myVenues' => $myVenues]);
+        return Inertia::render('Mypage/Index',['myReviews' => $myReviews, 'myBookmarks' => $myBookmarks, 'myVenues' => $myVenues, 'announcements' => $announcements]);
     }
 
 
-    public function show(User $user)
+    public function show(User $user, Announcement $announcement)
     {
-        return Inertia::render('Mypage/Show',['user' => $user]);
+        $announcements = $announcement->orderBy('created_at','DESC')->get();
+        return Inertia::render('Mypage/Show',['user' => $user, 'announcements' => $announcements]);
     }
 
 
-    public function edit(User $user)
+    public function edit(User $user, Announcement $announcement)
     {
-        return Inertia::render('Mypage/Edit'); //authの中身で事足りるから['user' => $user]を渡すのをやめてみた
+        $announcements = $announcement->orderBy('created_at', 'DESC')->get();
+        return Inertia::render('Mypage/Edit',['announcements' => $announcements]); //$userを渡さなくてもauthの中から取り出せる
     }
 
 

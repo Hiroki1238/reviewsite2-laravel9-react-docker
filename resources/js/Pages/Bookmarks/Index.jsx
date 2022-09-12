@@ -4,11 +4,12 @@ import { Link } from "@inertiajs/inertia-react";
 import Bookmark from "@/Components/Bookmark";
 
 const Index = (props) => {
-    const { myBookmarks, auth } = props;
+    const { myBookmarks, auth, announcements } = props;
 
     return (
         <Authenticated
             auth={props.auth}
+            announcements={announcements}
             // header={
             //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
             //         ブックマーク

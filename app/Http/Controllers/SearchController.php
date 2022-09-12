@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Inertia\Inertia;
 use Illuminate\Http\Request;
-use App\Models\Venue;
-use App\Models\{Prefecture, Announcement};
+use App\Models\{Prefecture, Venue, Announcement};
 
 class SearchController extends Controller
 {

@@ -7,8 +7,7 @@ use App\Models\{User,Announcement};
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\{Auth,Hash};
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 
@@ -56,6 +55,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/');
+        //return redirect('RouteServiceProvider::HOME');
     }
 }

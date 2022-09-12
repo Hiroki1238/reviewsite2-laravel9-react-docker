@@ -10,11 +10,7 @@ const Index = (props) => {
     return (
         <Authenticated
             auth={props.auth}
-            // header={
-            //     <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-            //         お気に入り
-            //     </h2>
-            // }
+            announcements={announcements}
         >
 
             <div className="py-2 px-3 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
