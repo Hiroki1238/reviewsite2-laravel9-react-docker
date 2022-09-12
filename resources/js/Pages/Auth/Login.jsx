@@ -15,8 +15,6 @@ export default function Login({ status, canResetPassword, announcements }) {
         remember: '',
     });
 
-    console.log("neko2",announcements);
-
     useEffect(() => {
         return () => {
             reset('password');

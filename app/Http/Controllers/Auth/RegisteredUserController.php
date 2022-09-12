@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\{User,Announcement};
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 
+//このコントローラーがRegister.jsxを表示している
 class RegisteredUserController extends Controller
 {
     /**
@@ -19,9 +20,10 @@ class RegisteredUserController extends Controller
      *
      * @return \Inertia\Response
      */
-    public function create()
+    public function create(Announcement $announcement)
     {
-        return Inertia::render('Auth/Register');
+        $announcements = $announcement->orderBy('created_at','DESC')->get();
+        return Inertia::render('Auth/Register',['announcements' => $announcements]);
     }
 
     /**

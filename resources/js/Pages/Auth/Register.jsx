@@ -6,7 +6,7 @@ import Label from '@/Components/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
 
-export default function Register() {
+export default function Register({ announcements }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         lastname: '',
         name: '',
@@ -33,7 +33,7 @@ export default function Register() {
     };
 
     return (
-        <Guest>
+        <Guest announcements={announcements}>
             <Head title="Register" />
 
             <ValidationErrors errors={errors} />
