@@ -34,6 +34,8 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 ## 使用技術
 #### フロントエンド
 - React
+- HTML
+- CSS(Tailwind)
 
 #### バックエンド
 
