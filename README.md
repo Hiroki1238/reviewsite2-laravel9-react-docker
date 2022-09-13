@@ -73,7 +73,7 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 ## データベース設計
 
 #### 各テーブルについて
-|テーブル名|説明|
+|テーブル名|    説明    |
 | :---: | :---: |
 |  TD  |  TD  |
 |  TD  |  TD  |
