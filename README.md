@@ -75,16 +75,16 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 #### 各テーブルについて
 |テーブル名|説明|
 | :---: | :---: |
-|  users  |  TD  |
-|  reviews  |  TD  |
-|  images  |  TD  |
-|  venues  |  TD  |
-|  prefectures  |  TD  |
-|  regions  |  TD  |
-|  contacts  |  TD  |
-|  regions  |  TD  |
-|  likes  |  TD  |
-|  bookmarks  |  TD  |
+|  users  |  一般ユーザー情報  |
+|  admins  |  管理者ユーザー情報  |
+|  reviews  |  レビューの情報  |
+|  images  |  レビュー投稿時に添付した画像のパスの情報  |
+|  venues  |  全国のライブ会場の情報  |
+|  prefectures  |  都道府県の情報  |
+|  regions  |  地方の情報  |
+|  contacts  |  お問い合せ内容の情報  |
+|  likes  |  会場に対するお気に入り  |
+|  bookmarks  |  レビューに対するブックマーク  |
 
 ---
 
