@@ -103,17 +103,20 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 //reviewsite2-laravel9-react-dockerで下記を実行
 $ sail artisan migrate
 $ sail artisan db:seed
+```
 
-　5. composer、node.jsのインストール
+5. composer、node.jsのインストール
+```
+$composer install
+$npm install
+```
 
-
-
-6.リモートでアプリケーションを起動
+6.ローカルでアプリケーションを起動
+```
 $ sail up -d
 $ npm run dev
 // localhostにアクセスするとプレビューが確認できる
-
-
+```
 
 #### dockerの停止
 ```
