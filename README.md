@@ -11,6 +11,10 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 #### 注意
 本アプリは制作途中です。
 
+#### 制作背景
+ライブの当日までに自分の座席は発表されますが、実際に会場へ行ってみると番号から予想していた距離感よりも遠く、双眼鏡を持ってこなかったことや、多額の交通費をかけて遠い会場まで来たことを後悔する事があります。会場の座席から撮った写真が画像検索で出てきますが、そのような画像が大変参考になると感じていました。しかし、こういった情報がまとめられているライブ会場にレビューをつけるアプリが見当たらなかったため、自分で開発することにしました。
+
+
 ---
 
 ## 実装済み機能
@@ -62,41 +66,17 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 ---
 
 ## 構成図
+※修正中です。
 
-```	
-reviewsite2-laravel9-react-docker
-|
-├─ app
-│    ├─ Console
-│    │
-│    │
-│    ├─ Exceptions
-│    │
-│    │
-│    └─ 
-│
-│─ .editorconfig
-│─ .env
-│─ .env.example
-│─ .gitattributes
-│─ .gitignore
-│─ .zshrc
-│─ artisan
-│─ composer.json
-│─ composer.lock
-│─ docker-compose.yml
-│─ jsconfig.json
-│─ my.cnf
-│─ package-lock.json
-│─ package.json
-│─ phpunit.xml
-│─ postcss.config.js
-│─ Procfile
-│─ README.md
-│─ tailwind.config.js
-│─ vite.config.js
+---
 
-```
+## データベース設計
+
+#### 各テーブルについて
+|テーブル名|説明|
+| :---: | :---: |
+|  TD  |  TD  |
+|  TD  |  TD  |
 
 ---
 
