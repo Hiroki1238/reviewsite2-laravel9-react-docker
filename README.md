@@ -73,10 +73,18 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 ## データベース設計
 
 #### 各テーブルについて
-|テーブル名|    説明    |
+|テーブル名|説明|
 | :---: | :---: |
-|  TD  |  TD  |
-|  TD  |  TD  |
+|  users  |  TD  |
+|  reviews  |  TD  |
+|  images  |  TD  |
+|  venues  |  TD  |
+|  prefectures  |  TD  |
+|  regions  |  TD  |
+|  contacts  |  TD  |
+|  regions  |  TD  |
+|  likes  |  TD  |
+|  bookmarks  |  TD  |
 
 ---
 
