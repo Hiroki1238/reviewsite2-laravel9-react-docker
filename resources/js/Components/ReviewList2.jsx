@@ -6,14 +6,14 @@ const ReviewList2 = ({reviews}) => {
     <div className="mb-4">
        {reviews.map((review) => (
                         <div key={review.id}>
-                            <h2 className="m-2 font-kosugimaru">
+                            <div className="m-2 font-kosugimaru">
                                 <Link
                                     className="text-link-blue text-2xl"
                                     href={`/reviews/${review.id}`}
                                 >
                                     {review.title} <span className="text-lg">({review.venue.name})</span>
                                 </Link>
-                            </h2>
+                            </div>
                         </div>
                     ))}
     </div>

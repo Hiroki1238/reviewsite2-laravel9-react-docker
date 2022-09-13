@@ -45,8 +45,8 @@ const Edit = (props) => {
                 <form onSubmit={handleSendPosts}>
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">氏名</h2>
-                        <input className="mr-2 mb-8 text-lg rounded-lg" type="text" value={data.lastname} onChange={(e) => setData("lastname", e.target.value)}/>
-                        <input className="ml-2 mb-8 text-lg rounded-lg"type="text" value={data.name} onChange={(e) => setData("name", e.target.value)}/>
+                        <input className="mr-2 mb-8 text-lg rounded-lg font-kosugimaru" type="text" value={data.lastname} onChange={(e) => setData("lastname", e.target.value)}/>
+                        <input className="ml-2 mb-8 text-lg rounded-lg font-kosugimaru"type="text" value={data.name} onChange={(e) => setData("name", e.target.value)}/>
                         <span className="text-red-600">{props.errors.lastname}</span>
                         <span className="text-red-600">{props.errors.name}</span>
                     </div>                    
@@ -59,13 +59,13 @@ const Edit = (props) => {
                     
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">ユーザー名</h2>
-                        <input className="mb-8 text-lg rounded-lg" type="text" value={data.uname} onChange={(e) => setData("uname", e.target.value)}/>
+                        <input className="mb-8 text-lg rounded-lg font-kosugimaru" type="text" value={data.uname} onChange={(e) => setData("uname", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">メールアドレス</h2>
-                        <input className="mb-8 w-4/7 text-lg rounded-lg" type="text" value={data.email} onChange={(e) => setData("email", e.target.value)}/>
+                        <input className="mb-8 w-4/7 text-lg rounded-lg font-kosugimaru" type="text" value={data.email} onChange={(e) => setData("email", e.target.value)}/>
                         <span className="text-red-600">{props.errors.seat}</span>
                     </div>  
 
@@ -88,7 +88,7 @@ const Edit = (props) => {
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl mb-2">プロフィール</h2>
-                        <textarea className="mb-8 w-7/9 h-60 text-lg rounded-xl" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
+                        <textarea className="mb-8 w-7/9 h-60 text-lg rounded-xl font-kosugimaru" value={data.profile} onChange={(e) => setData("profile", e.target.value)} />
                         <span className="text-red-600">{props.errors.profile}</span>
                     </div>  
 

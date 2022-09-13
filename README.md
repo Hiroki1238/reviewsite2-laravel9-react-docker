@@ -98,7 +98,7 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 ＄ sail up -d
 ```
 
-4. migration
+4. マイグレーション
 ```
 //reviewsite2-laravel9-react-dockerで下記を実行
 $ sail artisan migrate

@@ -18,13 +18,13 @@ const Index = (props) => {
        </div>
 
        <h2 className="text-title-purple1 text-2xl">氏名</h2>
-       <h3 className="text-my-gray1 text-xl">{auth.user.lastname} {auth.user.name}</h3>
+       <h3 className="text-my-gray1 text-xl font-kosugimaru">{auth.user.lastname} {auth.user.name}</h3>
        <h2 className="text-title-purple1 text-2xl mt-4">ユーザー名</h2>
-       <h3 className="text-my-gray1 text-xl">{auth.user.uname}</h3>
+       <h3 className="text-my-gray1 text-xl font-kosugimaru">{auth.user.uname}</h3>
        <h2 className="text-title-purple1 text-2xl mt-4">年齢</h2>
-       <h3 className="text-my-gray1 text-xl">{auth.user.age}代</h3>
+       <h3 className="text-my-gray1 text-xl font-kosugimaru">{auth.user.age}代</h3>
        <h2 className="text-title-purple1 text-2xl mt-4">プロフィール</h2>
-       <h3 className="text-my-gray1 text-xl">{auth.user.profile}</h3>
+       <h3 className="text-my-gray1 text-xl font-kosugimaru">{auth.user.profile}</h3>
        <div className="border border-b-0 border-gray-300 mx-4 mt-4"></div>
        
 

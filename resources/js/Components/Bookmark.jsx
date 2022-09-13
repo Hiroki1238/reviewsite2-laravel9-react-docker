@@ -11,7 +11,7 @@ const Bookmark = ({ myBookmarks }) => {
                             className="text-link-blue text-2xl"
                             href={`/reviews/${review.id}`}
                         >
-                            {review.title}
+                            <span className="text-lg">[{review.updated_at}]</span> {review.title}
                         </Link>
                     </h2>
                 </div>

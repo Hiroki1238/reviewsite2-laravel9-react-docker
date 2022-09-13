@@ -83,7 +83,7 @@ const Index = (props) => {
                 <h2 className="py-1">収容人数 : {venue.scale_standing}人</h2>
                 <h2 className="py-1">所在地 : {venue.address}</h2>
                 <h2 className="py-1">
-                    ホームページ : <a className="text-gray-500"  target="_blank" href={venue.url}>{venue.url}</a>
+                    ホームページ : <a className="text-gray-500 font-kosugimaru"  target="_blank" href={venue.url}>{venue.url}</a>
                 </h2>
                 
                  <br/>
