@@ -12,6 +12,13 @@
 #### デプロイ先
 https://reviewsite2-laravel9-react.herokuapp.com/
 
+#### テスト用アカウント
+氏：テスト
+名：てすと
+ユーザー名：テスト用
+メールアドレス：test@gmail.com
+パスワード：testtest
+
 #### 注意
 本アプリは制作途中です。
 
