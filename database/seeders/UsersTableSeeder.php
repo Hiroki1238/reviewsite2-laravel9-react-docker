@@ -30,12 +30,12 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'lastname' => 'テスト',
-            'name' => 'ねこ',
-            'uname' => 'neko',
-            'email' => 'neko@gmail.com',
-            'age' => '10',
-            'password' => Hash::make('nekoneko'),
-            'profile' => 'こんにちは！',
+            'name' => 'てすと',
+            'uname' => 'テスト用',
+            'email' => 'test@gmail.com',
+            'age' => '30',
+            'password' => Hash::make('testtest'),
+            'profile' => 'こんにちは。テストです。',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);

@@ -4,9 +4,9 @@ import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/inertia-react";
+import ApplicationLogo2 from "@/Components/ApplicationLogo2";
 
 export default function Guest({ header, children, announcements }) {
-    console.log("neko", announcements);
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
@@ -18,7 +18,7 @@ export default function Guest({ header, children, announcements }) {
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
                                 <Link href="/">
-                                    <ApplicationLogo className="block h-9 w-auto text-gray-500" />
+                                    <ApplicationLogo2 className="block h-9 w-auto text-gray-500" />
                                 </Link>
                             </div>
 
