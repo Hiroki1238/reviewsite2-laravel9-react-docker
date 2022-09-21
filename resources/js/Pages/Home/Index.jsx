@@ -15,7 +15,9 @@ const Index = (props) => {
         <div>
             {auth.user != null ? (
                 <Authenticated auth={props.auth} announcements = {announcements}>
+                     <div className="z-0">
                     <Slider1 images={images} />
+                    </div>
 
                     <div className="w-full">
                         <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
@@ -34,7 +36,9 @@ const Index = (props) => {
                 </Authenticated>
             ) : (
                 <Guest announcements = {announcements}>
+                    <div className="z-0">
                     <Slider1 images={images} />
+                    </div>
 
                     <div className="w-full">
                         <div className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">

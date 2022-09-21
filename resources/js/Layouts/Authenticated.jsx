@@ -11,7 +11,7 @@ export default function Authenticated({ auth, header, children, announcements })
 
     return (
         <div className="min-h-screen bg-gray-100 text-my-gray1 font-rocknroll font-thin" >
-            <nav className="bg-my-purple2 border-b border-gray-100">
+            <nav className="bg-my-purple2 border-b border-gray-100 fixed w-full z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
@@ -159,7 +159,7 @@ export default function Authenticated({ auth, header, children, announcements })
                 </header>
             )}
 
-            <main className="flex max-w-full min-h-screen justify-around">
+            <main className="flex max-w-full min-h-screen justify-around pt-20 z-0">
             <div className="text-left text-xl"> {/* text-rightかtext-center最終的にバランスを見て決める */}
 
             <div className="text-3xl mt-4 py-1 text-menutitle-gray">検索</div>
@@ -198,6 +198,7 @@ export default function Authenticated({ auth, header, children, announcements })
                         })}
                 </div>
             </main>
+            {/* フッターを設置 */}
         </div>
     );
 }
