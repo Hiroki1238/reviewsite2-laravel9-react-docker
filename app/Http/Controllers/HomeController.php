@@ -14,4 +14,10 @@ class HomeController extends Controller
         $announcements = $announcement->orderBy('created_at','DESC')->get();
         return Inertia::render('Home/Index',['prefecture_array' => $prefecture->getRegionList(), 'reviews' => $review->getByLimit(5), 'images' => $images, 'announcements' => $announcements]); //新着のレビューをホームに表示、表示件数をここで指定
     }
+
+    public function description(Announcement $announcement)
+    {
+        $announcements = $announcement->orderBy('created_at','DESC')->get();
+        return Inertia::render('Home/Description',['announcements' => $announcements]); //新着のレビューをホームに表示、表示件数をここで指定
+    }
 }

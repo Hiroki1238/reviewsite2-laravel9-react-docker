@@ -70,7 +70,10 @@ Route::put('/reviews/update/{review}/', 'update');
 Route::delete('/reviews/delete/{review}', 'delete');
 });
 
+Route::controller(HomeController::class)->group(function (){
 Route::get('/',[HomeController::class,'index']); //ホーム
+Route::get('/description',[HomeController::class,'description']); //紹介ページ
+});
 
 
 //マイページ関連

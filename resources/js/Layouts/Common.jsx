@@ -6,7 +6,7 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/inertia-react";
 import ApplicationLogo2 from "@/Components/ApplicationLogo2";
 
-export default function Guest({ header, children, announcements }) {
+export default function Common({ header, children}) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
@@ -188,101 +188,9 @@ export default function Guest({ header, children, announcements }) {
             )}
 
             <main className="flex max-w-full min-h-screen justify-around pt-20 z-0">
-                <div className="w-1/8 text-left text-xl">
-                    <div className="text-3xl mt-4 py-1 text-menutitle-gray">
-                        検索
-                    </div>
-                    <div>
-                        <p>
-                            <Link
-                                href="/prefectures"
-                                className="no-underline text-menu-gray text-xl"
-                            >
-                                都道府県から探す
-                            </Link>
-                        </p>
-                        <p>
-                            <Link
-                                href="/search"
-                                className="no-underline text-menu-gray text-xl"
-                            >
-                                キーワードから探す
-                            </Link>
-                        </p>
-                        <p>
-                            <Link
-                                href="/search"
-                                className="no-underline text-menu-gray text-xl"
-                            >
-                                規模から探す
-                            </Link>
-                        </p>
-                    </div>
-                    <hr className="my-5 border-shadowgray1" />
-                    <div className="text-3xl mb-1 text-menutitle-gray">
-                        会員メニュー
-                    </div>
-                    <div>
-                        <p>
-                            <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl"
-                            >
-                                マイページ
-                            </Link>
-                        </p>
-                        <p>
-                            <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl"
-                            >
-                                会員情報
-                            </Link>
-                        </p>
-                        <p>
-                            <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl"
-                            >
-                                お気に入り
-                            </Link>
-                        </p>
-                        <p>
-                            <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl"
-                            >
-                                ブックマーク
-                            </Link>
-                        </p>
-                        <p>
-                            <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl"
-                            >
-                                お問い合わせ
-                            </Link>
-                        </p>
-                        <hr className="my-5 border-shadowgray1" />
-                    </div>
-                </div>
 
-                <div className="w-4/7">{children}</div>
+                <div>{children}</div>
 
-                <div className="w-1/8 text-left text-xl">
-                    <h1 className="mt-6 text-3xl mb-4 text-menutitle-gray">
-                        お知らせ
-                    </h1>
-                    {announcements.map((announcement) => {
-                        return(
-                        <div key={announcement.title}>
-                            <p className="mt-3">{announcement.created_at}</p>
-                            <p className="py-1 text-xl">{announcement.title}</p>
-                            <p className="py-1 text-xl font-kosugimaru mb-6">{announcement.body}</p>
-                        </div>
-                        )
-                        })}
-                </div>
             </main>
         </div>
     );

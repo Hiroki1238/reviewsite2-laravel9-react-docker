@@ -4,7 +4,7 @@ import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link } from '@inertiajs/inertia-react';
-// import Information from '@/Components/Information'; 未解決
+import ApplicationLogo2 from "@/Components/ApplicationLogo2";
 
 export default function Authenticated({ auth, header, children, announcements }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
@@ -16,7 +16,7 @@ export default function Authenticated({ auth, header, children, announcements })
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
-                                <Link href="/">
+                                <Link href="/description">
                                     <ApplicationLogo className="block h-9 w-auto text-gray-500" />
                                 </Link>
                             </div>
@@ -160,7 +160,7 @@ export default function Authenticated({ auth, header, children, announcements })
             )}
 
             <main className="flex max-w-full min-h-screen justify-around pt-20 z-0">
-            <div className="text-left text-xl"> {/* text-rightかtext-center最終的にバランスを見て決める */}
+            <div className="text-left text-xl">
 
             <div className="text-3xl mt-4 py-1 text-menutitle-gray">検索</div>
             <div>
