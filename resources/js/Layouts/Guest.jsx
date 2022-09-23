@@ -4,7 +4,6 @@ import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/inertia-react";
-import ApplicationLogo2 from "@/Components/ApplicationLogo2";
 
 export default function Guest({ header, children, announcements }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
