@@ -2,10 +2,9 @@ import React from "react";
 import Common from "@/Layouts/Common";
 import { Link } from "@inertiajs/inertia-react";
 import ReviewList2 from "@/Components/ReviewList2";
-import Announcement from "@/Components/Announcement";
 
-const Index = (props) => {
-    const { auth, announcements } = props;
+const Description = (props) => {
+    const { auth } = props;
 
     return (
         <div>
@@ -19,4 +18,4 @@ const Index = (props) => {
     );
 };
 
-export default Index;
+export default Description;

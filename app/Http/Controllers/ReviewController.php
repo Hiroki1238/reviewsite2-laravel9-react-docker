@@ -65,7 +65,13 @@ class ReviewController extends Controller
     public function delete(Review $review)
     {
         $review->delete();
-        return redirect('/reviews');
+        return redirect('/reviews/deleted');
+    }
+
+    public function deleted(Announcement $announcement)
+    {
+        $announcements = $announcement->orderBy('created_at','DESC')->get();
+        return Inertia::render('Reviews/Deleted',['announcements' => $announcements]);
     }
     
 }

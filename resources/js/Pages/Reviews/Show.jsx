@@ -32,6 +32,12 @@ const Show = (props) => {
         post(`/notbookmark/${review.id}`); //returnから上は{`${image.image_path}`}の外側の中「」いらない,return内はいる
     };
 
+    const handleDeletePost = (id) => {
+        Inertia.delete(`/reviews/delete/${id}`, {
+            onBefore: () => confirm("一度削除した投稿は復活できません。本当に削除しますか？")
+        })
+    }
+
     console.log(review.venue.name);
 
     return (
@@ -124,6 +130,8 @@ const Show = (props) => {
                     </Link>
 
                     <Link className="text-gray-400 hover:text-gray-600 no-underline text-lg" href={`/reviews/${review.id}/edit`}>編集</Link>
+
+                    <button action="submit" className="text-gray-400 hover:text-gray-600 no-underline text-lg" onClick={() => handleDeletePost(review.id)}>削除</button>
 
                     {isBookmarked ? (
                         <button onClick={handleNotBookmark}>

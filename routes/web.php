@@ -47,32 +47,39 @@ Route::get('/posts/{post}/edit', "edit");
 Route::put('/posts/{post}', "update");
 });
 
+//会場関連
 Route::controller(PrefectureController::class)->group(function () {
 Route::get('/prefectures', 'index'); //都道府県の一覧
 Route::get('/prefectures/{prefecture}', 'show'); //県ごとの会場を表示
 });
 
+//会場関連
 Route::controller(VenueController::class)->group(function () {
 Route::get('/prefectures/venues/pictures/{venue}', "picture");
 Route::get('/prefectures/venues/{venue}', "show"); //各会場ごとのレビューを表示
 });
 
+//レビュー関連
+Route::controller(ReviewController::class)->middleware('auth')->group(function () {
+    Route::get('/reviews/{venue}/create', 'create');
+    Route::post('/reviews/store', 'store');
+    Route::get('/reviews/deleted', 'deleted');
+    Route::get('/reviews/{review}/edit', 'edit');
+    Route::put('/reviews/update/{review}/', 'update');
+    Route::delete('/reviews/delete/{review}', 'delete');
+    });
+
+//レビュー関連
 Route::controller(ReviewController::class)->group(function () {
 Route::get('/reviews', 'index');
+//Route::get('/reviews/deleted', 'deleted');
 Route::get('/reviews/{review}', 'show');
 });
 
-Route::controller(ReviewController::class)->middleware('auth')->group(function () {
-Route::get('/reviews/{venue}/create', 'create');
-Route::post('/reviews/store', 'store'); //postにした
-Route::get('/reviews/{review}/edit', 'edit');
-Route::put('/reviews/update/{review}/', 'update');
-Route::delete('/reviews/delete/{review}', 'delete');
-});
-
+//トップページ関連
 Route::controller(HomeController::class)->group(function (){
-Route::get('/',[HomeController::class,'index']); //ホーム
-Route::get('/description',[HomeController::class,'description']); //紹介ページ
+Route::get('/','index'); //ホーム
+Route::get('/description','description'); //紹介ページ
 });
 
 
@@ -158,6 +165,7 @@ Route::get('/twitter/logout', 'logout');
      //return view('prefectures/index');
  //});
 
+ //ソーシャルログイン関連
  Route::controller(LoginController::class)->group(function () {
  Route::get('login/google', 'redirectToGoogle');
  Route::get('login/google/callback', 'handleGoogleCallback');
