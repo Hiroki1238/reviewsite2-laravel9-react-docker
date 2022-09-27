@@ -11,7 +11,7 @@ const Description = (props) => {
             <Common>
                   <div>
                     <p className="text-3xl top-30 text-center">raionについて</p>
-                    {/* <img src={"/discription2.jpg"} className="w-full"/> */}
+                    <img src={"/discription2.jpg"} className="w-full"/>
                     </div>
             </Common>
         </div>
