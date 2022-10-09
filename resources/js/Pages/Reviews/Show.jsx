@@ -41,6 +41,10 @@ const Show = (props) => {
         });
     };
 
+    const handleMessage = () => {
+        confirm("ブックマークするにはログインが必要です");
+    };
+
     console.log(review.venue.name);
 
     return (
@@ -305,7 +309,7 @@ const Show = (props) => {
                                     {images.map((image) => (
                                         <img
                                             src={`${image.image_path}`}
-                                            className="object-contain"
+                                            className="object-contain mb-2"
                                         />
                                     ))}
                                 </div>
@@ -322,11 +326,11 @@ const Show = (props) => {
                             </Link>
 
                             {isBookmarked ? (
-                                <button onClick={handleNotBookmark}>
+                                <button onClick={() => handleMessage()}>
                                     <BookmarkAddedIcon className="text-bookmark-red" />
                                 </button>
                             ) : (
-                                <button onClick={handleBookmark}>
+                                <button onClick={() => handleMessage()}>
                                     <BookmarkBorderIcon className="text-bookmark-red" />
                                 </button>
                             )}

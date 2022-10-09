@@ -29,6 +29,10 @@ const Index = (props) => {
         post(`/unlike/${venue.id}`);
     };
 
+    const handleMessage = () => {
+        confirm("お気に入り登録するにはログインが必要です");
+    };
+
     return (
         
         <div>
@@ -103,10 +107,10 @@ const Index = (props) => {
                 <Link className="text-gray-400 hover:text-gray-600 no-underline text-lg" onClick={() => window.history.back()}>
                         戻る
                     </Link>
-{/* 
-                {isLiked ? (<button onClick={handleUnlike}> <StarIcon className="text-yellow-500"/> </button>)
-                : (<button onClick={handleLike}> <StarBorderIcon className="text-yellow-500"/> </button>)
-              } */}
+
+                {isLiked ? (<button onClick={() => handleMessage()}> <StarIcon className="text-yellow-500"/> </button>)
+                : (<button onClick={() => handleMessage()}> <StarBorderIcon className="text-yellow-500"/> </button>)
+              }
               </div>
 
             </div>
