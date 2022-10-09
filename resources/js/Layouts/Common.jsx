@@ -191,6 +191,34 @@ export default function Common({ header, children}) {
                 <div>{children}</div>
 
             </main>
+
+            <footer class="bg-gray-200">
+                <div className="flex">
+                    <div className="pt-8 mr-auto">
+                        <ApplicationLogo className="h-16 ml-16" />
+                    </div>
+
+                    <div>
+                        <p className="pt-9 pr-5"><Link href="/" className="no-underline text-2xl text-my-gray1">トップ</Link></p>
+                    </div>
+
+                    <div>
+                        <p className="pt-9 pr-5"><Link href="/description" className="no-underline text-2xl text-my-gray1">raionについて</Link></p>
+                    </div>
+
+                    <div>
+                        <p className="pt-9 pr-5"><Link href="/description" className="no-underline text-2xl text-my-gray1">仮タイトル</Link></p>
+                    </div>
+
+                    <div>
+                        <p className="pt-9 pr-28"><Link href="/description" className="no-underline text-2xl text-my-gray1">仮タイトル</Link></p>
+                    </div>
+                </div>
+
+                <p class="p-2 text-center text-xl py-10 font-thin">
+                    Copyright © 2022 RAION CORPORATION. All Rights Reserved.
+                </p>
+            </footer>
         </div>
     );
 }

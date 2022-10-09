@@ -49,7 +49,7 @@ export default function Login({ status, canResetPassword, announcements }) {
             <ValidationErrors errors={errors} />
 
             <form
-                className="px-7 py-4 mt-16 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7"
+                className="px-7 py-4 mt-16 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7 font-kosugimaru"
                 onSubmit={submit}
             >
                 <div>
@@ -105,7 +105,7 @@ export default function Login({ status, canResetPassword, announcements }) {
                     {canResetPassword && (
                         <Link
                             href={route("password.request")}
-                            className="underline text-md text-gray-600 hover:text-gray-900"
+                            className="mr-auto underline text-md text-gray-600 hover:text-gray-900"
                         >
                             パスワードの再設定
                         </Link>
@@ -113,7 +113,12 @@ export default function Login({ status, canResetPassword, announcements }) {
 
                     <div>
                         {/* <a href="{{route('twitter.login')}}" className="btn btn-outline-primary">Twitterログイン</a> */}
-                        <a href="/login/google" className="no-underline text-my-purple2">Googleアカウントでログイン</a>
+                        <a
+                            href="/login/google"
+                            className="no-underline text-my-purple2"
+                        >
+                            Googleアカウントでログイン
+                        </a>
 
                         {/* ボタンでページ遷移できるように変更する */}
 
