@@ -64,18 +64,18 @@ const Show = (props) => {
                             </Link>
                         </h1>{" "}
                         {/*会場名をリレーションを使って表示した*/}
-                        <h1 className="text-title-purple1 text-3xl mb-3 font-medium">
+                        <h1 className="text-title-purple1 text-3xl mb-3">
                             {review.title}
                         </h1>
                         <div>
                             {/* <h3 className="text-title-purple1">レビュー内容</h3> */}
-                            <p className="text-my-gray1 text-2xl mb-9 px-6 font-kosugimaru font-medium">
+                            <p className="text-title-gray text-2xl mb-9 px-6">
                                 {review.body}
                             </p>
                             <h3 className="text-title-purple1 text-2xl">
                                 座席
                             </h3>
-                            <p className="text-my-gray1 text-2xl mt-2 mb-9 font-kosugimaru font-medium">
+                            <p className="text-title-gray text-2xl mt-2 mb-9">
                                 {review.seat}
                             </p>
                             {/* <h3 className="text-title-purple1">10段階評価1</h3>
@@ -137,7 +137,7 @@ const Show = (props) => {
                             <h3 className="text-title-purple1 text-2xl mt-4">
                                 訪問日
                             </h3>
-                            <p className="text-my-gray1 text-xl mt-2 mb-8 font-kosugimaru">
+                            <p className="text-title-gray text-xl mt-2 mb-8">
                                 {review.visited_at}
                             </p>
                         </div>
@@ -226,18 +226,18 @@ const Show = (props) => {
                             </Link>
                         </h1>{" "}
                         {/*会場名をリレーションを使って表示した*/}
-                        <h1 className="text-title-purple1 text-3xl mb-3 font-medium">
+                        <h1 className="text-title-purple1 text-3xl mb-3">
                             {review.title}
                         </h1>
                         <div>
                             {/* <h3 className="text-title-purple1">レビュー内容</h3> */}
-                            <p className="text-my-gray1 text-2xl mb-9 px-6 font-kosugimaru font-medium">
+                            <p className="text-my-gray1 text-2xl mb-9 px-6">
                                 {review.body}
                             </p>
                             <h3 className="text-title-purple1 text-2xl">
                                 座席
                             </h3>
-                            <p className="text-my-gray1 text-2xl mt-2 mb-9 font-kosugimaru font-medium">
+                            <p className="text-my-gray1 text-2xl mt-2 mb-9">
                                 {review.seat}
                             </p>
                             {/* <h3 className="text-title-purple1">10段階評価1</h3>

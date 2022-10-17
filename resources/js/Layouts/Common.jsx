@@ -10,7 +10,7 @@ export default function Common({ header, children}) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 text-my-gray1 font-rocknroll font-thin">
+        <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold"> {/*ここで全体のフォントを指定*/}
             <nav className="bg-my-purple2 border-b border-gray-100 fixed w-full z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -63,7 +63,7 @@ export default function Common({ header, children}) {
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4  rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 <div className="py-1">
                                                     新規登録
@@ -165,8 +165,8 @@ export default function Common({ header, children}) {
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
                         {/* <div className="px-4">
-                            <div className="font-medium text-base text-gray-800">{auth.user.name}</div>
-                            <div className="font-medium text-sm text-gray-500">{auth.user.email}</div>
+                            <div className="text-base text-gray-800">{auth.user.name}</div>
+                            <div className="text-sm text-gray-500">{auth.user.email}</div>
                         </div> */}
 
                         {/* <div className="mt-3 space-y-1">
@@ -192,7 +192,7 @@ export default function Common({ header, children}) {
 
             </main>
 
-            <footer class="bg-gray-200">
+            <footer class="bg-gray-200 ">
                 <div className="flex">
                     <div className="pt-8 mr-auto">
                         <ApplicationLogo className="h-16 ml-16" />

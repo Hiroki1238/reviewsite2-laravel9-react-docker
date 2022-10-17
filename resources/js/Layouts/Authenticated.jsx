@@ -15,7 +15,9 @@ export default function Authenticated({
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 text-my-gray1 font-rocknroll font-thin">
+        <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold">
+            {" "}
+            {/*ここで全体のフォントを指定*/}
             <nav className="bg-my-purple2 border-b border-gray-100 fixed w-full z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -76,7 +78,7 @@ export default function Authenticated({
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 <div className="py-1">
                                                     {auth.user.uname}
@@ -178,10 +180,10 @@ export default function Authenticated({
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
                         <div className="px-4">
-                            <div className="font-medium text-base text-gray-800">
+                            <div className="text-base text-gray-800">
                                 {auth.user.name}
                             </div>
-                            <div className="font-medium text-sm text-gray-500">
+                            <div className="text-sm text-gray-500">
                                 {auth.user.email}
                             </div>
                         </div>
@@ -198,7 +200,6 @@ export default function Authenticated({
                     </div>
                 </div>
             </nav>
-
             {header && (
                 <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -206,10 +207,9 @@ export default function Authenticated({
                     </div>
                 </header>
             )}
-
             <main className="flex max-w-full min-h-screen justify-around pt-20 z-0">
                 <div className="text-left text-xl">
-                    <div className="text-3xl mt-4 py-1 text-menutitle-gray">
+                    <div className="text-3xl mt-4 py-1 text-title-gray">
                         検索
                     </div>
                     <div>
@@ -239,7 +239,7 @@ export default function Authenticated({
                         </p>
                     </div>
                     <hr className="my-5 border-shadowgray1" />
-                    <div className="text-3xl mb-1 text-menutitle-gray">
+                    <div className="text-3xl mb-1 text-title-gray">
                         会員メニュー
                     </div>
                     <div>
@@ -287,10 +287,10 @@ export default function Authenticated({
                     </div>
                 </div>
                 <div className="w-5/8">{children}</div>
-                <div className="w-1/8 text-left text-xl">
-                    <h1 className="mt-6 text-3xl mb-4 text-menutitle-gray">
+                <div className="w-1/8 text-left text-xl text-title-gray">
+                    <div className="text-3xl mt-4 pt-1 text-title-gray">
                         お知らせ
-                    </h1>
+                    </div>
                     {announcements.map((announcement) => {
                         return (
                             <div key={announcement.title}>
@@ -300,7 +300,7 @@ export default function Authenticated({
                                 <p className="py-1 text-xl">
                                     {announcement.title}
                                 </p>
-                                <p className="py-1 text-xl font-kosugimaru mb-6">
+                                <p className="py-1 text-lg mb-6">
                                     {announcement.body}
                                 </p>
                             </div>
@@ -308,7 +308,6 @@ export default function Authenticated({
                     })}
                 </div>
             </main>
-
             <footer class="bg-gray-200 mt-10">
                 <div className="flex">
                     <div className="pt-8 mr-auto">
@@ -316,19 +315,47 @@ export default function Authenticated({
                     </div>
 
                     <div>
-                        <p className="pt-9 pr-5"><Link href="/" className="no-underline text-2xl text-my-gray1">トップ</Link></p>
+                        <p className="pt-9 pr-5">
+                            <Link
+                                href="/"
+                                className="no-underline text-2xl text-my-gray1"
+                            >
+                                トップ
+                            </Link>
+                        </p>
                     </div>
 
                     <div>
-                        <p className="pt-9 pr-5"><Link href="/description" className="no-underline text-2xl text-my-gray1">raionについて</Link></p>
+                        <p className="pt-9 pr-5">
+                            <Link
+                                href="/description"
+                                className="no-underline text-2xl text-my-gray1"
+                            >
+                                raionについて
+                            </Link>
+                        </p>
                     </div>
 
                     <div>
-                        <p className="pt-9 pr-5"><Link href="/description" className="no-underline text-2xl text-my-gray1">仮タイトル</Link></p>
+                        <p className="pt-9 pr-5">
+                            <Link
+                                href="/description"
+                                className="no-underline text-2xl text-my-gray1"
+                            >
+                                仮タイトル
+                            </Link>
+                        </p>
                     </div>
 
                     <div>
-                        <p className="pt-9 pr-28"><Link href="/description" className="no-underline text-2xl text-my-gray1">仮タイトル</Link></p>
+                        <p className="pt-9 pr-28">
+                            <Link
+                                href="/description"
+                                className="no-underline text-2xl text-my-gray1"
+                            >
+                                仮タイトル
+                            </Link>
+                        </p>
                     </div>
                 </div>
 

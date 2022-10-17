@@ -42,7 +42,7 @@ const Index = (props) => {
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 text-3xl mt-4 mb-7">{venue.name}のレビュー</h1>
 
-              <div>
+              <div className="text-title-gray">
                 <h2 className="py-1">収容人数 : {venue.scale_standing}人</h2>
                 <h2 className="py-1">所在地 : {venue.address}</h2>
                 <h2 className="py-1">
@@ -74,7 +74,7 @@ const Index = (props) => {
 
             </div>
 
-            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7 font-kosugimaru">
+            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
               <ReviewList reviews={reviews} />
             </div>
         </Authenticated>
@@ -83,11 +83,11 @@ const Index = (props) => {
             <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 text-3xl mt-4 mb-7">{venue.name}のレビュー</h1>
 
-              <div>
+              <div className="text-title-gray">
                 <h2 className="py-1">収容人数 : {venue.scale_standing}人</h2>
                 <h2 className="py-1">所在地 : {venue.address}</h2>
                 <h2 className="py-1">
-                    ホームページ : <a className="text-gray-500 font-kosugimaru"  target="_blank" href={venue.url}>{venue.url}</a>
+                    ホームページ : <a className="text-gray-500"  target="_blank" href={venue.url}>{venue.url}</a>
                 </h2>
                 
                  <br/>
@@ -115,7 +115,7 @@ const Index = (props) => {
 
             </div>
 
-            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7 font-kosugimaru">
+            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
               <ReviewList reviews={reviews} />
             </div>
         </Guest>

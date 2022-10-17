@@ -6,7 +6,7 @@ const ReviewList2 = ({reviews}) => {
     <div className="mb-4">
        {reviews.map((review) => (
                         <div key={review.id}>
-                            <div className="m-2 font-kosugimaru">
+                            <div className="m-2">
                                 <Link
                                     className="text-link-blue text-2xl"
                                     href={`/reviews/${review.id}`}

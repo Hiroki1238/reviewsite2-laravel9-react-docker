@@ -51,7 +51,7 @@ const Create = (props) => {
                 <form onSubmit={handleSendImage}>
                     <div>
                         <h2 className="text-title-purple1 text-2xl mt-4 mb-2">タイトル</h2>
-                        <input className="w-6/7 mb-8 text-lg rounded-lg font-kosugimaru font-medium"
+                        <input className="w-6/7 mb-8 text-lg rounded-lg"
                             type="text"
                             placeholder="タイトル"
                             onChange={(e) => setData("title", e.target.value)}
@@ -61,7 +61,7 @@ const Create = (props) => {
                         </span>
 
                         <h2 className="text-title-purple1 text-2xl mb-2">レビュー内容</h2>
-                        <textarea className="w-6/7 h-80 mb-9 text-lg rounded-xl font-kosugimaru font-medium"
+                        <textarea className="w-6/7 h-80 mb-9 text-lg rounded-xl"
                             placeholder="迷いました"
                             onChange={(e) => setData("body", e.target.value)}
                         ></textarea>
@@ -70,7 +70,7 @@ const Create = (props) => {
                         </span>
 
                         <h2 className="text-title-purple1 text-2xl mb-2">座席番号</h2>
-                        <input className="mb-10 text-lg rounded-lg font-kosugimaru font-medium"
+                        <input className="mb-10 text-lg rounded-lg"
                             type="text"
                             placeholder="東スタンド E17"
                             onChange={(e) => setData("seat", e.target.value)}

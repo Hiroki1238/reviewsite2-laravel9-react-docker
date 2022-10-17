@@ -11,7 +11,7 @@ use Inertia\Inertia;
 
 class ReviewController extends Controller
 {
-    public function index(Review $review)
+    public function index(Review $review, Announcement $announcement)
     {
         $announcements = $announcement->orderBy('created_at','DESC')->get();
         return Inertia::render('Reviews/Index',['reviews' => $review->getByLimitAndPeginate(), 'announcements' => $announcements]);

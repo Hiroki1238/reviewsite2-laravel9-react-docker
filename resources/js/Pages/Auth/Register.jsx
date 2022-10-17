@@ -44,7 +44,7 @@ export default function Register({ announcements }) {
             <ValidationErrors errors={errors} />
 
             <form
-                className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 w-5/7 font-kosugimaru"
+                className="p-6 mt-5 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 w-5/7"
                 onSubmit={submit}
             >
                 <h2 className="mt-4 ml-3">会員登録</h2>

@@ -26,7 +26,7 @@ const Index = (props) => {
                     </h1>
                     <div>
                         <input
-                            className="w-6/7 mt-2 mb-8 text-lg font-medium font-kosugimaru rounded-lg"
+                            className="w-6/7 mt-2 mb-8 text-lg rounded-lg"
                             type="text"
                             placeholder="タイトルを入力"
                             onChange={(e) => setData("title", e.target.value)}
@@ -35,7 +35,7 @@ const Index = (props) => {
                             {props.errors.title}
                         </span>
 
-                        <textarea className="w-6/7 h-80 text-lg font-medium font-kosugimaru rounded-xl" placeholder="お問い合わせ内容を入力" onChange={(e) => setData("body", e.target.value)}></textarea>
+                        <textarea className="w-6/7 h-80 text-lg rounded-xl" placeholder="お問い合わせ内容を入力" onChange={(e) => setData("body", e.target.value)}></textarea>
                         <span className="text-red-600">
                             {props.errors.body}
                         </span>

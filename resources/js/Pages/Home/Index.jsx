@@ -30,7 +30,7 @@ const Index = (props) => {
                         <Search />
                         <br />
                         <Prefectures prefecture_array={prefecture_array} />
-                        <Announcement announcements={announcements} />
+                        {/* <Announcement announcements={announcements} /> */}
                         <br />
                     </div>
                 </Authenticated>
@@ -47,7 +47,7 @@ const Index = (props) => {
                             </h2>
                             {reviews.map((review) => (
                                 <div key={review.id}>
-                                    <div className="m-2 font-kosugimaru">
+                                    <div className="m-2">
                                         <Link
                                             className="text-link-blue text-2xl"
                                             href={`/reviews/${review.id}`}
@@ -66,7 +66,7 @@ const Index = (props) => {
                         <Search />
                         <br />
                         <Prefectures prefecture_array={prefecture_array} />
-                        <Announcement announcements={announcements} />
+                        {/* <Announcement announcements={announcements} /> */}
                         <br />
                     </div>
                 </Guest>

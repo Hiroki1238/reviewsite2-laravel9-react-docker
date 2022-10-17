@@ -27,9 +27,9 @@ const Index = (props) => {
                         {venues.map((venue) => (
                             <div key={venue.id}>
                                 {venues.map((venue) => (
-                                    <div className="text-2xl mb-5 font-kosugimaru">
+                                    <div className="text-2xl mb-5">
                                         <Link
-                                            className="text-link-blue font-kosugimaru"
+                                            className="text-link-blue"
                                             href={`/prefectures/venues/${venue.id}`}
                                         >
                                             {venue.name}
@@ -58,7 +58,7 @@ const Index = (props) => {
                         {venues.map((venue) => (
                             <div key={venue.id}>
                                 {venues.map((venue) => (
-                                    <div className="text-2xl mb-5 font-kosugimaru">
+                                    <div className="text-2xl mb-5">
                                         <Link
                                             className="text-link-blue"
                                             href={`/prefectures/venues/${venue.id}`}

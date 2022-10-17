@@ -9,7 +9,7 @@ export default function AdminAuthenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 text-my-gray1 font-rocknroll font-thin" >
+        <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold"> {/*ここで全体のフォントを指定*/}
         <nav className="bg-my-purple2 border-b border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
@@ -66,7 +66,7 @@ export default function AdminAuthenticated({ auth, header, children }) {
                                         <span className="inline-flex rounded-md">
                                             <button
                                                 type="button"
-                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4  rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 {auth.user.name}
 
@@ -130,8 +130,8 @@ export default function AdminAuthenticated({ auth, header, children }) {
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
                         <div className="px-4">
-                            <div className="font-medium text-base text-gray-800">{auth.user.name}</div>
-                            <div className="font-medium text-sm text-gray-500">{auth.user.email}</div>
+                            <div className="text-base text-gray-800">{auth.user.name}</div>
+                            <div className="text-sm text-gray-500">{auth.user.email}</div>
                         </div>
 
                         <div className="mt-3 space-y-1">
@@ -146,14 +146,14 @@ export default function AdminAuthenticated({ auth, header, children }) {
             <main className="flex max-w-full min-h-screen justify-around">
             <div className="text-left text-xl"> {/* text-rightかtext-center最終的にバランスを見て決める */}
 
-            <div className="text-3xl mt-3 py-1 text-menutitle-gray">検索</div>
+            <div className="text-3xl mt-3 py-1 text-title-gray">検索</div>
             <div>
             <p><Link href="/prefectures" className="no-underline text-menu-gray text-xl">都道府県から探す</Link></p>
             <p><Link href="/search" className="no-underline text-menu-gray text-xl">キーワードから探す</Link></p>
             <p><Link href="/search" className="no-underline text-menu-gray text-xl">規模から探す</Link></p>
             </div>
             <hr className="my-5 border-shadowgray1"/>
-            <div className="text-3xl mb-1 text-menutitle-gray">会員メニュー</div>
+            <div className="text-3xl mb-1 text-title-gray">会員メニュー</div>
             <div>
             <p><Link href={`/mypage/${auth.user.id}`} className="no-underline text-menu-gray text-xl">マイページ</Link></p>
             <p><Link href={`/mypage/profile/${auth.user.id}`} className="no-underline text-menu-gray text-xl">会員情報</Link></p>
@@ -167,7 +167,7 @@ export default function AdminAuthenticated({ auth, header, children }) {
             <div className="w-5/8">
             {children}
             </div>
-            <div className="text-3xl mt-3 py-1 text-menutitle-gray">お知らせ</div>
+            <div className="text-3xl mt-3 py-1 text-title-gray">お知らせ</div>
             </main>
             </div>
             
