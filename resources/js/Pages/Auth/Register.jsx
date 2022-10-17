@@ -61,7 +61,7 @@ export default function Register({ announcements }) {
                             type="text"
                             name="lastname"
                             value={data.lastname}
-                            className="ml-14 mt-1 block w-full"
+                            className="ml-14 mt-1 block w-full text-2xl text-title-gray"
                             autoComplete="lastname"
                             handleChange={onHandleChange}
                             required
@@ -77,7 +77,7 @@ export default function Register({ announcements }) {
                             type="text"
                             name="name"
                             value={data.name}
-                            className="ml-10 mt-14 block w-full"
+                            className="ml-10 mt-14 block w-full text-2xl text-title-gray"
                             autoComplete="name"
                             isFocused={true}
                             handleChange={onHandleChange}
@@ -99,7 +99,7 @@ export default function Register({ announcements }) {
                         type="text"
                         name="uname"
                         value={data.uname}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full text-2xl text-title-gray"
                         autoComplete="uname"
                         handleChange={onHandleChange}
                         required
@@ -119,8 +119,8 @@ export default function Register({ announcements }) {
                         type="email"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
+                        className="mt-1 block w-full font-zenmaru text-2xl text-title-gray"
+                        autoComplete="email"
                         handleChange={onHandleChange}
                         required
                     />
@@ -139,7 +139,7 @@ export default function Register({ announcements }) {
                         type="password"
                         name="password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full font-zenmaru text-2xl text-title-gray"
                         autoComplete="new-password"
                         handleChange={onHandleChange}
                         required
@@ -159,7 +159,7 @@ export default function Register({ announcements }) {
                         type="password"
                         name="password_confirmation"
                         value={data.password_confirmation}
-                        className="mt-1 mb-5 block w-full"
+                        className="mt-1 mb-5 block w-full font-zenmaru text-2xl text-title-gray"
                         handleChange={onHandleChange}
                         required
                     />

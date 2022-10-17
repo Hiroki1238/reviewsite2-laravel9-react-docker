@@ -292,28 +292,56 @@ export default function Guest({ header, children, announcements }) {
 
             <footer class="bg-gray-200 mt-10">
                 <div className="flex">
-                    <div className="pt-8 mr-auto ">
+                    <div className="pt-9 mr-auto">
                         <ApplicationLogo className="h-16 ml-16" />
                     </div>
 
                     <div>
-                        <p className="pt-9 pr-5"><Link href="/" className="no-underline text-2xl text-my-gray1">トップ</Link></p>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/"
+                                className="no-underline text-3xl text-title-gray"
+                            >
+                                トップ
+                            </Link>
+                        </p>
                     </div>
 
                     <div>
-                        <p className="pt-9 pr-5"><Link href="/description" className="no-underline text-2xl text-my-gray1">raionについて</Link></p>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-title-gray"
+                            >
+                                raionについて
+                            </Link>
+                        </p>
                     </div>
 
                     <div>
-                        <p className="pt-9 pr-5"><Link href="/description" className="no-underline text-2xl text-my-gray1">仮タイトル</Link></p>
+                        <p className="pt-11 pr-7">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-title-gray"
+                            >
+                                仮タイトル
+                            </Link>
+                        </p>
                     </div>
 
                     <div>
-                        <p className="pt-9 pr-28"><Link href="/description" className="no-underline text-2xl text-my-gray1">仮タイトル</Link></p>
+                        <p className="pt-11 pr-24">
+                            <Link
+                                href="/description"
+                                className="no-underline text-3xl text-title-gray"
+                            >
+                                仮タイトル
+                            </Link>
+                        </p>
                     </div>
                 </div>
 
-                <p class="p-2 text-center text-xl py-10 font-thin">
+                <p class="text-center text-2xl mt-5 py-12 text-title-gray font-zenmaru font-black">
                     Copyright © 2022 RAION CORPORATION. All Rights Reserved.
                 </p>
             </footer>
