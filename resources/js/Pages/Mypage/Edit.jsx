@@ -7,7 +7,7 @@ const Edit = (props) => {
     const { auth, announcements } = props; //authの中にuserがあって、ユーザー情報が入ってるから、わざわざuserをコントローラーで連れてくる必要ないかも
     
     const {data, setData, post} = useForm({  
-        image:"",
+          image:"",
 
           lastname: auth.user.lastname,
           name: auth.user.name,
@@ -32,7 +32,7 @@ const Edit = (props) => {
 
     }
 
-    const handleChangeFile = (e) => {
+    const handleChangeFile = (e) => { //プレビュー表示用
         const { files } = e.target;
         setPreview(window.URL.createObjectURL(files[0]));
       };

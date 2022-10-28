@@ -5,6 +5,7 @@ import Guest from "@/Layouts/Guest";
 
 const Word = (props) => {
   const { results, auth, announcements } = props;
+  console.log(props);
 
   return (
     <div>
