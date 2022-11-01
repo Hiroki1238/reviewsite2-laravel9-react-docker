@@ -38,6 +38,15 @@ use App\Http\Controllers\LoginController; //googleログイン
 //     ]);
 // });
 
+use App\Http\Controllers\ChatController;
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/chat', [ChatController::class, 'showMessages'])->name('chat.index');
+    Route::get('/messages', [ChatController::class, 'fetchMessages'])->name('chat.fetch');
+    Route::post('/messages', [ChatController::class, 'sendMessage'])->name('chat.store');
+});
+
+
 Route::controller(PostController::class)->group(function () {
 Route::get("/blog","index");
 Route::get("/posts/create", "create");

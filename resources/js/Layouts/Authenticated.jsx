@@ -308,7 +308,7 @@ export default function Authenticated({
                     })}
                 </div>
             </main>
-            <footer class="bg-gray-200 mt-10">
+            <footer className="bg-gray-200 mt-10">
                 <div className="flex">
                     <div className="pt-9 mr-auto">
                         <ApplicationLogo className="h-16 ml-16" />
@@ -359,7 +359,7 @@ export default function Authenticated({
                     </div>
                 </div>
 
-                <p class="text-center text-2xl mt-5 py-12 text-title-gray font-zenmaru font-black">
+                <p className="text-center text-2xl mt-5 py-12 text-title-gray font-zenmaru font-black">
                     Copyright © 2022 RAION CORPORATION. All Rights Reserved.
                 </p>
             </footer>
