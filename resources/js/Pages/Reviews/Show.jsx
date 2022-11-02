@@ -52,17 +52,57 @@ const Show = (props) => {
             {auth.user != null ? (
                 <Authenticated auth={props.auth} announcements={announcements}>
                     <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                        <div className="text-left px-2 text-gray-500 text-md">
-                            {review.created_at}
+                        <div className="flex border">
+                            <div className="w-16 x-auto mb-1 ml-2">
+                                {review.user.image_path !== null ? (
+                                    <div>
+                                        <img
+                                            className="rounded-full hover:border-my-purple3 border-2"
+                                            src={review.user.image_path}
+                                        />
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <img
+                                            className="rounded-full hover:border-my-purple3 border-2"
+                                            src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"
+                                        />
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="text-xl mt-5 ml-3">
+                                {/* レビューの投稿者とログインユーザーが一致する場合、そうでない場合で遷移先を分ける */}
+                                {review.user.id == auth.user.id ? (
+                                <Link href={`/mypage/profile/${review.user.id}`} className="no-underline text-gray-500 hover:text-my-purple3">{review.user.uname}
+                                <span className="text-lg">さん</span>
+                                </Link>
+                                ):(
+                                <Link href={`/mypage/public/${review.user.id}`} className="no-underline text-gray-500 hover:text-my-purple3">{review.user.uname}
+                                <span className="text-lg">さん</span>
+                                </Link>
+                                )}
+                            </div>
+                            <div className="text-gray-400 text-xl ml-auto mr-3 mt-5">
+                                {review.created_at}
+                            </div>
+                            {/* リレーションでレビュー投稿者の名前を表示 */}
                         </div>
-                        <h1 className="py-2 mt-1 mb-5 text-2xl">
+
+                        {/* <div className="text-right px-2 text-gray-500 text-md">
+                            {review.created_at}
+                        </div> */}
+
+                        <div className="mt-2 mb-7 border border-b-0 border-gray-400"></div>
+
+                        <h1 className="pb-2 mb-5 text-2xl">
                             <Link
                                 className="text-link-blue"
                                 href={`/prefectures/venues/${review.venue_id}`}
                             >
                                 {review.venue.name}のレビュー
                             </Link>
-                        </h1>{" "}
+                        </h1>
                         {/*会場名をリレーションを使って表示した*/}
                         <h1 className="text-title-purple1 text-3xl mb-3">
                             {review.title}

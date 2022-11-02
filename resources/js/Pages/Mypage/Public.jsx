@@ -3,8 +3,10 @@ import { Inertia } from "@inertiajs/inertia";
 import Authenticated from "@/Layouts/Authenticated";
 import { Link } from "@inertiajs/inertia-react";
 
-const Show = (props) => {
-    const { auth, announcements } = props;
+const Public = (props) => {
+    const { user, announcements } = props;
+
+    console.log(user);
 
     return (
         <Authenticated auth={props.auth} announcements={announcements}>
@@ -12,16 +14,16 @@ const Show = (props) => {
                 {/* <div id="icon" className="rounded">*/}
 
                 <div className="h-48 w-48 my-0 mx-auto py-2 mb-7">
-                    {auth.user.image_path !== null ? (
+                    {user.image_path !== null ? (
                         <div>
                             <img
                                 className="rounded-full"
-                                src={auth.user.image_path}
+                                src={user.image_path}
                             />
                         </div>
                     ) : (
                         <div>
-                            {" "}
+                           
                             <img
                                 className="rounded-full"
                                 src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"
@@ -33,7 +35,7 @@ const Show = (props) => {
                   <div className="mt-8 mb-6">
                     <h2 className="text-title-purple1 text-2xl mb-1">氏名</h2>
                     <h3 className="text-2xl">
-                        {auth.user.lastname} {auth.user.name}
+                        {user.lastname} {user.name}
                     </h3>
                     </div>
 
@@ -41,19 +43,19 @@ const Show = (props) => {
                     <h2 className="text-title-purple1  text-2xl mb-1 mt-4">
                         ユーザー名
                     </h2>
-                    <h3 className="text-2xl">{auth.user.uname}</h3>
+                    <h3 className="text-2xl">{user.uname}</h3>
                     </div>
 
                     <div className="mb-6">
                     <h2 className="text-title-purple1 text-2xl mb-1 mt-4">年齢</h2>
-                    <h3 className="text-2xl">{auth.user.age}代</h3>
+                    <h3 className="text-2xl">{user.age}代</h3>
                     </div>
                     
                     <div className="mb-8">
                     <h2 className="text-title-purple1 text-2xl mb-1 mt-4">
                         プロフィール
                     </h2>
-                    <h3 className="text-2xl">{auth.user.profile}</h3>
+                    <h3 className="text-2xl">{user.profile}</h3>
                     </div>
 
                     <div className="border border-b-0 border-gray-300 mx-4 mt-4"></div>
@@ -69,7 +71,7 @@ const Show = (props) => {
 
                     <Link
                         className="text-gray-400 hover:text-gray-600 no-underline text-lg"
-                        href={`/mypage/profile/edit/${auth.user.id}`}
+                        href={`/mypage/profile/edit/${user.id}`}
                     >
                         編集
                     </Link>
@@ -79,4 +81,4 @@ const Show = (props) => {
     );
 };
 
-export default Show;
+export default Public;

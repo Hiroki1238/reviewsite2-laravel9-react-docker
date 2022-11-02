@@ -97,6 +97,7 @@ Route::controller(ProfileController::class)->middleware('auth')->group(function 
     Route::post('/mypage/profile/update/{user}', 'update');
     Route::get('/mypage/profile/edit/{user}','edit');
     Route::get('/mypage/profile/{user}', 'show');
+    Route::get('/mypage/public/{user}', 'public');
     Route::get('/mypage/{user}','index');
 });
 

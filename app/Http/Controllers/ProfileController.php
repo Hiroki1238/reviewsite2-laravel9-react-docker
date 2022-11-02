@@ -28,6 +28,12 @@ class ProfileController extends Controller
         return Inertia::render('Mypage/Show',['user' => $user, 'announcements' => $announcements]);
     }
 
+    public function public(User $user, Announcement $announcement)
+    {
+        $announcements = $announcement->orderBy('created_at','DESC')->get();
+        return Inertia::render('Mypage/Public',['user' => $user, 'announcements' => $announcements]);
+    }
+
 
     public function edit(User $user, Announcement $announcement)
     {

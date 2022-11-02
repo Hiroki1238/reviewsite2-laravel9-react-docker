@@ -20,7 +20,7 @@ class ReviewController extends Controller
     public function show(Review $review,Image $image, User $user, Announcement $announcement) //reviews/3の時$reviewsに3がid=3のreviewsテーブルを持ってくる、それが$reviesに入ってくる $review->idとすると3が取得できる
     {
         $announcements = $announcement->orderBy('created_at','DESC')->get();
-        $review = Review::with('venue')->find($review->id); //showのルーティングは/reviews/{review}なので、引数のreviewに今から表示するidが入っている。Review::with('venue')のvenueはReview.php内のvenueメソッドを使用するということ
+        $review = Review::with('venue','user')->find($review->id); //showのルーティングは/reviews/{review}なので、引数のreviewに今から表示するidが入っている。Review::with('venue')のvenueはReview.php内のvenueメソッドを使用するということ
         $images = $image->where('review_id',$review->id)->get();
         $boolean = $user->bookmarkStatus($review->id);
         return Inertia::render('Reviews/Show',['review' => $review, 'images' => $images, 'isBookmarked' => $boolean, 'announcements' => $announcements]);
