@@ -8,6 +8,7 @@ import { Head } from '@inertiajs/inertia-react';
 export default function Chats({ auth, errors, announcements }) {
 
     const user = auth.user;
+    const auth_name = auth.user.name; //追加
     const [messages, setMessages] = useState([]);
 
     // メッセージをバックエンドに送信
@@ -44,7 +45,7 @@ export default function Chats({ auth, errors, announcements }) {
 
             <div class="py-12 h-[600px]">
                 <div class="mx-[8%] bg-white h-full overflow-y-scroll p-3">
-                    <ChatMessages messages={messages} />
+                    <ChatMessages auth_name={auth_name} messages={messages} />
                 </div>
                 <div class="mx-[8%] bg-white border-t-2">
                     <ChatForm user={user} sendMessage={sendMessage} />

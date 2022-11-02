@@ -1,20 +1,31 @@
-import React from 'react';
+import React from "react";
 
-export default function ChatMessages({ messages }) {
+export default function ChatMessages({ auth_name, messages }) {
     return (
         <ul className="chat">
-            {messages.map(message => {
+            {messages.map((message) => {
                 const username = message.user.name;
                 const mes = message.message;
 
                 return (
-                    <li>
-                        <strong>{username}</strong>
-                        <div className="mb-2 text-white">
-                            <p className="bg-[#6CC655] inline p-1 mb-2 rounded">{mes}</p>
+                    <li className={username == auth_name ? "text-right"
+                    :
+                    "text-left"}>
+                        <strong className="text-gray-500 font-black text-xl">{username}</strong>
+                        {/* <div className="mb-2 text-white">
+                            <p className="bg-my-purple3 text-xl inline py-1 px-2 mb-2 rounded">{mes}</p>
+                        </div> */}
+
+                        <div className="mb-4 text-white"> {/* 自分の投稿のみ紫にする */}
+
+                            <p className={username == auth_name ? "bg-my-purple3 text-2xl inline py-1 px-2 mb-2 rounded"
+                            :
+                            "bg-gray-400 text-2xl inline py-1 px-2 mb-2 rounded"}>
+                                {mes}
+                            </p>
                         </div>
                     </li>
-                )
+                );
             })}
         </ul>
     );

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('message');
             //$table->foreignId('room_id')->constrained('rooms');
             //rooms  id user_id1 user_id2 name(ルーム名)
+            //上記のもの作る、messageテーブルから持ってくるデータを該当のものだけにする(room_id)、アクセス制限
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
