@@ -67,7 +67,10 @@ const Index = (props) => {
             </div>
 
             <div className="py-6 mt-9 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                <Link href="/chat">チャット（仮）</Link>
+            <h3 className="text-title-purple1 text-3xl mt-4 mb-5">
+                進行中のチャット
+            </h3>
+            <Link href="/chat">No.1</Link>
             </div>
 
             <div className="flex justify-center">

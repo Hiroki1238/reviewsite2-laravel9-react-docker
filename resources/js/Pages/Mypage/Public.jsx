@@ -69,12 +69,6 @@ const Public = (props) => {
                         戻る
                     </Link>
 
-                    <Link
-                        className="text-gray-400 hover:text-gray-600 no-underline text-lg"
-                        href={`/mypage/profile/edit/${user.id}`}
-                    >
-                        編集
-                    </Link>
                 </div>
             </div>
         </Authenticated>
