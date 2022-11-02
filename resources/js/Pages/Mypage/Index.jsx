@@ -28,16 +28,16 @@ const Index = (props) => {
                     ) : (
                         <div>
                             <img
-                                className="rounded-full"
+                                className="rounded-full border-2 border-my-purple5"
                                 src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"
                             />
                         </div>
                     )}
                 </div>
 
-                <div className="mt-5 mb-4">
+                <div className="mt-8 mb-2">
                     <Link
-                        className="text-link-blue text-lg"
+                        className="text-white text-lg no-underline rounded-xl bg-my-purple3 px-3 py-2 hover:bg-title-purple1"
                         href={`/mypage/profile/${auth.user.id}`}
                     >
                         プロフィール詳細

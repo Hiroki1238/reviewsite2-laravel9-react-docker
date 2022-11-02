@@ -7,7 +7,7 @@ const ReviewList = ({reviews}) => {
         {reviews.map((review) => (
                     <div key={review.id}>
                         <div className="m-2">
-                            <Link className="text-link-blue text-2xl" href={`/reviews/${review.id}`}>
+                            <Link className="text-link-blue text-2xl hover:text-link-blue2" href={`/reviews/${review.id}`}>
                             <span className="text-lg">[{review.updated_at}]</span> {review.title}
                             </Link>
                         </div>

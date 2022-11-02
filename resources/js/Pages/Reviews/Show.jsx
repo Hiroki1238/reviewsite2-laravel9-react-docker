@@ -97,7 +97,7 @@ const Show = (props) => {
 
                         <h1 className="pb-2 mb-5 text-2xl">
                             <Link
-                                className="text-link-blue"
+                                className="text-link-blue hover:text-link-blue2"
                                 href={`/prefectures/venues/${review.venue_id}`}
                             >
                                 {review.venue.name}のレビュー

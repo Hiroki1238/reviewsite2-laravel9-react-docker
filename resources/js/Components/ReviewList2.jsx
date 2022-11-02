@@ -8,7 +8,7 @@ const ReviewList2 = ({reviews}) => {
                         <div key={review.id}>
                             <div className="m-2">
                                 <Link
-                                    className="text-link-blue text-2xl"
+                                    className="text-link-blue text-2xl hover:text-link-blue2"
                                     href={`/reviews/${review.id}`}
                                 >
                                     {review.title} <span className="text-lg">({review.venue.name})</span>
