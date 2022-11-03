@@ -216,7 +216,7 @@ export default function Authenticated({
                         <p>
                             <Link
                                 href="/prefectures"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 都道府県から探す
                             </Link>
@@ -224,7 +224,7 @@ export default function Authenticated({
                         <p>
                             <Link
                                 href="/search"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 キーワードから探す
                             </Link>
@@ -232,7 +232,7 @@ export default function Authenticated({
                         <p>
                             <Link
                                 href="/search"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 規模から探す
                             </Link>
@@ -246,7 +246,7 @@ export default function Authenticated({
                         <p>
                             <Link
                                 href={`/mypage/${auth.user.id}`}
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 マイページ
                             </Link>
@@ -254,7 +254,7 @@ export default function Authenticated({
                         <p>
                             <Link
                                 href={`/mypage/profile/${auth.user.id}`}
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 会員情報
                             </Link>
@@ -262,7 +262,7 @@ export default function Authenticated({
                         <p>
                             <Link
                                 href={`/mypage/like/${auth.user.id}`}
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 お気に入り
                             </Link>
@@ -270,7 +270,7 @@ export default function Authenticated({
                         <p>
                             <Link
                                 href={`/mypage/bookmarks/${auth.user.id}`}
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 ブックマーク
                             </Link>
@@ -278,7 +278,7 @@ export default function Authenticated({
                         <p>
                             <Link
                                 href={`/mypage/contacts/${auth.user.id}`}
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 お問い合わせ
                             </Link>

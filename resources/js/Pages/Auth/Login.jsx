@@ -101,7 +101,7 @@ export default function Login({ status, canResetPassword, announcements }) {
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className="flex items-center justify-end mt-6">
                     {canResetPassword && (
                         <Link
                             href={route("password.request")}
@@ -115,22 +115,15 @@ export default function Login({ status, canResetPassword, announcements }) {
                         {/* <a href="{{route('twitter.login')}}" className="btn btn-outline-primary">Twitterログイン</a> */}
                         <a
                             href="/login/google"
-                            className="no-underline text-my-purple2"
+                            className="no-underline bg-blue-500 hover:bg-blue-600 py-2 px-3 rounded-lg mr-2 text-white"
                         >
                             Googleアカウントでログイン
                         </a>
 
                         {/* ボタンでページ遷移できるように変更する */}
 
-                        {/* <GoogleButton onclick="location.href='/login/google'"
-                            className="ml-4 text-lg bg-my-purple3"
-                            processing={processing}
-                        >
-                            Googleアカウントでログイン
-                        </GoogleButton> */}
-
                         <Button
-                            className="ml-4 text-lg bg-my-purple3"
+                            className="ml-4 text-lg bg-my-purple1 hover:bg-my-purple0"
                             processing={processing}
                         >
                             ログイン

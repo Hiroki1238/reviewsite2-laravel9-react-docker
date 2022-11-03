@@ -18,7 +18,7 @@ module.exports = {
 
             colors: {
                 // 'カラー名': 'カラーコード'
-                'link-blue': '#227cd6', 'link-blue2': '#1a61a8', 'box-gray':'#eaeaea','my-gray1':'#494949', 'title-gray': '#5b5b5b','menu-gray': '#686868', 'box-bordergray':'#c7c7c7', 'shadowgray1':'#bfbfbf', 'title-purple1':'#7a54a8','title-purple2':'#874898', 'button-purple2':'#9780b5', 'my-purple1': '#9855a6', 'my-purple2':'#884898', 'my-purple3':'#9969d3', 'my-purple4': '#a06edd', 'my-purple5': '#bda0d9', 'green-white':'#f9ffff', 'bookmark-red':'#842530', 'gray-50': '#f9fbfc', 'gray-150': '#f4f5f7', 'gray-170': '#eff0f2', 'gray-250': '#eaebef',
+                'link-blue': '#227cd6', 'link-blue2': '#1a61a8', 'box-gray':'#eaeaea','my-gray1':'#494949', 'title-gray': '#5b5b5b','menu-gray': '#686868', 'box-bordergray':'#c7c7c7', 'shadowgray1':'#bfbfbf', 'title-purple1':'#7a54a8','title-purple2':'#874898', 'button-purple2':'#9780b5', 'my-purple0':'#854a91', 'my-purple1': '#9855a6', 'my-purple2':'#884898', 'my-purple3':'#9969d3', 'my-purple4': '#a06edd', 'my-purple5': '#bda0d9', 'my-purple6':'#c2abd4', 'my-purple7':'#cabbd4', 'green-white':'#f9ffff', 'bookmark-red':'#842530', 'gray-50': '#f9fbfc', 'gray-150': '#f4f5f7', 'gray-170': '#eff0f2', 'gray-250': '#eaebef',
               },
 
               width: {

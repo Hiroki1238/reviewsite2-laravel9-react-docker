@@ -167,29 +167,30 @@ export default function Register({ announcements }) {
 
                 <div className="mt-7 border border-b-0 border-gray-300"></div>
 
-                <div className="flex justify-end mt-4">
-                    <div className="py-2 shadow-lg shadow-shadowgray1 bg-blue-500 rounded-xl my-0 mr-auto border border-gray-300 text-center w-2/7 text-sm">
-                        <a
-                            href="/login/google"
-                            className="no-underline text-white"
-                        >
-                            Googleアカウントでログイン
-                        </a>
-                    </div>
+                <div className="mt-4">
+                <div className="flex items-center justify-end mt-6">
 
-                    <Link
+                <Link
                         href={route("login")}
-                        className="underline text-lg mt-2 text-gray-600 hover:text-gray-900"
+                        className="mr-auto underline text-md text-gray-600 hover:text-gray-900"
                     >
                         会員の方はこちら
                     </Link>
+                    
+                    <a
+                            href="/login/google"
+                            className="no-underline bg-blue-500 hover:bg-blue-600 py-2 px-3 rounded-lg mr-2 text-white"
+                        >
+                            Googleアカウントでログイン
+                        </a>
 
                     <Button
-                        className="ml-6 text-xl bg-my-purple2"
+                        className="ml-4 py-3 text-lg bg-my-purple1 hover:bg-my-purple0"
                         processing={processing}
                     >
                         登録
                     </Button>
+                    </div>
                 </div>
             </form>
         </Guest>
