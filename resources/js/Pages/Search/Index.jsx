@@ -21,7 +21,7 @@ const Index = (props) => {
      <div className="py-1"></div>
          <Prefectures prefecture_array={prefecture_array} />
          <div className="py-5 flex justify-center">
-         <Link className="text-gray-400 text-xl no-underline" onClick={() => window.history.back()}>
+         <Link className="text-gray-400 text-xl no-underline hover:text-gray-500" onClick={() => window.history.back()}>
                      戻る
                  </Link>
                  </div>
@@ -33,7 +33,7 @@ const Index = (props) => {
     <div className="py-1"></div>
         <Prefectures prefecture_array={prefecture_array} />
         <div className="py-5 flex justify-center">
-        <Link className="text-gray-400 text-xl no-underline" onClick={() => window.history.back()}>
+        <Link className="text-gray-400 text-xl no-underline hover:text-gray-500" onClick={() => window.history.back()}>
                     戻る
                 </Link>
                 </div>

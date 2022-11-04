@@ -48,7 +48,7 @@ const Search = (props) => {
                     <br />
                     <button
                         type="submit"
-                        className="px-3 py-1 mt-5 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md"
+                        className="px-3 py-1 mt-5 bg-my-purple1 m-2 text-white hover:bg-my-purple2 rounded-md"
                     >
                         検索
                     </button>
