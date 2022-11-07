@@ -15,7 +15,7 @@ const Show = (props) => {
                     {auth.user.image_path !== null ? (
                         <div>
                             <img
-                                className="rounded-full"
+                                className="rounded-full aspect-square object-cover border-2 border-shadowgray1"
                                 src={auth.user.image_path}
                             />
                         </div>
@@ -23,7 +23,7 @@ const Show = (props) => {
                         <div>
                             {" "}
                             <img
-                                className="rounded-full"
+                                className="rounded-full aspect-square object-cover border-2 border-shadowgray1"
                                 src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"
                             />
                         </div>

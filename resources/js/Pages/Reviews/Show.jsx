@@ -57,14 +57,14 @@ const Show = (props) => {
                                 {review.user.image_path !== null ? (
                                     <div>
                                         <img
-                                            className="rounded-full hover:border-my-purple3 border-2"
+                                            className="rounded-full aspect-square object-cover border-2 border-shadowgray1 hover:border-my-purple3"
                                             src={review.user.image_path}
                                         />
                                     </div>
                                 ) : (
                                     <div>
                                         <img
-                                            className="rounded-full hover:border-my-purple3 border-2"
+                                            className="rounded-full aspect-square object-cover border-2 border-shadowgray1 hover:border-my-purple3"
                                             src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"
                                         />
                                     </div>

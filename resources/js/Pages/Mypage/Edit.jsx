@@ -94,7 +94,7 @@ const Edit = (props) => {
 
                     <div>
                         <h2 className="text-title-purple1 text-2xl">画像</h2> {/*送信用*/}
-                        <img className="rounded-full h-48 w-48 my-0 mx-auto" src={preview} />  {/*変更後のプレビューを表示*/}
+                        <img className="rounded-full h-48 w-48 my-0 mx-auto aspect-square object-cover" src={preview} />  {/*変更後のプレビューを表示*/}
                         <input className="mt-2 mb-4" type="file" onChange={(e) => {setData("image", e.target.files[0]); handleChangeFile(e);}}/>
                         <span className="text-red-600">{props.errors.image}</span>
                     </div> 
@@ -102,7 +102,7 @@ const Edit = (props) => {
                    
                     {/* 表示用 */}
                     <div className="h-48 w-48 my-0 mx-auto">
-                    {auth.user.image_path !== null ? (<div><img className="rounded-full" src={auth.user.image_path}/></div>) : (<div><img className="rounded-full" src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"/></div>) }
+                    {auth.user.image_path !== null ? (<div><img className="rounded-full aspect-square object-cover" src={auth.user.image_path}/></div>) : (<div><img className="rounded-full aspect-square object-cover" src="https://reviewsite1-laravel9.s3.ap-northeast-1.amazonaws.com/dummy_icon/40PoY9t4ftGWao11657527184_1657528010.png"/></div>) }
                     </div>
                     
                     <button type="submit" className="px-3 py-1 mt-5 bg-title-purple2 m-2 text-white hover:bg-purple-400 rounded-md">変更</button>
