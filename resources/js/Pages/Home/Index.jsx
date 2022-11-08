@@ -1,10 +1,10 @@
 import React from "react";
-import Authenticated from "@/Layouts/Authenticated";
+import HomeAuthenticated from "@/Layouts/HomeAuthenticated";
 import { Link } from "@inertiajs/inertia-react";
 import Prefectures from "@/Components/Prefectures";
 import Slider1 from "@/Components/Slider1";
 import Search from "@/Components/Search";
-import Guest from "@/Layouts/Guest";
+import HomeGuest from "@/Layouts/HomeGuest";
 import ReviewList2 from "@/Components/ReviewList2";
 import Announcement from "@/Components/Announcement";
 
@@ -14,10 +14,10 @@ const Index = (props) => {
     return (
         <div>
             {auth.user != null ? (
-                <Authenticated auth={props.auth} announcements = {announcements}>
-                     <div className="z-0">
+                <HomeAuthenticated auth={props.auth} announcements = {announcements} images={images}>
+                     {/* <div className="z-0">
                     <Slider1 images={images} />
-                    </div>
+                    </div> */}
 
                     <div className="w-full">
                         <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
@@ -33,12 +33,12 @@ const Index = (props) => {
                         {/* <Announcement announcements={announcements} /> */}
                         <br />
                     </div>
-                </Authenticated>
+                </HomeAuthenticated>
             ) : (
-                <Guest announcements = {announcements}>
-                   <div className="z-0">
+                <HomeGuest announcements = {announcements} images={images}>
+                   {/* <div className="z-0">
                     <Slider1 images={images} />
-                    </div>
+                    </div> */}
 
                     <div className="w-full">
                         <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
@@ -54,7 +54,7 @@ const Index = (props) => {
                         {/* <Announcement announcements={announcements} /> */}
                         <br />
                     </div>
-                </Guest>
+                </HomeGuest>
             )}
         </div>
     );

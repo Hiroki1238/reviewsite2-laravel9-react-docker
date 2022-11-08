@@ -4,10 +4,12 @@ import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/inertia-react";
+import Slider1 from "@/Components/Slider1";
 
-export default function Authenticated({
+export default function HomeAuthenticated({
     auth,
     header,
+    images,
     children,
     announcements,
 }) {
@@ -200,13 +202,16 @@ export default function Authenticated({
                     </div>
                 </div>
             </nav>
-            {header && (
+            {/* {header && (
                 <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {header}
                     </div>
                 </header>
-            )}
+            )} */}
+            <div className="px-4 pt-20">
+                <Slider1 images={images} />
+            </div>
             <main className="flex max-w-full min-h-screen justify-around pt-20 z-0">
                 <div className="text-left text-xl">
                     <div className="text-3xl mt-4 py-1 text-title-gray">
@@ -285,9 +290,28 @@ export default function Authenticated({
                         </p>
                         <hr className="my-5 border-shadowgray1" />
                     </div>
+
+                    <p className="text-3xl mt-4 pt-1 text-title-gray">
+                        お知らせ
+                    </p>
+                    {announcements.map((announcement) => {
+                        return (
+                            <p key={announcement.title}>
+                                <p className="mt-3">
+                                    {announcement.created_at}
+                                </p>
+                                <p className="py-1 text-xl">
+                                    {announcement.title}
+                                </p>
+                                {/* <p className="py-1 text-lg mb-6">
+                                    {announcement.body}
+                                </p> */}
+                            </p>
+                        );
+                    })}
                 </div>
                 <div className="w-5/8">{children}</div>
-                <div className="w-1/8 text-left text-xl text-title-gray">
+                {/* <div className="w-1/8 text-left text-xl text-title-gray">
                     <div className="text-3xl mt-4 pt-1 text-title-gray">
                         お知らせ
                     </div>
@@ -306,7 +330,7 @@ export default function Authenticated({
                             </div>
                         );
                     })}
-                </div>
+                </div> */}
             </main>
             <footer className="bg-gray-200 mt-10">
                 <div className="flex">
