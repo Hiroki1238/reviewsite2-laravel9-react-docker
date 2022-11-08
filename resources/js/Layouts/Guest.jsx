@@ -195,7 +195,7 @@ export default function Guest({ header, children, announcements }) {
                         <p>
                             <Link
                                 href="/prefectures"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
                             >
                                 都道府県から探す
                             </Link>
@@ -203,7 +203,7 @@ export default function Guest({ header, children, announcements }) {
                         <p>
                             <Link
                                 href="/search"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
                             >
                                 キーワードから探す
                             </Link>
@@ -211,7 +211,7 @@ export default function Guest({ header, children, announcements }) {
                         <p>
                             <Link
                                 href="/search"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
                             >
                                 規模から探す
                             </Link>
@@ -225,7 +225,7 @@ export default function Guest({ header, children, announcements }) {
                         <p>
                             <Link
                                 href="/login"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
                             >
                                 マイページ
                             </Link>
@@ -233,7 +233,7 @@ export default function Guest({ header, children, announcements }) {
                         <p>
                             <Link
                                 href="/login"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
                             >
                                 会員情報
                             </Link>
@@ -241,7 +241,7 @@ export default function Guest({ header, children, announcements }) {
                         <p>
                             <Link
                                 href="/login"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
                             >
                                 お気に入り
                             </Link>
@@ -249,7 +249,7 @@ export default function Guest({ header, children, announcements }) {
                         <p>
                             <Link
                                 href="/login"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
                             >
                                 ブックマーク
                             </Link>
@@ -257,7 +257,7 @@ export default function Guest({ header, children, announcements }) {
                         <p>
                             <Link
                                 href="/login"
-                                className="no-underline text-menu-gray text-xl"
+                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
                             >
                                 お問い合わせ
                             </Link>
