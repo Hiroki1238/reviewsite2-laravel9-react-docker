@@ -86,20 +86,19 @@ const Index = (props) => {
                 <h2 className="py-1">収容人数 : {venue.scale_standing}人</h2>
                 <h2 className="py-1">所在地 : {venue.address}</h2>
                 <h2 className="py-1">
-                    ホームページ : <a className="text-gray-500"  target="_blank" href={venue.url}>{venue.url}</a>
+                    ホームページ : <a className="text-gray-500 hover:text-gray-600"  target="_blank" href={venue.url}>{venue.url}</a>
                 </h2>
                 
                  <br/>
-                 <div className="mb-3">
-                <Link className="text-gray-500 text-xl no-underline" href={`/prefectures/venues/pictures/${venue.id}`}>[ {venue.name}の画像一覧 ]</Link>
+                 <div className="mb-6">
+                <Link className="text-white text-xl no-underline rounded-xl bg-gray-500 px-3 py-2 hover:bg-gray-600" href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
                 </div>
 
-                <h2>
-                    <Link className="text-my-purple3 no-underline" href={`/reviews/${venue.id}/create`}>[ 新規投稿 ]</Link>
-                    
-                </h2>
+                <div>
+                    <Link className="text-white text-xl no-underline rounded-xl bg-my-purple3 px-3 py-2 hover:bg-title-purple1" href={`/reviews/${venue.id}/create`}>新規投稿</Link>
                 </div>
-                <div className="mt-3 border border-b-0 border-gray-300">
+                </div>
+                <div className="mt-5 border border-b-0 border-gray-300">
                 </div>
 
                 <div className="w-1/2 ml-auto text-right space-x-3 mt-3" >
@@ -107,8 +106,8 @@ const Index = (props) => {
                         戻る
                     </Link>
 
-                {isLiked ? (<button onClick={() => handleMessage()}> <StarIcon className="text-yellow-500"/> </button>)
-                : (<button onClick={() => handleMessage()}> <StarBorderIcon className="text-yellow-500"/> </button>)
+                {isLiked ? (<button onClick={handleUnlike}> <StarIcon className="text-yellow-500"/> </button>)
+                : (<button onClick={handleLike}> <StarBorderIcon className="text-yellow-500"/> </button>)
               }
               </div>
 

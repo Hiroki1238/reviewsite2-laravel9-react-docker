@@ -33,7 +33,7 @@ export default function Slider1(props) {
     pagination={{
       clickable: true
     }}
-    navigation={true}
+    navigation={false} //左右の矢印のオンオフ
 
         speed={5000} //写真が切り替わる際の移動の
         autoplay={{

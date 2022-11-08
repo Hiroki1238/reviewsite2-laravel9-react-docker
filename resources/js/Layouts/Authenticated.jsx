@@ -318,7 +318,7 @@ export default function Authenticated({
                         <p className="pt-11 pr-7">
                             <Link
                                 href="/"
-                                className="no-underline text-3xl text-title-gray"
+                                className="no-underline text-3xl text-title-gray hover:text-my-gray1"
                             >
                                 トップ
                             </Link>
@@ -329,7 +329,7 @@ export default function Authenticated({
                         <p className="pt-11 pr-7">
                             <Link
                                 href="/description"
-                                className="no-underline text-3xl text-title-gray"
+                                className="no-underline text-3xl text-title-gray hover:text-my-gray1"
                             >
                                 raionについて
                             </Link>
@@ -340,7 +340,7 @@ export default function Authenticated({
                         <p className="pt-11 pr-7">
                             <Link
                                 href="/description"
-                                className="no-underline text-3xl text-title-gray"
+                                className="no-underline text-3xl text-title-gray hover:text-my-gray1"
                             >
                                 仮タイトル
                             </Link>
@@ -351,7 +351,7 @@ export default function Authenticated({
                         <p className="pt-11 pr-24">
                             <Link
                                 href="/description"
-                                className="no-underline text-3xl text-title-gray"
+                                className="no-underline text-3xl text-title-gray hover:text-my-gray1"
                             >
                                 仮タイトル
                             </Link>
