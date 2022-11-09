@@ -191,7 +191,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
             </div>
 
             <main className="flex max-w-full min-h-screen justify-around pt-20 z-0">
-                <div className="w-1/8 text-left text-xl">
+                <div className="w-1/8 text-left text-xl ml-10">
                     <div className="text-3xl mt-4 py-1 text-title-gray">
                         検索
                     </div>
@@ -288,7 +288,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
                     })}
                 </div>
 
-                <div className="w-4/7">{children}</div>
+                <div className="w-6/7">{children}</div>
 
                 {/* <div className="w-1/8 text-left text-xl text-title-gray">
                     <div className="text-3xl mt-4 pt-1 text-title-gray">
