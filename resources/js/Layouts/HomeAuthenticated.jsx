@@ -18,7 +18,7 @@ export default function HomeAuthenticated({
 
     return (
         <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold">
-            {" "}
+
             {/*ここで全体のフォントを指定*/}
             <nav className="bg-my-purple2 border-b border-gray-100 fixed w-full z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -212,7 +212,7 @@ export default function HomeAuthenticated({
             <div className="px-4 pt-20">
                 <Slider1 images={images} />
             </div>
-            <main className="flex max-w-full min-h-screen justify-around pt-20 z-0">
+            <main className="flex max-w-full min-h-screen justify-around pt-1 z-0">
                 <div className="text-left text-xl ml-10">
                     <div className="text-3xl mt-4 py-1 text-title-gray">
                         検索

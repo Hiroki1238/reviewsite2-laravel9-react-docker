@@ -190,7 +190,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
                 <Slider1 images={images} />
             </div>
 
-            <main className="flex max-w-full min-h-screen justify-around pt-20 z-0">
+            <main className="flex max-w-full min-h-screen justify-around pt-1 z-0">
                 <div className="w-1/8 text-left text-xl ml-10">
                     <div className="text-3xl mt-4 py-1 text-title-gray">
                         検索
