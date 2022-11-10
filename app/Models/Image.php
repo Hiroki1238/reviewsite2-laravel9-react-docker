@@ -30,9 +30,20 @@ class Image extends Model
         }
     }
 
+    // public function getReviewImages()
+    // {
+    //     $review_images = [];
+    //     $images = $this->get();
+    //     for ($i = 0; $i < count($images); $i++) {
+    //         $review_images[] = $images[$i];
+    //         if ($images[$i]->review_id == $images[$i + 1]->review_id) {
+    //             break;
+    //         }
+    //     }
+    //}
+
     protected $fillable = [
         'review_id',
         'image_path',
     ];
-
 }

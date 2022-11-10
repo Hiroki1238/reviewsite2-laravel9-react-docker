@@ -4,13 +4,16 @@ import Dropdown from "@/Components/Dropdown";
 import NavLink from "@/Components/NavLink";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/inertia-react";
+import Slider1 from "@/Components/Slider1";
 
-export default function Guest({ header, children, announcements }) {
+export default function Guest({ header, children, announcements, images }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold"> {/*ここで全体のフォントを指定*/}
+        <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold">
+            {" "}
+            {/*ここで全体のフォントを指定*/}
             <nav className="bg-my-purple2 border-b border-gray-100 fixed w-full z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -39,20 +42,16 @@ export default function Guest({ header, children, announcements }) {
                                 <NavLink href={`/login`}>マイページ</NavLink>
                             </div>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            {/* <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href={`/login`}>お気に入り</NavLink>
+                            </div>
 
-                                <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                    <NavLink href={`/login`}>
-                                        ブックマーク
-                                    </NavLink>
-                                </div>
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href={`/login`}>ブックマーク</NavLink>
+                            </div> */}
 
-                                <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                    <NavLink href={`/login`}>
-                                        お問い合せ
-                                    </NavLink>
-                                </div>
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <NavLink href={`/login`}>お問い合せ</NavLink>
                             </div>
                         </div>
 
@@ -177,17 +176,18 @@ export default function Guest({ header, children, announcements }) {
                     </div>
                 </div>
             </nav>
-
-            {header && (
+            {/* {header && (
                 <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {header}
                     </div>
                 </header>
-            )}
-
-            <main className="flex max-w-full min-h-screen justify-around pt-20 z-0">
-                <div className="w-1/8 text-left text-xl">
+            )} */}
+            <div className="px-4 pt-20">
+                <Slider1 images={images} />
+            </div>
+            <main className="flex max-w-full min-h-screen justify-around pt-1 z-0">
+                <div className="w-1/8 text-left text-xl ml-10">
                     <div className="text-3xl mt-4 py-1 text-title-gray">
                         検索
                     </div>
@@ -264,11 +264,29 @@ export default function Guest({ header, children, announcements }) {
                         </p>
                         <hr className="my-5 border-shadowgray1" />
                     </div>
+                    <p className="text-3xl mt-4 pt-1 text-title-gray">
+                        お知らせ
+                    </p>
+                    {announcements.map((announcement) => {
+                        return (
+                            <p key={announcement.title}>
+                                <p className="mt-3">
+                                    {announcement.created_at}
+                                </p>
+                                <p className="py-1 text-xl">
+                                    {announcement.title}
+                                </p>
+                                {/* <p className="py-1 text-lg mb-6">
+                                    {announcement.body}
+                                </p> */}
+                            </p>
+                        );
+                    })}
                 </div>
 
-                <div className="w-4/7">{children}</div>
+                <div className="w-6/7">{children}</div>
 
-                <div className="w-1/8 text-left text-xl text-title-gray">
+                {/* <div className="w-1/8 text-left text-xl text-title-gray">
                     <div className="text-3xl mt-4 pt-1 text-title-gray">
                         お知らせ
                     </div>
@@ -287,9 +305,8 @@ export default function Guest({ header, children, announcements }) {
                             </div>
                         );
                     })}
-                </div>
+                </div> */}
             </main>
-
             <footer class="bg-gray-200 mt-10">
                 <div className="flex">
                     <div className="pt-9 mr-auto">

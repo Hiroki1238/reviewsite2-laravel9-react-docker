@@ -6,19 +6,27 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink";
 import { Link } from "@inertiajs/inertia-react";
 import Slider1 from "@/Components/Slider1";
 
-export default function HomeGuest({ header, children, announcements, images }) {
+export default function Authenticated2({
+    auth,
+    header,
+    images,
+    children,
+    announcements,
+}) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold"> {/*ここで全体のフォントを指定*/}
+        <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold">
+
+            {/*ここで全体のフォントを指定*/}
             <nav className="bg-my-purple2 border-b border-gray-100 fixed w-full z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
                                 <Link href="/description">
-                                    <ApplicationLogo className="block h-9 w-auto text-gray-500" />
+                                    <ApplicationLogo className="block h-9 w-auto" />
                                 </Link>
                             </div>
 
@@ -37,20 +45,28 @@ export default function HomeGuest({ header, children, announcements, images }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/login`}>マイページ</NavLink>
+                                <NavLink href={`/mypage/${auth.user.id}`}>
+                                    マイページ
+                                </NavLink>
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/login`}>お気に入り</NavLink>
+                                <NavLink href={`/mypage/like/${auth.user.id}`}>
+                                    お気に入り
+                                </NavLink>
 
                                 <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                    <NavLink href={`/login`}>
+                                    <NavLink
+                                        href={`/mypage/bookmarks/${auth.user.id}`}
+                                    >
                                         ブックマーク
                                     </NavLink>
                                 </div>
 
                                 <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                    <NavLink href={`/login`}>
+                                    <NavLink
+                                        href={`/mypage/contacts/${auth.user.id}`}
+                                    >
                                         お問い合せ
                                     </NavLink>
                                 </div>
@@ -67,7 +83,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 <div className="py-1">
-                                                    新規登録
+                                                    {auth.user.uname}
                                                 </div>
 
                                                 <svg
@@ -88,18 +104,18 @@ export default function HomeGuest({ header, children, announcements, images }) {
 
                                     <Dropdown.Content>
                                         <Dropdown.Link
-                                            href={route("register")}
+                                            href={`/mypage/${auth.user.id}`}
                                             method="get"
                                             as="button"
                                         >
-                                            新規会員登録
+                                            マイページ
                                         </Dropdown.Link>
                                         <Dropdown.Link
-                                            href="/login"
-                                            method="get"
+                                            href={route("logout")}
+                                            method="post"
                                             as="button"
                                         >
-                                            ログイン
+                                            ログアウト
                                         </Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
@@ -165,20 +181,27 @@ export default function HomeGuest({ header, children, announcements, images }) {
                     </div>
 
                     <div className="pt-4 pb-1 border-t border-gray-200">
-                        {/* <div className="px-4">
-                            <div className="text-base text-gray-800">{auth.user.name}</div>
-                            <div className="text-sm text-gray-500">{auth.user.email}</div>
-                        </div> */}
+                        <div className="px-4">
+                            <div className="text-base text-gray-800">
+                                {auth.user.name}
+                            </div>
+                            <div className="text-sm text-gray-500">
+                                {auth.user.email}
+                            </div>
+                        </div>
 
-                        {/* <div className="mt-3 space-y-1">
-                            <ResponsiveNavLink method="post" href={route('logout')} as="button">
+                        <div className="mt-3 space-y-1">
+                            <ResponsiveNavLink
+                                method="post"
+                                href={route("logout")}
+                                as="button"
+                            >
                                 ログアウト
                             </ResponsiveNavLink>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
-                </nav>
-
+            </nav>
             {/* {header && (
                 <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -189,9 +212,8 @@ export default function HomeGuest({ header, children, announcements, images }) {
             <div className="px-4 pt-20">
                 <Slider1 images={images} />
             </div>
-
             <main className="flex max-w-full min-h-screen justify-around pt-1 z-0">
-                <div className="w-1/8 text-left text-xl ml-10">
+                <div className="text-left text-xl ml-10">
                     <div className="text-3xl mt-4 py-1 text-title-gray">
                         検索
                     </div>
@@ -199,7 +221,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
                         <p>
                             <Link
                                 href="/prefectures"
-                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 都道府県から探す
                             </Link>
@@ -207,7 +229,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
                         <p>
                             <Link
                                 href="/search"
-                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 キーワードから探す
                             </Link>
@@ -215,7 +237,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
                         <p>
                             <Link
                                 href="/search"
-                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 規模から探す
                             </Link>
@@ -228,46 +250,47 @@ export default function HomeGuest({ header, children, announcements, images }) {
                     <div>
                         <p>
                             <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
+                                href={`/mypage/${auth.user.id}`}
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 マイページ
                             </Link>
                         </p>
                         <p>
                             <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
+                                href={`/mypage/profile/${auth.user.id}`}
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 会員情報
                             </Link>
                         </p>
                         <p>
                             <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
+                                href={`/mypage/like/${auth.user.id}`}
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 お気に入り
                             </Link>
                         </p>
                         <p>
                             <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
+                                href={`/mypage/bookmarks/${auth.user.id}`}
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 ブックマーク
                             </Link>
                         </p>
                         <p>
                             <Link
-                                href="/login"
-                                className="no-underline text-menu-gray text-xl hover:text-my-purple1"
+                                href={`/mypage/contacts/${auth.user.id}`}
+                                className="no-underline text-menu-gray hover:text-my-purple1 text-xl"
                             >
                                 お問い合わせ
                             </Link>
                         </p>
                         <hr className="my-5 border-shadowgray1" />
                     </div>
+
                     <p className="text-3xl mt-4 pt-1 text-title-gray">
                         お知らせ
                     </p>
@@ -287,9 +310,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
                         );
                     })}
                 </div>
-
                 <div className="w-6/7">{children}</div>
-
                 {/* <div className="w-1/8 text-left text-xl text-title-gray">
                     <div className="text-3xl mt-4 pt-1 text-title-gray">
                         お知らせ
@@ -311,8 +332,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
                     })}
                 </div> */}
             </main>
-
-            <footer class="bg-gray-200 mt-10">
+            <footer className="bg-gray-200 mt-10">
                 <div className="flex">
                     <div className="pt-9 mr-auto">
                         <ApplicationLogo className="h-16 ml-16" />
@@ -363,7 +383,7 @@ export default function HomeGuest({ header, children, announcements, images }) {
                     </div>
                 </div>
 
-                <p class="text-center text-2xl mt-5 py-12 text-title-gray font-zenmaru font-black">
+                <p className="text-center text-2xl mt-5 py-12 text-title-gray font-zenmaru font-black">
                     Copyright © 2022 RAION CORPORATION. All Rights Reserved.
                 </p>
             </footer>

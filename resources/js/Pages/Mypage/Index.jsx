@@ -49,7 +49,9 @@ const Index = (props) => {
                 <h2 className="text-title-purple1 text-3xl mt-4 mb-5">
                     あなたのレビュー
                 </h2>
+                <div className="ml-44">
                 <ReviewList2 reviews={myReviews} />
+                </div>
             </div>
 
             <div className="py-6 mt-9 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">

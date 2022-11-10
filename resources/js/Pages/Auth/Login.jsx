@@ -111,16 +111,19 @@ export default function Login({ status, canResetPassword, announcements }) {
                         </Link>
                     )}
 
+                    <div className="flex mt-2">
+
                     <div>
-                        {/* <a href="{{route('twitter.login')}}" className="btn btn-outline-primary">Twitterログイン</a> */}
+                       
                         <a
                             href="/login/google"
-                            className="no-underline bg-blue-500 hover:bg-blue-600 py-2 px-3 rounded-lg mr-2 text-white"
                         >
-                            Googleアカウントでログイン
+                            <img className="w-24" src={"/image/google_signin.png"} />
                         </a>
+                        </div>
+                        <div>
 
-                        {/* ボタンでページ遷移できるように変更する */}
+                        {/* className="no-underline bg-blue-500 hover:bg-blue-600 py-2 px-3 rounded-lg mr-2 text-white" */}
 
                         <Button
                             className="ml-4 text-lg bg-my-purple1 hover:bg-my-purple0"
@@ -128,6 +131,7 @@ export default function Login({ status, canResetPassword, announcements }) {
                         >
                             ログイン
                         </Button>
+                        </div>
                     </div>
                 </div>
             </form>
