@@ -104,9 +104,23 @@ const Show = (props) => {
                             </Link>
                         </h1>
                         {/*会場名をリレーションを使って表示した*/}
-                        <h1 className="text-title-purple1 text-3xl mb-3">
-                            {review.title}
-                        </h1>
+                        <div className="text-title-purple1 text-3xl mb-5 flex justify-center">
+                            <div>{review.title}</div>
+                            <div className="ml-3">
+                            <Box
+                                sx={{
+                                    "& > legend": { mt: 2 },
+                                }}
+                            >
+                                <Rating
+                                    className="mb-5"
+                                    name="read-only"
+                                    value={review.star3}
+                                    readOnly
+                                />
+                            </Box>
+                            </div>
+                        </div>
                         <div>
                             {/* <h3 className="text-title-purple1">レビュー内容</h3> */}
                             <p className="text-title-gray text-2xl mb-9 px-6">

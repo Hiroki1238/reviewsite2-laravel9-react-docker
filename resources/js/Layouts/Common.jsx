@@ -39,21 +39,22 @@ export default function Common({ header, children}) {
                                 <NavLink href={`/login`}>マイページ</NavLink>
                             </div>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            {/* <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href={`/login`}>お気に入り</NavLink>
+                            </div>
 
                                 <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                     <NavLink href={`/login`}>
                                         ブックマーク
                                     </NavLink>
-                                </div>
+                                </div> */}
 
                                 <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                     <NavLink href={`/login`}>
                                         お問い合せ
                                     </NavLink>
                                 </div>
-                            </div>
+                            
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
@@ -66,7 +67,7 @@ export default function Common({ header, children}) {
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4  rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 <div className="py-1">
-                                                    新規登録
+                                                    ログイン
                                                 </div>
 
                                                 <svg
@@ -86,19 +87,21 @@ export default function Common({ header, children}) {
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
-                                        <Dropdown.Link
-                                            href={route("register")}
-                                            method="get"
-                                            as="button"
-                                        >
-                                            新規会員登録
-                                        </Dropdown.Link>
+                                     
                                         <Dropdown.Link
                                             href="/login"
                                             method="get"
                                             as="button"
                                         >
                                             ログイン
+                                        </Dropdown.Link>
+
+                                        <Dropdown.Link
+                                            href={route("register")}
+                                            method="get"
+                                            as="button"
+                                        >
+                                            新規会員登録
                                         </Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>

@@ -51,11 +51,11 @@ const Index = (props) => {
                 
                  <br/>
                  <div className="mb-6">
-                <Link className="text-white text-xl no-underline rounded-xl bg-gray-500 px-3 py-2 hover:bg-gray-600" href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
+                <Link className="text-white text-xl no-underline rounded-xl bg-my-purple3 px-3 py-2 hover:bg-title-purple1" href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
                 </div>
 
                 <div>
-                    <Link className="text-white text-xl no-underline rounded-xl bg-my-purple3 px-3 py-2 hover:bg-title-purple1" href={`/reviews/${venue.id}/create`}>新規投稿</Link>
+                    <Link className="text-white text-xl no-underline rounded-xl bg-my-purple3 px-3 py-2 hover:bg-title-purple1" href={`/reviews/${venue.id}/create`}>レビューを投稿</Link>
                 </div>
                 </div>
                 <div className="mt-5 border border-b-0 border-gray-300">
@@ -91,11 +91,11 @@ const Index = (props) => {
                 
                  <br/>
                  <div className="mb-6">
-                <Link className="text-white text-xl no-underline rounded-xl bg-gray-500 px-3 py-2 hover:bg-gray-600" href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
+                <Link className="text-white text-xl no-underline rounded-xl bg-my-purple3 px-3 py-2 hover:bg-title-purple1" href={`/prefectures/venues/pictures/${venue.id}`}>{venue.name}の画像一覧</Link>
                 </div>
 
                 <div>
-                    <Link className="text-white text-xl no-underline rounded-xl bg-my-purple3 px-3 py-2 hover:bg-title-purple1" href={`/reviews/${venue.id}/create`}>新規投稿</Link>
+                    <Link className="text-white text-xl no-underline rounded-xl bg-my-purple3 px-3 py-2 hover:bg-title-purple1" href={`/reviews/${venue.id}/create`}>レビューを投稿</Link>
                 </div>
                 </div>
                 <div className="mt-5 border border-b-0 border-gray-300">

@@ -11,9 +11,7 @@ export default function Guest({ header, children, announcements, images }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold">
-            {" "}
-            {/*ここで全体のフォントを指定*/}
+        <div className="min-h-screen bg-gray-100 text-my-gray1 font-kosugimaru font-semibold"> {/*ここで全体のフォントを指定*/}
             <nav className="bg-my-purple2 border-b border-gray-100 fixed w-full z-10">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
@@ -42,17 +40,21 @@ export default function Guest({ header, children, announcements, images }) {
                                 <NavLink href={`/login`}>マイページ</NavLink>
                             </div>
 
-                            {/* <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <NavLink href={`/login`}>お気に入り</NavLink>
-                            </div>
+                                </div>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/login`}>ブックマーク</NavLink>
-                            </div> */}
+                                <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                    <NavLink href={`/login`}>
+                                        ブックマーク
+                                    </NavLink>
+                                </div>
 
-                            <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink href={`/login`}>お問い合せ</NavLink>
-                            </div>
+                                <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                    <NavLink href={`/login`}>
+                                        お問い合せ
+                                    </NavLink>
+                                </div>
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ml-6">
@@ -65,7 +67,7 @@ export default function Guest({ header, children, announcements, images }) {
                                                 className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                             >
                                                 <div className="py-1">
-                                                    新規登録
+                                                    ログイン
                                                 </div>
 
                                                 <svg
@@ -85,6 +87,14 @@ export default function Guest({ header, children, announcements, images }) {
                                     </Dropdown.Trigger>
 
                                     <Dropdown.Content>
+                                    <Dropdown.Link
+                                            href="/login"
+                                            method="get"
+                                            as="button"
+                                        >
+                                            ログイン
+                                        </Dropdown.Link>
+
                                         <Dropdown.Link
                                             href={route("register")}
                                             method="get"
@@ -92,13 +102,7 @@ export default function Guest({ header, children, announcements, images }) {
                                         >
                                             新規会員登録
                                         </Dropdown.Link>
-                                        <Dropdown.Link
-                                            href="/login"
-                                            method="get"
-                                            as="button"
-                                        >
-                                            ログイン
-                                        </Dropdown.Link>
+                                      
                                     </Dropdown.Content>
                                 </Dropdown>
                             </div>
@@ -175,7 +179,8 @@ export default function Guest({ header, children, announcements, images }) {
                         </div> */}
                     </div>
                 </div>
-            </nav>
+                </nav>
+
             {/* {header && (
                 <header className="bg-white shadow">
                     <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -186,6 +191,7 @@ export default function Guest({ header, children, announcements, images }) {
             <div className="px-4 pt-20">
                 <Slider1 images={images} />
             </div>
+
             <main className="flex max-w-full min-h-screen justify-around pt-1 z-0">
                 <div className="w-1/8 text-left text-xl ml-10">
                     <div className="text-3xl mt-4 py-1 text-title-gray">
@@ -307,6 +313,7 @@ export default function Guest({ header, children, announcements, images }) {
                     })}
                 </div> */}
             </main>
+
             <footer class="bg-gray-200 mt-10">
                 <div className="flex">
                     <div className="pt-9 mr-auto">

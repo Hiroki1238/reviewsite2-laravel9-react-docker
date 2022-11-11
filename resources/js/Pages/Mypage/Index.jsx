@@ -8,6 +8,7 @@ import ReviewList2 from "@/Components/ReviewList2";
 const Index = (props) => {
     const { myReviews, myBookmarks, myVenues, auth, announcements } = props;
     //ProfileControllerのindexでReview::with('user','venue')としているのでvenueの情報も取得できている
+    console.log(props);
 
     return (
         <Authenticated auth={props.auth} announcements={announcements}>
@@ -45,34 +46,41 @@ const Index = (props) => {
                 </div>
             </div>
 
-            <div className="py-6 mt-9 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                <h2 className="text-title-purple1 text-3xl mt-4 mb-5">
+            <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                <h2 className="text-title-purple1 text-3xl mt-3 mb-5">
                     あなたのレビュー
                 </h2>
-                <div className="ml-44">
-                <ReviewList2 reviews={myReviews} />
+
+                <div className="ml-10 mr-10">
+                    <ReviewList2 reviews={myReviews} />
                 </div>
             </div>
 
-            <div className="py-6 mt-9 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                <h3 className="text-title-purple1 text-3xl mt-4 mb-5">
+            <div className="py-6 mt-9 mb-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-left w-5/7">
+                <h3 className="text-title-purple1 text-3xl mt-4 mb-5 text-center">
                     お気に入りの会場
                 </h3>
+                <div className="ml-36 mr-10">
                 <Like myVenues={myVenues} />
+                </div>
             </div>
 
-            <div className="py-6 mt-9 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-                <h3 className="text-title-purple1 text-3xl mt-4 mb-5">
+            <div className="py-6 mt-9 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-left w-5/7">
+                <h3 className="text-title-purple1 text-3xl text-center mt-4 mb-5">
                     ブックマークしたレビュー
                 </h3>
+                <div className="ml-36 mr-10">
                 <Bookmark myBookmarks={myBookmarks} />
+                </div>
             </div>
 
-            <div className="py-6 mt-9 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
-            <h3 className="text-title-purple1 text-3xl mt-4 mb-5">
-                進行中のチャット
-            </h3>
-            <Link href="/chat">No.1</Link>
+            <div className="py-6 mt-9 mb-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-left w-5/7">
+                <h3 className="text-title-purple1 text-center text-3xl mt-4 mb-5">
+                    進行中のチャット
+                </h3>
+                <div className="ml-20 text-3xl">
+                <Link className="text-link-blue text-2xl hover:text-link-blue2 no-underline" href="/chat">No.1</Link>
+                </div>
             </div>
 
             <div className="flex justify-center">

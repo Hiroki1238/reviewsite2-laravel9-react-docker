@@ -17,7 +17,7 @@ class ProfileController extends Controller
         $myReviews = Review::with('user','venue')->where('user_id', $authId)->get(); 
         //上の行についてwithの()内で2個していできることが判明
         $myVenues = $auth->likeVenues()->get();
-        $myBookmarks = $auth->bookmarkReviews()->get();
+        $myBookmarks = $auth->bookmarkReviews()->with('venue')->get();
         return Inertia::render('Mypage/Index',['myReviews' => $myReviews, 'myBookmarks' => $myBookmarks, 'myVenues' => $myVenues, 'announcements' => $announcements]);
     }
 

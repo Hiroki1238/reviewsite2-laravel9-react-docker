@@ -9,25 +9,39 @@ import ReviewList2 from "@/Components/ReviewList2";
 import Announcement from "@/Components/Announcement";
 
 const Index = (props) => {
-    const { auth, prefecture_array, reviews, review_images, images, announcements } = props;
+    const {
+        auth,
+        prefecture_array,
+        reviews,
+        review_images,
+        images,
+        announcements,
+    } = props;
 
     console.log(props);
 
     return (
         <div>
             {auth.user != null ? (
-                <Authenticated auth={props.auth} announcements = {announcements} images={images}>
-                     {/* <div className="z-0">
+                <Authenticated
+                    auth={props.auth}
+                    announcements={announcements}
+                    images={images}
+                >
+                    {/* <div className="z-0">
                     <Slider1 images={images} />
                     </div> */}
 
                     <div className="w-full">
-                        <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-left w-5/7">
-                            <h2 className="text-title-purple1 text-center text-3xl mt-3 mb-5">
+                        <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                            <h2 className="text-title-purple1 text-3xl mt-3 mb-5">
                                 新着のレビュー
                             </h2>
-                            <div className="ml-44">
-                            <ReviewList2 reviews={reviews} review_images={review_images}/>
+                            <div className="ml-10 mr-10">
+                                <ReviewList2
+                                    reviews={reviews}
+                                    review_images={review_images}
+                                />
                             </div>
                         </div>
                         <br />
@@ -39,23 +53,28 @@ const Index = (props) => {
                     </div>
                 </Authenticated>
             ) : (
-                <Guest announcements = {announcements} images={images}>
-                   {/* <div className="z-0">
+                <Guest announcements={announcements} images={images}>
+                    {/* <div className="z-0">
                     <Slider1 images={images} />
                     </div> */}
 
-                    <div className="w-full">
+<div className="w-full">
                         <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
                             <h2 className="text-title-purple1 text-3xl mt-3 mb-5">
                                 新着のレビュー
                             </h2>
-                            <ReviewList2 reviews={reviews} />
+                            <div className="ml-10 mr-10">
+                                <ReviewList2
+                                    reviews={reviews}
+                                    review_images={review_images}
+                                />
+                            </div>
                         </div>
                         <br />
                         <Search />
                         <br />
                         <Prefectures prefecture_array={prefecture_array} />
-                       
+                        {/* <Announcement announcements={announcements} /> */}
                         <br />
                     </div>
                 </Guest>
