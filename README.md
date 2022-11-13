@@ -1,6 +1,6 @@
 # raion
 
-<img width="91" alt="logo-transparent" src="https://user-images.githubusercontent.com/105682555/189569009-f34bd847-62f2-4924-a3e7-42ce76a6c156.png">
+<img width="91" alt="raion_logo" src="https://user-images.githubusercontent.com/105682555/201507595-326dd310-0420-4194-a3fa-f8e6b183b3f0.png">
 ライブ会場にレビューを付けられるアプケーションです。
 
 ## 本アプリの概要
@@ -97,6 +97,8 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 |  contacts  |  お問い合せ内容の情報  |
 |  likes  |  会場に対するお気に入り  |
 |  bookmarks  |  レビューに対するブックマーク  |
+
+<img width="91" alt="ER-diagram" src="https://user-images.githubusercontent.com/105682555/201507926-1d6b97ad-32a5-4a41-b9e5-cc1f7a1b6f37.jpg">
 
 ---
 
