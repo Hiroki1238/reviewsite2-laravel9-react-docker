@@ -98,7 +98,7 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 |  likes  |  会場に対するお気に入り  |
 |  bookmarks  |  レビューに対するブックマーク  |
 
-<img width="91" alt="ER-diagram" src="https://user-images.githubusercontent.com/105682555/201507926-1d6b97ad-32a5-4a41-b9e5-cc1f7a1b6f37.jpg">
+<img width="200" alt="ER-diagram" src="https://user-images.githubusercontent.com/105682555/201507926-1d6b97ad-32a5-4a41-b9e5-cc1f7a1b6f37.jpg">
 
 ---
 
