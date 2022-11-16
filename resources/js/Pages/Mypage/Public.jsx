@@ -10,7 +10,7 @@ const Public = (props) => {
 
     return (
         <Authenticated auth={props.auth} announcements={announcements}>
-            <div className="p-6 mt-9 mb-12 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-9 mb-12 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
                 {/* <div id="icon" className="rounded">*/}
 
                 <div className="h-48 w-48 my-0 mx-auto py-2 mb-7">

@@ -49,7 +49,7 @@ export default function Login({ status, canResetPassword, announcements }) {
             <ValidationErrors errors={errors} />
 
             <form
-                className="px-7 py-4 mt-16 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7"
+                className="px-7 py-4 mt-16 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7"
                 onSubmit={submit}
             >
                 <div>

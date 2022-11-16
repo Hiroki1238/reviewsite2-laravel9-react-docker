@@ -47,7 +47,7 @@ const Create = (props) => {
             announcements={announcements}
             errors={props.errors} //これは何のため？
         >
-            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
                 <form onSubmit={handleSendImage}>
                     <div>
                         <h2 className="text-title-purple1 text-2xl mt-4 mb-2">タイトル</h2>

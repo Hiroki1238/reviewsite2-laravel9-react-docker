@@ -11,7 +11,7 @@ const Index = (props) => {
         <div>
             {auth.user != null ? (
                 <Authenticated auth={props.auth} announcements={announcements}>
-                    <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                    <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
                         <div className="py-2 flex justify-left">
                             <Link
                                 className="text-gray-400 text-xl no-underline"
@@ -42,7 +42,7 @@ const Index = (props) => {
                 </Authenticated>
             ) : (
                 <Guest announcements={announcements}>
-                    <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+                    <div className="p-6 mt-6 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
                         <div className="py-2 flex justify-left">
                             <Link
                                 className="text-gray-400 text-xl no-underline"

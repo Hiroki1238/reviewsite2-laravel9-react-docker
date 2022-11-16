@@ -11,7 +11,7 @@ const Index = (props) => {
             auth={props.auth}
             announcements={announcements}
         >
-            <div className="py-2 px-3 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="py-2 px-3 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
                 <div className="flex justify-left">
                     <Link
                         className="text-gray-400 text-xl no-underline"

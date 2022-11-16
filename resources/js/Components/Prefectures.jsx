@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/inertia-react";
 
 function Prefectures({ prefecture_array }) {
     return (
-        <div className="p-6 mt-5 mb-11 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+        <div className="p-6 mt-5 mb-11 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
             <h1 className="text-title-purple1 text-4xl mt-5">
                 都道府県から探す
             </h1>

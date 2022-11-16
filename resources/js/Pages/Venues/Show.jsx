@@ -39,7 +39,7 @@ const Index = (props) => {
         {auth.user != null ? (
             <Authenticated auth={props.auth} announcements={announcements}>
 
-            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 text-3xl mt-4 mb-7">{venue.name}のレビュー</h1>
 
               <div className="text-title-gray">
@@ -73,13 +73,13 @@ const Index = (props) => {
 
             </div>
 
-            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
               <ReviewList reviews={reviews} />
             </div>
         </Authenticated>
     ) : (
         <Guest announcements={announcements}>
-            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-9 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
                 <h1 className="text-title-purple1 text-3xl mt-4 mb-7">{venue.name}のレビュー</h1>
 
               <div className="text-title-gray">
@@ -113,7 +113,7 @@ const Index = (props) => {
 
             </div>
 
-            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-lg border border-gray-300 text-center w-5/7">
+            <div className="p-6 mt-7 shadow-lg shadow-shadowgray1 bg-gray-200 my-0 mx-auto rounded-2xl border border-gray-300 text-center w-5/7">
               <ReviewList reviews={reviews} />
             </div>
         </Guest>
