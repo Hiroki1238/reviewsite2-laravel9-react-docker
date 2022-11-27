@@ -64,13 +64,13 @@ https://reviewsite2-laravel9-react.herokuapp.com/
 - CSS(Tailwind)
 
 #### バックエンド
-- PHP
-- Laravel9
+- Laravel9 (PHP)
 
 #### インフラ
 - Docker
 - MySQL
 - Google+ API
+- Amazon S3
 
 #### その他
 - Visual Studio Code

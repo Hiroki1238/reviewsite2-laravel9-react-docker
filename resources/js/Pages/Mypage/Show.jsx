@@ -38,7 +38,7 @@ const Show = (props) => {
                     </div>
 
                     <div className="mb-6">
-                    <h2 className="text-title-purple1  text-2xl mb-1 mt-4">
+                    <h2 className="text-title-purple1 text-2xl mb-1 mt-4">
                         ユーザー名
                     </h2>
                     <h3 className="text-2xl">{auth.user.uname}</h3>
